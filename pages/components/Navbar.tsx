@@ -1,18 +1,20 @@
+import style from '../../styles/components/navbar.module.scss';
+
 import Link from 'next/link';
 import Image from 'next/image';
+
 import { MagnifyingGlass } from 'phosphor-react';
 
 export default function Navbar() {
     return(
         <nav>
             <div>
-                <p>Logotipo</p>
-                {/* <Image 
-                    src="#"
+                <Image 
+                    src="/images/Formato.png"
                     width="30" 
                     height="30" 
                     alt="Formato consultoria"
-                /> */}
+                />
             </div>
             <ul>
                 <li>
@@ -30,7 +32,7 @@ export default function Navbar() {
                 <li>
                     <Link href="/about">Sobre Nós</Link>
                 </li>
-                <li className="primary-btn">
+                <li className={style.primary_btn}>
                     <Link href="/subscribe">Contratar</Link>
                 </li>
                 <li>

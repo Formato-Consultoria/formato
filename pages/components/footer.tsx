@@ -1,6 +1,8 @@
+import style from '../../styles/components/footer.module.scss';
+
 export default function Footer() {
     return (
-        <footer>
+        <footer className={style.footer}>
             <p>
                 <span>Formato consultoria</span> &copy; 2022
             </p>
