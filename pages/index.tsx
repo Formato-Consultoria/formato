@@ -4,19 +4,8 @@ import Head from 'next/head'
 
 export default function Home() {
   return (
-    <>
-      <Head>
-        <title>Formato Consultoria</title>
-      </Head>
-      <main>
-        <h1>
-          Hello Word
-        </h1>
-      </main>
-
-      <footer>
-        
-      </footer>
-    </>
+    <section>
+      <h1>Hello Word!</h1>
+    </section>
   )
 }
