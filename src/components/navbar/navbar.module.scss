@@ -1,0 +1,61 @@
+@use '../../../styles/variable';
+
+.primary_btn {
+    background: variable.$primary-color;
+}
+.nav_bar {
+    width: 88vw;
+    max-height: variable.$height-nav-bar;
+    max-width: variable.$max-width-screen;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logotipo_img img { 
+        width: 170px;
+    }
+
+    div.navigation {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 35px;
+        
+        ul.navigation_options {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 25px;
+    
+            li {
+                line-height: calc(variable.$height-nav-bar - 10px);
+                vertical-align: center;
+    
+                a {
+                    font-size: 1.2rem;
+                    font-weight: 500;
+
+                    text-decoration: none;
+                    color: variable.$black-dark;
+                    transition: .5s;
+                }
+
+                a:hover {
+                    text-decoration: underline;
+                    color: variable.$link-color;
+                    transition: .5s;
+                }
+            }
+        }
+
+        button.search_btn {
+            svg {
+                max-width: 25px;
+            }
+        }
+    }
+}

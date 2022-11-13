@@ -1,0 +1,19 @@
+@use '../../../styles/variable';
+
+button.primary_btn {
+    height: 32px;
+    background-color: variable.$primary-color;
+    color: variable.$white;
+    
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    width: max-content;
+    padding: 0 20px;
+
+    a {
+        vertical-align: center;
+        color: variable.$white;
+        font-weight: 700;
+    }
+}

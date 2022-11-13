@@ -1,0 +1,101 @@
+@use '../../../styles/variable';
+
+.footer {
+    color: variable.$white;
+    max-width: variable.$max-width-screen;
+    margin: 0 auto;
+
+    div.navigation_container {
+        display: flex;
+        gap: 20px;
+        background: variable.$black-dark-97;
+        padding: 35px 35px 20px;
+
+
+        .logotipo_img img { 
+            width: 170px;
+        }
+
+        div.navigation_content {
+            display: flex;
+            color: variable.$white;
+            gap: 150px;
+
+            nav.menus,
+            div.servicos div.menu_services nav {
+                ul.navigation_options {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    li {
+                        line-height: 2rem;
+                        a {
+                            font-size: 1.2rem;
+                            font-weight: 200;
+            
+                            text-decoration: none;
+                            color: variable.$white;
+                            transition: .5s;
+                        }
+            
+                        a:hover {
+                            text-decoration: underline;
+                            color: variable.$link-color;
+                            transition: .5s;
+                        }
+                    }
+        
+                }
+            }
+
+            nav.menus {
+                margin-top: 20px;
+            }
+
+            div.servicos {
+                div.menu_services {
+                    display: flex;
+                    gap: 100px;
+                }
+
+                h3 {
+                    fallback: inherit;
+                    font-size: 1.5rem;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    div.network_and_copy {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px 100px;
+
+        background-color: variable.$black-dark;
+
+        div a {
+            color: variable.$white;
+            margin: 0 5px;
+            opacity: .5;
+            svg {
+                max-width: 22px;
+            }
+
+            :hover {
+                color: variable.$link-color;
+            }
+        }
+
+        p {
+            font-size: 0.99rem;
+            opacity: .5;
+            font-weight: 100;
+            span {
+                font-weight: 300;
+            }
+        }
+    }
+}

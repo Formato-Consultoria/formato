@@ -4,8 +4,8 @@ import style from './layout.module.scss';
 import { Blinker } from '@next/font/google';
 import { NextFont } from '@next/font/dist/types';
 
-import Footer from '../footer/footer';
-import Navbar from '../navbar/Navbar';
+import Footer from '../footer';
+import Navbar from '../navbar';
 
 const blinker: NextFont = Blinker({
   weight: ['300', '400', '600', '700'],
