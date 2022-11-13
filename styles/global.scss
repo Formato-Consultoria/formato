@@ -6,10 +6,47 @@
     box-sizing: border-box;
 }
 
-.primary-btn {
-    background: variable.$primary-color;
+body {
+    width: 100vw;
+    height: auto;
+    margin: 0 auto;
+
+    color: variable.$black;
+    --webkit-font-somoothing: antialiased;
+    font-size: 17px;
 }
 
-.secondary-btn {
+header.header {
+    width: 100vw;
+    height: auto;
 
+    background: none;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: variable.$black;
+    transition: .5s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: variable.$link-color;
+    transition: .5s;
+}
+
+.primary-btn {
+    height: 32px !important;
+    background-color: variable.$primary-color !important;
+    color: variable.$white !important;
+    
+    border-radius: 10px !important;
+    vertical-align: center !important;
+    text-align: center !important;
+    width: max-content !important;
+    padding: 0 20px !important;
 }

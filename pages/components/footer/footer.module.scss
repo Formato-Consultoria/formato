@@ -1,0 +1,9 @@
+@use '../../../styles/variable';
+
+.footer {
+    background: variable.$black;
+    color: variable.$white;
+    
+    max-width: variable.$max-width-screen;
+    margin: 0 auto;
+}
