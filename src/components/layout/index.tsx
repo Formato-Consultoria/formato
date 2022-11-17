@@ -1,15 +1,8 @@
 import Head from 'next/head';
-import style from './layout.module.scss';
-
-import { Blinker } from '@next/font/google';
-import { NextFont } from '@next/font/dist/types';
+import styles from './layout.module.scss';
 
 import Footer from '../footer';
 import Navbar from '../navbar';
-
-const blinker: NextFont = Blinker({
-  weight: ['300', '400', '600', '700'],
-});
 
 export default function Layout({children}: any) {
     return (
@@ -19,11 +12,9 @@ export default function Layout({children}: any) {
                 <title>Formato Consultoria</title>
             </Head>
             
-            <header className={`${style.header} ${blinker.className}`}>
-                <Navbar />
-            </header>
+            <Navbar />
 
-            <main className={style.main}>
+            <main className={styles.main}>
                 {children}
             </main>
 

@@ -11,9 +11,8 @@ button.primary_btn {
     width: max-content;
     padding: 0 20px;
 
-    a {
-        vertical-align: center;
-        color: variable.$white;
-        font-weight: 700;
-    }
+    vertical-align: center;
+    color: variable.$white;
+    font-weight: 500;
+    font-size: 1.03rem;
 }

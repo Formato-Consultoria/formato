@@ -7,20 +7,13 @@
 }
 
 body {
-    width: 100vw;
+    width: 100%;
     height: auto;
     margin: 0 auto;
 
     color: variable.$black-dark;
     --webkit-font-somoothing: antialiased;
     font-size: 17px;
-}
-
-header.header {
-    width: 100vw;
-    height: auto;
-
-    background: none;
 }
 
 ul {
