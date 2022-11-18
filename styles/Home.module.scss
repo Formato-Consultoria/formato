@@ -3,7 +3,6 @@
 
 section.principal {
     width: 100%;
-    height: auto;
     padding: 50px 25px 25px 25px;
 
     display: grid;
@@ -12,8 +11,7 @@ section.principal {
     grid-template-areas:
         "description description boxs-image"
         "description description boxs-image"
-        "button button boxs-image "
-        ". . boxs-image";
+        "button button boxs-image ";
 
     justify-content: stretch;
     align-items: start;
@@ -61,11 +59,17 @@ section.principal {
         position: relative;
 
         height: 85%;
+        width: 90%;
+        justify-self: start;
         align-self: end;
 
         display: flex;
         justify-content: center;
         align-items: center;
+
+        img {
+            height: 235px;
+        }
         
         img:nth-child(1) {
             border-radius: 10px;
@@ -95,5 +99,120 @@ section.principal {
         justify-content: center;
 
         margin-left: 25px;
+    }
+}
+
+section.strategy {
+    background: variable.$white-mediumn;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    gap: 80px;
+
+    padding: 30px 25px 0 25px;
+
+    div.title_and_description {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+
+        h2 {
+            color: variable.$black-80;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        p {
+            max-width: 50%;
+            text-align: center;
+            font-size: 1.30rem;
+            color: variable.$black-50;
+            font-weight: 400;
+        }
+    }
+
+    div.strategys_an_image {
+        height: 97vh;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        background-image: url('/images/woman-trategy-section.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        div.first_block {
+            display: flex;
+            justify-content: space-between;
+            height: 100%;
+            width: 100%;
+        }
+
+        div.secound_block {
+            display: flex;
+            justify-content: space-between;
+            height: 100%;
+            width: 100%;
+        }
+
+        div.first_block,
+        div.secound_block {
+            div {
+                width: 30%;
+                height: max-content;
+                text-align: justify;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                h3 {
+                    color: variable.$black-dark;
+                    font-weight: 400;
+                    font-size: 2rem;
+                }
+                p {
+                    color: variable.$black-dark;
+                    font-weight: 300;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        div.first_block {
+            position: relative;
+            div.descoberta {
+                position: absolute;
+                top: 50px;
+                left: 190px;
+            }
+    
+            div.modelagem {
+                position: absolute;
+                right: 50px;
+                top: 25px;
+            }
+        }
+
+        div.secound_block {
+            position: relative;
+
+            div.implantacao {
+                position: absolute;
+                bottom: 25px;
+                left: 140px;
+            }
+    
+            div.ideacao {
+                position: absolute;
+                right: 50px;
+                top: 100px;
+            }
+        }
     }
 }

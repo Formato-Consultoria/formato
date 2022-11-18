@@ -8,12 +8,12 @@
 
 body {
     width: 100%;
-    height: auto;
+    min-height: 100vh;
     margin: 0 auto;
 
     color: variable.$black-dark;
-    --webkit-font-somoothing: antialiased;
     font-size: 17px;
+    --webkit-font-somoothing: antialiased;
 }
 
 ul {
