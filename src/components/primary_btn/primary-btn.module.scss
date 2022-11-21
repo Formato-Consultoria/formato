@@ -15,4 +15,9 @@ button.primary_btn {
     color: variable.$white;
     font-weight: 500;
     font-size: 1.03rem;
+
+    svg {
+        margin-left: 10px;
+        vertical-align: middle;
+    }
 }

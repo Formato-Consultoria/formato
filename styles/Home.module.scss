@@ -216,3 +216,76 @@ section.strategy {
         }
     }
 }
+
+section.services {
+    width: 100%;
+    background: variable.$white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin: 25px 0;
+
+    div.container_services {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 50px;
+
+        div.box_services {
+            max-width: 300px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+    
+            color: variable.$black-dark;
+            background-color: variable.$white;
+
+            border: solid .5px variable.$black-50;
+            border-radius: 15px;
+
+            padding: 10px;
+
+            svg {
+                color: variable.$white-regular;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 1.3rem;
+                font-weight: 200;
+
+                margin-bottom: 10px;
+            }
+
+            small {
+                text-align: center;
+                color: variable.$black-50;
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+            }
+        }
+
+        div.black {
+            background-color: variable.$black-dark;
+            color: variable.$white;
+
+            svg {
+                color: variable.$white-regular-80;
+            }
+
+            p {
+                font-weight: 100;
+            }
+
+            small {
+                color: variable.$white-80;
+            }
+        }
+
+    }
+}
