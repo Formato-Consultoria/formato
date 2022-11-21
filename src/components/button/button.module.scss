@@ -1,0 +1,60 @@
+@use '../../../styles/variable';
+
+button.primary_btn {
+    height: 32px;
+    background-color: variable.$primary-color;
+    color: variable.$white;
+    
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    width: max-content;
+    padding: 0 20px;
+
+    vertical-align: center;
+    color: variable.$white;
+    font-weight: 500;
+    font-size: 1.03rem;
+
+    svg {
+        margin-left: 10px;
+        vertical-align: middle;
+    }
+}
+
+button.secundary_btn {
+    border-radius: 8px;
+    background: transparent;
+    color: variable.$primary-color;
+    border: solid 1px variable.$primary-color;
+}
+
+button.custommer_btn {
+    background: linear-gradient(90deg, rgba(118,18,134,1) 45%, rgba(255,255,255,1) 45%);
+    font-size: 1.03rem;
+
+    padding: 0 0 0 20px;
+
+    div > div {
+        font-size: 1.03rem;
+        color: variable.$black-dark;
+        font-weight: 500;
+        padding: 5px 10px 5px 5px;
+
+        display: inline-block;
+        vertical-align: middle;
+
+        height: 32px;
+        border-radius: 0 10px 10px 0;
+        background-color: variable.$white;
+        
+        border-top: 1px;
+        border-bottom: 1px;
+        border-right: 1px;
+        border-left: 0;
+
+        border-style: solid;
+        border-color: variable.$primary-color;
+    }
+}
+

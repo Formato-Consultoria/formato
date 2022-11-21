@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { MagnifyingGlass } from 'phosphor-react';
-import PrimaryButton from '../primary_btn';
+import ButttonGlobal from '../button';
 
 const blinker: NextFont = Blinker({
     weight: ['300', '400', '600', '700'],
@@ -43,7 +43,7 @@ export default function Navbar() {
                         </li>
                     </ul>
 
-                    <PrimaryButton text="Contratar"/>
+                    <ButttonGlobal text="Contratar"/>
 
                     <button className={style.search_btn}>
                         <MagnifyingGlass size={36} />

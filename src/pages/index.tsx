@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Inter, Blinker } from '@next/font/google';
 import { NextFont } from '@next/font/dist/types';
 
-import PrimaryButton from '../components/primary_btn';
+import ButttonGlobal from '../components/button';
 import { ArrowRight, Buildings } from 'phosphor-react';
 
 const inter: NextFont = Inter({
@@ -29,7 +29,7 @@ export default function Home() {
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie metus tempus neque aliquam hendrerit.</p>
         </div>
 
-        <PrimaryButton text="Saiba Mais"/>
+        <ButttonGlobal text="Saiba Mais"/>
 
         <div className={styles.box_imgs}>
           <img src="/images/box-imgs-office-of-the-main-section.png"
@@ -115,7 +115,7 @@ export default function Home() {
           </div>
         </div>
         
-        <PrimaryButton text="Saiba Mais" icone={<ArrowRight size={20}/>} />
+        <ButttonGlobal text="Saiba Mais" icone={<ArrowRight size={20}/>} />
       </section>
 
       <section className={`${styles.about} ${inter.className}`}>
@@ -136,6 +136,74 @@ export default function Home() {
             <p>Maecenas auctor elementum augue id hendrerit. Duis nunc risus, lacinia et sapien eu, vehicula mattis sem.</p>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id lobortis nulla. In in sapien nec ex eleifend efficitur. Praesent et pulvinar nibh. Suspendisse odio arcu, interdum quis luctus non, pretium sed elit.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className={`${styles.lasts_posts} ${inter.className}`}>
+        <div className={styles.headler_}>
+          <h2 className={blinker.className}>ULTIMAS POSTAGEMS</h2>
+
+          <ButttonGlobal 
+            text="Veja todos" 
+            icone={<ArrowRight size={20}/>} 
+            isSecondary
+          />
+        </div>
+
+        <div className={styles.boxs_news}>
+          <div className={styles.custom_box}>
+            <div className={styles.bg_shadow}></div>
+            <img className={styles.bg_image} src="/teste/elon-musk.jpg" alt="elon musk" />
+            
+            <div className={styles.content}>
+              <ButttonGlobal text={
+                <div>
+                  mais <div>sobre...</div>
+                </div>}
+
+                isCustommer
+              />
+
+              <h3 className={inter.className}>Elon Musk cree que Netflix perdió suscriptores debido a un virus</h3>
+              <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed pellentesque felis. Ut eget accumsan magna. Donec ornare quam leo, non dapibus justo tristique dictum.</small>
+            </div>
+          </div>
+
+          <div className={styles.custom_box}>
+            <div className={styles.bg_shadow}></div>
+            <img className={styles.bg_image} src="/teste/elon-musk.jpg" alt="elon musk" />
+            
+            <div className={styles.content}>
+              <ButttonGlobal text={
+                <div>
+                  mais <div>sobre...</div>
+                </div>}
+
+                isCustommer
+              />
+
+              <h3 className={inter.className}>Elon Musk cree que Netflix perdió suscriptores debido a un virus</h3>
+              <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed pellentesque felis. Ut eget accumsan magna. Donec ornare quam leo, non dapibus justo tristique dictum.</small>
+            </div>
+          </div>
+
+          <div className={styles.custom_box}>
+            <div className={styles.bg_shadow}></div>
+            <img className={styles.bg_image} src="/teste/elon-musk.jpg" alt="elon musk" />
+            
+            <div className={styles.content}>
+              <ButttonGlobal text={
+                <div>
+                  mais <div>sobre...</div>
+                </div>}
+
+                isCustommer
+              />
+
+              <h3 className={inter.className}>Elon Musk cree que Netflix perdió suscriptores debido a un virus</h3>
+              <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed pellentesque felis. Ut eget accumsan magna. Donec ornare quam leo, non dapibus justo tristique dictum.</small>
+            </div>
           </div>
         </div>
       </section>

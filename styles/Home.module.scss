@@ -312,7 +312,6 @@ section.about {
         gap: 40px;
 
         img {
-            // width: 45%;
             border-radius: 10px;
             object-fit: cover;
             object-position: bottom;
@@ -325,6 +324,116 @@ section.about {
 
             p {
                 font-size: 1.1rem;
+            }
+        }
+    }
+}
+
+section.lasts_posts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 50px 0;
+
+    div.headler_ {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 25px 0 50px;
+        margin-bottom: 25px;
+        background: none;
+
+        h2 {
+            margin: 0 auto;
+
+            color: variable.$black-80;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+    }
+
+    div.boxs_news {
+        background: none;
+        display: flex;
+        flex-direction: column;
+        padding: 0 25px;
+        gap: 25px;
+
+        div.custom_box:nth-child(2) {
+            align-self: center;
+        }
+
+        div.custom_box:nth-child(3) {
+            align-self: flex-end;
+        }
+
+        div.custom_box {
+            position: relative;
+            height: 250px;
+
+            border-radius: 20px;
+            max-width: 40%;
+                
+            div.bg_shadow, img.bg_image {
+                width: 100%;
+                height: 250px;
+
+                border-radius: 20px;
+                object-fit: cover;
+            }
+
+            img.bg_image {
+                position: absolute;
+                z-index: 1;
+            }
+    
+            div.bg_shadow {
+                position: absolute;
+                z-index: 2;
+
+                background-color: variable.$black-dark-50;
+            }
+    
+            div.content {
+                width: 100%;
+                height: 250px;
+                
+                position: relative;
+                z-index: 3;
+                padding: 25px;
+
+                flex-wrap: nowrap;
+                overflow: none;
+
+                button {
+                    position: absolute;
+                    z-index: 999;
+                    
+                    top: 25px;
+                    right: -72px;
+                }
+
+                h3 {
+                    width: 90%;
+                    font-size: 1.1rem;
+                    color: variable.$white;
+                    margin-bottom: 10px;
+                }
+    
+                small {                    
+                    width: 100%;
+                    max-height: 100%;
+                    color: variable.$white-50;
+                    font-size: 1rem;
+
+                    text-overflow: ellipsis;
+                    overflow: none;
+
+                    overflow-wrap: break-word;
+                    word-wrap: break-word;
+                    white-space: wrap;
+                }
             }
         }
     }
