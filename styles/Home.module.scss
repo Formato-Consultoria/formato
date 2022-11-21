@@ -224,7 +224,7 @@ section.services {
     flex-direction: column;
     align-items: center;
     gap: 50px;
-    margin: 25px 0;
+    margin: 50px 0;
 
     div.container_services {
         width: 100%;
@@ -287,5 +287,45 @@ section.services {
             }
         }
 
+    }
+}
+
+section.about {
+    background-color: variable.$white-mediumn;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    h2 {
+        color: variable.$black-80;
+        font-size: 2rem;
+        margin: 25px 0 0 50px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    div.content {
+        width: 100%;
+        display: flex;
+        padding: 40px;
+        gap: 40px;
+
+        img {
+            // width: 45%;
+            border-radius: 10px;
+            object-fit: cover;
+            object-position: bottom;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            p {
+                font-size: 1.1rem;
+            }
+        }
     }
 }
