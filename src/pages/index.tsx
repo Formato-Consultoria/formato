@@ -1,5 +1,4 @@
 import styles from '../../styles/Home.module.scss';
-import Image from 'next/image';
 
 import { Inter, Blinker } from '@next/font/google';
 import { NextFont } from '@next/font/dist/types';

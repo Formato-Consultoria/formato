@@ -106,7 +106,7 @@ section.strategy {
     background: variable.$white-mediumn;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: flex-start;
     justify-content: stretch;
     gap: 80px;
 
@@ -115,7 +115,6 @@ section.strategy {
     div.title_and_description {
         display: flex;
         flex-direction: column;
-
         align-items: center;
 
         h2 {
@@ -135,8 +134,6 @@ section.strategy {
     }
 
     div.strategys_an_image {
-        height: 97vh;
-        
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -150,21 +147,21 @@ section.strategy {
         div.first_block {
             display: flex;
             justify-content: space-between;
-            height: 100%;
+            height: 325px;
             width: 100%;
         }
 
         div.secound_block {
             display: flex;
             justify-content: space-between;
-            height: 100%;
+            height: 325px;
             width: 100%;
         }
 
         div.first_block,
         div.secound_block {
             div {
-                width: 30%;
+                width: 33%;
                 height: max-content;
                 text-align: justify;
                 display: flex;
@@ -185,33 +182,30 @@ section.strategy {
         }
 
         div.first_block {
-            position: relative;
+            display: flex;
             div.descoberta {
-                position: absolute;
-                top: 50px;
-                left: 190px;
+                align-self: baseline;
+                margin-left: 150px;
+                margin-top: 50px;
             }
     
             div.modelagem {
-                position: absolute;
-                right: 50px;
-                top: 25px;
+                align-self: flex-start;
+                justify-self: flex-end;
             }
         }
 
         div.secound_block {
-            position: relative;
-
+            display: flex;
             div.implantacao {
-                position: absolute;
-                bottom: 25px;
-                left: 140px;
+                align-self: flex-start;
+
+                margin-left: 100px;
+                margin-top: 100px;
             }
     
             div.ideacao {
-                position: absolute;
-                right: 50px;
-                top: 100px;
+                align-self: center;
             }
         }
     }
@@ -308,10 +302,13 @@ section.about {
     div.content {
         width: 100%;
         display: flex;
+        justify-content: stretch;
         padding: 40px;
         gap: 40px;
 
         img {
+            max-width: 450px;
+            max-height: 500px;
             border-radius: 10px;
             object-fit: cover;
             object-position: bottom;
@@ -320,11 +317,22 @@ section.about {
         div {
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            max-height: 490px;
+            padding: 20px 0;
 
+            // overflow: hidden;
             p {
+                line-height: 2.2rem;
                 font-size: 1.1rem;
+                color: variable.$black-80;
             }
+
+            // p:nth-last-child(1) {
+            //     white-space: nowrap; 
+            //     overflow: hidden;
+            //     text-overflow: ellipsis;
+            //     width: 100%;
+            // }
         }
     }
 }
@@ -357,7 +365,7 @@ section.lasts_posts {
         background: none;
         display: flex;
         flex-direction: column;
-        padding: 0 25px;
+        padding: 0 100px;
         gap: 25px;
 
         div.custom_box:nth-child(2) {
@@ -373,7 +381,7 @@ section.lasts_posts {
             height: 250px;
 
             border-radius: 20px;
-            max-width: 40%;
+            max-width: 500px;
                 
             div.bg_shadow, img.bg_image {
                 width: 100%;

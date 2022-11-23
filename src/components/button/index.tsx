@@ -1,6 +1,6 @@
-import { IconProps } from 'phosphor-react'
-import { ReactElement } from 'react'
-import style from './button.module.scss'
+import { IconProps } from 'phosphor-react';
+import { ReactElement } from 'react';
+import style from './button.module.scss';
 
 interface Props {
     text: string | ReactElement,
@@ -11,7 +11,11 @@ interface Props {
 
 export default function ButttonGlobal({text, icone, isSecondary=false, isCustommer=false}: Props) {
     return (
-        <button className={`${style.primary_btn} ${isSecondary && style.secundary_btn} ${isCustommer && style.custommer_btn}`}>
+        <button className={`
+            ${style.primary_btn}
+            ${isSecondary && style.secundary_btn}
+            ${isCustommer && style.custommer_btn}
+        `}>
             {text} {icone && <strong>{icone}</strong>}
         </button>
     )

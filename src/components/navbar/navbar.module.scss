@@ -12,10 +12,10 @@ header.header {
         background: variable.$primary-color;
     }
     .nav_bar {
-        width: 88vw;
         max-height: variable.$height-nav-bar;
         max-width: variable.$max-width-screen;
         margin: 0 auto;
+        padding: 0 25px;
     
         display: flex;
         align-items: center;
