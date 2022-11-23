@@ -165,13 +165,31 @@ export default function Home() {
               />
 
               <h3 className={inter.className}>Elon Musk cree que Netflix perdió suscriptores debido a un virus</h3>
+              <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed pellentesque felis. Ut eget accumsan magna. Donec ornare quam leo, non dapibus justo tristique dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed pellentesque felis. Ut eget accumsan magna. Donec ornare quam leo, non dapibus justo tristique dictum.</small>
+            </div>
+          </div>
+
+          <div className={styles.custom_box}>
+            <div className={styles.bg_shadow}></div>
+            <img className={styles.bg_image} src="/teste/domain-transfer.jpg" alt="domain-transfer" />
+
+            <div className={styles.content}>
+              <ButttonGlobal text={
+                <div>
+                  mais <div>sobre...</div>
+                </div>}
+
+                isCustommer
+              />
+
+              <h3 className={inter.className}>Transferir seu portfólio de domínios nunca foi tão fácil</h3>
               <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed pellentesque felis. Ut eget accumsan magna. Donec ornare quam leo, non dapibus justo tristique dictum.</small>
             </div>
           </div>
 
           <div className={styles.custom_box}>
             <div className={styles.bg_shadow}></div>
-            <img className={styles.bg_image} src="/teste/elon-musk.jpg" alt="elon musk" />
+            <img className={styles.bg_image} src="/teste/store.jpg" alt="store" />
             
             <div className={styles.content}>
               <ButttonGlobal text={
@@ -182,28 +200,45 @@ export default function Home() {
                 isCustommer
               />
 
-              <h3 className={inter.className}>Elon Musk cree que Netflix perdió suscriptores debido a un virus</h3>
+              <h3 className={inter.className}>7 passos para fazer o cliente comprar novamente na sua loja</h3>
               <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed pellentesque felis. Ut eget accumsan magna. Donec ornare quam leo, non dapibus justo tristique dictum.</small>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className={styles.custom_box}>
-            <div className={styles.bg_shadow}></div>
-            <img className={styles.bg_image} src="/teste/elon-musk.jpg" alt="elon musk" />
-            
-            <div className={styles.content}>
-              <ButttonGlobal text={
-                <div>
-                  mais <div>sobre...</div>
-                </div>}
-
-                isCustommer
-              />
-
-              <h3 className={inter.className}>Elon Musk cree que Netflix perdió suscriptores debido a un virus</h3>
-              <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed pellentesque felis. Ut eget accumsan magna. Donec ornare quam leo, non dapibus justo tristique dictum.</small>
-            </div>
+      <section className={`${styles.blog} ${inter.className}`}>
+        <div className={styles.sideinfo}>
+          <div className={styles.contacts}>
+            <h3>Ligue para Nós</h3>
+            <p>+5538999999999</p>
+            <p>+5538999999999</p>
           </div>
+          
+          <div className={styles.address}>
+            <h3>Localização</h3>
+            <p>Rua da Conceição, 21</p>
+            <p>Centro</p>
+            <p>Paracatu, MG 38600-000</p>
+          </div>
+        </div>
+
+        <div className={styles.sideform}>
+          <form action="#">
+            <input type="text" name="name" id="Name" required placeholder="Digite seu nome" />
+            <input type="text" name="address" id="Address" required placeholder="Digite seu enderço" />
+
+            <input type="tel" name="phone" id="Phone" required placeholder="Telefone (e.g +553899999999)" />
+            <input type="email" name="email" id="Email" required placeholder="Digite um e-mail valido" />
+
+            <textarea name="message_text" id="MessageText"></textarea>
+            <label htmlFor="Terms">
+              <input type="checkbox" name="terms" id="Terms" required />
+              Eu aceito os <a href="#"><strong>termos de serviço</strong></a>
+            </label>
+
+            <input type="button" value="Enviar" />
+          </form>
         </div>
       </section>
     </>

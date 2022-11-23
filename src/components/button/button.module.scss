@@ -4,6 +4,7 @@ button.primary_btn {
     height: 32px;
     background-color: variable.$primary-color;
     color: variable.$white;
+    border: solid 1px transparent;
     
     display: flex;
     align-items: center;
@@ -16,28 +17,61 @@ button.primary_btn {
     font-weight: 500;
     font-size: 1.03rem;
 
+    transition: opacity .5;
+
     svg {
         margin-left: 10px;
         vertical-align: middle;
+        transform: translateX(5%);
+    }
+
+    -webkit-transition: box-shadow .3s ease-in-out, color .3s ease-in-out;
+    transition: box-shadow .3s ease-in-out, color .3s ease-in-out;
+}
+
+button.primary_btn:hover {
+    box-shadow: 0 0 40px 40px variable.$white inset;
+    border: solid 1px variable.$primary-color;
+    color: variable.$primary-color;
+
+    opacity: .95;
+    transition: opacity .5;
+
+    svg {
+        transform: translateX(20%);
     }
 }
 
 button.secundary_btn {
     border-radius: 8px;
-    background: transparent;
+    background-image: linear-gradient(45deg, variable.$white 50%, transparent 50%);
+    background-image: -webkit-linear-gradient(45deg, variable.$white 50%, transparent 50%);
+
+    background-size: 400%;
+
     color: variable.$primary-color;
     border: solid 1px variable.$primary-color;
+    
+    transition: background .3s ease-in-out;
+}
+
+button.secundary_btn:hover {
+    background-position: 100%;
+    color: variable.$white;
+    box-shadow: 0 0 0 0;
 }
 
 button.custommer_btn {
-    background: linear-gradient(90deg, rgba(118,18,134,1) 45%, rgba(255,255,255,1) 45%);
     font-size: 1.03rem;
-
     padding: 0 0 0 20px;
+
+    transition: background .2s ease-out;
+    box-shadow: 0 0 0 0;
 
     div > div {
         font-size: 1.03rem;
         color: variable.$black-dark;
+        
         font-weight: 500;
         padding: 5px 10px 5px 5px;
 
@@ -55,6 +89,18 @@ button.custommer_btn {
 
         border-style: solid;
         border-color: variable.$primary-color;
+        box-shadow: 0 0 0 0;
+
+        transition: background .2s ease-out;
     }
 }
 
+button.custommer_btn:hover {
+    box-shadow: 0 0 0 0;
+    background-color: variable.$white;
+
+    div > div {
+        color: variable.$white;
+        background-color: variable.$primary-color;
+    }
+}

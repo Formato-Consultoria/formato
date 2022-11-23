@@ -9,7 +9,12 @@ interface Props {
     isCustommer?: boolean
 }
 
-export default function ButttonGlobal({text, icone, isSecondary=false, isCustommer=false}: Props) {
+export default function ButttonGlobal({
+    text,
+    icone, 
+    isSecondary=false, 
+    isCustommer=false
+}: Props) {
     return (
         <button className={`
             ${style.primary_btn}

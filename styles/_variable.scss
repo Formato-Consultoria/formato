@@ -1,23 +1,27 @@
-$black-dark: #080C10;
+$black-dark: rgb(8, 12, 16);
+$black-dark-80: rgb(8, 12, 16, 0.8);
 $black-dark-97: rgba(8, 12, 16, 0.97);
 $black-dark-50: rgba(8, 12, 16, 0.5);
 
-$black: #000;
+$black: rgb(0, 0, 0);
 $black-80: rgba(0, 0, 0, 0.8);
 $black-50: rgba(0, 0, 0, 0.5);
 
-
-$white: #FFFFFF;
+$white: rgb(255, 255, 255);
 $white-50: rgba(255, 255, 255, 0.5);
 $white-80: rgba(255, 255, 255, 0.8);
-$white-mediumn: #EBEBEB;
-$radial-gradient-bg: radial-gradient(49.89% 67.16% at 83.93% 0%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 0.01%, #FFFFFF 100%);
+$white-75: rgba(255, 255, 255, 0.75);
 
-$white-regular: #AAAAAA;
+$white-mediumn: rgb(235, 235, 235);
+
+$white-regular: rgb(170, 170, 170);
 $white-regular-80: rgba(170, 170, 170, 0.8);
 
-$primary-color: #761286; 
-$link-color: #CF42C9;
+$primary-color: rgb(118, 18, 134); 
+$link-color: rgb(207, 66, 201);
+
+$radial-gradient-bg: radial-gradient(49.89% 67.16% at 83.93% 0%, $white-75 0%, $white-75 0.01%, $white 100%);
+$black-dark-80-gradient: linear-gradient(90deg, $black-dark-80 0%, $black-dark-80 0%);
 
 $height-nav-bar: 80px;
 $max-width-screen: 1390px;
