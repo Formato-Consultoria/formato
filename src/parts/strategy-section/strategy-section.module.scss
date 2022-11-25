@@ -1,0 +1,93 @@
+@use '../../../styles/variable';
+
+section.strategy {
+    background: variable.$white-mediumn;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+    gap: 80px;
+
+    padding: 30px 0 0;
+    margin: 0 auto;
+
+    div.title_and_description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+            color: variable.$black-80;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        p {
+            max-width: 50%;
+            text-align: center;
+            font-size: 1.30rem;
+            color: variable.$black-50;
+            font-weight: 400;
+        }
+    }
+
+    div.strategys_an_image {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        background-image: url('/images/woman-trategy-section.png');
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+
+        div.first_block,
+        div.secound_block {
+            display: flex;
+            justify-content: space-between;
+            height: 300px;
+
+            padding: 25px 50px;
+
+            div {
+                width: 33%;
+                height: max-content;
+                text-align: justify;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                
+                h3 {
+                    color: variable.$black-dark;
+                    font-weight: 400;
+                    font-size: 2rem;
+                }
+                p {
+                    color: variable.$black-dark;
+                    font-weight: 300;
+                    font-size: 1.2rem;
+                }
+            }
+
+            div.descoberta {
+                align-self: center;
+            }
+    
+            div.modelagem {
+                align-self: flex-start;
+            }
+
+            div.implantacao {
+                align-self: flex-end;
+            }
+    
+            div.ideacao {
+                align-self: center;
+            }
+        }
+    }
+}
