@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app';
 import { Inter } from '@next/font/google';
 import { NextFont } from '@next/font/dist/types';
 
-import Layout from '../parts/layout';
+import Layout from '../components/layout';
 
 const inter: NextFont = Inter({
   weight: ['400', '500', '600', '700'],

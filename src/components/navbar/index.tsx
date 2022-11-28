@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { MagnifyingGlass } from 'phosphor-react';
 import ButttonGlobal from '../button';
 
+
 const blinker: NextFont = Blinker({
     weight: ['300', '400', '600', '700'],
 });
@@ -30,7 +31,7 @@ export default function Navbar() {
                             <Link href="/">inicio</Link>
                         </li>
                         <li>
-                            <Link href="/blog">Blog</Link>
+                            <Link href="/article">Artigo</Link>
                         </li>
                         <li>
                             <Link href="/clientes">Clientes</Link>

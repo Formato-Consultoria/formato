@@ -8,7 +8,9 @@ export default function PrincipalSection() {
         <section className={`${styles.principal} ${inter.className}`}>
             <div className={styles.titulo_and_apresentation}>
             <h1>
-                Formato<span>Consultoria</span>
+                Formato
+                <span>Consultoria</span>
+                <span>Empresarial</span>
             </h1>
 
             <h3>Lorem ipsum dolor sit ametconsectetur adipiscing?Lorem ipsum dolor sit ametconsectetur adipiscing?</h3>

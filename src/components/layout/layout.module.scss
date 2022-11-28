@@ -9,9 +9,10 @@
     margin: 0 auto;
     padding-top: variable.$height-nav-bar;
 
+    /**/ 
     background-image: variable.$radial-gradient-bg, url('/images/Background-img.png');
 
     background-repeat: no-repeat, no-repeat;
-    background-size: 60% 100vh, 60%;
+    background-size: 60% 180vh, 60%;
     background-position: top right, top right;
 }

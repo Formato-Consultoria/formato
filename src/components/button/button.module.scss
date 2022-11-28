@@ -104,3 +104,27 @@ button.custommer_btn:hover {
         background-color: variable.$primary-color;
     }
 }
+
+button.arrowdow_btn {
+    height: auto;
+    flex-direction: column;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    svg {
+        margin: 0;
+        transform: translate(0%, 0%);
+    }
+}
+
+button.arrowdow_btn:hover {
+    height: auto;
+    flex-direction: column;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    svg {
+        margin: 0;
+        transform: translate(0%, 20%);
+    }
+}

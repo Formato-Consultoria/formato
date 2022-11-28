@@ -7,15 +7,14 @@ export default function ContactSection() {
             <div className={styles.sideinfo}>
             <div className={styles.contacts}>
                 <h3>Ligue para Nós</h3>
-                <p>+5538999999999</p>
-                <p>+5538999999999</p>
+                <p>+55 (62) 99312-8216</p>
             </div>
             
             <div className={styles.address}>
                 <h3>Localização</h3>
-                <p>Rua da Conceição, 21</p>
+                <p>R. Goiás, 305</p>
                 <p>Centro</p>
-                <p>Paracatu, MG 38600-000</p>
+                <p>Paracatu, MG 38600-126</p>
             </div>
             </div>
 

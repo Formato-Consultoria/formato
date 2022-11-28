@@ -1,16 +1,10 @@
 import style from './footer.module.scss';
+import { inter } from '../../utils/_fonts';
 
 import Link from 'next/link';
 import Image from 'next/image';
 
 import { InstagramLogo, FacebookLogo, TwitterLogo } from 'phosphor-react';
-import { Inter } from '@next/font/google';
-import { NextFont } from '@next/font/dist/types';
-
-const inter: NextFont = Inter({
-    weight: ['400', '500', '600', '700'],
-    fallback: ['sans-serif']
-  });
 
 export default function Footer() {
     return (
@@ -32,7 +26,7 @@ export default function Footer() {
                                 <Link href="/">inicio</Link>
                             </li>
                             <li>
-                                <Link href="/blog">Blog</Link>
+                                <Link href="/article">Artigo</Link>
                             </li>
                             <li>
                                 <Link href="/clientes">Clientes</Link>

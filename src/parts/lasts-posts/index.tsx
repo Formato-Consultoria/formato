@@ -4,7 +4,6 @@ import { inter, blinker } from '../../utils/_fonts';
 import ButttonGlobal from '../../components/button';
 import { ArrowRight } from 'phosphor-react';
 
-
 export default function LastsPostsSection() {
     return (
         <section className={`${styles.lasts_posts} ${inter.className}`}>

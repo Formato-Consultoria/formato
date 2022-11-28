@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import styles from './layout.module.scss';
 
-import Footer from '../../components/footer';
-import Navbar from '../../components/navbar';
+import Footer from '../footer';
+import Navbar from '../navbar';
 
 export default function Layout({children}: any) {
     return (
