@@ -11,12 +11,7 @@ export default function Footer() {
         <footer className={`${style.footer} ${inter.className}`}>
             <div className={style.navigation_container}>
                 <div className={style.logotipo_img}>
-                    <Image 
-                        src="/images/Formato_white.svg"
-                        width="30" 
-                        height="30" 
-                        alt="Formato consultoria"
-                    />
+                    <img src="/icons/Logotipo_light.png" alt="Formato consultoria"/>
                 </div>
 
                 <div className={style.navigation_content}>

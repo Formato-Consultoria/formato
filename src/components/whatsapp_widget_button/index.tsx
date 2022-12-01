@@ -7,7 +7,7 @@ export default function WhatsappWidgetButton() {
 
     return (
         <>
-            <a href="https://wa.me" className={`${styles.widget_button} ${didScroll && styles.after_principal_section}`} target="_blank">
+            <a href="https://wa.me/556293128216" className={`${styles.widget_button} ${didScroll && styles.after_principal_section}`} target="_blank">
                 <img src="/icons/whatsapp.png" alt="botão widget para whatsapp" />
             </a>
         </>

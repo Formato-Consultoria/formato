@@ -8,7 +8,7 @@ export default function Layout({children}: any) {
     return (
         <>
             <Head>
-                <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+                <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
                 <title>Formato Consultoria</title>
             </Head>
             

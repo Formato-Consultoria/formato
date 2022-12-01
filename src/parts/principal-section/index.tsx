@@ -10,7 +10,6 @@ export default function PrincipalSection() {
             <h1>
                 Formato
                 <span>Consultoria</span>
-                <span>Empresarial</span>
             </h1>
 
             <h3>Lorem ipsum dolor sit ametconsectetur adipiscing?Lorem ipsum dolor sit ametconsectetur adipiscing?</h3>
