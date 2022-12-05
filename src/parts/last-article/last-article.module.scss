@@ -20,27 +20,28 @@ section.last_article {
             object-fit: cover;
             border-radius: 5px;            
 
-            filter: contrast(50%);
+            filter: contrast(125%);
         }
 
         h1 {
             z-index: 1;
             padding: 0 20px;
             font-size: 2.2rem;
-            margin-top: -25px;
-            margin-bottom: 25px;
+            margin: 25px 0;
 
             color: variable.$black-dark-80-gradient;
         }
 
         div.tex_content {
             position: relative;
+
+            height: 200px;
             width: 100%;
     
             p {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
                 padding: 0 5px;
-                line-height: 2rem;
+                line-height: 1.5rem;
                 margin-bottom: 20px;
             }
     
