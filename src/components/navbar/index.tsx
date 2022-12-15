@@ -1,7 +1,6 @@
 import style from './navbar.module.scss';
-import { Blinker } from '@next/font/google';
-import { NextFont } from '@next/font/dist/types';
-import localFont from '@next/font/local';
+import cx from 'clsx';
+import { blinker } from '../../utils/_fonts';
 
 import Link from 'next/link';
 
@@ -9,15 +8,9 @@ import { MagnifyingGlass } from 'phosphor-react';
 import ButttonGlobal from '../button';
 
 
-const blinker: NextFont = Blinker({
-    weight: ['300', '400', '600', '700'],
-});
-
-// const myFont = localFont({ src: 'fonts/*' });
-
 export default function Navbar() {
     return(
-        <header className={`${style.header} ${blinker.className}`}>
+        <header className={cx(style.header, blinker.className)}>
             <nav className={style.nav_bar}>
                 <div className={style.logotipo_img}>
                     <img src="/icons/Logotipo_dark.png" alt="Formato consultoria" />

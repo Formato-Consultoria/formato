@@ -1,12 +1,13 @@
 import styles from './last-article.module.scss';
 import { inter } from '../../utils/_fonts';
+import cx from 'clsx';
 
 import { ArrowDown } from 'phosphor-react';
 import ButttonGlobal from '../../components/button';
 
 export default function LastArticle() {
     return(
-        <section className={`${styles.last_article} ${inter.className}`}>
+        <section className={cx(styles.last_article, inter.className)}>
             <div className={styles.content}>
                 <img src="/teste/elon-musk.jpg" alt="Elon Musk" />
 

@@ -1,14 +1,14 @@
 import style from './footer.module.scss';
 import { inter } from '../../utils/_fonts';
+import cx from 'clsx';
 
 import Link from 'next/link';
-import Image from 'next/image';
 
 import { InstagramLogo, FacebookLogo, TwitterLogo } from 'phosphor-react';
 
 export default function Footer() {
     return (
-        <footer className={`${style.footer} ${inter.className}`}>
+        <footer className={cx(style.footer, inter.className)}>
             <div className={style.navigation_container}>
                 <div className={style.logotipo_img}>
                     <img src="/icons/Logotipo_light.png" alt="Formato consultoria"/>

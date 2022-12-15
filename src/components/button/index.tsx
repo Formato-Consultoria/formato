@@ -1,6 +1,7 @@
 import { IconProps } from 'phosphor-react';
 import { ReactElement } from 'react';
 import style from './button.module.scss';
+import cx from 'clsx';
 
 interface Props {
     text: string | ReactElement,
@@ -18,12 +19,11 @@ export default function ButttonGlobal({
     isDowButton=false
 }: Props) {
     return (
-        <button className={`
-            ${style.primary_btn}
-            ${isSecondary && style.secundary_btn}
-            ${isCustommer && style.custommer_btn}
-            ${isDowButton && style.arrowdow_btn}
-        `}>
+        <button className={cx(style.primary_btn, 
+            isSecondary && style.secundary_btn,
+            isCustommer && style.custommer_btn,
+            isDowButton && style.arrowdow_btn
+        )}>
             {text} {icone && <strong>{icone}</strong>}
         </button>
     )
