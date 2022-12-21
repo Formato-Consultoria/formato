@@ -7,7 +7,6 @@ import Link from 'next/link';
 import { MagnifyingGlass } from 'phosphor-react';
 import ButttonGlobal from '../button';
 
-
 export default function Navbar() {
     return(
         <header className={cx(style.header, blinker.className)}>
@@ -21,7 +20,7 @@ export default function Navbar() {
                             <Link href="/">inicio</Link>
                         </li>
                         <li>
-                            <Link href="/article">Artigos</Link>
+                            <Link href="/artigos">Artigos</Link>
                         </li>
                         <li>
                             <Link href="/clientes">Clientes</Link>
@@ -34,7 +33,7 @@ export default function Navbar() {
                         </li>
                     </ul>
 
-                    <ButttonGlobal text="Contratar"/>
+                    <ButttonGlobal text="Contratar" />
 
                     <button className={style.search_btn}>
                         <MagnifyingGlass size={36} />

@@ -1,9 +1,11 @@
 import styles from './strategy-section.module.scss';
 import { blinker } from '../../utils/_fonts';
 
+import cx from 'clsx';
+
 export default function StrategySection() {
     return (
-        <section className={`${styles.strategy} ${blinker.className}`}>
+      <section className={cx(styles.strategy, blinker.className)}>
         <div className={styles.title_and_description}>
           <h2>ESTRATEGIA</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed pellentesque felis. Ut eget accumsan magna. Donec ornare quam leo, non dapibus justo tristique dictum.</p>

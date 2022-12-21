@@ -17,7 +17,7 @@ export default function Home() {
       <StrategySection />
       <ServiceSection />
       <AboutSection />
-      <LastsPostsSection />
+      {/* <LastsPostsSection /> */}
       <ContactSection />
     </>
   )

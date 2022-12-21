@@ -4,17 +4,26 @@ import styles from './layout.module.scss';
 import Footer from '../footer';
 import Navbar from '../navbar';
 
-export default function Layout({children}: any) {
+import cx from 'clsx';
+import { useRouter } from 'next/router'
+import { ReactNode } from 'react';
+
+interface PropsChildren {
+    children: ReactNode
+}
+
+export default function Layout({children}: PropsChildren) {
+    const router = useRouter();
+
     return (
         <>
             <Head>
-                <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
                 <title>Formato Consultoria</title>
             </Head>
             
             <Navbar />
 
-            <main className={styles.main}>
+            <main className={cx(styles.main, router.pathname == "/" && styles.home_page)}>
                 {children}
             </main>
 

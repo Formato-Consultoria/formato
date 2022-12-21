@@ -4,8 +4,8 @@ header.header {
     width: 100%;
     height: auto;
 
-    background: none;
     position: absolute;
+    background: none;
     top: 0;
 
     .primary_btn {
@@ -63,6 +63,23 @@ header.header {
             button.search_btn {
                 svg {
                     max-width: 25px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    header.header {
+        .nav_bar {
+            padding-left: 25px;
+            padding-right: 30px;
+            
+            div.navigation {
+                gap: 20px;
+
+                ul.navigation_options {
+                    gap: 15px;
                 }
             }
         }

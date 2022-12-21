@@ -20,6 +20,7 @@ section.about {
         position: relative;
         width: 100%;
         height: auto;
+
         display: flex;
         justify-content: center;
 
@@ -27,6 +28,7 @@ section.about {
         gap: 40px;
 
         img {
+            height: 500px;
             border-radius: 10px;
             object-fit: cover;
             object-position: bottom;
@@ -37,7 +39,9 @@ section.about {
             flex-direction: column;
             padding: 20px 0;
 
+            max-width: 500px;
             overflow: hidden;
+
             p {
                 line-height: 2.2rem;
                 font-size: 1.1rem;
@@ -50,6 +54,36 @@ section.about {
             //     text-overflow: ellipsis;
             //     width: 100%;
             // }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    section.about {
+
+        div.content {
+            flex-direction: column;
+            gap: 20px;
+
+            img {
+                height: 300px;
+            }
+
+            div {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    section.about {
+        div.content {
+            gap: 0;
+            
+            img {
+                height: 200px;
+            }
         }
     }
 }

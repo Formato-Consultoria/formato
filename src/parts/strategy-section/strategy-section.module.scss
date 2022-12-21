@@ -48,12 +48,14 @@ section.strategy {
         div.first_block,
         div.secound_block {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             height: 300px;
+            gap: 350px;
 
             padding: 25px 50px;
 
             div {
+                // width: 350px;
                 width: 33%;
                 height: max-content;
                 text-align: justify;
@@ -89,5 +91,11 @@ section.strategy {
                 align-self: center;
             }
         }
+    }
+}
+
+@media (max-width: 1024px) {
+    section.strategy {
+        gap: 30px;
     }
 }

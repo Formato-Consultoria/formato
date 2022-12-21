@@ -4,12 +4,13 @@ import { inter } from '../../utils/_fonts';
 import { ArrowRight, Buildings } from 'phosphor-react';
 
 import ButttonGlobal from '../../components/button';
+import cx from 'clsx';
 
 export default function ServiceSection() {
     return (
-        <section className={`${styles.services} ${inter.className}`}>
+        <section className={cx(styles.services, inter.className)}>
         <div className={styles.container_services}>
-          <div className={`${styles.box_services} ${styles.black}`}>
+          <div className={cx(styles.box_services, styles.black)}>
             <Buildings size={32} />
             <p>Nome do serviço</p>
             <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula bibendum tellus vitae molestie.</small>
@@ -21,7 +22,7 @@ export default function ServiceSection() {
             <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula bibendum tellus vitae molestie.</small>
           </div>
 
-          <div className={`${styles.box_services} ${styles.black}`}>
+          <div className={cx(styles.box_services, styles.black)}>
             <Buildings size={32} />
             <p>Nome do serviço</p>
             <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula bibendum tellus vitae molestie.</small>
@@ -33,7 +34,7 @@ export default function ServiceSection() {
             <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula bibendum tellus vitae molestie.</small>
           </div>
 
-          <div className={`${styles.box_services} ${styles.black}`}>
+          <div className={cx(styles.box_services, styles.black)}>
             <Buildings size={32} />
             <p>Nome do serviço</p>
             <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula bibendum tellus vitae molestie.</small>
