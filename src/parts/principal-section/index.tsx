@@ -13,8 +13,8 @@ export default function PrincipalSection() {
                     <span>Consultoria</span>
                 </h1>
 
-                <h3>"Ajudamos pessoas a se conectarem de forma genuína com seus negócios. Percebemos a gestão como um elemento simples e muito prazeroso"</h3>
-                <p>"Focamos no essencial e abraçamos desafios através de abordagens inovadoras. Nos importamos com cada pessoa e fornecemos caminhos para impulsioná-las a serem mais prósperas e bem-sucedidas"</p>
+                <h3>&quot;Ajudamos pessoas a se conectarem de forma genuína com seus negócios. Percebemos a gestão como um elemento simples e muito prazeroso&ldquo;</h3>
+                <p>&quot;Focamos no essencial e abraçamos desafios através de abordagens inovadoras. Nos importamos com cada pessoa e fornecemos caminhos para impulsioná-las a serem mais prósperas e bem-sucedidas&ldquo;</p>
 
                 <ButttonGlobal text="Saiba Mais"/>
             </div>

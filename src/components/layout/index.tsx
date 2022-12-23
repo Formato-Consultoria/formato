@@ -7,16 +7,17 @@ import Navbar from '../navbar';
 import cx from 'clsx';
 import { useRouter } from 'next/router'
 import { ReactNode } from 'react';
+import { inter } from '../../utils/_fonts';
 
-interface PropsChildren {
+type PropsChildren = {
     children: ReactNode
 }
 
-export default function Layout({children}: PropsChildren) {
+export default function Layout({ children }: PropsChildren) {
     const router = useRouter();
 
     return (
-        <>
+        <div className={inter.className}>
             <Head>
                 <title>Formato Consultoria</title>
             </Head>
@@ -28,6 +29,6 @@ export default function Layout({children}: PropsChildren) {
             </main>
 
             <Footer />
-        </>
+        </div>
     )
 }

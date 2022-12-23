@@ -15,24 +15,24 @@ export default function StrategySection() {
           <div className={styles.first_block}>
             <div className={styles.descoberta}>
               <h3>1. DESCOBERTA</h3>
-              <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
+              <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words randomised look even slightly believable</p>
             </div>
 
             <div className={styles.modelagem}>
               <h3>2. MODELAGEM</h3>
-              <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
+              <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words randomised look even slightly believable</p>
             </div>
           </div>
 
           <div className={styles.secound_block}>
             <div className={styles.implantacao}>
               <h3>3. IMPLANTAÇÃO</h3>
-              <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
+              <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words randomised look even slightly believable</p>
             </div>
 
             <div className={styles.ideacao}>
               <h3>4. IDEAÇÃO</h3>
-              <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
+              <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words randomised look even slightly believable</p>
             </div>
           </div>
         </div>

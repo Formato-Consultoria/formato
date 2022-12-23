@@ -3,11 +3,11 @@ import { ReactElement } from 'react';
 import style from './button.module.scss';
 import cx from 'clsx';
 
-interface Props {
+type BtnProps = {
     text: string | ReactElement,
-    icone?: ReactElement<IconProps>
-    isSecondary?: boolean
-    isCustommer?: boolean
+    icone?: ReactElement<IconProps>,
+    isSecondary?: boolean,
+    isCustommer?: boolean,
     isDowButton?: boolean
 }
 
@@ -16,8 +16,8 @@ export default function ButttonGlobal({
     icone, 
     isSecondary=false, 
     isCustommer=false,
-    isDowButton=false
-}: Props) {
+    isDowButton=false,
+}: BtnProps) {
     return (
         <button className={cx(style.primary_btn, 
             isSecondary && style.secundary_btn,
