@@ -4,7 +4,7 @@ import cx from 'clsx';
 
 import Link from 'next/link';
 
-import { InstagramLogo, FacebookLogo, TwitterLogo } from 'phosphor-react';
+import { InstagramLogo, LinkedinLogo } from 'phosphor-react';
 
 export default function Footer() {
     return (
@@ -84,16 +84,12 @@ export default function Footer() {
 
             <div className={style.network_and_copy}>
                 <div>
-                    <Link href="#">
+                    <Link href="https://www.instagram.com/consultoria.formato" target="_blank">
                         <InstagramLogo size={36} />
                     </Link>
 
-                    <Link href="#">
-                        <FacebookLogo size={36} />
-                    </Link>
-
-                    <Link href="#">
-                        <TwitterLogo size={36} />
+                    <Link href="https://www.linkedin.com/company/formato-consultoria" target="_blank">
+                        <LinkedinLogo size={36} />
                     </Link>
                 </div>
                 <p><span>Formato consultoria</span> &copy; 2022</p>

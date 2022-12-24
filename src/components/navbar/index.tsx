@@ -31,13 +31,17 @@ export default function Navbar() {
                         <li>
                             <Link href="/sobre">Sobre Nós</Link>
                         </li>
+
+                        <li>
+                            <Link href="/#contato">Contatos</Link>
+                        </li>
                     </ul>
 
                     <ButttonGlobal text="Contratar" />
 
-                    <button className={style.search_btn}>
+                    {/* <button className={style.search_btn}>
                         <MagnifyingGlass size={36} />
-                    </button>
+                    </button> */}
                 </div>
             </nav>
         </header>

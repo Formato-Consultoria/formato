@@ -20,55 +20,51 @@ section.services {
         gap: 35px;
 
         div.box_services {
+            min-height: 200px;
             max-width: 300px;
 
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-end;
+            justify-content: flex-start;
     
             color: variable.$blue-dark;
             background-color: variable.$white;
 
-            border: solid .5px variable.$black-50;
+            border: solid .5px variable.$blue-dark;
             border-radius: 15px;
 
+            gap: 8px;
             padding: 10px;
 
-            svg {
-                color: variable.$white-regular;
-                margin-bottom: 10px;
+            img {
+                margin-top: 5px
             }
 
             p {
                 font-size: 1.3rem;
-                font-weight: 200;
-
-                margin-bottom: 10px;
+                font-weight: 500;
             }
 
             small {
                 text-align: center;
-                color: variable.$black-50;
+                color: variable.$blue-dark-50;
                 font-size: 1.1rem;
-                margin-bottom: 10px;
             }
         }
 
         div.black {
             background-color: variable.$blue-dark;
             color: variable.$white;
+            border: variable.$blue-dark;
 
             svg {
                 color: variable.$white-regular-80;
-            }
-
-            p {
-                font-weight: 100;
+                font-weight: 500;
             }
 
             small {
-                color: variable.$white-80;
+                color: variable.$white-50;
             }
         }
     }
@@ -76,6 +72,8 @@ section.services {
 
 @media (max-width: 1024px) {
     section.services {
+        gap: 30px;
+        margin: 30px 0;
         div.container_services {
             gap: 10px;
         }

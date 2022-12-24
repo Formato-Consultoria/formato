@@ -28,7 +28,8 @@ section.about {
         gap: 40px;
 
         img {
-            height: 500px;
+            align-self: center;
+            height: 520px;
             border-radius: 10px;
             object-fit: cover;
             object-position: bottom;
@@ -37,9 +38,9 @@ section.about {
         div {
             display: flex;
             flex-direction: column;
-            padding: 20px 0;
+            padding: 0;
 
-            max-width: 500px;
+            max-width: 630px;
             overflow: hidden;
 
             p {
@@ -47,26 +48,19 @@ section.about {
                 font-size: 1.1rem;
                 color: variable.$black-80;
             }
-
-            // p:nth-last-child(1) {
-            //     white-space: nowrap; 
-            //     overflow: hidden;
-            //     text-overflow: ellipsis;
-            //     width: 100%;
-            // }
         }
     }
 }
 
 @media (max-width: 1024px) {
     section.about {
-
         div.content {
             flex-direction: column;
             gap: 20px;
 
             img {
                 height: 300px;
+                width: 100%;
             }
 
             div {

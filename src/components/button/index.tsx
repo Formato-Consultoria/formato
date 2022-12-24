@@ -19,7 +19,7 @@ export default function ButttonGlobal({
     isDowButton=false,
 }: BtnProps) {
     return (
-        <button className={cx(style.primary_btn, 
+        <button className={cx(style.primary_btn,
             isSecondary && style.secundary_btn,
             isCustommer && style.custommer_btn,
             isDowButton && style.arrowdow_btn
