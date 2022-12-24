@@ -9,10 +9,12 @@ import ButttonGlobal from '../button';
 
 export default function Navbar() {
     return(
-        <header className={cx(style.header, blinker.className)}>
+        <header className={cx(style.header, style.inScroll, blinker.className)}>
             <nav className={style.nav_bar}>
                 <div className={style.logotipo_img}>
-                    <img src="/icons/Logotipo_dark.png" alt="Formato consultoria" />
+                    <Link href="/">
+                        <img src="/icons/Logotipo_dark.png" alt="Formato consultoria" />
+                    </Link>
                 </div>
                 <div className={style.navigation}>
                     <ul className={style.navigation_options}>

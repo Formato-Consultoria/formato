@@ -4,9 +4,10 @@ header.header {
     width: 100%;
     height: auto;
 
-    position: absolute;
+    position: fixed;
     background: none;
     top: 0;
+    z-index: 999;
 
     .primary_btn {
         background: variable.$primary-color;
@@ -21,7 +22,7 @@ header.header {
         align-items: center;
         justify-content: space-between;
     
-        .logotipo_img img { 
+        .logotipo_img img {
             width: 170px;
         }
     
@@ -67,6 +68,28 @@ header.header {
             }
         }
     }
+}
+
+header.inScroll {
+    background: variable.$white-75;
+    backdrop-filter: blur(4px);
+
+    .nav_bar {
+        min-height: 40px;
+
+        div.navigation {
+            ul.navigation_options {
+                li {
+                    line-height: 30px;
+                }
+            }
+        }
+
+        .logotipo_img img {
+            width: 150px;
+        }
+    }
+
 }
 
 @media (max-width: 1024px) {
