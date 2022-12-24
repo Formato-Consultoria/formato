@@ -8,10 +8,12 @@ header.header {
     background: none;
     top: 0;
     z-index: 999;
+    transition: height .5s ease;
 
     .primary_btn {
         background: variable.$primary-color;
     }
+
     .nav_bar {
         min-height: variable.$height-nav-bar;
         max-width: variable.$max-width-screen;
@@ -23,7 +25,11 @@ header.header {
         justify-content: space-between;
     
         .logotipo_img img {
+            transition: .2s ease-in;
             width: 170px;
+            :hover {
+                cursor: pointer;
+            }
         }
     
         div.navigation {
@@ -70,9 +76,10 @@ header.header {
     }
 }
 
-header.inScroll {
+header.onScroll {
     background: variable.$white-75;
     backdrop-filter: blur(4px);
+    transition: height .3s ease-in;
 
     .nav_bar {
         min-height: 40px;
@@ -86,10 +93,11 @@ header.inScroll {
         }
 
         .logotipo_img img {
-            width: 150px;
+            transition: .1s ease;
+            width: auto;
+            height: 40px;
         }
     }
-
 }
 
 @media (max-width: 1024px) {
