@@ -99,10 +99,6 @@ header.onScroll {
     }
 }
 
-header.absolutePosition {
-    position: absolute;
-}
-
 @media (max-width: 1024px) {
     header.header {
         .nav_bar {

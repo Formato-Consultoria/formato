@@ -33,10 +33,7 @@ export default function Navbar() {
     }, []);
 
     return(
-        <header className={cx(
-            style.header,
-            (didScroll && router.pathname == "/" && style.onScroll) ?? style.absolutePosition, blinker.className
-        )}>
+        <header className={cx(style.header, (didScroll && style.onScroll), blinker.className)}>
             <nav className={style.nav_bar}>
                 <div className={style.logotipo_img}>
                     <Link href="/">
