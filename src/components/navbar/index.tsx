@@ -33,16 +33,17 @@ export default function Navbar() {
     }, []);
 
     return(
-        <header className={cx(style.header, didScroll && router.pathname == "/" && style.onScroll, blinker.className)}>
+        <header className={cx(
+            style.header,
+            (didScroll && router.pathname == "/" && style.onScroll) ?? style.absolutePosition, blinker.className
+        )}>
             <nav className={style.nav_bar}>
                 <div className={style.logotipo_img}>
                     <Link href="/">
-                        {
-                            didScroll ? 
-                            <img src="/icons/icone_dark.png" alt="Formato consultoria" />
-                            :
-                            <img src="/icons/Logotipo_dark.png" alt="Formato consultoria" />
-                        }
+                        <img
+                            src={cx(didScroll ? "/icons/icone_dark.png" : "/icons/Logotipo_dark.png")}
+                            alt="Formato consultoria"
+                        />
                     </Link>
                 </div>
                 <div className={style.navigation}>
