@@ -21,9 +21,6 @@ export default function Footer() {
                                 <Link href="/">inicio</Link>
                             </li>
                             <li>
-                                <Link href="/article">Artigo</Link>
-                            </li>
-                            <li>
                                 <Link href="/clientes">Clientes</Link>
                             </li>
                             <li>
@@ -36,47 +33,67 @@ export default function Footer() {
                     </nav>
 
                     <div className={style.servicos}>
-                        <h3>Principais serviços</h3>
+                        <h4>Principais serviços</h4>
                         <div className={style.menu_services}>
-                            <nav>
-                                <ul className={style.navigation_options}>
-                                    <li>
-                                        <Link href="#">Nome do serviço</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">Nome do serviço</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">Nome do serviço</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">Nome do serviço</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">Nome do serviço</Link>
-                                    </li>
-                                </ul>
-                            </nav>
+                            <div>
+                                <h5>Serviços de Consultorias</h5>
+                                <nav>
+                                    <ul className={style.navigation_options}>
+                                        <li>
+                                            <Link href="/servicos#financas">Finanças</Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/servicos#marketing">Marketing</Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/servicos#marketing-digital">Marketing Digital</Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/servicos#modelagem-de-negocios">Modelagem de Negócios</Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/servicos#producao-enxuta">Produção enxuta</Link>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
 
-                            <nav>
-                                <ul className={style.navigation_options}>
-                                    <li>
-                                        <Link href="#">Nome do serviço</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">Nome do serviço</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">Nome do serviço</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">Nome do serviço</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">Nome do serviço</Link>
-                                    </li>
-                                </ul>
-                            </nav>
+                            <div>
+                                <h5>Workshops</h5>
+                                <nav>
+                                    <ul className={style.navigation_options}>
+                                        <li>
+                                            <Link href="/servicos#planejamento-estrategico">Planejamento Estratégico</Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/servicos#gestao-por-okrs">Gestão por OKRs</Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/servicos#produtividade-e-gestao-de-tarefas">Produtividade e Gestão de Tarefas</Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/servicos#indicadores-e-metricas">Indicadores e Métricas</Link>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+
+                            <div>
+                                <h5>Mentoria Técnica</h5>
+                                <nav>
+                                    <ul className={style.navigation_options}>
+                                        <li>
+                                            <Link href="/servicos#inovacao-e-modelo-de-negocios">Inovação e Modelo de Negócio</Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/servicos#qualidade-e-produtividade">Qualidade e Produtividade</Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/servicos#transformacao-digital">Transformação Digital</Link>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                 </div>

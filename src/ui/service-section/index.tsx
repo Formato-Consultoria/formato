@@ -30,7 +30,7 @@ export default function ServiceSection() {
               width={40}
               height={40}
             />
-            <p>workshop</p>
+            <p>Workshop</p>
             <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula bibendum tellus vitae molestie.</small>
           </div>
 

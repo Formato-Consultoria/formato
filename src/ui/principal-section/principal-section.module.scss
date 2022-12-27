@@ -3,18 +3,18 @@
 section.principal {
     width: 100%;
     padding: 130px 25px 25px 25px;
-    height: 90vh;
+    height: 600px;
     max-width: 1700px;
 
     display: grid;
-    grid-template-columns: auto 1fr 1fr 1fr 1fr auto;
+    grid-template-columns: auto 1fr 1fr .5fr .5fr .5fr auto;
     grid-template-rows: auto 1fr 1fr 1fr auto;
     grid-template-areas:
-        ". . . . . ."
-        ". description description boxs-image boxs-image ."
-        ". description description boxs-image boxs-image ."
-        ". description description boxs-image boxs-image ."
-        ". . . . . .";
+        ". . . . . . ."
+        ". description description boxs-image boxs-image boxs-image ."
+        ". description description boxs-image boxs-image boxs-image ."
+        ". description description boxs-image boxs-image boxs-image ."
+        ". . . . . . .";
 
     justify-content: stretch;
     align-items: start;
@@ -24,7 +24,6 @@ section.principal {
         grid-area: description;
         display: flex;
         flex-direction: column;
-        gap: 25px;
 
         width: 100%;
         height: 100%;
@@ -34,6 +33,7 @@ section.principal {
             fallback: 'sans-serif';
             line-height: 3.31rem;
             color: variable.$blue-dark;
+            margin-bottom: 10px;
             
             span {
                 display: block;
@@ -54,13 +54,24 @@ section.principal {
             font-size: 1.2rem;
 
             color:  variable.$black-80;
+            margin-bottom: 10px;
         }
+
         p {
             width: 85%;
             font-size: 1.1rem;
             font-weight: 500;
             color: variable.$black-50;
+            margin-bottom: 10px;
         }
+    }
+
+    button {
+        max-width: 200px;
+        align-items: center;
+        justify-content: center;
+
+        margin-top: 10px;
     }
 
     div.box_imgs {
@@ -69,7 +80,7 @@ section.principal {
 
         height: 85%;
         max-width: 85%;
-        min-width: 600px;
+        min-width: 500px;
         width: auto;
 
         justify-self: start;
@@ -92,7 +103,6 @@ section.principal {
 
         img:nth-child(2) {
             border-radius: 25px;
-            border: solid 1px variable.$white;
             z-index: 1;
         }
 
@@ -104,19 +114,31 @@ section.principal {
         }
     }
 
-    button {
-        max-width: 200px;
-        align-items: center;
-        justify-content: center;
+}
+
+@media (max-width: 1440px) {
+    section.principal {
+        grid-template-columns: auto 1fr 1fr auto auto auto auto;
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1232px) {
     section.principal {
-        padding-top: 50px;
+        grid-template-columns: auto 1fr 1fr auto auto auto auto;
+        
+        div.box_imgs {
+            min-width: 300px;
+        }
+    }
+}
+
+@media (max-width: 896px) {
+    section.principal {
+        grid-template-rows: auto auto auto auto auto;
 
         div.box_imgs {
-            min-width: 350px;
+            align-self: center;
+            height: 75%;
         }
     }
 }
