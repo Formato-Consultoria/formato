@@ -5,7 +5,7 @@ import AboutSection from '../ui/about-section';
 // import LastsPostsSection from '../parts/lasts-posts';
 import ContactSection from '../ui/contact-section.scss';
 
-import WhatsappWidgetButton from '../components/whatsapp_widget_button';
+import WhatsappWidgetButton from '../components/whatsapp-widget-button';
 
 export default function Home() {
   return (

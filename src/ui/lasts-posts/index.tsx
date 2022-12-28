@@ -1,12 +1,14 @@
-import styles from './lasts-posts-section.module.scss';
-import { inter, blinker } from '../../utils/_fonts';
+import styles from "./lasts-posts-section.module.scss";
+import { inter, blinker } from "../../utils/_fonts";
 
-import ButttonGlobal from '../../components/button';
-import { ArrowRight } from 'phosphor-react';
+import cx from "clsx";
+
+import ButttonGlobal from "../../components/button";
+import { ArrowRight } from "phosphor-react";
 
 export default function LastsPostsSection() {
     return (
-        <section className={`${styles.lasts_posts} ${inter.className}`}>
+        <section className={cx(styles.lasts_posts, inter.className)}>
             <div className={styles.headler_}>
             <h2 className={blinker.className}>ULTIMAS POSTAGEMS</h2>
 

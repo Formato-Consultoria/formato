@@ -1,7 +1,14 @@
+import style from "./clients.module.scss";
+import BannerTitle from "../../components/title-page-banner";
+
 export default function Clients() {
     return (
-      <section>
-        <h2>Pagina clientes da FORMATO</h2>
-      </section>
+      <>
+        <BannerTitle
+          value="Clientes"
+          src="/images/cliente_hero.jpg"
+        />
+
+      </>
     )
 }

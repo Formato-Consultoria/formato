@@ -1,7 +1,12 @@
+import BannerTitle from "../../components/title-page-banner";
+
 export default function Services() {
     return (
-      <section>
-        <h2>pagina servicos da FORMATO</h2>
-      </section>
+      <>
+        <BannerTitle
+          value="Serviços"
+          src="/images/services_hero.jpg"
+        />
+      </>
     )
   }
