@@ -8,7 +8,8 @@ type BtnProps = {
     icone?: ReactElement<IconProps>,
     isSecondary?: boolean,
     isCustommer?: boolean,
-    isDowButton?: boolean
+    isDowButton?: boolean,
+    className?: string
 }
 
 export default function ButttonGlobal({
@@ -17,12 +18,14 @@ export default function ButttonGlobal({
     isSecondary=false, 
     isCustommer=false,
     isDowButton=false,
+    className,
 }: BtnProps) {
     return (
         <button className={cx(style.primary_btn,
             isSecondary && style.secundary_btn,
             isCustommer && style.custommer_btn,
-            isDowButton && style.arrowdow_btn
+            isDowButton && style.arrowdow_btn,
+            className
         )}>
             {text} {icone && <strong>{icone}</strong>}
         </button>

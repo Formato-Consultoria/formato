@@ -4,7 +4,7 @@ import { blinker } from '../../utils/_fonts';
 
 import Link from 'next/link';
 
-import { MagnifyingGlass } from 'phosphor-react';
+import { List, X } from 'phosphor-react';
 
 import ButttonGlobal from '../button';
 import { useCallback, useState, useEffect } from 'react';
@@ -12,6 +12,8 @@ import { useRouter } from 'next/router'
 
 export default function Navbar() {
     const [didScroll, setDidiScroll] = useState(false);
+    // const [isMobileResponsiveness, setIsMobileResponsiveness] = useState(false);
+    const [isOpenModal, setIsOpenModal] = useState(false);
     const router = useRouter();
 
     const onScroll = useCallback(() => {
@@ -32,6 +34,10 @@ export default function Navbar() {
         }
     }, []);
 
+    // function changeStateModal() {
+    //     setIsOpenModal(!isOpenModal);
+    // }
+
     return(
         <header className={cx(style.header, (didScroll && style.onScroll), blinker.className)}>
             <nav className={style.nav_bar}>
@@ -43,6 +49,7 @@ export default function Navbar() {
                         />
                     </Link>
                 </div>
+
                 <div className={style.navigation}>
                     <ul className={style.navigation_options}>
                         <li>
@@ -66,7 +73,14 @@ export default function Navbar() {
                         </li>
                     </ul>
 
-                    <ButttonGlobal text="Contratar" />
+                    <ButttonGlobal text="Contratar" className={style.contratar_btn} />
+                    
+                    <button
+                        onClick={() => setIsOpenModal(!isOpenModal)}
+                        className={style.hamburgerIcon}
+                    >
+                        {isOpenModal ?  <X size={26} /> : <List size={26} />}
+                    </button>
 
                     {/* <button className={style.search_btn}>
                         <MagnifyingGlass size={36} />

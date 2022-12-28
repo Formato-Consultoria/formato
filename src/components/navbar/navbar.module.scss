@@ -72,6 +72,11 @@ header.header {
                     max-width: 25px;
                 }
             }
+
+            button.hamburgerIcon {
+                display: none;
+                color: variable.$black-dark;
+            }
         }
     }
 }
@@ -110,6 +115,47 @@ header.onScroll {
 
                 ul.navigation_options {
                     gap: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 896px) {
+    header.header {
+        .nav_bar {
+            div.logotipo_img img {
+                height: 40px;
+            }
+
+            div.navigation {
+                ul.navigation_options {
+                    display: none;
+                }
+
+                button.hamburgerIcon {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    header.onScroll {
+        .nav_bar {    
+            .logotipo_img img {
+                height: 30px;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 572px) {
+    header.header {
+        .nav_bar {
+            div.navigation {
+                button.contratar_btn {
+                    display: none;
                 }
             }
         }

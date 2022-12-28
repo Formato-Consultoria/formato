@@ -7,5 +7,5 @@ export const inter: NextFont = Inter({
 });
 
 export const blinker: NextFont = Blinker({
-  weight: ['300', '400', '600', '700'],
+  weight: ['100', '200', '300', '400', '600', '700'],
 });

@@ -32,7 +32,7 @@ section.strategy {
         }
     }
 
-    div.strategys_an_image {
+    div.strategys_and_image {
         width: 100%;
 
         display: flex;
@@ -55,8 +55,7 @@ section.strategy {
             padding: 25px 50px;
 
             div {
-                // width: 350px;
-                width: 33%;
+                max-width: 40%;
                 height: max-content;
                 text-align: justify;
                 display: flex;
@@ -94,8 +93,111 @@ section.strategy {
     }
 }
 
+@media (min-width: 1440px) {
+    section.strategy {
+        div.strategys_an_image {
+            div.first_block,
+            div.secound_block {
+                div {
+                    max-width: 25%;
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 1024px) {
     section.strategy {
-        gap: 30px;
+        gap: 25px;
+
+        div.title_and_description {
+            h2 {
+                font-weight: 500;
+            }
+
+            p {
+                max-width: 70%;
+
+                font-size: 1.1rem;
+                font-weight: 400;
+            }
+        }
+
+        div.strategys_and_image {
+            div.first_block,
+            div.secound_block {
+                padding: 10px 20px;
+                div {
+                    h3 {
+                        color: variable.$black-dark;
+                        font-weight: 300;
+                        font-size: 1.8rem;
+                    }
+                    p {
+                        color: variable.$black-dark-97;
+
+                        font-weight: 200;
+                        font-size: 1.15rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 896px) {
+    section.strategy {
+        div.title_and_description {
+            p {
+                max-width: 80%;
+                padding: 0 10px;
+            }
+        }
+
+        div.strategys_and_image {
+            background: none;
+
+            div.first_block,
+            div.secound_block {
+                height: auto;
+                gap: 30px;
+
+                div {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    section.strategy {
+        div.title_and_description {
+            p {
+                max-width: 100%;
+            }
+        }
+
+        div.strategys_and_image {
+            div.first_block,
+            div.secound_block {
+                height: auto;
+                gap: 20px;
+                flex-direction: column;
+
+                div {
+                    max-width: 100%;
+
+                    h3 {
+                        font-size: 1.5rem;
+                    }
+                    p {
+                        color: variable.$black-dark;
+                        
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
     }
 }

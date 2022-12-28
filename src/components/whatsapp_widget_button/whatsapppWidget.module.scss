@@ -20,3 +20,12 @@ a.widget_button:hover {
 a.after_principal_section{
     display: block;
 }
+
+
+@media (max-width: 572px) {
+    a.widget_button {
+        img {
+            height: 40px;
+        }
+    } 
+}

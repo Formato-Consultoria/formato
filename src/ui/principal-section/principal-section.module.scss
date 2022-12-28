@@ -134,11 +134,38 @@ section.principal {
 
 @media (max-width: 896px) {
     section.principal {
-        grid-template-rows: auto auto auto auto auto;
+        padding: 130px 20px 30px 20px;
+        height: auto;
+
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: max-content;
+        grid-template-areas:
+            ". description .";
+
+        div.titulo_and_apresentation {
+            height: auto;
+            h1 {
+                font-size: 2.5rem;
+                line-height: 3rem;
+                margin-bottom: 20px;
+            }
+
+            h3 {
+                align-self: flex-end;
+                width: 90%;
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+    
+            p {
+                width: 90%;
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+        }
 
         div.box_imgs {
-            align-self: center;
-            height: 75%;
+            display: none;
         }
     }
 }

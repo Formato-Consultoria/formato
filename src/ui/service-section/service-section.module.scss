@@ -31,7 +31,7 @@ section.services {
             color: variable.$blue-dark;
             background-color: variable.$white;
 
-            border: solid .5px variable.$blue-dark;
+            border: solid .5px variable.$black-dark-50;
             border-radius: 15px;
 
             gap: 8px;
@@ -74,7 +74,25 @@ section.services {
         gap: 30px;
         margin: 30px 0;
         div.container_services {
+            padding: 0 20px;
             gap: 10px;
+
+            div.box_services {
+                p {
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                }
+    
+                small {
+                    font-size: 1rem;
+                }
+            }
+
+            div.black {
+                p {
+                    font-weight: 400;
+                }
+            }
         }
     }
 }
@@ -83,6 +101,10 @@ section.services {
     section.services {
         div.container_services {
             padding: 0 8px;
+
+            div.box_services {
+                border-radius: 5px;
+            }
         }
     }
 }

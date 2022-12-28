@@ -33,7 +33,6 @@ export default function Footer() {
                     </nav>
 
                     <div className={style.servicos}>
-                        <h4>Principais serviços</h4>
                         <div className={style.menu_services}>
                             <div>
                                 <h5>Serviços de Consultorias</h5>

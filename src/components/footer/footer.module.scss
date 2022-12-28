@@ -11,7 +11,7 @@
         background: variable.$blue-dark-97;
         padding: 35px 35px 20px;
 
-        .logotipo_img img { 
+        .logotipo_img img {
             width: 170px;
             margin-right: 25px;
         }
@@ -19,7 +19,7 @@
         div.navigation_content {
             display: flex;
             color: variable.$white;
-            gap: 150px;
+            gap: 60px;
 
             nav.menus,
             div.servicos div.menu_services nav {
@@ -49,7 +49,7 @@
             }
 
             nav.menus {
-                margin-top: 20px;
+                margin-top: 50px;
             }
 
             div.servicos {
@@ -57,14 +57,9 @@
                     display: flex;
                     gap: 50px;
 
-                    h4 {
-                        fallback: inherit;
-                        font-size: 1.35rem;
-                        margin-bottom: 10px;
-                    }
-
                     div {
                         h5 {
+                            color: variable.$white-80;
                             font-size: 1rem;
                             margin: 10px 0;
                         }
@@ -83,15 +78,17 @@
         background-color: variable.$blue-dark;
 
         div a {
-            color: variable.$white;
+            color: variable.$white-80;
             margin: 0 5px;
             opacity: .5;
+            
             svg {
                 max-width: 22px;
             }
 
             :hover {
-                color: variable.$link-color;
+                opacity: none;
+                color: variable.$white;
             }
         }
 
@@ -101,6 +98,85 @@
             font-weight: 100;
             span {
                 font-weight: 300;
+            }
+        }
+    }
+}
+
+@media (max-width: 896px) {
+    .footer {
+        div.navigation_container {
+            flex-direction: column;
+            padding: 20px 20px 10px;
+
+            .logotipo_img img {
+                margin: 0;
+            }
+
+            div.navigation_content {
+                nav.menus {
+                    margin-top: 65px;
+                }
+
+                div.servicos {
+                    div.menu_services {
+                        gap: 20px
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        div.navigation_container {
+            gap: 0;
+            div.navigation_content {
+                gap: 20px;
+                flex-direction: column;
+                nav.menus {
+                    margin: 0;
+                    ul.navigation_options {
+                        flex-direction: row;
+                        gap: 15px;
+                        justify-content: flex-end;
+                        flex-wrap: wrap;
+                    }
+                }
+            }
+        }
+
+        div.network_and_copy {
+            padding: 5px 20px;
+        }
+    }
+}
+
+@media (max-width: 572px) {
+    .footer {
+        div.navigation_container {
+            gap: 20px;
+            div.navigation_content {
+                gap: 20px;
+                flex-direction: column;
+
+                .logotipo_img img {
+                    align-self: center;
+                }
+
+                nav.menus {
+                    ul.navigation_options {
+                        flex-direction: column;
+                        gap: 0;
+                    }
+                }
+
+                div.servicos {
+                    div.menu_services {
+                        flex-direction: column;
+                    }
+                }
             }
         }
     }

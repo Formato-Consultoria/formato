@@ -11,7 +11,7 @@ export default function StrategySection() {
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed pellentesque felis. Ut eget accumsan magna. Donec ornare quam leo, non dapibus justo tristique dictum.</p>
         </div>
 
-        <div className={styles.strategys_an_image}>
+        <div className={styles.strategys_and_image}>
           <div className={styles.first_block}>
             <div className={styles.descoberta}>
               <h3>1. DESCOBERTA</h3>
