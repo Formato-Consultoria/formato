@@ -2,6 +2,7 @@ import style from "./about.module.scss";
 import BannerTitle from "../../components/title-page-banner";
 
 import cx from "clsx";
+import PillarBoxCard from "../../ui/pillar-box-card";
 
 export default function About() {
   return (
@@ -23,13 +24,21 @@ export default function About() {
         </div>
       </section>
 
-      <section className={cx(style.pillars, style.section)}>
-        <h2>Pilares</h2>
+      <section className={cx(style.pillarsContainer, style.section)}>
+        <h2>Estrategia</h2>
 
         <div className={style.pillarsContent}>
-          <div className={style.box}>
-          </div>
+          <PillarBoxCard src={"/icons/descoberta.png"} title={"DESCOBERTA"} />
+          <PillarBoxCard src={"/icons/ideacao.png"} title={"IDEAÇÃO"} />
+          <PillarBoxCard src={"/icons/modelagem.png"} title={"MODELAGEM"} />
+          <PillarBoxCard src={"/icons/implantacao.png"} title={"IMPLANTAÇÃO"} />
         </div>
+      </section>
+
+      <section className={style.mediaContent}>
+        {/* <span className={style.bg_shadow}></span> */}
+
+        <video src="https://www.youtube.com/watch?v=IAnzAWt5tCI&ebc=ANyPxKqUTB50iYbBANBb2q5OZ4Wvd8Fqjwh6K8eHTtZy3Qc6WuTDwcGReeSL80QH3hRSeev0zBZmtJOc8mmGk0TsSpHzHmCNAg"></video>
       </section>
     </>
   )

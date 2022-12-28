@@ -1,6 +1,6 @@
 import LastArticle from "../../ui/last-article";
 
-export default function Articles() {
+function Articles() {
     return (
       <>
         <LastArticle />
