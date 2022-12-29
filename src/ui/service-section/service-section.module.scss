@@ -43,7 +43,7 @@ section.services {
 
             p {
                 font-size: 1.3rem;
-                font-weight: 600;
+                font-weight: 500;
             }
 
             small {
@@ -57,11 +57,7 @@ section.services {
             background-color: variable.$blue-dark;
             color: variable.$white;
             border: variable.$blue-dark;
-
-            p {
-                font-weight: 500;
-            }
-
+            
             small {
                 color: variable.$white-50;
             }
