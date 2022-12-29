@@ -137,10 +137,10 @@ section.principal {
         padding: 130px 20px 30px 20px;
         height: auto;
 
-        grid-template-columns: auto 1fr auto;
+        grid-template-columns: 1fr;
         grid-template-rows: max-content;
         grid-template-areas:
-            ". description .";
+            "description";
 
         div.titulo_and_apresentation {
             height: auto;

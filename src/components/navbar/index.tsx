@@ -19,7 +19,7 @@ export default function Navbar() {
     const onScroll = useCallback(() => {
         const { scrollY } = window;
         
-        if (scrollY > 85) {
+        if (scrollY > 25) {
             setDidiScroll(true);
         } else {
             setDidiScroll(false);

@@ -1,15 +1,22 @@
 import style from "./about.module.scss";
 import BannerTitle from "../../components/title-page-banner";
+// 
+// import play from "/icons/play.svg";
 
 import cx from "clsx";
 import PillarBoxCard from "../../ui/pillar-box-card";
+import { useState } from "react";
+
+import Image from "next/image";
 
 export default function About() {
+  const [isPlay, setIsPlay] = useState(false);
+
   return (
     <>
       <BannerTitle
-        value="Quem somos"
         src="/images/quem_somos_hero.jpg"
+        value="Quem somos"
       />
 
       <section className={cx(style.about, style.section)}>
@@ -28,17 +35,33 @@ export default function About() {
         <h2>Estrategia</h2>
 
         <div className={style.pillarsContent}>
-          <PillarBoxCard src={"/icons/descoberta.png"} title={"DESCOBERTA"} />
-          <PillarBoxCard src={"/icons/ideacao.png"} title={"IDEAÇÃO"} />
-          <PillarBoxCard src={"/icons/modelagem.png"} title={"MODELAGEM"} />
-          <PillarBoxCard src={"/icons/implantacao.png"} title={"IMPLANTAÇÃO"} />
+          <PillarBoxCard src={"/icons/descoberta.png"} value={"DESCOBERTA"} />
+          <PillarBoxCard src={"/icons/ideacao.png"} value={"IDEAÇÃO"} />
+          <PillarBoxCard src={"/icons/modelagem.png"} value={"MODELAGEM"} />
+          <PillarBoxCard src={"/icons/implantacao.png"} value={"IMPLANTAÇÃO"} />
         </div>
       </section>
 
-      <section className={style.mediaContent}>
-        {/* <span className={style.bg_shadow}></span> */}
+      <section className={cx(style.mediaContent, style.section)}>
+        {/* <span
+          className={style.bg_shadow}
+        >
+          <button
+            onClick={() => setIsPlay(true)}
+          >
+            <Image src={play} width={100}  height={100} alt="play" />
+          </button>
+        </span> */}
 
-        <video src="https://www.youtube.com/watch?v=IAnzAWt5tCI&ebc=ANyPxKqUTB50iYbBANBb2q5OZ4Wvd8Fqjwh6K8eHTtZy3Qc6WuTDwcGReeSL80QH3hRSeev0zBZmtJOc8mmGk0TsSpHzHmCNAg"></video>
+        <video
+          loop
+          autoPlay={false}
+          muted={false}
+          controls={false}
+          className={cx(style.media_video)}
+        >
+          <source src={"/video/inspiration.mp4"} />
+        </video>
       </section>
     </>
   )

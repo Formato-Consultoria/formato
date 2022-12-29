@@ -3,15 +3,15 @@ import style from "./pillar-box-card.module.scss";
 
 type PropsPlrBxCrd = {
     src: string,
-    title: string
+    value: string
 }
 
-export default function PillarBoxCard({ src, title }: PropsPlrBxCrd) {
+export default function PillarBoxCard({ src, value }: PropsPlrBxCrd) {
     return (
         <div className={style.cardBox}>
-            <img src={src} alt={title} />
+            <img src={src} alt={value} />
 
-            <p>{title}</p>
+            <p>{value}</p>
         </div>
     )
 }

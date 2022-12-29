@@ -101,11 +101,11 @@ export default function Footer() {
             <div className={style.network_and_copy}>
                 <div>
                     <Link href="https://www.instagram.com/consultoria.formato" target="_blank">
-                        <InstagramLogo size={36} />
+                        <InstagramLogo size={36} weight="fill" />
                     </Link>
 
                     <Link href="https://www.linkedin.com/company/formato-consultoria" target="_blank">
-                        <LinkedinLogo size={36} />
+                        <LinkedinLogo size={36} weight="fill" />
                     </Link>
                 </div>
                 <p><span>Formato consultoria</span> &copy; 2022</p>
