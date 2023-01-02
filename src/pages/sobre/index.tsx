@@ -3,12 +3,15 @@ import BannerTitle from "../../components/title-page-banner";
 
 import cx from "clsx";
 import { useCallback, useRef, useState } from "react";
+import Image from "next/image";
 
 import PillarBoxCard from "../../ui/pillar-box-card";
 import ReactPlayerMedia from "../../ui/react-player";
 import { Play, Pause } from "../../ui/svgs";
 
 import ReactPlayer from "react-player";
+
+// TODO: Fix: Fazer o play reiniciar quando chegar ao final da reprodução,
 
 export default function About() {
   const [isPlay, setIsPlay] = useState(false);
@@ -37,7 +40,7 @@ export default function About() {
       />
 
       <section className={cx(style.about, style.section)}>
-        <h2>Formato Consultoria</h2>
+        <h2>Um pouco sobre a nossa história</h2>
 
         <div>
           <p>Desde 2017 atuamos no segmento de consultoria empresarial. Entendemos que a gestão pode ser feita de forma simples e também prazerosa.</p>
@@ -54,6 +57,16 @@ export default function About() {
           <PillarBoxCard src={"/icons/ideacao.png"} value={"IDEAÇÃO"} />
           <PillarBoxCard src={"/icons/modelagem.png"} value={"MODELAGEM"} />
           <PillarBoxCard src={"/icons/implantacao.png"} value={"IMPLANTAÇÃO"} />
+        </div>
+      </section>
+
+      <section className={cx(style.logotipoAndInspirationMessage)}>
+        <div className={style.logotipo_img}>
+          <img src={"/images/Logotipo_light.jpg"} alt="Logotipo dark" />
+        </div>
+
+        <div className={style.message}>
+          <p>&ldquo;Ajudamos pessoas a se conectarem de forma genuína com seus negócios. Percebemos a gestão como um elemento simples e muito prazeroso. Focamos no essencial e abraçamos desafios através de abordagens inovadoras. Nos importamos com cada pessoa e fornecemos caminhos para impulsioná-las a serem mais prósperas e bem-sucedidas.&rdquo;</p>
         </div>
       </section>
 
@@ -79,18 +92,24 @@ export default function About() {
             url={"https://youtu.be/IAnzAWt5tCI"}
             loop={!isPlay}
             muted={!isPlay}
-            onEnded={changeEndPlayState}
+            // onEnded={changeEndPlayState}
           />
         </div>
       </section>
 
-      <section className={cx(style.pillarsContainer, style.section)}>
-        <div className={style.pillarsContent}>
-          <PillarBoxCard src={"/icons/descoberta.png"} value={"DESCOBERTA"} />
-          <PillarBoxCard src={"/icons/ideacao.png"} value={"IDEAÇÃO"} />
-          <PillarBoxCard src={"/icons/modelagem.png"} value={"MODELAGEM"} />
-          <PillarBoxCard src={"/icons/implantacao.png"} value={"IMPLANTAÇÃO"} />
-          <PillarBoxCard src={"/icons/ideacao.png"} value={"IDEAÇÃO"} />
+      <section className={cx(style.valueContainer, style.section)}>
+        <div className={style.containerBox}>
+          <h2>Nossos Valores</h2>
+
+          <div>
+            <PillarBoxCard src={"/icons/descoberta.png"} value={"Respeito"} />
+            <PillarBoxCard src={"/icons/ideacao.png"} value={"Abertura a desafios"} />
+            <PillarBoxCard src={"/icons/modelagem.png"} value={"Vontade"} />
+            <PillarBoxCard src={"/icons/implantacao.png"} value={"Colaboração"} />
+            <PillarBoxCard src={"/icons/ideacao.png"} value={"Pensamento Crítico"} />
+            <PillarBoxCard src={"/icons/descoberta.png"} value={"Compromisso"} />
+            <PillarBoxCard src={"/icons/ideacao.png"} value={"Diálogo"} />
+          </div>
         </div>
       </section>
     </>

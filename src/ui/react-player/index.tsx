@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import dynamic from 'next/dynamic'
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 import { ReactPlayerProps } from "react-player";
@@ -12,7 +10,7 @@ const propsInitialState: ReactPlayerProps = {
     height: "100%"
 }
 
-const ReactPlayerMedia: React.FC<ReactPlayerProps> = (props, { playerref }) => {    
+const ReactPlayerMedia: React.FC<ReactPlayerProps> = (props, { playerref }) => {
     return (
         <ReactPlayer
             ref={playerref}
