@@ -1,16 +1,33 @@
 import style from "./about.module.scss";
 import BannerTitle from "../../components/title-page-banner";
-// 
-// import play from "/icons/play.svg";
 
 import cx from "clsx";
-import PillarBoxCard from "../../ui/pillar-box-card";
-import { useState } from "react";
+import { useCallback, useRef, useState } from "react";
 
-import Image from "next/image";
+import PillarBoxCard from "../../ui/pillar-box-card";
+import ReactPlayerMedia from "../../ui/react-player";
+import { Play, Pause } from "../../ui/svgs";
+
+import ReactPlayer from "react-player";
 
 export default function About() {
   const [isPlay, setIsPlay] = useState(false);
+  const [isNotPlayShadow, setIsNotPlayShadow] = useState(false);
+
+  const playerRef = useRef<ReactPlayer>();
+
+  function changeStartPlayState() {
+    playerRef?.current?.seekTo(0, "seconds");
+
+    setIsNotPlayShadow(true);
+  }
+
+  function changeEndPlayState() {
+    playerRef?.current?.seekTo(0, "seconds");
+
+    setIsPlay(false);
+    setIsNotPlayShadow(false);
+  }
 
   return (
     <>
@@ -32,8 +49,6 @@ export default function About() {
       </section>
 
       <section className={cx(style.pillarsContainer, style.section)}>
-        <h2>Estrategia</h2>
-
         <div className={style.pillarsContent}>
           <PillarBoxCard src={"/icons/descoberta.png"} value={"DESCOBERTA"} />
           <PillarBoxCard src={"/icons/ideacao.png"} value={"IDEAÇÃO"} />
@@ -43,25 +58,40 @@ export default function About() {
       </section>
 
       <section className={cx(style.mediaContent, style.section)}>
-        {/* <span
-          className={style.bg_shadow}
+        <span
+          className={cx(style.bg_shadow)}
+          style={isNotPlayShadow ? { display: "none" } : { display: "flex" }}
         >
           <button
             onClick={() => setIsPlay(true)}
+            className={cx(isPlay && style.play_ping_animation)}
+            onAnimationEnd={changeStartPlayState}
           >
-            <Image src={play} width={100}  height={100} alt="play" />
+            {isPlay ? <Pause /> : <Play />}
           </button>
-        </span> */}
+        </span>
 
-        <video
-          loop
-          autoPlay={false}
-          muted={false}
-          controls={false}
+        <div
           className={cx(style.media_video)}
         >
-          <source src={"/video/inspiration.mp4"} />
-        </video>
+          <ReactPlayerMedia
+            playerref={playerRef}
+            url={"https://youtu.be/IAnzAWt5tCI"}
+            loop={!isPlay}
+            muted={!isPlay}
+            onEnded={changeEndPlayState}
+          />
+        </div>
+      </section>
+
+      <section className={cx(style.pillarsContainer, style.section)}>
+        <div className={style.pillarsContent}>
+          <PillarBoxCard src={"/icons/descoberta.png"} value={"DESCOBERTA"} />
+          <PillarBoxCard src={"/icons/ideacao.png"} value={"IDEAÇÃO"} />
+          <PillarBoxCard src={"/icons/modelagem.png"} value={"MODELAGEM"} />
+          <PillarBoxCard src={"/icons/implantacao.png"} value={"IMPLANTAÇÃO"} />
+          <PillarBoxCard src={"/icons/ideacao.png"} value={"IDEAÇÃO"} />
+        </div>
       </section>
     </>
   )

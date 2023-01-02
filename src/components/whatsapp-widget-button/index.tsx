@@ -10,7 +10,7 @@ export default function WhatsappWidgetButton() {
     return (
         <>
             <Link
-                href="https://wa.me/556293128216"
+                href="https://wa.me/5538984064384"
                 className={cx(styles.widget_button, styles.after_principal_section)}
                 target="_blank"
                 rel="Whatsapp"
