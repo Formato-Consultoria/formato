@@ -16,7 +16,8 @@ export default function BannerTitle({ value, src }: PropsBnrTlt) {
                 background: `url(${src})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                backgroundRepeat: "no-repeat"}}
+                backgroundRepeat: "no-repeat"
+            }}
         >
             <span className={style.bg_shadow}></span>
             <h2>{value}</h2>

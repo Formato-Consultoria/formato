@@ -2,8 +2,7 @@ import style from "./about.module.scss";
 import BannerTitle from "../../components/title-page-banner";
 
 import cx from "clsx";
-import { useCallback, useRef, useState } from "react";
-import Image from "next/image";
+import { useRef, useState } from "react";
 
 import PillarBoxCard from "../../ui/pillar-box-card";
 import ReactPlayerMedia from "../../ui/react-player";
