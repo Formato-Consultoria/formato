@@ -10,13 +10,13 @@ export default function LastsPostsSection() {
     return (
         <section className={cx(styles.lasts_posts, inter.className)}>
             <div className={styles.headler_}>
-            <h2 className={blinker.className}>ULTIMAS POSTAGEMS</h2>
-
-            <ButttonGlobal 
-                text="Veja todos" 
-                icone={<ArrowRight size={20}/>} 
-                isSecondary
-            />
+                <h2 className={blinker.className}>ULTIMAS POSTAGEMS</h2>
+            
+                <ButttonGlobal 
+                    text="Veja todos" 
+                    icone={<ArrowRight size={20}/>} 
+                    isSecondary
+                />
             </div>
 
             <div className={styles.boxs_news}>

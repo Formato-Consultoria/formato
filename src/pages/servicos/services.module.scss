@@ -5,14 +5,27 @@ section.section {
     flex-direction: column;
     align-items: center;
 
-    margin: 25px 0;
-
     h2 {
         font-size: 2rem;
         color: variable.$black-80;
-        margin: 50px;
+        margin-top: 50px;
     }
 }
 
 section.serviceContainer {
+    width: 100%;
+    gap: 50px;
+    
+    div.sectionServices {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        h3 {
+            font-size: 1.8rem;
+            color: variable.$white-mediumn-dark;
+            font-weight: 300;
+            padding: 0 0 20px 50px;
+        }
+    }
 }

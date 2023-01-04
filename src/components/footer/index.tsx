@@ -39,19 +39,19 @@ export default function Footer() {
                                 <nav>
                                     <ul className={style.navigation_options}>
                                         <li>
-                                            <Link href="/servicos#financas">Finanças</Link>
+                                            <Link href="/servicos/financas">Finanças</Link>
                                         </li>
                                         <li>
-                                            <Link href="/servicos#marketing">Marketing</Link>
+                                            <Link href="/servicos/marketing">Marketing</Link>
                                         </li>
                                         <li>
-                                            <Link href="/servicos#marketing-digital">Marketing Digital</Link>
+                                            <Link href="/servicos/marketing-digital">Marketing Digital</Link>
                                         </li>
                                         <li>
-                                            <Link href="/servicos#modelagem-de-negocios">Modelagem de Negócios</Link>
+                                            <Link href="/servicos/modelagem-de-negocios">Modelagem de Negócios</Link>
                                         </li>
                                         <li>
-                                            <Link href="/servicos#producao-enxuta">Produção enxuta</Link>
+                                            <Link href="/servicos/producao-enxuta">Produção enxuta</Link>
                                         </li>
                                     </ul>
                                 </nav>
@@ -62,16 +62,16 @@ export default function Footer() {
                                 <nav>
                                     <ul className={style.navigation_options}>
                                         <li>
-                                            <Link href="/servicos#planejamento-estrategico">Planejamento Estratégico</Link>
+                                            <Link href="/servicos/planejamento-estrategico">Planejamento Estratégico</Link>
                                         </li>
                                         <li>
-                                            <Link href="/servicos#gestao-por-okrs">Gestão por OKRs</Link>
+                                            <Link href="/servicos/gestao-por-okrs">Gestão por OKRs</Link>
                                         </li>
                                         <li>
-                                            <Link href="/servicos#produtividade-e-gestao-de-tarefas">Produtividade e Gestão de Tarefas</Link>
+                                            <Link href="/servicos/produtividade-e-gestao-de-tarefas">Produtividade e Gestão de Tarefas</Link>
                                         </li>
                                         <li>
-                                            <Link href="/servicos#indicadores-e-metricas">Indicadores e Métricas</Link>
+                                            <Link href="/servicos/indicadores-e-metricas">Indicadores e Métricas</Link>
                                         </li>
                                     </ul>
                                 </nav>
@@ -82,13 +82,13 @@ export default function Footer() {
                                 <nav>
                                     <ul className={style.navigation_options}>
                                         <li>
-                                            <Link href="/servicos#inovacao-e-modelo-de-negocios">Inovação e Modelo de Negócio</Link>
+                                            <Link href="/servicos/inovacao-e-modelo-de-negocios">Inovação e Modelo de Negócio</Link>
                                         </li>
                                         <li>
-                                            <Link href="/servicos#qualidade-e-produtividade">Qualidade e Produtividade</Link>
+                                            <Link href="/servicos/qualidade-e-produtividade">Qualidade e Produtividade</Link>
                                         </li>
                                         <li>
-                                            <Link href="/servicos#transformacao-digital">Transformação Digital</Link>
+                                            <Link href="/servicos/transformacao-digital">Transformação Digital</Link>
                                         </li>
                                     </ul>
                                 </nav>
