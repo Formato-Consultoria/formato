@@ -34,7 +34,7 @@ export default function ContactSection() {
                         Eu aceito os <a href="#"><strong>termos de serviço</strong></a>
                     </label>
 
-                    <input type="button" value="Enviar" />
+                    <input type="submit" value="Enviar" />
                 </form>
             </div>
         </section>
