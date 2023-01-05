@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 export default function ServiceSection() {
     return (
-        <section className={cx(styles.services, inter.className)}>
+      <section className={cx(styles.services, inter.className)}>
         <div className={styles.container_services}>
           <div className={cx(styles.box_services, styles.black)}>
             <Image
@@ -46,9 +46,9 @@ export default function ServiceSection() {
           </div>
         </div>
         
-        {/* <Link href="/"> */}
+        <Link href="/servicos">
           <ButttonGlobal text="Conhecer todos os serviços" icone={<ArrowRight size={20}/>} />
-        {/* </Link> */}
+        </Link>
       </section>
     )
 }

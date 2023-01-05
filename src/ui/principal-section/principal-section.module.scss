@@ -64,6 +64,10 @@ section.principal {
             color: variable.$black-50;
             margin-bottom: 10px;
         }
+
+        a {
+            text-decoration: none;
+        }
     }
 
     button {

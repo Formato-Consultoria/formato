@@ -10,3 +10,6 @@ export { default as StrategicPlanning } from "../../../public/icons/StrategicPla
 export { default as ManagementOKRS } from "../../../public/icons/ManagementOKRS.svg";
 export { default as ProductivityTaskManagement } from "../../../public/icons/ProductivityTaskManagement.svg";
 export { default as IndicatorsMetrics } from "../../../public/icons/IndicatorsMetrics.svg";
+
+export { default as QuoteStart } from "../../../public/icons/QuoteStart.svg";
+export { default as QuoteEnd } from "../../../public/icons/QuoteEnd.svg";

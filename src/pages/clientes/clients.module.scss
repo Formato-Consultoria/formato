@@ -5,11 +5,75 @@ section.section {
     flex-direction: column;
     align-items: center;
 
-    margin: 25px 0;
-    padding: 0 20px;
-
     h2 {
         font-size: 2rem;
         color: variable.$black-80;
+    }
+}
+
+
+section.container_clients {
+    display: flex;
+    flex-direction: column;
+
+    div.container_images {
+        width: 100%;
+
+        div.imgs_box {
+            display: flex;
+    
+            div {
+                height: 300px;
+                width: 100%;
+
+                border: 1.1px solid variable.$white;
+
+                img {
+                    object-fit: cover;
+    
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+
+        div.imgs_box:nth-child(2) {
+            flex-basis: auto;
+            div:nth-child(1) {
+                flex: .5;
+            }
+            div:nth-child(2) {
+                flex: 1;
+            }
+            div:nth-child(3) {
+                flex: .5;
+            }
+        }
+    
+    }
+
+    div.depositions_section {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+            margin: 50px 0;
+        }
+
+        div.container_testimonials_box {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            padding: 20px 10px;
+            background-color: variable.$white-mediumn;
+        }
     }
 }
