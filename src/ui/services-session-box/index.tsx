@@ -37,7 +37,7 @@ export default function ServicesSessionBox({
                 
                 <Link href={url}>
                     <ButttonGlobal
-                        text="saiba mais" 
+                        value="saiba mais"
                         icone={<ArrowRight size={20}/>} 
                         isSecondary
                     />

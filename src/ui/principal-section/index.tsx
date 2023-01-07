@@ -18,7 +18,7 @@ export default function PrincipalSection() {
                 <p>Focamos no essencial e abraçamos desafios através de abordagens inovadoras. Nos importamos com cada pessoa e fornecemos caminhos para impulsioná-las a serem mais prósperas e bem-sucedidas</p>
 
                 <Link href={"/sobre"}>
-                    <ButttonGlobal text="Saiba Mais"/>
+                    <ButttonGlobal value="Saiba Mais"/>
                 </Link>
             </div>
 

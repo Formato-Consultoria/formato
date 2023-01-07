@@ -128,3 +128,30 @@ button.arrowdow_btn:hover {
         transform: translate(0%, 20%);
     }
 }
+
+button.loading_btn {
+    border-radius: 3px;
+    min-width: 90px;
+
+    svg {
+        margin: 0 auto;
+        transform: translateX(0%);
+
+        animation: spin 1s linear infinite;
+    }
+}
+
+button.loading_btn:hover {
+    svg {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
