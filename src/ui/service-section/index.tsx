@@ -20,7 +20,7 @@ export default function ServiceSection() {
             />
 
             <p>Consultorias Empresarial</p>
-            <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula bibendum tellus vitae molestie.</small>
+            <small>Consultores com experiência prática de mercado e especializados em gestão e inovação. Consultorias de finanças, marketing, processos, modelagem de negócios e transformação digital.</small>
           </div>
 
           <div className={styles.box_services}>
@@ -31,7 +31,7 @@ export default function ServiceSection() {
               height={40}
             />
             <p>Workshop</p>
-            <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula bibendum tellus vitae molestie.</small>
+            <small>Profissionais com know-how em metodologias ativas e expertise gerencial. Atuamos com abordagens inovativas e personalizadas. Conduzimos workshops de elaboração de planejamento estratégico, melhoria da produtividade e gestão por indicadores.</small>
           </div>
 
           <div className={cx(styles.box_services, styles.black)}>
@@ -42,7 +42,7 @@ export default function ServiceSection() {
               height={40}
             />
             <p>Mentoria Técnica</p>
-            <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula bibendum tellus vitae molestie.</small>
+            <small>Mentoria de negócios focadas em colaborar com objetivos de projetos a serem atingidos. Ajudamos na definição  do desafio, desenhamos um processo de desenvolvimento e contribuímos para acelerar a entrega de resultados.</small>
           </div>
         </div>
         

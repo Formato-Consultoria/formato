@@ -1,6 +1,6 @@
 import style from "./quote-section.module.scss";
 
-import { QuoteEnd, QuoteStart } from "../svgs";
+import { QuoteEnd, QuoteStart } from "../images/svgs";
 
 type PropsQuoteSection = {
     children: string

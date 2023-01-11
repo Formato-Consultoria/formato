@@ -5,10 +5,12 @@ import ButttonGlobal from "../../components/button";
 import { ArrowRight } from "phosphor-react";
 import Link from "next/link";
 
+import cx from "clsx";
+
 type PropsServieSessionBox = {
     children: string,
     url: string,
-    icon: ReactNode,
+    icon: string,
     title: string,
     bannerImg?: string
 }
@@ -29,7 +31,9 @@ export default function ServicesSessionBox({
 
             <div className={style.boxcontent}>
                 <div className={style.icon_and_title}>
-                    {icon}
+                    <div className={style.container_svg}>
+                        <Image src={icon} width={50} height={50} alt={"Icon service"} />
+                    </div>
                     <h4>{title}</h4>
                 </div>
 
