@@ -12,16 +12,19 @@ section.services {
 
     div.container_services {
         width: 100%;
+        height: auto;
+
         display: flex;
-        align-items: flex-start;
+        align-items: stretch;
         justify-content: center;
         flex-wrap: wrap;
+
         padding: 0 35px;
         gap: 35px;
 
         div.box_services {
-            min-height: 200px;
-            max-width: 300px;
+            width: 375px;
+            height: auto;
 
             display: flex;
             flex-direction: column;
@@ -66,6 +69,16 @@ section.services {
 
     a {
         text-decoration: none;
+    }
+}
+
+@media (max-width: 896px) {
+    section.services {
+        div.container_services {
+            div.box_services {
+                width: 100%;
+            }
+        }
     }
 }
 

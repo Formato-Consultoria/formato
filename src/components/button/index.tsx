@@ -4,30 +4,40 @@ import style from './button.module.scss';
 import cx from 'clsx';
 
 type BtnProps = {
-    text: string | ReactElement,
+    value: string | ReactElement,
     icone?: ReactElement<IconProps>,
+    onClick?: () => Promise<void>,
     isSecondary?: boolean,
     isCustommer?: boolean,
     isDowButton?: boolean,
+    isLoading?: boolean,
+    disabled?: boolean,
     className?: string
 }
 
 export default function ButttonGlobal({
-    text,
+    value,
     icone, 
     isSecondary=false, 
     isCustommer=false,
     isDowButton=false,
+    isLoading=false,
+    disabled=false,
+    onClick,
     className,
 }: BtnProps) {
     return (
-        <button className={cx(style.primary_btn,
-            isSecondary && style.secundary_btn,
-            isCustommer && style.custommer_btn,
-            isDowButton && style.arrowdow_btn,
-            className
+        <button
+            disabled={disabled}
+            onClick={onClick}
+            className={cx(style.primary_btn,
+                isSecondary && style.secundary_btn,
+                isCustommer && style.custommer_btn,
+                isDowButton && style.arrowdow_btn,
+                isLoading && style.loading_btn,
+                className
         )}>
-            {text} {icone && <strong>{icone}</strong>}
+            {value} {icone && <strong>{icone}</strong>}
         </button>
     )
 }

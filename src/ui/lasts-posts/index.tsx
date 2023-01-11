@@ -13,7 +13,7 @@ export default function LastsPostsSection() {
                 <h2 className={blinker.className}>ULTIMAS POSTAGEMS</h2>
             
                 <ButttonGlobal 
-                    text="Veja todos" 
+                    value="Veja todos" 
                     icone={<ArrowRight size={20}/>} 
                     isSecondary
                 />
@@ -25,7 +25,7 @@ export default function LastsPostsSection() {
                 <img className={styles.bg_image} src="/teste/elon-musk.jpg" alt="elon musk" />
                 
                 <div className={styles.content}>
-                <ButttonGlobal text={
+                <ButttonGlobal value={
                     <div>
                     mais <div>sobre...</div>
                     </div>}
@@ -43,7 +43,7 @@ export default function LastsPostsSection() {
                 <img className={styles.bg_image} src="/teste/domain-transfer.jpg" alt="domain-transfer" />
 
                 <div className={styles.content}>
-                <ButttonGlobal text={
+                <ButttonGlobal value={
                     <div>
                     mais <div>sobre...</div>
                     </div>}
@@ -61,7 +61,7 @@ export default function LastsPostsSection() {
                 <img className={styles.bg_image} src="/teste/store.jpg" alt="store" />
                 
                 <div className={styles.content}>
-                <ButttonGlobal text={
+                <ButttonGlobal value={
                     <div>
                     mais <div>sobre...</div>
                     </div>}

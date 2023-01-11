@@ -6,9 +6,23 @@ import { useRef, useState } from "react";
 
 import PillarBoxCard from "../../ui/pillar-box-card";
 import ReactPlayerMedia from "../../ui/react-player";
-import { Play, Pause } from "../../ui/svgs";
 
 import ReactPlayer from "react-player";
+
+import { Play, Pause} from "../../ui/images/svgs";
+import {
+  Collaboration,
+  Commitment,
+  CriticalThinking,
+  Dialogue,
+  Innovation,
+  Metrics,
+  Mindset,
+  OpennessChallenges,
+  Respect,
+  Strategy,
+  Willpower
+} from "../../ui/images/pngs";
 
 // TODO: Fix: Fazer o play reiniciar quando chegar ao final da reprodução,
 
@@ -52,10 +66,10 @@ export default function About() {
 
       <section className={cx(style.pillarsContainer, style.section)}>
         <div className={style.pillarsContent}>
-          <PillarBoxCard src={"/icons/descoberta.png"} value={"DESCOBERTA"} />
-          <PillarBoxCard src={"/icons/ideacao.png"} value={"IDEAÇÃO"} />
-          <PillarBoxCard src={"/icons/modelagem.png"} value={"MODELAGEM"} />
-          <PillarBoxCard src={"/icons/implantacao.png"} value={"IMPLANTAÇÃO"} />
+          <PillarBoxCard src={Mindset.src} value={"MINDSET"} />
+          <PillarBoxCard src={Strategy.src} value={"ESTRATÉGIA"} />
+          <PillarBoxCard src={Metrics.src} value={"MÉTRICAS"} />
+          <PillarBoxCard src={Innovation.src} value={"EVOLUÇÃO"} />
         </div>
       </section>
 
@@ -101,13 +115,13 @@ export default function About() {
           <h2>Nossos Valores</h2>
 
           <div>
-            <PillarBoxCard src={"/icons/descoberta.png"} value={"Respeito"} />
-            <PillarBoxCard src={"/icons/ideacao.png"} value={"Abertura a desafios"} />
-            <PillarBoxCard src={"/icons/modelagem.png"} value={"Vontade"} />
-            <PillarBoxCard src={"/icons/implantacao.png"} value={"Colaboração"} />
-            <PillarBoxCard src={"/icons/ideacao.png"} value={"Pensamento Crítico"} />
-            <PillarBoxCard src={"/icons/descoberta.png"} value={"Compromisso"} />
-            <PillarBoxCard src={"/icons/ideacao.png"} value={"Diálogo"} />
+            <PillarBoxCard src={Respect.src} value={"Respeito"} />
+            <PillarBoxCard src={OpennessChallenges.src} value={"Abertura a desafios"} />
+            <PillarBoxCard src={Willpower.src} value={"Vontade"} />
+            <PillarBoxCard src={Collaboration.src} value={"Colaboração"} />
+            <PillarBoxCard src={CriticalThinking.src} value={"Pensamento Crítico"} />
+            <PillarBoxCard src={Commitment.src} value={"Compromisso"} />
+            <PillarBoxCard src={Dialogue.src} value={"Diálogo"} />
           </div>
         </div>
       </section>

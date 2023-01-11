@@ -4,17 +4,21 @@ import BannerTitle from "../../components/title-page-banner";
 import cx from "clsx";
 
 import ServicesSessionBox from "../../ui/services-session-box";
+
 import {
   BusinessModeling,
   DigitalMarketing,
+  DigitalTransformation,
   Finance,
   IndicatorsMetrics,
+  InnovationBusinessModel,
   LeanProduction,
   ManagementOKRS,
   Marketing,
   ProductivityTaskManagement,
+  QualityProductivity,
   StrategicPlanning
-} from "../../ui/svgs";
+} from "../../ui/images/pngs";
 
 export default function Services() {
   return (
@@ -29,10 +33,10 @@ export default function Services() {
 
         <div className={style.sectionServices}>
           <h3>Consultorias para Empresas Locais</h3>
-          
+
           <ServicesSessionBox
             url={"/servicos"}
-            icon={<Finance />}
+            icon={Finance.src}
             title={"Finanças"}
             bannerImg="/teste/finance.jpg"
           >
@@ -42,7 +46,7 @@ export default function Services() {
 
           <ServicesSessionBox
             url={"/servicos"}
-            icon={<Marketing />}
+            icon={Marketing.src}
             title={"Marketing"}
             bannerImg="/teste/marketing.jpg"
           >
@@ -52,7 +56,7 @@ export default function Services() {
 
           <ServicesSessionBox
             url={"/servicos"}
-            icon={<DigitalMarketing />}
+            icon={DigitalMarketing.src}
             title={"Marketing digital"}
             bannerImg="/teste/marketing.jpg"
           >
@@ -62,7 +66,7 @@ export default function Services() {
 
           <ServicesSessionBox
             url={"/servicos"}
-            icon={<BusinessModeling />}
+            icon={BusinessModeling.src}
             title={"Modelagem de negocios"}
             bannerImg="/teste/business-modeling.jpg"
           >
@@ -72,7 +76,7 @@ export default function Services() {
 
           <ServicesSessionBox
             url={"/servicos"}
-            icon={<LeanProduction />}
+            icon={LeanProduction.src}
             title={"Produção enxuta"}
             bannerImg="/teste/business-modeling.jpg"
           >
@@ -86,7 +90,7 @@ export default function Services() {
 
           <ServicesSessionBox
             url={"/servicos"}
-            icon={<StrategicPlanning />}
+            icon={StrategicPlanning.src}
             title={"Planejamento estrategico"}
             bannerImg="/teste/business-modeling.jpg"
           >
@@ -96,7 +100,7 @@ export default function Services() {
 
           <ServicesSessionBox
             url={"/servicos"}
-            icon={<ManagementOKRS />}
+            icon={ManagementOKRS.src}
             title={"Gestão por OKRS"}
             bannerImg="/teste/business-modeling.jpg"
           >
@@ -107,7 +111,7 @@ export default function Services() {
           
           <ServicesSessionBox
             url={"/servicos"}
-            icon={<ProductivityTaskManagement />}
+            icon={ProductivityTaskManagement.src}
             title={"Produtividade e gestão de tarefas"}
             bannerImg="/teste/business-modeling.jpg"
           >
@@ -117,7 +121,7 @@ export default function Services() {
 
           <ServicesSessionBox
             url={"/servicos"}
-            icon={<IndicatorsMetrics />}
+            icon={IndicatorsMetrics.src}
             title={"Indicadores e metricas"}
             bannerImg="/teste/business-modeling.jpg"
           >
@@ -131,18 +135,17 @@ export default function Services() {
 
           <ServicesSessionBox
             url={"/servicos"}
-            icon={<ManagementOKRS />}
+            icon={InnovationBusinessModel.src}
             title={"Inovação e Modelo de Negócio"}
             bannerImg="/teste/business-modeling.jpg"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Deleniti fugit ullam libero natus nulla ad molestiae rem provident
           </ServicesSessionBox>
-
           
           <ServicesSessionBox
             url={"/servicos"}
-            icon={<ProductivityTaskManagement />}
+            icon={QualityProductivity.src}
             title={"Qualidade e Produtividade"}
             bannerImg="/teste/business-modeling.jpg"
           >
@@ -152,7 +155,7 @@ export default function Services() {
 
           <ServicesSessionBox
             url={"/servicos"}
-            icon={<IndicatorsMetrics />}
+            icon={DigitalTransformation.src}
             title={"Transformação Digital"}
             bannerImg="/teste/business-modeling.jpg"
           >

@@ -24,9 +24,9 @@ section.strategy {
         }
 
         p {
-            max-width: 50%;
+            max-width: 70%;
             text-align: center;
-            font-size: 1.30rem;
+            font-size: 1.10rem;
             color: variable.$black-50;
             font-weight: 400;
         }
@@ -34,6 +34,7 @@ section.strategy {
 
     div.strategys_and_image {
         width: 100%;
+        height: auto;
 
         display: flex;
         flex-direction: column;
@@ -49,7 +50,7 @@ section.strategy {
         div.secound_block {
             display: flex;
             justify-content: center;
-            height: 300px;
+            min-height: 300px;
             gap: 350px;
 
             padding: 25px 50px;
@@ -70,25 +71,25 @@ section.strategy {
                 p {
                     color: variable.$black-dark;
                     font-weight: 300;
-                    font-size: 1.2rem;
+                    font-size: 1.1rem;
                 }
             }
 
-            div.descoberta {
-                align-self: center;
-            }
+            // div.mindset {
+            //     align-self: center;
+            // }
     
-            div.modelagem {
-                align-self: flex-start;
-            }
+            // div.estrategia {
+            //     align-self: flex-start;
+            // }
 
-            div.implantacao {
-                align-self: flex-end;
-            }
+            // div.metricas {
+            //     align-self: flex-end;
+            // }
     
-            div.ideacao {
-                align-self: center;
-            }
+            // div.evolucao {
+            //     align-self: center;
+            // }
         }
     }
 }
@@ -108,7 +109,7 @@ section.strategy {
 
 @media (max-width: 1024px) {
     section.strategy {
-        gap: 25px;
+        gap: 50px;
 
         div.title_and_description {
             h2 {
@@ -116,18 +117,37 @@ section.strategy {
             }
 
             p {
-                max-width: 70%;
+                max-width: 85%;
 
                 font-size: 1.1rem;
                 font-weight: 400;
+
+                padding: 0 10px;
             }
         }
 
         div.strategys_and_image {
+            background: none;
+            height: auto;
+
             div.first_block,
             div.secound_block {
+                min-height: 0;
+                height: auto;
+                align-items: stretch;
+                
                 padding: 10px 20px;
+                gap: 25px;
+
                 div {
+                    height: auto;
+                    max-width: 100%;
+                    width: 50%;
+
+                    background-color: variable.$white;
+                    padding: 20px;
+                    border-radius: 10px;
+
                     h3 {
                         color: variable.$black-dark;
                         font-weight: 300;
@@ -140,6 +160,14 @@ section.strategy {
                         font-size: 1.15rem;
                     }
                 }
+
+                div.mindset,
+                div.estrateg,
+                div.metricas,
+                div.evolucao {
+                    align-self: flex-start;
+                    height: auto;
+                }
             }
         }
     }
@@ -150,20 +178,14 @@ section.strategy {
         div.title_and_description {
             p {
                 max-width: 80%;
-                padding: 0 10px;
             }
         }
 
         div.strategys_and_image {
-            background: none;
-
             div.first_block,
             div.secound_block {
-                height: auto;
-                gap: 30px;
-
                 div {
-                    max-width: 100%;
+                    width: 100%; 
                 }
             }
         }

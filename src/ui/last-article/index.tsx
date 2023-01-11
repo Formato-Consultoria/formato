@@ -19,7 +19,7 @@ export default function LastArticle() {
 
                     <div className={styles.gradient}>
                         <ButttonGlobal
-                            text={"continuar lendo"}
+                            value={"continuar lendo"}
                             icone={<ArrowDown />}
                             isDowButton
                         />

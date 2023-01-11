@@ -73,7 +73,7 @@ export default function Navbar() {
                         </li>
                     </ul>
 
-                    <ButttonGlobal text="Contratar" className={style.contratar_btn} />
+                    <ButttonGlobal value="Contratar" className={style.contratar_btn} />
                     
                     <button
                         onClick={() => setIsOpenModal(!isOpenModal)}
