@@ -1,6 +1,7 @@
 import style from "./testimonials-box.module.scss";
 
 import cx from "clsx";
+import Image from "next/image";
 
 type PropsPersonProfession = {
     children: string;
@@ -38,7 +39,13 @@ export default function TestimonialsBox({
             <p className={style.comment}>{children}</p>
 
             <div className={style.footer}>
-                <img src={personImg} alt={personName} />
+                <div className={style.image_person}>
+                    <Image
+                        src={personImg}
+                        fill
+                        alt={personName}
+                    />
+                </div>
 
                 <div>
                     <p>{personName}</p>

@@ -47,13 +47,19 @@ div.testimonials_box {
         background-color: variable.$black-dark;
         color: variable.$white;
 
-        img {
+        div.image_person {
             width: 60px;
             height: 60px;
+
+            position: relative;
             border-radius: 999px;
 
-            object-fit: cover;
-            object-position: top;
+            img {
+                border-radius: 999px;
+
+                object-fit: cover;
+                object-position: top;
+            }
         }
 
         div {

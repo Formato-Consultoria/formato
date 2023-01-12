@@ -1,9 +1,11 @@
-import styles from './principal-section.module.scss';
-import { inter } from '../../utils/_fonts';
+import styles from "./principal-section.module.scss";
+import { inter } from "../../utils/_fonts";
 
-import cx from 'clsx';
-import ButttonGlobal from '../../components/button';
-import Link from 'next/link';
+import cx from "clsx";
+import ButttonGlobal from "../../components/button";
+
+import Link from "next/link";
+import Image from "next/image";
 
 export default function PrincipalSection() {
     return (
@@ -27,9 +29,24 @@ export default function PrincipalSection() {
             </div>
 
             <div className={styles.box_imgs}>
-                <img src="/images/box-imgs-office-of-the-main-section.png" alt="man climbing ladder" />
-                <img src="/images/box-imgs-man-climbing-ladder.png" alt="man climbing ladder" />
-                <img src="/images/box-imgs-main-section-building.png" alt="man climbing ladder" />
+                <Image
+                    src={"/images/box-imgs-office-of-the-main-section.png"}
+                    height={194}
+                    width={215}
+                    alt="hero 1"
+                />
+                <Image
+                    src={"/images/box-imgs-man-climbing-ladder.png"}
+                    height={194}
+                    width={194}
+                    alt="hero 2"
+                />
+                <Image
+                    src={"/images/box-imgs-main-section-building.png"}
+                    height={194}
+                    width={215}
+                    alt="hero 3"
+                />
             </div>
         </section>
     )

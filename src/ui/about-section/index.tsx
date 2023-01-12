@@ -1,7 +1,8 @@
-import styles from './about-section.module.scss';
-import { inter, blinker } from '../../utils/_fonts';
+import styles from "./about-section.module.scss";
+import { inter, blinker } from "../../utils/_fonts";
 
-import cx from 'clsx';
+import Image from "next/image";
+import cx from "clsx";
 
 export default function AboutSection() {
     return(
@@ -9,7 +10,13 @@ export default function AboutSection() {
             <h2 className={blinker.className}>SOBRE A NOSSA EMPRESA</h2>
 
             <div className={styles.content}>
-                <img src="/images/imagem-predio.png" alt="imagem de um predio preto" />
+                <div className={styles.image}>
+                    <Image
+                        src="/images/imagem-predio.png"
+                        fill
+                        alt="imagem de um predio preto"
+                    />
+                </div>
 
                 <div>
                     <p>Desde 2017 atuamos no segmento de consultoria empresarial. Entendemos que a gestão pode ser feita de forma simples e também prazerosa. Estamos sempre em busca de estratégias que reduzem a complexidade e focam no essencial.</p>

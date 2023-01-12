@@ -157,11 +157,10 @@ section.logotipoAndInspirationMessage {
         height: 100%;
 
         align-items: center;
+        position: relative;
 
         img {
             object-fit: cover;
-            height: 100%;
-            width: 100%;
         }
     }
 

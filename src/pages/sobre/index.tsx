@@ -3,6 +3,7 @@ import BannerTitle from "../../components/title-page-banner";
 
 import cx from "clsx";
 import { useRef, useState } from "react";
+import Image from "next/image";
 
 import PillarBoxCard from "../../ui/pillar-box-card";
 import ReactPlayerMedia from "../../ui/react-player";
@@ -75,7 +76,11 @@ export default function About() {
 
       <section className={cx(style.logotipoAndInspirationMessage)}>
         <div className={style.logotipo_img}>
-          <img src={"/images/Logotipo_light.jpg"} alt="Logotipo dark" />
+          <Image
+            src={"/images/Logotipo_light.jpg"}
+            fill
+            alt="Logotipo"
+          />
         </div>
 
         <div className={style.message}>

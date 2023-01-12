@@ -2,7 +2,6 @@ import style from "./services.module.scss";
 import BannerTitle from "../../components/title-page-banner";
 
 import cx from "clsx";
-
 import ServicesSessionBox from "../../ui/services-session-box";
 
 import {
@@ -38,7 +37,7 @@ export default function Services() {
             url={"/servicos"}
             icon={Finance.src}
             title={"Finanças"}
-            bannerImg="/teste/finance.jpg"
+            bannerImg="/teste/business-modeling.jpg"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Deleniti fugit ullam libero natus nulla ad molestiae rem provident
@@ -48,7 +47,7 @@ export default function Services() {
             url={"/servicos"}
             icon={Marketing.src}
             title={"Marketing"}
-            bannerImg="/teste/marketing.jpg"
+            bannerImg="/teste/business-modeling.jpg"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Deleniti fugit ullam libero natus nulla ad molestiae rem provident
@@ -58,7 +57,7 @@ export default function Services() {
             url={"/servicos"}
             icon={DigitalMarketing.src}
             title={"Marketing digital"}
-            bannerImg="/teste/marketing.jpg"
+            bannerImg="/teste/business-modeling.jpg"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Deleniti fugit ullam libero natus nulla ad molestiae rem provident

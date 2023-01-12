@@ -1,10 +1,10 @@
 import style from "./services-session-box.module.scss";
-import { ReactNode } from "react";
-import Image from "next/image";
-import ButttonGlobal from "../../components/button";
+
 import { ArrowRight } from "phosphor-react";
+import Image from "next/image";
 import Link from "next/link";
 
+import ButttonGlobal from "../../components/button";
 import cx from "clsx";
 
 type PropsServieSessionBox = {
@@ -12,7 +12,7 @@ type PropsServieSessionBox = {
     url: string,
     icon: string,
     title: string,
-    bannerImg?: string
+    bannerImg: string
 }
 
 export default function ServicesSessionBox({
@@ -26,13 +26,22 @@ export default function ServicesSessionBox({
     return (
         <div className={style.services_session_box}>
             <div className={style.banner_img}>
-                <img src={bannerImg} alt={title} />
+                <Image
+                    src={bannerImg}
+                    fill
+                    alt={`${title} banner`}
+                />
             </div>
 
             <div className={style.boxcontent}>
                 <div className={style.icon_and_title}>
                     <div className={style.container_svg}>
-                        <Image src={icon} width={50} height={50} alt={"Icon service"} />
+                        <Image
+                            src={icon}
+                            width={50}
+                            height={50}
+                            alt={`${title} icon`}
+                        />
                     </div>
                     <h4>{title}</h4>
                 </div>
@@ -42,7 +51,7 @@ export default function ServicesSessionBox({
                 <Link href={url}>
                     <ButttonGlobal
                         value="saiba mais"
-                        icone={<ArrowRight size={20}/>} 
+                        icone={<ArrowRight size={20}/>}
                         isSecondary
                     />
                 </Link>

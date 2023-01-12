@@ -4,6 +4,7 @@ import BannerTitle from "../../components/title-page-banner";
 import cx from "clsx";
 import QuoteSection from "../../ui/quote-section";
 import TestimonialsBox from "../../ui/testimonials-box";
+import Image from "next/image";
 
 export default function Clients() {
     return (
@@ -24,14 +25,44 @@ export default function Clients() {
           
           <div className={style.container_images}>
             <div className={style.imgs_box}>
-                <div><img src={"/teste/B4.jpeg"} alt="hero4 img" /></div>
-                <div><img src={"/teste/B2.jpeg"} alt="hero2 img" /></div>
+                <div>
+                  <Image
+                    src={"/teste/B4.jpeg"}
+                    fill
+                    alt="hero4 img"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src={"/teste/B2.jpeg"}
+                    fill
+                    alt="hero2 img"
+                  />
+              </div>
             </div>
 
             <div className={style.imgs_box}>
-                <div><img src={"/teste/B5.jpeg"} alt="hero5 img" /></div>
-                <div><img src={"/teste/B3.jpeg"} alt="her3 img" /></div>
-                <div><img src={"/teste/B1.jpeg"} alt="hero1 img" /></div>
+                <div>
+                  <Image
+                    src={"/teste/B5.jpeg"}
+                    fill
+                    alt="hero5 img"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src={"/teste/B3.jpeg"}
+                    fill
+                    alt="her3 img" 
+                  />
+                </div>
+                <div>
+                  <Image
+                    src={"/teste/B1.jpeg"}
+                    fill
+                    alt="hero1 img"
+                  />
+                </div>
             </div>
           </div>
 

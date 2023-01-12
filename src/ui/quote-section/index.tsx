@@ -1,6 +1,7 @@
 import style from "./quote-section.module.scss";
 
 import { QuoteEnd, QuoteStart } from "../images/svgs";
+import Image from "next/image";
 
 type PropsQuoteSection = {
     children: string
@@ -17,7 +18,11 @@ export default function QuoteSection({ children, img }: PropsQuoteSection) {
             </p>
 
             <div className={style.image_box}>
-                <img src={img} alt="Image quote" />
+                <Image
+                    src={img}
+                    fill
+                    alt="Image quote"
+                />
             </div>
         </div>
     )
