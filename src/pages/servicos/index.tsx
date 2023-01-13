@@ -17,7 +17,7 @@ import {
   ProductivityTaskManagement,
   QualityProductivity,
   StrategicPlanning
-} from "../../ui/images/pngs";
+} from "../../ui/images";
 
 export default function Services() {
   return (

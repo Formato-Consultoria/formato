@@ -1,13 +1,13 @@
-import Head from 'next/head';
-import styles from './layout.module.scss';
+import Head from "next/head";
+import styles from "./layout.module.scss";
 
-import Footer from '../footer';
-import Navbar from '../navbar';
+import Footer from "../footer";
+import Navbar from "../navbar";
 
-import cx from 'clsx';
-import { useRouter } from 'next/router'
-import { ReactNode } from 'react';
-import { inter } from '../../utils/_fonts';
+import cx from "clsx";
+import { useRouter } from "next/router"
+import { ReactNode } from "react";
+import { inter } from "../../utils/_fonts";
 
 type PropsChildren = {
     children: ReactNode

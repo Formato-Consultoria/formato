@@ -1,14 +1,16 @@
-import style from './navbar.module.scss';
-import cx from 'clsx';
-import { blinker } from '../../utils/_fonts';
+import style from "./navbar.module.scss";
 
-import Link from 'next/link';
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-import { List, X } from 'phosphor-react';
+import { List, X } from "phosphor-react";
 
-import ButttonGlobal from '../button';
-import { useCallback, useState, useEffect } from 'react';
-import { useRouter } from 'next/router'
+import ButttonGlobal from "../button";
+import { useCallback, useState, useEffect } from "react";
+import { blinker } from "../../utils/_fonts";
+import { DarkIcon, DarkLogotipo } from "../../ui/images";
+
+import cx from "clsx";
 
 export default function Navbar() {
     const [didScroll, setDidiScroll] = useState(false);
@@ -44,7 +46,7 @@ export default function Navbar() {
                 <div className={style.logotipo_img}>
                     <Link href="/">
                         <img
-                            src={cx(didScroll ? "/icons/icone_dark.png" : "/icons/Logotipo_dark.png")}
+                            src={cx(didScroll ? DarkIcon.src : DarkLogotipo.src)}
                             alt="Formato consultoria"
                         />
                     </Link>

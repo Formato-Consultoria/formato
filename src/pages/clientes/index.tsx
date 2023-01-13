@@ -1,10 +1,20 @@
 import style from "./clients.module.scss";
 import BannerTitle from "../../components/title-page-banner";
 
+import Image from "next/image";
 import cx from "clsx";
+
 import QuoteSection from "../../ui/quote-section";
 import TestimonialsBox from "../../ui/testimonials-box";
-import Image from "next/image";
+import InfiniteScrollCarousel from "../../ui/infinite-scroll-carousel";
+
+import {
+  cdl,
+  farMelhor,
+  garanti,
+  nexa,
+  sebrae
+} from "../../ui/images";
 
 export default function Clients() {
     return (
@@ -67,6 +77,16 @@ export default function Clients() {
           </div>
 
           {/* video */}
+
+          <InfiniteScrollCarousel
+            images={[
+              nexa.src,
+              sebrae.src,
+              farMelhor.src,
+              cdl.src,
+              garanti.src
+            ]}
+          />
 
           <div className={style.depositions_section}>
             <h2>Veja os depoimentos de nossos clientes</h2>

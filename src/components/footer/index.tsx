@@ -5,13 +5,14 @@ import cx from 'clsx';
 import Link from 'next/link';
 
 import { InstagramLogo, LinkedinLogo } from 'phosphor-react';
+import { LightLogotipo } from '../../ui/images';
 
 export default function Footer() {
     return (
         <footer className={cx(style.footer, inter.className)}>
             <div className={style.navigation_container}>
                 <div className={style.logotipo_img}>
-                    <img src="/icons/Logotipo_light.png" alt="Formato consultoria"/>
+                    <img src={LightLogotipo.src} alt="Formato consultoria"/>
                 </div>
 
                 <div className={style.navigation_content}>

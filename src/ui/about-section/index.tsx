@@ -14,7 +14,7 @@ export default function AboutSection() {
                     <Image
                         src="/images/imagem-predio.png"
                         fill
-                        alt="imagem de um predio preto"
+                        alt="sobre a nossa empresa image banner"
                     />
                 </div>
 
