@@ -39,6 +39,15 @@ export default function InfiniteScrollCarousel({ images }: PathImages) {
                     {imgList}
                 </div>
             </div>
+
+            <div className={style.carousel_scrolling}>
+                <div>
+                    {imgList}
+                </div>
+                <div>
+                    {imgList}
+                </div>
+            </div>
         </div>
     )
 }

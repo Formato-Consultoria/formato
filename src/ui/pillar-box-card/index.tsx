@@ -1,5 +1,7 @@
-import { ReactNode } from "react";
-import style from "./pillar-box-card.module.scss";
+import { ReactNode } from 'react';
+
+import style from './pillar-box-card.module.scss';
+import Image from 'next/image';
 
 type PropsPlrBxCrd = {
     src: string,
@@ -9,7 +11,13 @@ type PropsPlrBxCrd = {
 export default function PillarBoxCard({ src, value }: PropsPlrBxCrd) {
     return (
         <div className={style.cardBox}>
-            <img src={src} alt={value} />
+            <div className={style.image}>
+                <Image
+                    src={src}
+                    fill
+                    alt={value}
+                />
+            </div>
 
             <p>{value}</p>
         </div>
