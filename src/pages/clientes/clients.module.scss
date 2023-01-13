@@ -11,23 +11,28 @@ section.section {
     }
 }
 
-
 section.container_clients {
     display: flex;
     flex-direction: column;
+    gap: variable.$border-client;
+
+    border: variable.$border-client solid variable.$white;
 
     div.container_images {
+        display: flex;
+        flex-direction: column;
         width: 100%;
+        gap: variable.$border-client;
 
         div.imgs_box {
             display: flex;
+            gap: variable.$border-client;
     
             div {
                 position: relative;
                 height: 300px;
                 width: 100%;
-
-                border: 1.1px solid variable.$white;
+                gap: variable.$border-client;
 
                 img {
                     object-fit: cover;
