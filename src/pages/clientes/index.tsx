@@ -12,8 +12,9 @@ import {
   cdl,
   farMelhor,
   garanti,
+  maisBr,
   nexa,
-  sebrae
+  sebrae,
 } from "../../ui/images";
 
 export default function Clients() {
@@ -84,7 +85,8 @@ export default function Clients() {
               sebrae.src,
               farMelhor.src,
               cdl.src,
-              garanti.src
+              garanti.src,
+              maisBr.src
             ]}
           />
 

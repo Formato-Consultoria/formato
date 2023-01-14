@@ -41,6 +41,7 @@ export { default as nexa } from "../../../public/images/nexa-resource.jpg";
 export { default as farMelhor } from "../../../public/images/far-melhor.png";
 export { default as garanti } from "../../../public/images/garanti-paranaiba.png";
 export { default as cdl } from "../../../public/images/cdl-tres-maria.png";
+export { default as maisBr } from "../../../public/images/mais-brasil.png";
 
 // svgs
 export { default as Play } from "../../../public/icons/Play.svg";
