@@ -8,7 +8,7 @@ import { List, X } from "phosphor-react";
 import ButttonGlobal from "../button";
 import { useCallback, useState, useEffect } from "react";
 import { blinker } from "../../utils/_fonts";
-import { DarkIcon, DarkLogotipo } from "../../ui/images";
+import { DarkIcon, DarkLogotipo } from "../images";
 
 import cx from "clsx";
 

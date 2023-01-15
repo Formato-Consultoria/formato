@@ -1,8 +1,8 @@
 import Head from "next/head";
 import styles from "./layout.module.scss";
 
-import Footer from "../footer";
-import Navbar from "../navbar";
+import Footer from "../../components/footer";
+import Navbar from "../../components/navbar";
 
 import cx from "clsx";
 import { useRouter } from "next/router"

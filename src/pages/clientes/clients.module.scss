@@ -17,14 +17,15 @@ section.container_clients {
     gap: variable.$border-client;
 
     border: variable.$border-client solid variable.$white;
+    width: 100%;
 
-    div.container_images {
+    div.container_images_gallery {
         display: flex;
         flex-direction: column;
         width: 100%;
         gap: variable.$border-client;
 
-        div.imgs_box {
+        div.images_gallery {
             display: flex;
             gap: variable.$border-client;
     
@@ -40,7 +41,7 @@ section.container_clients {
             }
         }
 
-        div.imgs_box:nth-child(2) {
+        div.images_gallery:nth-child(2) {
             flex-basis: auto;
             div:nth-child(1) {
                 flex: .5;

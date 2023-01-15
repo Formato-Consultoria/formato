@@ -15,7 +15,7 @@ import {
   maisBr,
   nexa,
   sebrae,
-} from "../../ui/images";
+} from "../../components/images";
 
 export default function Clients() {
     return (
@@ -34,8 +34,8 @@ export default function Clients() {
             outra pessoa.
           </QuoteSection>
           
-          <div className={style.container_images}>
-            <div className={style.imgs_box}>
+          <div className={style.container_images_gallery}>
+            <div className={style.images_gallery}>
                 <div>
                   <Image
                     src={"/teste/B4.jpeg"}
@@ -52,7 +52,7 @@ export default function Clients() {
               </div>
             </div>
 
-            <div className={style.imgs_box}>
+            <div className={style.images_gallery}>
                 <div>
                   <Image
                     src={"/teste/B5.jpeg"}

@@ -5,7 +5,7 @@ import cx from 'clsx';
 import Link from 'next/link';
 
 import { InstagramLogo, LinkedinLogo } from 'phosphor-react';
-import { LightLogotipo } from '../../ui/images';
+import { LightLogotipo } from '../images';
 
 export default function Footer() {
     return (

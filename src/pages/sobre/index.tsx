@@ -10,7 +10,7 @@ import ReactPlayerMedia from "../../ui/react-player";
 
 import ReactPlayer from "react-player";
 
-import { Play, Pause} from "../../ui/images";
+import { Play, Pause} from "../../components/images";
 import {
   Collaboration,
   Commitment,
@@ -23,7 +23,7 @@ import {
   Respect,
   Strategy,
   Willpower
-} from "../../ui/images";
+} from "../../components/images";
 
 // TODO: Fix: Fazer o play reiniciar quando chegar ao final da reprodução,
 

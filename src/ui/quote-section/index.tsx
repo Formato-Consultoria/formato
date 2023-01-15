@@ -1,6 +1,6 @@
 import style from "./quote-section.module.scss";
 
-import { QuoteEnd, QuoteStart } from "../images";
+import { QuoteEnd, QuoteStart } from "../../components/images";
 import Image from "next/image";
 
 type PropsQuoteSection = {
