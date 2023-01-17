@@ -1,0 +1,57 @@
+@use '../../../../styles/variable';
+
+section.service_page {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding-top: 50px;
+    background-color: variable.$white-mediumn;
+
+    div.title_service {
+        display: flex;
+        align-items: center;
+
+        gap: 20px;
+        margin-left: 50px;
+
+        div.iconImg {
+            width: auto;
+            height: auto;
+
+            background-color: variable.$white;
+            border-radius: 999px;
+            padding: 10px;
+
+            img {
+                object-fit: cover;
+
+                width: 100%;
+                height: 100%;
+
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -o-user-select: none;
+                user-select: none;
+            }
+        }
+
+        h3 {
+            font-size: 2rem;
+            color: variable.$black-80;
+        }
+    }
+
+    div.content {
+        width: 85%;
+        padding: 20px 0;
+        margin: 0 auto;
+
+        p {
+            line-height: 2rem;
+            font-size: 1.1rem;
+            color: variable.$black;
+        }
+    }
+}

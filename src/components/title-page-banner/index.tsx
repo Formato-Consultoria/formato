@@ -2,9 +2,10 @@ import style from './banner-title-page.module.scss';
 
 import cx from 'clsx';
 import { inter } from '../../utils/_fonts';
+import { ReactNode } from 'react';
 
 type PropsBnrTlt = {
-    value: string,
+    value: string | ReactNode,
     src?: string
 }
 
@@ -20,7 +21,7 @@ export default function BannerTitle({ value, src }: PropsBnrTlt) {
             }}
         >
             <span className={style.bg_shadow}></span>
-            <h2>{value}</h2>
+            <div>{value}</div>
         </section>
     )
 }

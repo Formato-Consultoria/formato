@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import ButttonGlobal from "../../components/button";
-import cx from "clsx";
 
 type PropsServieSessionBox = {
     children: string,

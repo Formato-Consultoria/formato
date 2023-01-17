@@ -9,12 +9,17 @@ section.bannerTitle {
     align-items: center;
     justify-content: center;
 
-    h2 {
+    div {
         z-index: 1;
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         color: variable.$white;
         font-weight: 300;
+
+        a {
+            text-decoration: underline;
+        }
     }
+    
 
     .bg_shadow {
         position: absolute;

@@ -6,4 +6,4 @@ export default function handler(
     res: NextApiResponse<PropValuesForm[]>
 ) {
     res.status(200).json({ ...req.body })
-  }
+}

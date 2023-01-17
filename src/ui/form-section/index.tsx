@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import ButttonGlobal from "../../components/button";
 import { PropStateForm } from "../../@types/form";
-import { sendContactForm } from "../../lib/api";
+import { sendContactForm } from "../../lib/email";
 
 const initState: PropStateForm = {
     isLoading: false,
