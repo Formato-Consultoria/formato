@@ -28,7 +28,6 @@ const Service = () => {
                         style={{ display: "flex", alignItems: "center", opacity: ".8"}}
                     >
                         <Link href="/servicos" style={{ fontSize: "2.3px", color: "#FFF", textDecoration: "underline"}}>
-                            {/* <House size={35} /> */}
                             <Shield size={35} />
                         </Link><span style={{margin: "0 15px"}}>·</span>{srv?.title}
                     </div> ?? "serviço indisponivel"
