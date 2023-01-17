@@ -5,7 +5,7 @@ section.service_page {
     flex-direction: column;
 
     width: 100%;
-    padding-top: 50px;
+    padding: 50px 20px 0;
     background-color: variable.$white-mediumn;
 
     div.title_service {
@@ -44,7 +44,7 @@ section.service_page {
     }
 
     div.content {
-        width: 82%;
+        width: 85%;
         padding: 20px 0;
         margin: 0 auto;
 
