@@ -1,0 +1,41 @@
+@use '../../../styles/variable';
+
+div.img_gallery {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: variable.$border-client;
+
+    .image {
+        height: 480px;
+        width: calc(33% - (variable.$border-client));
+        position: relative;
+
+        border-radius: 5px;
+
+        img {
+            object-fit: cover;
+
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    div.img_gallery {
+        .image {
+            width: calc(50% - (variable.$border-client));
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    div.img_gallery {
+        .image {
+            width: calc(100% - (variable.$border-client));
+        }
+    }
+}

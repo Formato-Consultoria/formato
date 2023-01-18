@@ -69,7 +69,9 @@ export default function Navbar() {
                         <li>
                             <Link href="/sobre">Sobre Nós</Link>
                         </li>
-
+                        <li>
+                            <Link href="/galeria">Galeria</Link>
+                        </li>
                         <li>
                             <Link href="/#contato">Contatos</Link>
                         </li>

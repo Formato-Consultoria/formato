@@ -30,6 +30,9 @@ export default function Footer() {
                             <li>
                                 <Link href="/sobre">Sobre Nós</Link>
                             </li>
+                            <li>
+                                <Link href="/galeria">Galeria</Link>
+                            </li>
                         </ul>
                     </nav>
 
@@ -89,7 +92,7 @@ export default function Footer() {
                                             <Link href="/servicos/qualidade-e-produtividade">Qualidade e Produtividade</Link>
                                         </li>
                                         <li>
-                                            <Link href="/servicos/transformacao-digital">Transformação Digital</Link>
+                                            <Link href="/servicos/transformação-digital">Transformação Digital</Link>
                                         </li>
                                     </ul>
                                 </nav>

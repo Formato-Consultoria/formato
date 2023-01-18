@@ -23,6 +23,10 @@ const nextConfig = {
     });
     return config;
   },
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    domains: ['res.cloudinary.com'],
+  },
   reactStrictMode: true,
   swcMinify: true,
   experimental: {
