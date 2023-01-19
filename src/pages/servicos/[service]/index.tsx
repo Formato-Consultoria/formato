@@ -32,7 +32,7 @@ const Service = () => {
                         </Link><span style={{margin: "0 15px"}}>·</span>{srv?.title}
                     </div> ?? "serviço indisponivel"
                 }
-                src={srv?.bannerImg}
+                src={srv?.bannerImg ?? ""}
             />
 
             <section className={cx(style.service_page, style.section)}>

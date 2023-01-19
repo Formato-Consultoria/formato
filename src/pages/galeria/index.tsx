@@ -23,11 +23,11 @@ const Gallery = ({ images }: { images: ImageProps[] }) => {
                     className={style.image}
                 >
                     <Image
+                        style={{ transform: 'translate3d(0, 0, 0)' }}
                         src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${public_id}.${format}`}
                         blurDataURL={blurDataUrl}
                         placeholder="blur"
                         alt="Next.js Conf photo"
-                        style={{ transform: 'translate3d(0, 0, 0)' }}
                         fill
                         loading={id < 4 ? "eager" : "lazy"}
                     />
