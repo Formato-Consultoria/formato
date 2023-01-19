@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { GetStaticProps, NextPage } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 
 import cloudinary from "../../utils/cloudinary";
 import { ImageProps } from "../../utils/types";
@@ -75,5 +75,6 @@ export const getStaticProps: GetStaticProps = async () => {
         props: {
             images: reducedResults,
         },
+        revalidate: 10,
     }
 }
