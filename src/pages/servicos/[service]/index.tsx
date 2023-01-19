@@ -1,15 +1,15 @@
 import style from "./service-page.module.scss";
 
-import { contentService } from "../../../@types/services";
-import BannerTitle from "../../../components/title-page-banner";
-import { services } from '../../../content/all-services';
-
 import cx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { House, Shield } from "phosphor-react";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
+
+import { contentService } from "../../../@types/services";
+import BannerTitle from "../../../components/title-page-banner";
+import { services } from '../../../content/all-services';
 
 const Service = () => {
     const [dontIcon, setdontIcon] = useState(false);
@@ -18,7 +18,7 @@ const Service = () => {
     const { service } = router.query;
 
     const srv: contentService | undefined = services.find((srv) => srv.slug === service);
-
+    
     return (
         <>
             <BannerTitle

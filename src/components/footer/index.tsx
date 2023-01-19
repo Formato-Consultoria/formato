@@ -86,7 +86,7 @@ export default function Footer() {
                                 <nav>
                                     <ul className={style.navigation_options}>
                                         <li>
-                                            <Link href="/servicos/inovacao-e-modelo-de-negocios">Inovação e Modelo de Negócio</Link>
+                                            <Link href="/servicos/inovação-e-modelo-de-negocios">Inovação e Modelo de Negócio</Link>
                                         </li>
                                         <li>
                                             <Link href="/servicos/qualidade-e-produtividade">Qualidade e Produtividade</Link>
