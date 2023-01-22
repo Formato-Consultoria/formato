@@ -1,16 +1,16 @@
-import style from "./about.module.scss";
-import BannerTitle from "../../components/title-page-banner";
+import { useRef, useState } from "react";
 
 import cx from "clsx";
-import { useRef, useState } from "react";
-import Image from "next/image";
 
+import Image from "next/image";
 import PillarBoxCard from "../../ui/pillar-box-card";
 import ReactPlayerMedia from "../../ui/react-player";
-
+import BannerTitle from "../../components/title-page-banner";
 import ReactPlayer from "react-player";
 
-import { Play, Pause} from "../../components/images";
+import style from "./about.module.scss";
+
+import { Play, Pause } from "phosphor-react";
 import {
   Collaboration,
   Commitment,
@@ -25,25 +25,22 @@ import {
   Willpower
 } from "../../components/images";
 
-// TODO: Fix: Fazer o play reiniciar quando chegar ao final da reprodução,
+
+// TODO: não funciona a animação e toggle do btn de Play para o btn Pouse
 
 export default function About() {
   const [isPlay, setIsPlay] = useState(false);
-  const [isNotPlayShadow, setIsNotPlayShadow] = useState(false);
+  const [isStart, setIsStart] = useState(false);
+
+  const videos = [
+    "https://youtu.be/IAnzAWt5tCI",
+    "https://youtu.be/Cm9QLc1azl4"
+  ]
 
   const playerRef = useRef<ReactPlayer>();
 
-  function changeStartPlayState() {
-    playerRef?.current?.seekTo(0, "seconds");
-
-    setIsNotPlayShadow(true);
-  }
-
-  function changeEndPlayState() {
-    playerRef?.current?.seekTo(0, "seconds");
-
-    setIsPlay(false);
-    setIsNotPlayShadow(false);
+  function changeStopPlayState() {
+    playerRef?.current?.showPreview()
   }
 
   return (
@@ -89,28 +86,36 @@ export default function About() {
       </section>
 
       <section className={cx(style.mediaContent, style.section)}>
-        <span
-          className={cx(style.bg_shadow)}
-          style={isNotPlayShadow ? { display: "none" } : { display: "flex" }}
-        >
-          <button
-            onClick={() => setIsPlay(true)}
-            className={cx(isPlay && style.play_ping_animation)}
-            onAnimationEnd={changeStartPlayState}
-          >
-            {isPlay ? <Pause /> : <Play />}
-          </button>
-        </span>
-
         <div
           className={cx(style.media_video)}
         >
           <ReactPlayerMedia
             playerref={playerRef}
-            url={"https://youtu.be/IAnzAWt5tCI"}
-            loop={!isPlay}
-            muted={!isPlay}
-            // onEnded={changeEndPlayState}
+            url={videos}
+            light={"videos/Formato_2.png"}
+            muted={false}
+            // playing={isStart} // animação não funciona #2
+            playIcon={
+              <button
+                onClick={() => setIsPlay(true)}
+                className={cx(isPlay && style.play_ping_animation)}
+                onAnimationEnd={() => setIsStart(true)}
+              >
+                {isPlay ?
+                  <Pause
+                    size={100}
+                    color="rgb(8, 12, 16, 0.5)"
+                    weight="fill"
+                  />
+                  :
+                  <Play
+                    size={100}
+                    color="rgb(8, 12, 16, 0.5)"
+                    weight="fill"
+                  />}
+              </button>
+            }
+            onEnded={changeStopPlayState} // não funciona #3
           />
         </div>
       </section>

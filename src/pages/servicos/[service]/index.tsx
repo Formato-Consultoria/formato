@@ -5,9 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { House, Shield } from "phosphor-react";
-import { ReactNode, useState } from "react";
+import {  useState } from "react";
 
-import { contentService } from "../../../@types/services";
+import type { contentService } from "../../../@types/services";
 import BannerTitle from "../../../components/title-page-banner";
 import { services } from '../../../content/all-services';
 
@@ -25,9 +25,12 @@ const Service = () => {
                 value={
                     <div
                         className={style.title_custom}
-                        style={{ display: "flex", alignItems: "center", opacity: ".8"}}
+                        style={{ display: "flex", alignItems: "center", opacity: ".8" }}
                     >
-                        <Link href="/servicos" style={{ fontSize: "2.3px", color: "#FFF", textDecoration: "underline"}}>
+                        <Link
+                            href="/servicos"
+                            style={{ fontSize: "2.3px", color: "#FFF", textDecoration: "underline" }}
+                        >
                             <Shield size={35} />
                         </Link><span style={{margin: "0 15px"}}>·</span>{srv?.title}
                     </div> ?? "serviço indisponivel"

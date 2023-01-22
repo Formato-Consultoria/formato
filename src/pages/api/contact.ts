@@ -1,5 +1,5 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
-import { PropValuesForm } from '../../@types/form'
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { PropValuesForm } from '../../@types/form';
 
 export default function handler(
     req: NextApiRequest,

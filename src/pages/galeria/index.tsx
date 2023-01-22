@@ -4,7 +4,7 @@ import Image from "next/image";
 import { GetServerSideProps, GetStaticProps } from "next";
 
 import cloudinary from "../../utils/cloudinary";
-import { ImageProps } from "../../utils/types";
+import type { ImageProps } from "../../@types/image-gallery";
 
 import style from "./gallery.module.scss";
 import getBase64ImageUrl from "../../utils/generateBlurPlaceholder";
@@ -18,7 +18,6 @@ const Gallery = ({ images }: { images: ImageProps[] }) => {
                     // href={`/?photoId=${id}`}
                     href={"#"}
                     // as={`/p/${id}`}
-                    // ref={id === Number(lastViewedPhoto) ? lastViewedPhotoRef : null}
                     shallow
                     className={style.image}
                 >
@@ -41,10 +40,10 @@ export default Gallery;
 
 export const getStaticProps: GetStaticProps = async () => {
     const results = await cloudinary.v2.search
-    .expression(`folder:${process.env.CLOUDINARY_FOLDER}/*`)
-    .sort_by('public_id', 'desc')
-    .max_results(200)
-    .execute();
+        .expression(`folder:${process.env.CLOUDINARY_FOLDER}`)
+        .sort_by('public_id', 'desc')
+        .max_results(200)
+        .execute();
 
     let reducedResults: ImageProps[] = []
     let i = 0

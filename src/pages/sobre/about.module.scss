@@ -78,17 +78,6 @@ section.mediaContent {
         
         background-image: variable.$media-radial-shadow;
         z-index: 1;
-
-        button.play_ping_animation {
-            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) 1;
-        }
-
-        @keyframes ping {
-            75%, 100% {
-              transform: scale(2);
-              opacity: 0;
-            }
-        }
     }
 
     .media_video {
@@ -96,13 +85,24 @@ section.mediaContent {
         height: 100%;
         max-height: 800px;
 
-        border-radius: 18px;
-        background-color: variable.$white;
+        border-radius: 10px;
+        background-color: variable.$black;
         position: relative;
 
         video {
-            border-radius: 18px;
+            border-radius: 10px;
         }
+    }
+}
+
+button.play_ping_animation {
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) 1;
+}
+
+@keyframes ping {
+    75%, 100% {
+      transform: scale(2);
+      opacity: 0;
     }
 }
 
