@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import ButttonGlobal from "../../components/button";
 import { PropStateForm } from "../../@types/form";
-import { sendContactForm } from "../../lib/email";
+import { sendContactForm } from "../../service/email";
 
 const initState: PropStateForm = {
     isLoading: false,
@@ -14,12 +14,13 @@ const initState: PropStateForm = {
         address: "",
         phone: "",
         message: "",
-        // terms: false
+        subject: "",
     }
 }
 
 export default function Form() {
     const [state, setState] = useState<PropStateForm>(initState);
+    const [terms, setTerms] = useState(false);
 
     const { values, isLoading, error } = state;
 
@@ -29,7 +30,6 @@ export default function Form() {
             values: {
                 ...prev.values,
                 [target.name]: target.value,
-                // terms: ,
             },
         }));
     }
@@ -41,8 +41,9 @@ export default function Form() {
         }));
 
         try {
-            await sendContactForm(values);
+            await sendContactForm({...values, subject: `Messagem do(a) ${values.name}`});
             setState(initState);
+            setTerms(false);
         } catch(error: any) {
             setState((prev) => ({
                 ...prev,
@@ -96,18 +97,19 @@ export default function Form() {
 
             <textarea
                 onChange={handleChange}
+                value={values.message}
                 name="message"
                 id="messageText"
             ></textarea>
 
-            <label htmlFor="Terms">
+            <label htmlFor="terms">
                 <input
                     type="checkbox"
                     name="terms"
                     id="terms"
                     required
-                    onChange={handleChange}
-                    // checked={values.terms}
+                    // onChange={handleChange}
+                    defaultChecked={terms}
                 />
                 Eu aceito os <a href="#"><strong>termos de serviço</strong></a>
             </label>

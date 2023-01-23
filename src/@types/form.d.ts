@@ -4,7 +4,7 @@ export interface PropValuesForm {
     address: string,
     phone: string,
     message: string,
-    // terms: boolean,
+    subject: string,
 };
 
 export interface PropStateForm {

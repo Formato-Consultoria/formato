@@ -160,7 +160,7 @@ export const services: contentService[] = [
         typeService: 'MT',
     },
     {
-        slug: "transformação-digital",
+        slug: "transformacao-digital",
         icon: DigitalTransformation.src,
         title: "Transformação Digital",
         bannerImg: "/teste/business-modeling.jpg",

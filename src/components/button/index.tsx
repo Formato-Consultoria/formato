@@ -28,6 +28,7 @@ export default function ButttonGlobal({
 }: BtnProps) {
     return (
         <button
+            type="button"
             disabled={disabled}
             onClick={onClick}
             className={cx(style.primary_btn,

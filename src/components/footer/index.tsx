@@ -6,8 +6,29 @@ import Link from 'next/link';
 
 import { InstagramLogo, LinkedinLogo } from 'phosphor-react';
 import { LightLogotipo } from '../images';
+import { contentService, typeService } from '../../@types/services';
+import { ReactElement } from 'react';
+import { services } from '../../content/all-services';
 
 export default function Footer() {
+
+    const listServiceByType = (
+        type: typeService
+    ): ReactElement<contentService>[] => {
+    
+        const arrServices = Object.values(services).filter(service => service.typeService === type);
+    
+        return (
+          arrServices.map((s: contentService) => (
+            <li
+                key={s.slug}
+            >
+                <Link href={`/servicos/${s.slug}`}>{s.title}</Link>
+            </li>
+          ))
+        )
+    }
+
     return (
         <footer className={cx(style.footer, inter.className)}>
             <div className={style.navigation_container}>
@@ -42,21 +63,7 @@ export default function Footer() {
                                 <h5>Serviços de Consultorias</h5>
                                 <nav>
                                     <ul className={style.navigation_options}>
-                                        <li>
-                                            <Link href="/servicos/financas">Finanças</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/servicos/marketing">Marketing</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/servicos/marketing-digital">Marketing Digital</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/servicos/modelagem-de-negocios">Modelagem de Negócios</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/servicos/producao-enxuta">Produção enxuta</Link>
-                                        </li>
+                                        {listServiceByType("CEL")}
                                     </ul>
                                 </nav>
                             </div>
@@ -65,18 +72,7 @@ export default function Footer() {
                                 <h5>Workshops</h5>
                                 <nav>
                                     <ul className={style.navigation_options}>
-                                        <li>
-                                            <Link href="/servicos/planejamento-estrategico">Planejamento Estratégico</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/servicos/gestao-por-okrs">Gestão por OKRs</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/servicos/produtividade-e-gestao-de-tarefas">Produtividade e Gestão de Tarefas</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/servicos/indicadores-e-metricas">Indicadores e Métricas</Link>
-                                        </li>
+                                        {listServiceByType("WORKSHOPS")}
                                     </ul>
                                 </nav>
                             </div>
@@ -85,15 +81,7 @@ export default function Footer() {
                                 <h5>Mentoria Técnica</h5>
                                 <nav>
                                     <ul className={style.navigation_options}>
-                                        <li>
-                                            <Link href="/servicos/inovação-e-modelo-de-negocios">Inovação e Modelo de Negócio</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/servicos/qualidade-e-produtividade">Qualidade e Produtividade</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/servicos/transformação-digital">Transformação Digital</Link>
-                                        </li>
+                                        {listServiceByType("MT")}
                                     </ul>
                                 </nav>
                             </div>
