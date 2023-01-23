@@ -2,15 +2,12 @@ import { ReactElement, ReactNode, useEffect, useState } from 'react';
 import Image from 'next/image';
 
 import style from './infinite-scroll-carousel.module.scss';
-
-type PathImages = {
-    images: string[]
-}
+import { PathImages } from '../../@types/path-image';
 
 export default function InfiniteScrollCarousel({ images }: PathImages) {
     const [imgList, setImgList] = useState<ReactElement<HTMLDivElement>[]>()
 
-    function ContainerImageBuilder() {
+    useEffect(() => {
         setImgList(
             images.map((img, index) => (
                 <div>
@@ -23,10 +20,6 @@ export default function InfiniteScrollCarousel({ images }: PathImages) {
                 </div>
             ))
         )
-    }
-
-    useEffect(() => {
-        ContainerImageBuilder()
     }, [])
 
     return (

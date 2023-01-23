@@ -1,6 +1,6 @@
 @use "../../../styles/variable";
 
-div.services_session_box {
+div.services_section_box {
     display: flex;
     align-items: stretch;
 
@@ -104,7 +104,7 @@ div.services_session_box {
     }
 }
 
-div.services_session_box:nth-child(odd) {
+div.services_section_box:nth-child(odd) {
     div.banner_img {order: 3}
     div.boxcontent {order: 2}
     div.boxcolor {order: 1}

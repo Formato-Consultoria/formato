@@ -25,19 +25,23 @@ import {
   Willpower
 } from "../../components/images";
 
+import GallerySection from "../../ui/image-gallery-section";
+import { ImageProps } from "../../@types/image-gallery";
+import { GetStaticProps } from "next";
+import cloudinary from "../../utils/cloudinary";
+import getBase64ImageUrl from "../../utils/generateBlurPlaceholder";
 
 // TODO: não funciona a animação e toggle do btn de Play para o btn Pouse
 
-export default function About() {
+const About = ({ images }: { images: ImageProps[] }) => {
   const [isPlay, setIsPlay] = useState(false);
   const [isStart, setIsStart] = useState(false);
 
+  const playerRef = useRef<ReactPlayer>();
   const videos = [
     "https://youtu.be/IAnzAWt5tCI",
     "https://youtu.be/Cm9QLc1azl4"
   ]
-
-  const playerRef = useRef<ReactPlayer>();
 
   function changeStopPlayState() {
     playerRef?.current?.showPreview()
@@ -135,6 +139,52 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      <GallerySection
+        images={images}
+      />
     </>
   )
+}
+
+export default About;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const results = await cloudinary.v2.search
+      .expression(`folder:${process.env.CLOUDINARY_FOLDER}`)
+      .sort_by('public_id', 'desc')
+      .max_results(5)
+      .execute();
+
+  let reducedResults: ImageProps[] = []
+  let i = 0
+
+  for (let result of results.resources) {
+      reducedResults.push({
+          id: i,
+          height: result.height,
+          width: result.width,
+          public_id: result.public_id,
+          format: result.format,
+      })
+
+      i++;
+  }
+
+  const blurImagePromises = results.resources.map((image: ImageProps) => {
+      return getBase64ImageUrl(image);
+  })
+
+  const imagesWithBlurDataUrls = await Promise.all(blurImagePromises);
+
+  for (let i = 0; i < reducedResults.length; i++) {
+      reducedResults[i].blurDataUrl = imagesWithBlurDataUrls[i]
+  }
+  
+  return {
+      props: {
+          images: reducedResults,
+      },
+      revalidate: 10,
+  }
 }

@@ -1,4 +1,4 @@
-import style from "./services-session-box.module.scss";
+import style from "./services-section-box.module.scss";
 
 import { ArrowRight } from "phosphor-react";
 import Image from "next/image";
@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import ButttonGlobal from "../../components/button";
 
-type PropsServieSessionBox = {
+type PropsServieSectionBox = {
     children: string,
     url: string,
     icon: string,
@@ -14,16 +14,16 @@ type PropsServieSessionBox = {
     bannerImg: string
 }
 
-export default function ServicesSessionBox({
+export default function ServicesSectionBox({
     children,
     url,
     icon,
     title,
     bannerImg
-}: PropsServieSessionBox) {
+}: PropsServieSectionBox) {
     
     return (
-        <div className={style.services_session_box}>
+        <div className={style.services_section_box}>
             <div className={style.banner_img}>
                 <Image
                     src={bannerImg}
