@@ -34,7 +34,6 @@ section.strategy {
 
     div.strategys_and_image {
         width: 100%;
-        height: auto;
 
         display: flex;
         flex-direction: column;
@@ -56,8 +55,7 @@ section.strategy {
             padding: 25px 50px;
 
             div {
-                max-width: 40%;
-                height: max-content;
+                width: 40%;
                 text-align: justify;
                 display: flex;
                 flex-direction: column;
@@ -74,22 +72,6 @@ section.strategy {
                     font-size: 1.1rem;
                 }
             }
-
-            // div.mindset {
-            //     align-self: center;
-            // }
-    
-            // div.estrategia {
-            //     align-self: flex-start;
-            // }
-
-            // div.metricas {
-            //     align-self: flex-end;
-            // }
-    
-            // div.evolucao {
-            //     align-self: center;
-            // }
         }
     }
 }
@@ -100,7 +82,7 @@ section.strategy {
             div.first_block,
             div.secound_block {
                 div {
-                    max-width: 25%;
+                    width: 25%;
                 }
             }
         }
@@ -113,13 +95,14 @@ section.strategy {
 
         div.title_and_description {
             h2 {
+                font-size: 1.8rem;
                 font-weight: 500;
             }
 
             p {
-                max-width: 85%;
+                width: 85%;
 
-                font-size: 1.1rem;
+                font-size: 1rem;
                 font-weight: 400;
 
                 padding: 0 10px;
@@ -128,13 +111,11 @@ section.strategy {
 
         div.strategys_and_image {
             background: none;
-            height: auto;
 
             div.first_block,
             div.secound_block {
                 min-height: 0;
                 height: auto;
-                align-items: stretch;
                 
                 padding: 10px 20px;
                 gap: 25px;
@@ -151,7 +132,7 @@ section.strategy {
                     h3 {
                         color: variable.$black-dark;
                         font-weight: 300;
-                        font-size: 1.8rem;
+                        font-size: 1.5rem;
                     }
                     p {
                         color: variable.$black-dark-97;

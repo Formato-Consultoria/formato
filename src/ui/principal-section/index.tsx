@@ -17,10 +17,8 @@ export default function PrincipalSection() {
                 </h1>
 
                 <p>
-                    {/* &quot; */}
-                        Ajudamos cada pessoa a se conectar de forma genuína com seus negócios.
-                        Abraçamos desafios e focamos em caminhos mais simples e estratégicos
-                    {/* &quot; */}
+                    Ajudamos cada pessoa a se conectar de forma genuína com seus negócios.
+                    Abraçamos desafios e focamos em caminhos mais simples e estratégicos
                 </p>
 
                 <Link href={"/sobre"}>

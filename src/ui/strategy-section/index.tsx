@@ -8,7 +8,7 @@ export default function StrategySection() {
       <section className={cx(styles.strategy, blinker.className)}>
         <div className={styles.title_and_description}>
           <h2>ESTRATEGIA</h2>
-          <p>O que vimos ontem, pode não ser suficiente para encarar o nos espera hoje. Estamos sempre abertos a novas perspectivas. Nos desafiamos a ser mais simples e efetivos. Focamos no essencial e abraçamos problemas complexos através de abordagens estratégicas e inovadoras. Não esperamos que bons negócios aconteçam por acaso, em vez disso, planejamos, definimos condições para evolução e aprendemos ao longo do caminho.</p>
+          <p>O que vimos ontem, pode não ser suficiente para encarar o que nos espera hoje. Estamos sempre abertos a novas perspectivas. Nos desafiamos a ser mais simples e efetivos. Focamos no essencial e abraçamos problemas complexos através de abordagens estratégicas e inovadoras. Não esperamos que bons negócios aconteçam por acaso, em vez disso, planejamos, definimos condições para evolução e aprendemos ao longo do caminho.</p>
         </div>
 
         <div className={styles.strategys_and_image}>

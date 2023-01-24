@@ -63,15 +63,17 @@ section.about {
         h2 {
             margin: 30px 20px 0;
             font-weight: 500;
+            font-size: 1.8rem;
         }
 
         div.content {
             flex-direction: column;
             padding: 30px 20px;
+            margin-bottom: 20px;
             gap: 20px;
 
             div.image {
-                height: 300px;
+                height: 250px;
                 width: 100%;
                 
                 img {
@@ -81,6 +83,10 @@ section.about {
 
             div {
                 max-width: 100%;
+                p {
+                    line-height: 2rem;
+                    font-size: 1rem;
+                }
             }
         }
     }
