@@ -3,9 +3,9 @@ import { useRef, useState } from "react";
 import cx from "clsx";
 
 import Image from "next/image";
-import PillarBoxCard from "../../ui/pillar-box-card";
-import ReactPlayerMedia from "../../ui/react-player";
-import BannerTitle from "../../components/title-page-banner";
+import PillarBoxCard from "@/ui/pillar-box-card";
+import ReactPlayerMedia from "@/ui/react-player";
+import BannerTitle from "@/components/title-page-banner";
 import ReactPlayer from "react-player";
 
 import style from "./about.module.scss";
@@ -23,10 +23,10 @@ import {
   Respect,
   Strategy,
   Willpower
-} from "../../components/images";
+} from "@/components/images";
 
-import GallerySection from "../../ui/image-gallery-section";
-import { ImageProps } from "../../@types/image-gallery";
+import GallerySection from "@/ui/image-gallery-section";
+import { ImageProps } from "@/@types/image-gallery";
 import { GetStaticProps } from "next";
 import cloudinary from "../../utils/cloudinary";
 import getBase64ImageUrl from "../../utils/generateBlurPlaceholder";

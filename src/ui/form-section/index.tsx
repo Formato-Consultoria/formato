@@ -1,8 +1,8 @@
 import { CircleNotch } from "phosphor-react";
 import { useState } from "react";
 
-import ButttonGlobal from "../../components/button";
-import { PropStateForm } from "../../@types/form";
+import ButttonGlobal from "@/components/button";
+import { PropStateForm } from "@/@types/form";
 import { sendContactForm } from "../../service/email";
 
 const initState: PropStateForm = {

@@ -2,7 +2,7 @@ import styles from "./principal-section.module.scss";
 import { inter } from "../../utils/_fonts";
 
 import cx from "clsx";
-import ButttonGlobal from "../../components/button";
+import ButttonGlobal from "@/components/button";
 
 import Link from "next/link";
 import Image from "next/image";

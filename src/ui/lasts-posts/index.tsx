@@ -3,7 +3,7 @@ import { inter, blinker } from "../../utils/_fonts";
 
 import cx from "clsx";
 
-import ButttonGlobal from "../../components/button";
+import ButttonGlobal from "@/components/button";
 import { ArrowRight } from "phosphor-react";
 
 export default function LastsPostsSection() {

@@ -13,8 +13,22 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "baseUrl": "src",
+    "paths": {
+      "@/ui/*": ["ui/*"],
+      "@/lib/*": ["lib/*"],
+      "@/public/*": ["public/*"],
+      "@/components/*": ["components/*"],
+      "@/@types/*": ["@types/*"],
+    },
     "incremental": true
   },
-  "include": ["@types/image-svg.d.ts", "@types/video-mp4.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "@types/image-svg.d.ts",
+    "@types/video-mp4.d.ts",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
   "exclude": ["node_modules"]
 }

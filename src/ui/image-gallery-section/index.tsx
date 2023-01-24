@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useState } from "react";
 import Image from "next/image";
-import { ImageProps } from "../../@types/image-gallery";
+import { ImageProps } from "@/@types/image-gallery";
 import cx from "clsx";
 
 import style from "./gallery-section.module.scss";

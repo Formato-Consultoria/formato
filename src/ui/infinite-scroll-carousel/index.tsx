@@ -2,7 +2,7 @@ import { ReactElement, ReactNode, useEffect, useState } from 'react';
 import Image from 'next/image';
 
 import style from './infinite-scroll-carousel.module.scss';
-import { PathImages } from '../../@types/path-image';
+import { PathImages } from '@/@types/path-image';
 
 export default function InfiniteScrollCarousel({ images }: PathImages) {
     const [imgList, setImgList] = useState<ReactElement<HTMLDivElement>[]>()

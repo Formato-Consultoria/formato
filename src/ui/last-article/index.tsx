@@ -3,7 +3,7 @@ import { inter } from '../../utils/_fonts';
 import cx from 'clsx';
 
 import { ArrowDown } from 'phosphor-react';
-import ButttonGlobal from '../../components/button';
+import ButttonGlobal from '@/components/button';
 
 export default function LastArticle() {
     return(

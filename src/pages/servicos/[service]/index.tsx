@@ -7,8 +7,8 @@ import { useRouter } from "next/router";
 import { House, Shield } from "phosphor-react";
 import {  useState } from "react";
 
-import type { contentService } from "../../../@types/services";
-import BannerTitle from "../../../components/title-page-banner";
+import type { contentService } from "@/@types/services";
+import BannerTitle from "@/components/title-page-banner";
 import { services } from '../../../content/all-services';
 
 const Service = () => {

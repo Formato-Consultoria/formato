@@ -2,7 +2,7 @@ import styles from './service-section.module.scss';
 import { inter } from '../../utils/_fonts';
 import { ArrowRight, Buildings } from 'phosphor-react';
 
-import ButttonGlobal from '../../components/button';
+import ButttonGlobal from '@/components/button';
 import Image from 'next/image';
 import cx from 'clsx';
 import Link from 'next/link';

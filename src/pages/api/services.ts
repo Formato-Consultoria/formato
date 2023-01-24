@@ -1,5 +1,5 @@
-import { NextApiRequest, NextApiResponse } from "next"
-import { contentService } from "../../@types/services";
+import { NextApiRequest, NextApiResponse } from "next";
+import { contentService } from "@/@types/services";
 
 import { services } from "../../content/all-services";
 

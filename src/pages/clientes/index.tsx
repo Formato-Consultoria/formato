@@ -1,12 +1,12 @@
 import style from "./clients.module.scss";
-import BannerTitle from "../../components/title-page-banner";
+import BannerTitle from "@/components/title-page-banner";
 
 import Image from "next/image";
 import cx from "clsx";
 
-import QuoteSection from "../../ui/quote-section";
-import TestimonialsBox from "../../ui/testimonials-box";
-import InfiniteScrollCarousel from "../../ui/infinite-scroll-carousel";
+import QuoteSection from "@/ui/quote-section";
+import TestimonialsBox from "@/ui/feedbacks-box";
+import InfiniteScrollCarousel from "@/ui/infinite-scroll-carousel";
 
 import {
   cdl,
@@ -15,7 +15,7 @@ import {
   maisBr,
   nexa,
   sebrae,
-} from "../../components/images";
+} from "@/components/images";
 
 export default function Clients() {
     return (

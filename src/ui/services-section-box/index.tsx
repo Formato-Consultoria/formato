@@ -4,7 +4,7 @@ import { ArrowRight } from "phosphor-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import ButttonGlobal from "../../components/button";
+import ButttonGlobal from "@/components/button";
 
 type PropsServieSectionBox = {
     children: string,

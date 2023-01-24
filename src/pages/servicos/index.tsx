@@ -2,10 +2,10 @@ import { ReactElement } from 'react';
 import cx from 'clsx';
 
 import style from './services.module.scss';
-import { contentService, typeService } from '../../@types/services';
+import { contentService, typeService } from '@/@types/services';
 
-import BannerTitle from '../../components/title-page-banner';
-import ServicesSessionBox from '../../ui/services-section-box';
+import BannerTitle from '@/components/title-page-banner';
+import ServicesSessionBox from '@/ui/services-section-box';
 
 import { services } from '../../content/all-services';
 
