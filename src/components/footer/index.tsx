@@ -37,7 +37,7 @@ export default function Footer() {
                 </div>
 
                 <div className={style.navigation_content}>
-                    <nav className={style.menus}>
+                    {/* <nav className={style.menus}>
                         <ul className={style.navigation_options}>
                             <li>
                                 <Link href="/">inicio</Link>
@@ -55,7 +55,7 @@ export default function Footer() {
                                 <Link href="/galeria">Galeria</Link>
                             </li>
                         </ul>
-                    </nav>
+                    </nav> */}
 
                     <div className={style.servicos}>
                         <div className={style.menu_services}>
@@ -100,7 +100,7 @@ export default function Footer() {
                         <LinkedinLogo size={36} weight="fill" />
                     </Link>
                 </div>
-                <p><span>Formato consultoria</span> &copy; 2022</p>
+                <p><span>Formato Consultoria</span> &copy; {new Date().getFullYear()}</p>
             </div>
         </footer>
     )

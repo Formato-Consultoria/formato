@@ -51,11 +51,11 @@ const About = ({ images }: { images: ImageProps[] }) => {
     <>
       <BannerTitle
         src="/images/quem_somos_hero.jpg"
-        value="Quem somos"
+        value="Quem somos?"
       />
 
       <section className={cx(style.about, style.section)}>
-        <h2>Um pouco sobre a nossa história</h2>
+        <h2>Um pouco da nossa história</h2>
 
         <div>
           <p>Desde 2017 atuamos no segmento de consultoria empresarial. Entendemos que a gestão pode ser feita de forma simples e também prazerosa.</p>
@@ -126,7 +126,7 @@ const About = ({ images }: { images: ImageProps[] }) => {
 
       <section className={cx(style.valueContainer, style.section)}>
         <div className={style.containerBox}>
-          <h2>Nossos Valores</h2>
+          <h2>VALORES</h2>
 
           <div>
             <PillarBoxCard src={Respect.src} value={"Respeito"} />

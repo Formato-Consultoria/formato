@@ -10,7 +10,7 @@ export default function ContactSection() {
             <div className={styles.sideinfo}>
                 <div className={styles.contacts}>
                     <h3>Ligue para Nós</h3>
-                    <p>+55 (32) 98406-4384</p>
+                    <p>+55 (38) 98406-4384</p>
                 </div>
                 
                 <div className={styles.address}>

@@ -174,8 +174,9 @@ section.contact {
         div.sideform {
             form {
                 grid-template-areas:
-                    "name phone"
+                    "name name"
                     "address address"
+                    "phone phone"
                     "email email"
                     "textmessage textmessage"
                     "terms terms"
