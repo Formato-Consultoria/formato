@@ -29,3 +29,51 @@ section.serviceContainer {
         }
     }
 }
+
+@media (max-width: 1024px) {
+    section.serviceContainer {
+        h2 {
+            font-size: 1.7rem;
+        }
+
+        div.sectionServices {
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    section.serviceContainer {
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        div.sectionServices {
+            h3 {
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 596px) {
+    section.serviceContainer {
+        align-items: center;
+
+        h2 {
+            text-align: center;
+            margin: 50px 20px 0;
+        }
+
+        div.sectionServices {
+            align-items: center;
+
+            h3 {
+                text-align: center;
+                padding: 0 0 20px;
+            }
+        }
+    }
+}
