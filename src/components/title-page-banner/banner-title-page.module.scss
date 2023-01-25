@@ -39,3 +39,17 @@ section.bannerTitle {
         }
     }
 }
+
+@media (max-width: 1024px) {
+    section.bannerTitle {
+        height: 250px;
+
+        div.title {
+            font-size: 2rem;
+        }
+
+        div.image {
+            height: 250px;
+        }
+    }
+}

@@ -13,8 +13,7 @@ export default function QuoteSection({ children, img }: PropsQuoteSection) {
         <div className={style.quote_section}>
             <p>
                 <QuoteStart />
-                    {children}
-                <QuoteEnd />
+                {children}
             </p>
 
             <div className={style.image_box}>
