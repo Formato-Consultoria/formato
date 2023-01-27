@@ -28,11 +28,12 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-player": "^2.11.0",
+    "react-responsive": "^9.0.2",
     "typescript": "*"
   },
   "description": "Business consulting, leading strategies for companies to leverage their business.",
   "main": "index.js",
-  "author": "Diego C. Silva <diegocaetano444@outlook.com>",
+  "author": "For Formato Consultoria by Diego C. Silva <diegocaetano444@outlook.com>",
   "license": "MIT",
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",

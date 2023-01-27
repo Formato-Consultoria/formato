@@ -179,3 +179,39 @@ section.logotipoAndInspirationMessage {
         }
     }
 }
+
+@media (max-width: 1024px) {
+    section.about {
+        margin-top: 30px;
+        
+        h2 {
+            font-size: 1.8rem;
+        }
+
+        div {
+            width: 90%;
+            padding: 30px 0;
+
+            p {
+                line-height: 1.8rem;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    section.pillarsContainer {
+        gap: 18px;
+
+        div.pillarsContent {
+            gap: 40px;
+            height: 230px;
+        }
+    }
+
+    section.logotipoAndInspirationMessage {
+        padding: 20px 90px;
+        height: 350px;
+    
+        gap: 30px;
+    }
+}

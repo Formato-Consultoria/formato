@@ -78,6 +78,7 @@ div.carousel_container {
 
         div.carousel_scrolling {
             height: $height-lg;
+            width: calc(1024px * 2);
 
             div {
                 height: $height-lg;
@@ -95,6 +96,7 @@ div.carousel_container {
 
         div.carousel_scrolling {
             height: 90px;
+            width: calc(768px * 2);
 
             div {
                 height: 90px;

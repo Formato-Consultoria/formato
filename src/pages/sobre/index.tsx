@@ -40,7 +40,8 @@ const About = ({ images }: { images: ImageProps[] }) => {
   const playerRef = useRef<ReactPlayer>();
   const videos = [
     "https://youtu.be/IAnzAWt5tCI",
-    "https://youtu.be/Cm9QLc1azl4"
+    "https://youtu.be/Cm9QLc1azl4",
+    "videos/Formato_2.png"
   ]
 
   function changeStopPlayState() {

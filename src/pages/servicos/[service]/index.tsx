@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { House, Shield } from "phosphor-react";
 import {  useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 import type { contentService } from "@/@types/services";
 import BannerTitle from "@/components/title-page-banner";
@@ -13,6 +14,9 @@ import { services } from '../../../content/all-services';
 
 const Service = () => {
     const [dontIcon, setdontIcon] = useState(false);
+    const isMobile = useMediaQuery({
+        query: '(max-width: 768px)'
+    });
 
     const router = useRouter();
     const { service } = router.query;
@@ -31,8 +35,8 @@ const Service = () => {
                             href="/servicos"
                             style={{ fontSize: "2.3px", color: "#FFF", textDecoration: "underline" }}
                         >
-                            <Shield size={35} />
-                        </Link><span style={{margin: "0 15px"}}>·</span>{srv?.title}
+                            <House size={cx(isMobile ? 29 : 35)} />
+                        </Link><span style={{margin: "0 10px"}}>•</span>{srv?.title}
                     </div> ?? "serviço indisponivel"
                 }
                 src={srv?.bannerImg ?? ""}
@@ -44,10 +48,10 @@ const Service = () => {
                         {!dontIcon ?
                             <Image
                                 src={srv?.icon ?? ("" && setdontIcon(true))}
-                                width={46}
-                                height={46}
-                                alt={`service - ${srv?.title}`} 
-                            /> : <Shield size={46} />
+                                width={43}
+                                height={43}
+                                alt={`service - ${srv?.title}`}
+                            /> : <Shield size={43} />
                         }
                     </div>
 

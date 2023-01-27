@@ -24,7 +24,7 @@ section.strategy {
         }
 
         p {
-            max-width: 70%;
+            width: 70%;
             text-align: center;
             font-size: 1.10rem;
             color: variable.$black-50;
@@ -158,7 +158,7 @@ section.strategy {
     section.strategy {
         div.title_and_description {
             p {
-                max-width: 80%;
+                width: 80%;
             }
         }
 
@@ -177,7 +177,7 @@ section.strategy {
     section.strategy {
         div.title_and_description {
             p {
-                max-width: 100%;
+                width: 100%;
             }
         }
 
@@ -187,6 +187,7 @@ section.strategy {
                 height: auto;
                 gap: 20px;
                 flex-direction: column;
+                padding: 10px 8px;
 
                 div {
                     max-width: 100%;
