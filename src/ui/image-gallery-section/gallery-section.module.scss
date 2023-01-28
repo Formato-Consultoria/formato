@@ -43,3 +43,36 @@ section.gallery_section {
         }
     }
 }
+
+@media (max-width: 1024px) {
+    section.gallery_section {
+        div.content {
+            gap: 30px;
+
+            div {
+                width: 200px;
+                height: 230px;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    section.gallery_section {
+        div.content {
+            gap: 10px;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    section.gallery_section {
+        div.content {
+            div {
+                width: 180px;
+                height: 210px;
+            }
+        }
+    }
+}

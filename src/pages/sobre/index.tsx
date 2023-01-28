@@ -10,6 +10,7 @@ import ReactPlayer from "react-player";
 
 import style from "./about.module.scss";
 
+import { useMediaQuery } from "react-responsive";
 import { Play, Pause } from "phosphor-react";
 import {
   Collaboration,
@@ -36,12 +37,14 @@ import getBase64ImageUrl from "../../utils/generateBlurPlaceholder";
 const About = ({ images }: { images: ImageProps[] }) => {
   const [isPlay, setIsPlay] = useState(false);
   const [isStart, setIsStart] = useState(false);
+  const isMobile = useMediaQuery({
+    query: '(max-width: 768px)'
+  });
 
   const playerRef = useRef<ReactPlayer>();
   const videos = [
     "https://youtu.be/IAnzAWt5tCI",
-    "https://youtu.be/Cm9QLc1azl4",
-    "videos/Formato_2.png"
+    "https://youtu.be/Cm9QLc1azl4"
   ]
 
   function changeStopPlayState() {
@@ -91,9 +94,7 @@ const About = ({ images }: { images: ImageProps[] }) => {
       </section>
 
       <section className={cx(style.mediaContent, style.section)}>
-        <div
-          className={cx(style.media_video)}
-        >
+        <div className={cx(style.media_video)}>
           <ReactPlayerMedia
             playerref={playerRef}
             url={videos}
@@ -108,13 +109,13 @@ const About = ({ images }: { images: ImageProps[] }) => {
               >
                 {isPlay ?
                   <Pause
-                    size={100}
+                    size={cx(isMobile ? 60 : 100)}
                     color="rgb(8, 12, 16, 0.5)"
                     weight="fill"
                   />
                   :
                   <Play
-                    size={100}
+                    size={cx(isMobile ? 60 : 100)}
                     color="rgb(8, 12, 16, 0.5)"
                     weight="fill"
                   />}

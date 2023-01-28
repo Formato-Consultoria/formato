@@ -27,3 +27,36 @@ div.cardBox {
         color: variable.$black-dark;
     }
 }
+
+@media (max-width: 1024px) {
+    div.cardBox {
+        div.image {
+            width: 70px;
+            height: 70px;
+        }
+    
+        p {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    div.cardBox {
+        div.image {
+            width: 50px;
+            height: 50px;
+        }
+    
+        p {
+            font-size: 1rem;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    div.cardBox {
+        width: 100%;
+    }
+}
