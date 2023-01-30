@@ -5,6 +5,7 @@ import Link from "next/link";
 import cx from "clsx";
 import { inter } from "utils/_fonts";
 import style from "./modal.module.scss";
+import { useMediaQuery } from "react-responsive";
 
 interface ModalProps {
     isOpen: boolean,
@@ -13,6 +14,10 @@ interface ModalProps {
 }
 
 export default function Modal({ isOpen, onOpen, onClose }: ModalProps) {
+    // const isMobile = useMediaQuery({
+    //     query: ''
+    // });
+
     return (
         <Dialog
             open={isOpen}
@@ -55,7 +60,6 @@ export default function Modal({ isOpen, onOpen, onClose }: ModalProps) {
                 >
                     <ButttonGlobal value="Contratar" className={style.contratar_btn} />
                 </Link>
-
             </Dialog.Panel>
         </Dialog>
     )

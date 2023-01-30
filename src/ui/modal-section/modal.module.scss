@@ -1,7 +1,5 @@
 @use '../../../styles/variable';
 
-$border-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-
 .dialog {
     position: absolute;
     z-index: 50;
@@ -32,7 +30,6 @@ ul.container_list_pages {
     margin: 0 auto;
     padding: 0 20px;
     background-color: #FFF;
-    // box-shadow: $border-shadow;
     border-top: 1px solid rgba(0, 0, 0, .1);
 
     li {
@@ -69,6 +66,8 @@ ul.container_list_pages {
 }
 
 a.anchor_contratar {
+    display: none;
+
     text-decoration: none;
     margin: 20px;
     
@@ -77,8 +76,15 @@ a.anchor_contratar {
         
         height: 40px;
         text-align: center;
+        padding: 0 auto;
 
         font-size: 1.05rem;
         border: 1px solid rgba(0, 0, 0, .1);
+    }
+}
+
+@media (max-width: 896px) {
+    a.anchor_contratar {
+        display: block;
     }
 }
