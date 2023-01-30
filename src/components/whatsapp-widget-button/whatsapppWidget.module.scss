@@ -6,7 +6,7 @@ a.widget_button {
 
     right: 20px;
     bottom: 20px;
-    display: hidden;
+    display: none;
 
     img {
         height: 50px;
@@ -17,7 +17,7 @@ a.widget_button:hover {
     opacity: 1;
 }
 
-a.after_principal_section{
+a.after_principal_section {
     display: block;
 }
 

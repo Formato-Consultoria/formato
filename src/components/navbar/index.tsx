@@ -11,12 +11,12 @@ import { blinker } from "../../utils/_fonts";
 import { DarkIcon, DarkLogotipo } from "../images";
 
 import cx from "clsx";
+import Modal from "@/ui/modal-section";
 
 export default function Navbar() {
-    const [didScroll, setDidiScroll] = useState(false);
-    // const [isMobileResponsiveness, setIsMobileResponsiveness] = useState(false);
-    const [isOpenModal, setIsOpenModal] = useState(false);
     const router = useRouter();
+    const [didScroll, setDidiScroll] = useState(false);
+    const [isOpenModal, setIsOpenModal] = useState(false);
 
     const onScroll = useCallback(() => {
         const { scrollY } = window;
@@ -36,9 +36,17 @@ export default function Navbar() {
         }
     }, []);
 
-    // function changeStateModal() {
-    //     setIsOpenModal(!isOpenModal);
-    // }
+    const onClose = () => {
+        setIsOpenModal(false);
+    };
+
+    const onOpen = () => {
+        setIsOpenModal(true);
+    };
+
+    const onToggle = () => {
+        setIsOpenModal(!isOpenModal);
+    }
 
     return(
         <header className={cx(style.header, (didScroll && style.onScroll), blinker.className)}>
@@ -76,11 +84,17 @@ export default function Navbar() {
                             <Link href="/#contato">Contatos</Link>
                         </li>
                     </ul>
-
-                    <ButttonGlobal value="Contratar" className={style.contratar_btn} />
+                    
+                    <Link
+                        href="https://wa.me/5538984064384"
+                        className="button"
+                        target={"_blank"}
+                    >
+                        <ButttonGlobal value="Contratar" className={style.contratar_btn} />
+                    </Link>
                     
                     <button
-                        onClick={() => setIsOpenModal(!isOpenModal)}
+                        onClick={onToggle}
                         className={style.hamburgerIcon}
                     >
                         {isOpenModal ?  <X size={26} /> : <List size={26} />}
@@ -89,6 +103,12 @@ export default function Navbar() {
                     {/* <button className={style.search_btn}>
                         <MagnifyingGlass size={36} />
                     </button> */}
+                    
+                    <Modal
+                        onClose={onClose}
+                        onOpen={onOpen}
+                        isOpen={isOpenModal}
+                    />
                 </div>
             </nav>
         </header>

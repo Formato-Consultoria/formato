@@ -8,6 +8,7 @@ import BannerTitle from '@/components/title-page-banner';
 import ServicesSessionBox from '@/ui/services-section-box';
 
 import { services } from '../../content/all-services';
+import WhatsappWidgetButton from '@/components/whatsapp-widget-button';
 
 export default function Services() {
   const listServiceByType = (
@@ -37,6 +38,8 @@ export default function Services() {
         value="Serviços"
         src="/images/services_hero.jpg"
       />
+      
+      <WhatsappWidgetButton />
 
       <section className={cx(style.serviceContainer, style.section)}>
         <h2>Conheça todos os nossos serviços</h2>

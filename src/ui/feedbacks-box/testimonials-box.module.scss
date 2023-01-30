@@ -123,6 +123,14 @@ div.testimonials_box:hover {
             }
         }
     }
+
+    div.testimonials_box:hover {
+        div.banner_img_company {
+            div {
+                height: 140px;
+            }
+        }
+    }
 }
 
 @media (max-width: 596px) {

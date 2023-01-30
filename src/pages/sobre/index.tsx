@@ -3,9 +3,7 @@ import { useRef, useState } from "react";
 import cx from "clsx";
 
 import Image from "next/image";
-import PillarBoxCard from "@/ui/pillar-box-card";
-import ReactPlayerMedia from "@/ui/react-player";
-import BannerTitle from "@/components/title-page-banner";
+import { GetStaticProps } from "next";
 import ReactPlayer from "react-player";
 
 import style from "./about.module.scss";
@@ -25,10 +23,15 @@ import {
   Strategy,
   Willpower
 } from "@/components/images";
+import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
+import ReactPlayerMedia from "@/components/react-player";
+import BannerTitle from "@/components/title-page-banner";
 
 import GallerySection from "@/ui/image-gallery-section";
+import PillarBoxCard from "@/ui/pillar-box-card";
+
 import { ImageProps } from "@/@types/image-gallery";
-import { GetStaticProps } from "next";
+
 import cloudinary from "../../utils/cloudinary";
 import getBase64ImageUrl from "../../utils/generateBlurPlaceholder";
 
@@ -57,6 +60,8 @@ const About = ({ images }: { images: ImageProps[] }) => {
         src="/images/quem_somos_hero.jpg"
         value="Quem somos?"
       />
+      
+      <WhatsappWidgetButton />
 
       <section className={cx(style.about, style.section)}>
         <h2>Um pouco da nossa história</h2>

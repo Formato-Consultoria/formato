@@ -9,6 +9,7 @@
     "lint": "eslint ./ --ext js,jsx,ts,tsx"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.8",
     "@next/font": "^13.0.3",
     "@types/imagemin": "^8.0.0",
     "@types/node": "18.11.9",

@@ -19,12 +19,16 @@ img {
     user-select: none;
 }
 
+html,
+body {
+    background-color: variable.$white;
+}
+
 body {
     width: 100%;
     min-height: 100vh;
     margin: 0 auto;
-
-    color: variable.$black-dark;
+    
     font-size: 17px;
     --webkit-font-somoothing: antialiased;
 }
@@ -37,4 +41,14 @@ button {
     border: none;
     background: none;
     cursor: pointer;
+}
+
+a.button {
+    width: max-content;
+    height: auto;
+    text-decoration: none;
+
+    button {
+        margin: 0;
+    }
 }

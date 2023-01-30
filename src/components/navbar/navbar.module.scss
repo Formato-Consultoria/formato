@@ -76,6 +76,7 @@ header.header {
             button.hamburgerIcon {
                 display: none;
                 color: variable.$black-dark;
+                -webkit-tap-highlight-color: transparent;
             }
         }
     }
@@ -148,7 +149,6 @@ header.onScroll {
         }
     }
 }
-
 
 @media (max-width: 572px) {
     header.header {

@@ -16,6 +16,7 @@ import {
   nexa,
   sebrae,
 } from "@/components/images";
+import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
 
 export default function Clients() {
     return (
@@ -24,6 +25,8 @@ export default function Clients() {
           value="Clientes"
           src="/images/cliente_hero.jpg"
         />
+
+        <WhatsappWidgetButton />
 
         <section className={cx(style.container_clients, style.section)}>
           <QuoteSection

@@ -11,6 +11,7 @@ import { useMediaQuery } from "react-responsive";
 import type { contentService } from "@/@types/services";
 import BannerTitle from "@/components/title-page-banner";
 import { services } from '../../../content/all-services';
+import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
 
 const Service = () => {
     const [dontIcon, setdontIcon] = useState(false);
@@ -41,6 +42,8 @@ const Service = () => {
                 }
                 src={srv?.bannerImg ?? ""}
             />
+
+            <WhatsappWidgetButton />
 
             <section className={cx(style.service_page, style.section)}>
                 <div className={style.title_service}>
