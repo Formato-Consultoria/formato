@@ -47,3 +47,8 @@ a.button {
         margin: 0;
     }
 }
+
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+}

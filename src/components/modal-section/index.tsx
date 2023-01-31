@@ -14,10 +14,6 @@ interface ModalProps {
 }
 
 export default function Modal({ isOpen, onOpen, onClose }: ModalProps) {
-    // const isMobile = useMediaQuery({
-    //     query: ''
-    // });
-
     return (
         <Dialog
             open={isOpen}

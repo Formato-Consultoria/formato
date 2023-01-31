@@ -11,7 +11,7 @@ import { blinker } from "../../utils/_fonts";
 import { DarkIcon, DarkLogotipo } from "../images";
 
 import cx from "clsx";
-import Modal from "@/ui/modal-section";
+import Modal from "@/components/modal-section";
 
 export default function Navbar() {
     const router = useRouter();
