@@ -5,10 +5,10 @@ import { useRouter } from "next/router";
 
 import { List, X } from "phosphor-react";
 
-import ButttonGlobal from "../button";
+import ButttonGlobal from "@/components/button";
 import { useCallback, useState, useEffect } from "react";
-import { blinker } from "../../utils/_fonts";
-import { DarkIcon, DarkLogotipo } from "../images";
+import { blinker } from "@/utils/_fonts";
+import { DarkIcon, DarkLogotipo } from "@/components/images";
 
 import cx from "clsx";
 import Modal from "@/components/modal-section";

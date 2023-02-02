@@ -1,4 +1,4 @@
-import { contentService } from '../@types/services';
+import { contentService } from '@/@types/services';
 
 import {
     BusinessModeling,
@@ -13,7 +13,7 @@ import {
     ProductivityTaskManagement,
     QualityProductivity,
     StrategicPlanning
-} from '../components/images';
+} from '@/components/images';
 
 export const services: contentService[] = [
     {

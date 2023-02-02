@@ -7,7 +7,7 @@ import Navbar from "@/components/navbar";
 import cx from "clsx";
 import { useRouter } from "next/router"
 import { ReactNode } from "react";
-import { inter } from "../../utils/_fonts";
+import { inter } from "@/utils/_fonts";
 
 type PropsChildren = {
     children: ReactNode

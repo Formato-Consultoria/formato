@@ -3,11 +3,11 @@ import Image from "next/image";
 
 import { GetServerSideProps, GetStaticProps } from "next";
 
-import cloudinary from "../../utils/cloudinary";
+import cloudinary from "@/utils/cloudinary";
 import type { ImageProps } from "@/@types/image-gallery";
 
 import style from "./gallery.module.scss";
-import getBase64ImageUrl from "../../utils/generateBlurPlaceholder";
+import getBase64ImageUrl from "@/utils/generateBlurPlaceholder";
 import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
 
 const Gallery = ({ images }: { images: ImageProps[] }) => {

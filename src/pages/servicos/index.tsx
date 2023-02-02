@@ -7,7 +7,7 @@ import { contentService, typeService } from '@/@types/services';
 import BannerTitle from '@/components/title-page-banner';
 import ServicesSessionBox from '@/ui/services-section-box';
 
-import { services } from '../../content/all-services';
+import { services } from '@/content/all-services';
 import WhatsappWidgetButton from '@/components/whatsapp-widget-button';
 
 export default function Services() {

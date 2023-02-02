@@ -1,5 +1,5 @@
 import styles from "./about-section.module.scss";
-import { inter, blinker } from "../../utils/_fonts";
+import { inter, blinker } from "@/utils/_fonts";
 
 import Image from "next/image";
 import cx from "clsx";

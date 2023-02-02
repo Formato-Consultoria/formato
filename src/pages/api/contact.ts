@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { PropValuesForm } from '@/@types/form';
 
-import { mailOptions, transporter } from "../../config/nodemailer";
+import { mailOptions, transporter } from "@/config/nodemailer";
 
 const CONTACT_MESSAGE_FIELDS: any = {
   name: "Nome",

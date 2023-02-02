@@ -1,5 +1,5 @@
 import styles from './last-article.module.scss';
-import { inter } from '../../utils/_fonts';
+import { inter } from '@/utils/_fonts';
 import cx from 'clsx';
 
 import { ArrowDown } from 'phosphor-react';

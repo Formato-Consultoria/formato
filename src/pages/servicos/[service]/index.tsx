@@ -10,7 +10,7 @@ import { useMediaQuery } from "react-responsive";
 
 import type { contentService } from "@/@types/services";
 import BannerTitle from "@/components/title-page-banner";
-import { services } from '../../../content/all-services';
+import { services } from '.@/content/all-services';
 import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
 
 const Service = () => {

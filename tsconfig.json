@@ -13,13 +13,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
-      "@/ui/*": ["ui/*"],
-      "@/lib/*": ["lib/*"],
-      "@/public/*": ["public/*"],
-      "@/components/*": ["components/*"],
-      "@/@types/*": ["@types/*"],
+      "@/*": ["./src/*"]
     },
     "incremental": true
   },

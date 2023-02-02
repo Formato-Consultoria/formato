@@ -1,5 +1,5 @@
 import styles from "./lasts-posts-section.module.scss";
-import { inter, blinker } from "../../utils/_fonts";
+import { inter, blinker } from "@/utils/_fonts";
 
 import cx from "clsx";
 

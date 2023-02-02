@@ -1,5 +1,5 @@
 import styles from './strategy-section.module.scss';
-import { blinker } from '../../utils/_fonts';
+import { blinker } from '@/utils/_fonts';
 
 import cx from 'clsx';
 

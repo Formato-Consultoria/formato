@@ -1,7 +1,7 @@
 import style from "./banner-title-page.module.scss";
 
 import cx from "clsx";
-import { inter } from "../../utils/_fonts";
+import { inter } from "@/utils/_fonts";
 import { ReactNode } from "react";
 import Image from "next/image";
 

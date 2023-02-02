@@ -1,14 +1,14 @@
 import style from './footer.module.scss';
-import { inter } from '../../utils/_fonts';
+import { inter } from '@/utils/_fonts';
 import cx from 'clsx';
 
 import Link from 'next/link';
 
 import { InstagramLogo, LinkedinLogo } from 'phosphor-react';
 import { LightLogotipo } from '../images';
-import { contentService, typeService } from '../../@types/services';
+import { contentService, typeService } from '@/@types/services';
 import { ReactElement } from 'react';
-import { services } from '../../content/all-services';
+import { services } from '@/content/all-services';
 
 export default function Footer() {
 
