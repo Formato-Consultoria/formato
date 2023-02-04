@@ -1,15 +1,16 @@
 import { CircleNotch } from "phosphor-react";
-import { useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 
-import UseFormValidation from "@/hooks/_useFormValidation";
+import useFormValidation from "@/hooks/_useFormValidation";
 import ButttonGlobal from "@/components/button";
 import { PropStateForm, PropValuesForm } from "@/@types/form";
 import { sendContactForm } from "@/service/email";
 
 import style from "@/ui/contact-section/contact-section.module.scss";
 import cx from "clsx";
+import toast from "react-hot-toast";
 
-export const initState: PropStateForm = {
+const initState: PropStateForm = {
     isLoading: false,
     errors: {},
     values: {
@@ -34,7 +35,6 @@ export default function Form() {
         [target.name]: true
     }))
 
-    // handle change to input
     const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value, type, checked } = target;
 
@@ -47,7 +47,6 @@ export default function Form() {
         }));
     }
 
-    // handle change to textarea
     const handleTextAreaChange = ({ target }: React.ChangeEvent<HTMLTextAreaElement>) => {
         const { name, value } = target;
 
@@ -61,15 +60,31 @@ export default function Form() {
     }
 
     const onSubmit = async () => {
-        if(UseFormValidation(state).isValid) {
+        if(useFormValidation(state).isValid) {
             setState((prev) => ({
                 ...prev,
                 isLoading: true,
             }));
-    
-            try {
+
+            try { 
                 const { name, email, address, phone, message } = values;
-                // await sendContactForm({...values, subject: `Messagem do(a) ${values.name}`});
+
+                toast.promise(
+                    sendContactForm({
+                        name,
+                        email,
+                        address,
+                        phone,
+                        message,
+                        subject: `Messagem do(a) ${values.name}`}
+                    ),
+                    {
+                        loading: 'Enviando...',
+                        success: <b>Enviado com sucesso!</b>,
+                        error: <b>Houve algum erro no envio!</b>,
+                    }
+                );
+
                 setState(initState);
             } catch(error: any) {
                 setState((prev) => ({
@@ -77,10 +92,14 @@ export default function Form() {
                     isLoading: false,
                     errors: error.message,
                 }));
+
+                toast.error(error.message, {
+                    position: "bottom-center"
+                });
             }
         } else {
             for(let error of Object.values(errors)) {
-                console.error(error);
+                toast.error(error);
             }
         }
     }
@@ -160,9 +179,6 @@ export default function Form() {
             <ButttonGlobal
                 value={isLoading ? <CircleNotch size={22} weight="bold" /> : "Enviar"}
                 isLoading
-                disabled={
-                    !values.name || !values.email || !values.address || !values.phone
-                }
                 onClick={onSubmit}
             />
         </form>

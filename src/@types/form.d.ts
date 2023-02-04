@@ -5,7 +5,7 @@ interface PropValuesForm {
     phone: string,
     message: string,
     subject: string,
-    terms: boolean
+    terms?: boolean
 };
 
 export interface PropStateForm {
@@ -15,6 +15,10 @@ export interface PropStateForm {
     };
     values: PropValuesForm;
 };
+
+export interface PropsDialogError {
+    messageError: string,
+}
 
 // interface typeValidation {
 //     isValid: boolean,

@@ -1,4 +1,4 @@
-import { PropValuesForm } from "../@types/form";
+import { PropValuesForm } from "@/@types/form";
 
 export const sendContactForm = async (data: PropValuesForm) =>
   fetch("/api/contact", {

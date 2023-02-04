@@ -1,5 +1,4 @@
 import { PropStateForm } from "@/@types/form";
-// import { useState } from "react";
 
 export default function useFormValidation({ values, errors }: PropStateForm) {
     const { name, email, address, phone, message, terms } = values;
@@ -32,7 +31,7 @@ export default function useFormValidation({ values, errors }: PropStateForm) {
 
     if(!message) {
         isValid = false;
-        errors.phone = "E preciso que insira alguma menssagem!";
+        errors.phone = "Precisamos que insira alguma menssagem!";
     }
 
     if(!terms) {
