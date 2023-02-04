@@ -1,7 +1,7 @@
 import { CircleNotch } from "phosphor-react";
 import { ReactElement, useEffect, useState } from "react";
 
-import useFormValidation from "@/hooks/_useFormValidation";
+import useFormValidation from "@/hooks/useFormValidation";
 import ButttonGlobal from "@/components/button";
 import { PropStateForm, PropValuesForm } from "@/@types/form";
 import { sendContactForm } from "@/service/email";
@@ -69,7 +69,7 @@ export default function Form() {
             try { 
                 const { name, email, address, phone, message } = values;
 
-                toast.promise(
+                await toast.promise(
                     sendContactForm({
                         name,
                         email,
@@ -82,10 +82,11 @@ export default function Form() {
                         loading: 'Enviando...',
                         success: <b>Enviado com sucesso!</b>,
                         error: <b>Houve algum erro no envio!</b>,
-                    }
+                    }, {position: "bottom-center"}
                 );
 
                 setState(initState);
+                setTouched(initState.values);
             } catch(error: any) {
                 setState((prev) => ({
                     ...prev,
