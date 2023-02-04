@@ -3,9 +3,8 @@ import { Dialog } from "@headlessui/react";
 import Link from "next/link";
 
 import cx from "clsx";
-import { inter } from "utils/_fonts";
+import { inter } from "@/utils/_fonts";
 import style from "./modal.module.scss";
-import { useMediaQuery } from "react-responsive";
 
 interface ModalProps {
     isOpen: boolean,

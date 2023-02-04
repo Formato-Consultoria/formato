@@ -29,26 +29,26 @@ const generateEmailContent = (data: PropValuesForm) => {
 };
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    if (req.method === "POST") {
-        const data = req.body;
+  if (req.method === "POST") {
+    const data = req.body;
 
-        if (!data || !data.name || !data.email || !data.message) {
-            return res.status(400).send({ message: "Bad request" });
-        }
-
-        try {
-            await transporter.sendMail({
-                ...mailOptions,
-                ...generateEmailContent(data),
-                subject: `Messagem do(a) ${data.name}`,
-            });
-
-            return res.status(200).json({ success: true });
-        } catch (err: any) {
-            console.log(err);
-            return res.status(400).json({ message: err.message });
-        }
+    if (!data || !data.name || !data.email || !data.message) {
+      return res.status(400).send({ message: "Bad request" });
     }
 
-    return res.status(400).json({ message: "Bad request" });
+    try {
+      await transporter.sendMail({
+          ...mailOptions,
+          ...generateEmailContent(data),
+          subject: `Messagem do(a) ${data.name}`,
+      });
+
+      return res.status(200).json({ success: true });
+    } catch (err: any) {
+      console.log(err);
+      return res.status(400).json({ message: err.message });
+    }
+  }
+
+  return res.status(400).json({ message: "Bad request" });
 }

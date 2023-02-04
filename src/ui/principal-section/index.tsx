@@ -16,7 +16,7 @@ export default function PrincipalSection() {
                     <span>Consultoria</span>
                 </h1>
 
-                <p>Ajudamos cada pessoa a se conectar de forma genuína com seus negócios. Abraçamos desafios e focamos em caminhos mais simples e estratégicos</p>
+                <p>Ajudamos a conectar pessoas a seus negócios. Buscamos inovação e crescimento pessoal. Alinhamos objetivos, criamos conexão e colocamos ideias brilhantes em prática.</p>
 
                 <Link href={"/sobre"}>
                     <ButttonGlobal value="Saiba Mais"/>

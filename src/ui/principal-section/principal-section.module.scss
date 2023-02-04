@@ -42,15 +42,10 @@ section.principal {
                 color: variable.$primary-color;
                 margin-left: 20px;
             }
-
-            span + span {
-                display: block;
-                margin-left: 50px;
-            }
         }
 
         p {
-            align-self: flex-end;
+            margin-left: 20px;
             width: 80%;
             font-size: 1.1rem;
             font-weight: 500;
@@ -60,6 +55,7 @@ section.principal {
 
         a {
             text-decoration: none;
+            margin-left: 20px;
         }
     }
 

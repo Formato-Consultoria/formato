@@ -63,7 +63,7 @@ export default function Navbar() {
                 <div className={style.navigation}>
                     <ul className={style.navigation_options}>
                         <li>
-                            <Link href="/">inicio</Link>
+                            <Link href="/">Inicio</Link>
                         </li>
                         {/* <li>
                             <Link href="/artigos">Artigos</Link>

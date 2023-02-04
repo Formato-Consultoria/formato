@@ -24,7 +24,7 @@ section.strategy {
         }
 
         p {
-            width: 70%;
+            width: 50%;
             text-align: center;
             font-size: 1.10rem;
             color: variable.$black-50;
@@ -56,7 +56,7 @@ section.strategy {
 
             div {
                 width: 40%;
-                text-align: justify;
+                // text-align: justify;
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
@@ -197,7 +197,6 @@ section.strategy {
                     }
                     p {
                         color: variable.$black-dark;
-                        
                         font-size: 1.1rem;
                     }
                 }

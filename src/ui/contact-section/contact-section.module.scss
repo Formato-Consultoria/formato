@@ -73,7 +73,7 @@ section.contact {
             }
 
             input, textarea {
-                border: 0;
+                border: 1px solid transparent;
                 outline: none;
             }
 
@@ -89,6 +89,7 @@ section.contact {
             input[name="email"] {
                 grid-area: email;
             }
+
             textarea[name="message"] {
                 grid-area: textmessage;
                 width: 100%;
@@ -100,6 +101,21 @@ section.contact {
 
                 resize: none;
             }
+
+            input.is_invalid,
+            textarea.is_invalid {
+                color: #f00;
+                border-color: #f00;
+                background-color: #FFE5E5;
+                transition: .1s ease-out;
+            }
+
+            input.is_invalid::placeholder,
+            textarea.is_invalid::placeholder {
+                color: #f00;
+                transition: .1s ease-out;
+            }
+
             label {
                 grid-area: terms;
                 vertical-align: middle;

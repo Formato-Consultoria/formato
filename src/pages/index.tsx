@@ -3,7 +3,7 @@ import StrategySection from '../ui/strategy-section';
 import ServiceSection from '../ui/service-section';
 import AboutSection from '../ui/about-section';
 // import LastsPostsSection from '../parts/lasts-posts';
-import ContactSection from '@/ui/contact-section.scss';
+import ContactSection from '@/ui/contact-section';
 
 import WhatsappWidgetButton from '@/components/whatsapp-widget-button';
 
