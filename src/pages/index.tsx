@@ -1,11 +1,11 @@
-import PrincipalSection from '../ui/principal-section';
-import StrategySection from '../ui/strategy-section';
-import ServiceSection from '../ui/service-section';
-import AboutSection from '../ui/about-section';
-// import LastsPostsSection from '../parts/lasts-posts';
-import ContactSection from '@/ui/contact-section';
+import PrincipalSection from "@/ui/section-principal";
+import StrategySection from "@/ui/section-strategy";
+import ServiceSection from "@/ui/service-section";
+import AboutSection from "@/ui/section-about";
+// import LastsPostsSection from "../parts/lasts-posts";
+import ContactSection from "@/ui/section-contact";
 
-import WhatsappWidgetButton from '@/components/whatsapp-widget-button';
+import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
 
 export default function Home() {
   return (

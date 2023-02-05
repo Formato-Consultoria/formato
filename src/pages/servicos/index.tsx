@@ -1,14 +1,14 @@
-import { ReactElement } from 'react';
-import cx from 'clsx';
+import { ReactElement } from "react";
+import cx from "clsx";
 
-import style from './services.module.scss';
-import { contentService, typeService } from '@/@types/services';
+import style from "./services.module.scss";
+import { contentService, typeService } from "@/@types/services";
 
-import BannerTitle from '@/components/title-page-banner';
-import ServicesSessionBox from '@/ui/services-section-box';
+import BannerTitle from "@/components/title-page-banner";
+import ServicesSessionBox from "@/ui/section-services-box";
 
-import { services } from '@/content/all-services';
-import WhatsappWidgetButton from '@/components/whatsapp-widget-button';
+import { services } from "@/content/all-services";
+import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
 
 export default function Services() {
   const listServiceByType = (

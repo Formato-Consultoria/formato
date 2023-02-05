@@ -27,14 +27,14 @@ import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
 import ReactPlayerMedia from "@/components/react-player";
 import BannerTitle from "@/components/title-page-banner";
 
-import GallerySection from "@/ui/image-gallery-section";
-import PillarBoxCard from "@/ui/pillar-box-card";
+import GallerySection from "@/ui/section-image-gallery";
+import PillarBoxCard from "@/ui/comp-pillar-box-card";
 
 import { ImageProps } from "@/@types/image-gallery";
 
-import cloudinary from "../../utils/cloudinary";
-import getBase64ImageUrl from "../../utils/generateBlurPlaceholder";
-import ContactSection from "@/ui/contact-section";
+import cloudinary from "@/utils/cloudinary";
+import getBase64ImageUrl from "@/utils/generateBlurPlaceholder";
+import ContactSection from "@/ui/section-contact";
 
 // TODO: não funciona a animação e toggle do btn de Play para o btn Pouse
 

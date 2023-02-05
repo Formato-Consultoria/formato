@@ -2,7 +2,7 @@ import  styles from './contact-section.module.scss';
 import { inter } from '@/utils/_fonts';
 
 import cx from 'clsx';
-import Form from '@/ui/form-section';
+import Form from '@/ui/comp-form-section';
 
 export default function ContactSection() {
     return (

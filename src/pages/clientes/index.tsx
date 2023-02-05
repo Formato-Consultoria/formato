@@ -4,9 +4,9 @@ import BannerTitle from "@/components/title-page-banner";
 import Image from "next/image";
 import cx from "clsx";
 
-import QuoteSection from "@/ui/quote-section";
-import TestimonialsBox from "@/ui/feedbacks-box";
-import InfiniteScrollCarousel from "@/ui/infinite-scroll-carousel";
+import QuoteSection from "@/ui/section-quote";
+import TestimonialsBox from "@/ui/comp-feedbacks-box";
+import InfiniteScrollCarousel from "@/ui/section-infinite-scroll-carousel";
 
 import {
   cdl,
