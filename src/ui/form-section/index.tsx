@@ -174,7 +174,7 @@ export default function Form() {
                     checked={values.terms}
                     onChange={handleChange}
                 />
-                Eu aceito os <a href="#"><strong>termos de serviço</strong></a>
+                Concordo em fornecer meus dados de contato a <strong>Formato Consultoria</strong> para fins de comunicação e aceito os termos de uso dos serviços.
             </label>
 
             <ButttonGlobal

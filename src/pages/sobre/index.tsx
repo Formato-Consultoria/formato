@@ -34,6 +34,7 @@ import { ImageProps } from "@/@types/image-gallery";
 
 import cloudinary from "../../utils/cloudinary";
 import getBase64ImageUrl from "../../utils/generateBlurPlaceholder";
+import ContactSection from "@/ui/contact-section";
 
 // TODO: não funciona a animação e toggle do btn de Play para o btn Pouse
 
@@ -150,6 +151,8 @@ const About = ({ images }: { images: ImageProps[] }) => {
       <GallerySection
         images={images}
       />
+
+      <ContactSection />
     </>
   )
 }
