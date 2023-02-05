@@ -19,10 +19,3 @@ export interface PropStateForm {
 export interface PropsDialogError {
     messageError: string,
 }
-
-// interface typeValidation {
-//     isValid: boolean,
-//     errors: {
-//         [key: string]: string;
-//     }
-// }
