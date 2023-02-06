@@ -6,7 +6,7 @@ import ButttonGlobal from "@/components/button";
 import { PropStateForm, PropValuesForm } from "@/@types/form";
 import { sendContactForm } from "@/service/email";
 
-import style from "@/ui/contact-section/contact-section.module.scss";
+import style from "@/ui/section-contact/contact-section.module.scss";
 import cx from "clsx";
 import toast from "react-hot-toast";
 

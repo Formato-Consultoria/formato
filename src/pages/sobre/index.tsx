@@ -28,7 +28,7 @@ import ReactPlayerMedia from "@/components/react-player";
 import BannerTitle from "@/components/title-page-banner";
 
 import GallerySection from "@/ui/section-image-gallery";
-import PillarBoxCard from "@/ui/comp-pillar-box-card";
+import PillarBoxCard from "@/ui/comp-pillar-box";
 
 import { ImageProps } from "@/@types/image-gallery";
 
