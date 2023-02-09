@@ -35,6 +35,10 @@ export default function Articles() {
             />
           </div>
         </div>
+
+        <div className={style.pagination_carousel}>
+
+        </div>
       </div>
     )
 }
