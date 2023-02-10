@@ -100,7 +100,7 @@ div.testimonials_box:hover {
         width: 310px;
 
         div.banner_img_company {
-            border-radius: 14x;
+            border-radius: 14px;
             margin: 0 8px;
 
             max-height: 140px;
@@ -128,6 +128,9 @@ div.testimonials_box:hover {
         div.banner_img_company {
             div {
                 height: 140px;
+                border-radius: 14px;
+
+                font-size: 1rem;
             }
         }
     }
@@ -136,10 +139,27 @@ div.testimonials_box:hover {
 @media (max-width: 596px) {
     div.testimonials_box {
         width: 100%;
+        border-radius: 1px;
+
+        div.banner_img_company {
+            border-radius: 5px;
+        }
 
         p.comment {
             font-size: 1rem;
             padding: 10px 20px;
+        }
+
+        div.footer {
+            border-radius: 0 0 1px 1px;
+        }
+    }
+
+    div.testimonials_box:hover {
+        div.banner_img_company {
+            div {
+                border-radius: 5px;
+            }
         }
     }
 }

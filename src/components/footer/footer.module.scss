@@ -21,7 +21,6 @@
             color: variable.$white;
             gap: 60px;
 
-            nav.menus,
             div.servicos div.menu_services nav {
                 ul.navigation_options {
                     display: flex;
@@ -46,10 +45,6 @@
                         }
                     }
                 }
-            }
-
-            nav.menus {
-                margin-top: 50px;
             }
 
             div.servicos {
@@ -114,10 +109,6 @@
             }
 
             div.navigation_content {
-                nav.menus {
-                    margin-top: 65px;
-                }
-
                 div.servicos {
                     div.menu_services {
                         gap: 20px
@@ -135,13 +126,12 @@
             div.navigation_content {
                 gap: 20px;
                 flex-direction: column;
-                nav.menus {
-                    margin: 0;
-                    ul.navigation_options {
-                        flex-direction: row;
-                        gap: 15px;
-                        justify-content: flex-end;
-                        flex-wrap: wrap;
+
+                div.servicos {
+                    div.menu_services {
+                        nav ul.navigation_options li a {
+                            font-size: 1rem;
+                        }
                     }
                 }
             }
@@ -163,13 +153,6 @@
 
                 .logotipo_img img {
                     align-self: center;
-                }
-
-                nav.menus {
-                    ul.navigation_options {
-                        flex-direction: column;
-                        gap: 0;
-                    }
                 }
 
                 div.servicos {
