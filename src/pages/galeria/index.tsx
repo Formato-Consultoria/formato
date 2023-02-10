@@ -1,14 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { GetServerSideProps, GetStaticProps } from "next";
+import { GetStaticProps } from "next";
 
-import cloudinary from "@/utils/cloudinary";
 import type { ImageProps } from "@/@types/image-gallery";
 
 import style from "./gallery.module.scss";
-import getBase64ImageUrl from "@/utils/generateBlurPlaceholder";
 import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
+import getImagesGallery from "@/utils/get-cloudinary-gallery";
 
 const Gallery = ({ images }: { images: ImageProps[] }) => {
     return (
@@ -17,9 +16,7 @@ const Gallery = ({ images }: { images: ImageProps[] }) => {
                 {images.map(({ id, public_id, format, blurDataUrl }) => (
                     <Link
                         key={id}
-                        // href={`/?photoId=${id}`}
                         href={"#"}
-                        // as={`/p/${id}`}
                         shallow
                         className={style.image}
                     >
@@ -44,41 +41,10 @@ const Gallery = ({ images }: { images: ImageProps[] }) => {
 export default Gallery;
 
 export const getStaticProps: GetStaticProps = async () => {
-    const results = await cloudinary.v2.search
-        .expression(`folder:${process.env.CLOUDINARY_FOLDER}`)
-        .sort_by('public_id', 'desc')
-        .max_results(200)
-        .execute();
-
-    let reducedResults: ImageProps[] = []
-    let i = 0
-
-    for (let result of results.resources) {
-        reducedResults.push({
-            id: i,
-            height: result.height,
-            width: result.width,
-            public_id: result.public_id,
-            format: result.format,
-        })
-
-        i++;
-    }
-
-    const blurImagePromises = results.resources.map((image: ImageProps) => {
-        return getBase64ImageUrl(image);
-    })
-
-    const imagesWithBlurDataUrls = await Promise.all(blurImagePromises);
-
-    for (let i = 0; i < reducedResults.length; i++) {
-        reducedResults[i].blurDataUrl = imagesWithBlurDataUrls[i]
-    }
+    const { props } = await getImagesGallery();
     
     return {
-        props: {
-            images: reducedResults,
-        },
+        props,
         revalidate: 10,
     }
 }

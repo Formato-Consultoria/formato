@@ -32,9 +32,8 @@ import PillarBoxCard from "@/ui/comp-pillar-box";
 
 import { ImageProps } from "@/@types/image-gallery";
 
-import cloudinary from "@/utils/cloudinary";
-import getBase64ImageUrl from "@/utils/generateBlurPlaceholder";
 import ContactSection from "@/ui/section-contact";
+import getImagesGallery from "@/utils/get-cloudinary-gallery";
 
 // TODO: não funciona a animação e toggle do btn de Play para o btn Pouse
 
@@ -160,41 +159,10 @@ const About = ({ images }: { images: ImageProps[] }) => {
 export default About;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const results = await cloudinary.v2.search
-      .expression(`folder:${process.env.CLOUDINARY_FOLDER}`)
-      .sort_by('public_id', 'desc')
-      .max_results(5)
-      .execute();
+  const { props } = await getImagesGallery(5);
 
-  let reducedResults: ImageProps[] = []
-  let i = 0
-
-  for (let result of results.resources) {
-      reducedResults.push({
-          id: i,
-          height: result.height,
-          width: result.width,
-          public_id: result.public_id,
-          format: result.format,
-      })
-
-      i++;
-  }
-
-  const blurImagePromises = results.resources.map((image: ImageProps) => {
-      return getBase64ImageUrl(image);
-  })
-
-  const imagesWithBlurDataUrls = await Promise.all(blurImagePromises);
-
-  for (let i = 0; i < reducedResults.length; i++) {
-      reducedResults[i].blurDataUrl = imagesWithBlurDataUrls[i]
-  }
-  
   return {
-      props: {
-          images: reducedResults,
-      },
-      revalidate: 10,
+    props,
+    revalidate: 10,
   }
 }
