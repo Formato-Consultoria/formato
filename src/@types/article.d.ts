@@ -8,5 +8,16 @@ export interface PropsArticle {
     title: string,
     slug: string,
     description: string,
+    updatedAt: Date,
+    category: string,
+
+    author: PropsAuthor,
     typeBox: TypeBox
+}
+
+export interface PropsAuthor {
+    id: number,
+    name: string,
+    avatar: string,
+    email: string,
 }

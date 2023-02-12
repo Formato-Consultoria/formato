@@ -23,7 +23,8 @@ div.container_articles {
             width: 100%;
             height: auto;
 
-            // border-top: solid 1px variable.$black-10;
+            border-top: solid .5px variable.$black-10;
+            border-bottom: solid .5px variable.$black-10;
         }
     }
 

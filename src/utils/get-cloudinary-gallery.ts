@@ -1,4 +1,4 @@
-import cloudinary from "./cloudinary";
+import cloudinary from "../config/cloudinary";
 
 import type { ImageProps } from "@/@types/image-gallery";
 import getBase64ImageUrl from "@/utils/generate-blur-placeholder";

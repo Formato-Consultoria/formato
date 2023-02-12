@@ -6,16 +6,33 @@ import Image from "next/image";
 
 import Link from "next/link";
 import { PropsArticle } from "@/@types/article";
+import { Heart } from "phosphor-react";
+import formatDateTime from "@/utils/format-date-time";
+import { useEffect, useState } from "react";
 
 export default function PostBox({
     cover,
     slug,
     title,
     description,
+    updatedAt,
+    category,
+    author,
     typeBox
 }: PropsArticle) {
+    const time = formatDateTime(updatedAt);
+    const [updatedDateAt, setUpdatedDateAt] = useState<string>(time);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setUpdatedDateAt(formatDateTime(updatedAt));
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, []);
+
     return(
-        <div className={cx(style[typeBox], inter.className)}>
+        <div className={cx(style.post, style[typeBox], inter.className)}>
             <Link href={slug} className={style.image}>
                 <Image
                     src={cover}
@@ -24,8 +41,14 @@ export default function PostBox({
                 />
             </Link>
 
+            <div className={style.date_and_category}>
+                <p>{updatedDateAt}</p>
+
+                <div className={cx(style.category_box, blinker.className)}>{category}</div>
+            </div>
+
             <h3
-                className={style.tex_title}
+                className={cx(style.tex_title, blinker.className)}
             >
                 <Link href={slug}>{title}</Link>
             </h3>
@@ -33,7 +56,31 @@ export default function PostBox({
             <p className={cx(style.tex_description, blinker.className)}>{description}</p>
 
             <div className={style.interaction}>
-                {/* Aqui vira um componente com a data e hora da postagem e a quantidade de curtida, identificada pelo id */}
+                <div className={style.author_info}>
+                    <Link
+                        className={style.avatar}
+                        href={`mailto:${author.email}`}
+                        target={"_blank"}
+                    >
+                        <Image
+                            src={author.avatar}
+                            fill
+                            alt={author.name}
+                        />
+                    </Link>
+
+                    <p>{author.name}</p>
+                </div>
+
+                <div className={style.likes}>
+                    <Heart
+                        size={25}
+                        color="rgb(118, 18, 134)"
+                        weight="fill"
+                    />
+
+                    <small>1259</small> {/* {likes} *proveniente de uma api diferente */}
+                </div>
             </div>
         </div>
     )
