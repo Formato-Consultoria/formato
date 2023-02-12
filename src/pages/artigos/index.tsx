@@ -15,7 +15,7 @@ export default function Articles() {
             title="Elon Musk cree que Netflix perdió suscriptores debido a un virus"
             slug="#"
             description="Morbi a metus. Phasellus enim erat, vestibulum vel, aliquam a, posuere eu, velit. Nullam sapien sem, ornare ac, nonummy non, lobortis a, enim. Nunc tincidunt ante vitae massa. Duis ante orci, molestie vitae, vehicula venenatis, tincidunt ac, pede. Nulla accumsan, elit sit amet varius semper, nulla mauris mollis quam, tempor suscipit diam nulla vel leo. Etiam commodo dui eget wisi. Donec iaculis gravida nulla. Donec quis nibh at felis congue commodo. Etiam bibendum elit eget erat. Praesent in mauris eu."
-            updatedAt={new Date('Sat Feb 11 2023 21:21:38 GMT-0300 (Horário Padrão de Brasília)')}
+            updatedAt={new Date('Sat Feb 10 2023 20:00:00 GMT-0300 (Horário Padrão de Brasília)')}
             category={"techs"}
             author={{
               id: 1,

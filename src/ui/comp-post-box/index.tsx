@@ -20,8 +20,8 @@ export default function PostBox({
     author,
     typeBox
 }: PropsArticle) {
-    const time = formatDateTime(updatedAt);
-    const [updatedDateAt, setUpdatedDateAt] = useState<string>(time);
+    const time = formatDateTime(new Date());
+    const [updatedDateAt, setUpdatedDateAt] = useState(time);
 
     useEffect(() => {
         const interval = setInterval(() => {

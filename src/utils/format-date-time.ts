@@ -1,5 +1,4 @@
 import {
-  format,
   isToday,
   isYesterday,
   differenceInYears,
@@ -15,7 +14,8 @@ export default function formatDateTime(data: Date): string {
     'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'
   ];
 
-  let resultado = '';
+  let resultado = '', time = '';
+
   if (isToday(data)) {
     resultado += 'Hoje · ';
   } else if (isYesterday(data)) {
@@ -24,37 +24,34 @@ export default function formatDateTime(data: Date): string {
 
   resultado += `${meses[data.getMonth()]} ${data.getDate()} ·`;
 
-  let anos_diff = differenceInYears(new Date(), data);
-  let meses_diff = differenceInMonths(new Date(), data);
-  let dias_diff = differenceInDays(new Date(), data);
-  let horas_diff = differenceInHours(new Date(), data);
-  let minutos_diff = differenceInMinutes(new Date(), data);
   let segundos_diff = differenceInSeconds(new Date(), data);
-
-  let time = '';
-
   if (segundos_diff >= 1) {
-    time = segundos_diff + 's';
+    time = `${segundos_diff}s`;
   }
-
+  
+  let minutos_diff = differenceInMinutes(new Date(), data);
   if(minutos_diff >= 1) {
-    time = minutos_diff + 'min';
+    time = `${minutos_diff}min`;
   }
-
+  
+  let horas_diff = differenceInHours(new Date(), data);
   if(horas_diff >= 1) {
-    time = horas_diff + 'h';
+    time = `${horas_diff} ${horas_diff != 1 ? 'hrs' : 'h'}`;
   }
-
+  
+  let dias_diff = differenceInDays(new Date(), data);
   if (dias_diff >= 1) {
-    time = dias_diff + ' dias';
+    time = `${dias_diff} ${dias_diff != 1 ? 'dias' : 'dia'}`;
   }
-
+  
+  let meses_diff = differenceInMonths(new Date(), data);
   if (meses_diff >= 1) {
-    time = meses_diff + ' meses';
+    time = `${meses_diff} ${meses_diff != 1 ? 'meses' : 'mês'}`;
   }
-
+  
+  let anos_diff = differenceInYears(new Date(), data);
   if (anos_diff >= 1) {
-    time = anos_diff + ' anos';
+    time = `${anos_diff} ${anos_diff != 1 ? 'anos' : 'ano'}`;
   }
 
   return `${resultado} há ${time} atrás`;

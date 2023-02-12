@@ -21,3 +21,10 @@ export interface PropsAuthor {
     avatar: string,
     email: string,
 }
+
+// export interface PropsAuthor {
+//     id: number,
+//     name: string,
+//     avatar: string,
+//     email: string,
+// }

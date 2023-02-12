@@ -65,23 +65,23 @@ export default function Navbar() {
                         <li>
                             <Link href="/">Inicio</Link>
                         </li>
-                        {/* <li>
-                            <Link href="/artigos">Artigos</Link>
-                        </li> */}
                         <li>
-                            <Link href="/clientes">Clientes</Link>
+                            <Link href="/sobre">Sobre Nós</Link>
+                        </li>
+                        <li>
+                            <Link href="/#contato">Contatos</Link>
                         </li>
                         <li>
                             <Link href="/servicos">Serviços</Link>
                         </li>
                         <li>
-                            <Link href="/sobre">Sobre Nós</Link>
+                            <Link href="/clientes">Clientes</Link>
+                        </li>
+                        <li>
+                            <Link href="/artigos">Artigos</Link>
                         </li>
                         <li>
                             <Link href="/galeria">Galeria</Link>
-                        </li>
-                        <li>
-                            <Link href="/#contato">Contatos</Link>
                         </li>
                     </ul>
                     
