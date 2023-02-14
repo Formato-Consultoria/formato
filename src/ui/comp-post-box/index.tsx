@@ -9,13 +9,14 @@ import { PropsArticle } from "@/@types/article";
 import { Heart } from "phosphor-react";
 import formatDateTime from "@/utils/format-date-time";
 import { useEffect, useState } from "react";
+import { initStateArticle } from "@/utils/initial-state-post-box";
 
 export default function PostBox({
-    cover,
     slug,
     title,
     description,
     updatedAt,
+    cover,
     category,
     author,
     typeBox
@@ -32,52 +33,52 @@ export default function PostBox({
     }, []);
 
     return(
-        <div className={cx(style.post, style[typeBox], inter.className)}>
-            <Link href={slug} className={style.image}>
+        <div className={cx(style.post, style[typeBox ?? ""], inter.className)}>
+            <Link href={`/artigos/${slug ?? initStateArticle.slug}`} className={style.image}>
                 <Image
-                    src={cover}
+                    src={cover.url ?? initStateArticle.cover.url}
                     fill
-                    alt={title}
+                    alt={cover.alternativeText ?? initStateArticle.cover.alternativeText}
                 />
             </Link>
 
             <div className={style.date_and_category}>
-                <p>{updatedDateAt}</p>
+                <p>{updatedDateAt ?? initStateArticle.updatedAt}</p>
 
-                <div className={cx(style.category_box, blinker.className)}>{category}</div>
+                <div className={cx(style.category_box, blinker.className)}>{category.name ?? initStateArticle.category.name}</div>
             </div>
 
             <h3
                 className={cx(style.tex_title, blinker.className)}
             >
-                <Link href={slug}>{title}</Link>
+                <Link href={`/artigos/${slug ?? initStateArticle.slug}`}>{title ?? initStateArticle.title}</Link>
             </h3>
 
-            <p className={cx(style.tex_description, blinker.className)}>{description}</p>
+            <p className={cx(style.tex_description, blinker.className)}>{description ?? initStateArticle.description}</p>
 
             <div className={style.interaction}>
                 <div className={style.author_info}>
                     <Link
-                        className={style.avatar}
-                        href={`mailto:${author.email}`}
+                        className={style.avatar ?? initStateArticle.author.avatar}
+                        href={`mailto:${author.email ?? initStateArticle.author.email}`}
                         target={"_blank"}
                     >
                         <Image
-                            src={author.avatar}
+                            src={cx(author.avatar ?? initStateArticle.author.avatar)}
                             fill
-                            alt={author.name}
+                            alt={author.name ?? initStateArticle.author.name}
                         />
                     </Link>
 
-                    <p>{author.name}</p>
+                    <p>{author.name ?? initStateArticle.author.name}</p>
                 </div>
 
                 <div className={style.likes}>
-                    <Heart
+                    {/* <Heart
                         size={25}
                         color="rgb(118, 18, 134)"
                         weight="fill"
-                    />
+                    /> */}
 
                     <small>1259</small> {/* {likes} *proveniente de uma api diferente */}
                 </div>

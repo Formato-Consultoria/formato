@@ -49,3 +49,8 @@ export { default as Pause } from "../../../public/icons/Pause.svg";
 
 export { default as QuoteStart } from "../../../public/icons/QuoteStart.svg";
 export { default as QuoteEnd } from "../../../public/icons/QuoteEnd.svg";
+
+// artigos
+export { default as NoArticle } from "../../../public/icons/nenhum-blog.png";
+export { default as Person } from "../../../public/icons/man-user.png";
+export { default as BnrAlternative } from "../../../public/images/alternative-banner.png";

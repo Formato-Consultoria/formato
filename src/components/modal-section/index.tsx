@@ -32,11 +32,15 @@ export default function Modal({ isOpen, onOpen, onClose }: ModalProps) {
                         <hr />
                     </li>
                     <li onClick={onClose}>
+                        <Link href="/sobre">Sobre Nós</Link>
+                        <hr />
+                    </li>
+                    <li onClick={onClose}>
                         <Link href="/servicos">Serviços</Link>
                         <hr />
                     </li>
                     <li onClick={onClose}>
-                        <Link href="/sobre">Sobre Nós</Link>
+                        <Link href="/artigos">Artigos</Link>
                         <hr />
                     </li>
                     <li onClick={onClose}>

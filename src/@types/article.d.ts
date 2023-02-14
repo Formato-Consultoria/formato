@@ -1,30 +1,35 @@
-
-
 type TypeBox = "LAST_BOX_POST" | "BOX_POST";
+
+export interface PropsAuthor {
+    name: string,
+    avatar?: string,
+    email?: string,
+}
+
+export interface PropsComponent {
+    component: string,
+    content: string
+}
 
 export interface PropsArticle {
     id: number,
-    cover: string,
     title: string,
     slug: string,
     description: string,
     updatedAt: Date,
-    category: string,
-
+    
+    cover: {
+        name: string,
+        alternativeText: string,
+        url: string
+    },
+    category: {
+        name: string,
+        slug: string,
+        description?: string
+    },
     author: PropsAuthor,
-    typeBox: TypeBox
-}
+    body?: PropsComponent[],
 
-export interface PropsAuthor {
-    id: number,
-    name: string,
-    avatar: string,
-    email: string,
+    typeBox?: TypeBox
 }
-
-// export interface PropsAuthor {
-//     id: number,
-//     name: string,
-//     avatar: string,
-//     email: string,
-// }

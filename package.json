@@ -32,6 +32,7 @@
     "react-hot-toast": "^2.4.0",
     "react-player": "^2.11.0",
     "react-responsive": "^9.0.2",
+    "swr": "^2.0.3",
     "typescript": "*"
   },
   "description": "Business consulting, leading strategies for companies to leverage their business.",

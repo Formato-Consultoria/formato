@@ -26,9 +26,33 @@ div.container_articles {
             border-top: solid .5px variable.$black-10;
             border-bottom: solid .5px variable.$black-10;
         }
+
+        div.pagination_carousel {
+            
+        }
     }
 
-    div.pagination_carousel {
-        
+    div.image_content_notfound {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+
+        width: 250px;
+        height: 250px;
+        margin: 100px 0;
+
+        h2 {
+            filter: grayscale(50%) brightness(1) opacity(50%);
+        }
+
+        img {
+            filter: grayscale(50%) brightness(1) opacity(25%);
+            object-fit: contain;
+
+            width: 100%;
+            height: 100%;
+        }
     }
 }
