@@ -147,6 +147,23 @@ button.loading_btn:hover {
     }
 }
 
+button.disabled_btn {
+    filter: grayscale(1) brightness(2);
+
+    svg {
+        transform: none;
+    }
+}
+
+button.disabled_btn:hover {
+    box-shadow: 0 0 0 0;
+    filter: grayscale(1) brightness(2);
+
+    svg {
+        transform: none;
+    }
+}
+
 @keyframes spin {
     from {
         transform: rotate(0deg);

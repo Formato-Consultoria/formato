@@ -15,7 +15,7 @@ div.container_articles {
         height: auto;
         margin: 0 auto;
 
-        div.posts_list {
+        div.posts_list_1 {
             display: flex;
             flex-direction: column;
             margin: 30px 0 20px;
@@ -27,32 +27,32 @@ div.container_articles {
             border-bottom: solid .5px variable.$black-10;
         }
 
-        div.pagination_carousel {
-            
-        }
-    }
-
-    div.image_content_notfound {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        position: relative;
-
-        width: 250px;
-        height: 250px;
-        margin: 100px 0;
-
-        h2 {
-            filter: grayscale(50%) brightness(1) opacity(50%);
-        }
-
-        img {
-            filter: grayscale(50%) brightness(1) opacity(25%);
-            object-fit: contain;
-
+        div.pagination_btn {
             width: 100%;
-            height: 100%;
+            height: 50px;
+
+            gap: 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button.button_pag {
+            border-radius: 3px;
+            width: max-content;
+            padding: 0 10px;
+
+            svg {
+                margin: 0;
+                transform: none;
+            }
+        }
+
+        button.button_pag:hover {
+            svg {
+                transform: none;
+            }
         }
     }
 }

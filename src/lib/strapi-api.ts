@@ -1,10 +1,17 @@
 export const fetcher = async (url: string, options = {}) => {
-    let response = await fetch(url, {
-        ...options,
-        headers: {
-            Authorization: `Bearer ${process.env.API_STRAPI_TOKEN}`
-        }
-    })
+    // try {
+        const response: any = await fetch(url, {
+            ...options,
+            headers: {
+                Authorization: `Bearer ${process.env.API_STRAPI_TOKEN}`,
+                'Content-Type': 'application/json'
+            }
+        })
 
-    return await response.json();
+        if(response.ok) {
+            return await response.json()
+        }
+    // } catch (error) {
+    //     return error;
+    // }
 }

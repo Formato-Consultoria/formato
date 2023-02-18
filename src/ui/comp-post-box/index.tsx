@@ -6,10 +6,9 @@ import Image from "next/image";
 
 import Link from "next/link";
 import { PropsArticle } from "@/@types/article";
-import { Heart } from "phosphor-react";
+// import { Heart } from "phosphor-react";
 import formatDateTime from "@/utils/format-date-time";
 import { useEffect, useState } from "react";
-import { initStateArticle } from "@/utils/initial-state-post-box";
 
 export default function PostBox({
     slug,
@@ -33,44 +32,44 @@ export default function PostBox({
     }, []);
 
     return(
-        <div className={cx(style.post, style[typeBox ?? ""], inter.className)}>
-            <Link href={`/artigos/${slug ?? initStateArticle.slug}`} className={style.image}>
+        <div className={cx(style.post, style[typeBox ?? "LAST_BOX_POST"], inter.className)}>
+            <Link href={`/artigos/${slug}`} className={style.image}>
                 <Image
-                    src={cover.url ?? initStateArticle.cover.url}
+                    src={cover?.url ?? ""}
                     fill
-                    alt={cover.alternativeText ?? initStateArticle.cover.alternativeText}
+                    alt={cover?.alternativeText ?? ""}
                 />
             </Link>
 
             <div className={style.date_and_category}>
-                <p>{updatedDateAt ?? initStateArticle.updatedAt}</p>
+                <p>{updatedDateAt}</p>
 
-                <div className={cx(style.category_box, blinker.className)}>{category.name ?? initStateArticle.category.name}</div>
+                <div className={cx(style.category_box, blinker.className)}>{category?.name}</div>
             </div>
 
             <h3
                 className={cx(style.tex_title, blinker.className)}
             >
-                <Link href={`/artigos/${slug ?? initStateArticle.slug}`}>{title ?? initStateArticle.title}</Link>
+                <Link href={`/artigos/${slug}`}>{title}</Link>
             </h3>
 
-            <p className={cx(style.tex_description, blinker.className)}>{description ?? initStateArticle.description}</p>
+            <p className={cx(style.tex_description, blinker.className)}>{description}</p>
 
             <div className={style.interaction}>
                 <div className={style.author_info}>
                     <Link
-                        className={style.avatar ?? initStateArticle.author.avatar}
-                        href={`mailto:${author.email ?? initStateArticle.author.email}`}
+                        className={style.avatar}
+                        href={`mailto:${author?.email}`}
                         target={"_blank"}
                     >
                         <Image
-                            src={cx(author.avatar ?? initStateArticle.author.avatar)}
+                            src={author?.avatar ?? ""}
                             fill
-                            alt={author.name ?? initStateArticle.author.name}
+                            alt={author?.name ?? "avatar do author"}
                         />
                     </Link>
 
-                    <p>{author.name ?? initStateArticle.author.name}</p>
+                    <p>{author?.name}</p>
                 </div>
 
                 <div className={style.likes}>
@@ -80,7 +79,7 @@ export default function PostBox({
                         weight="fill"
                     /> */}
 
-                    <small>1259</small> {/* {likes} *proveniente de uma api diferente */}
+                    <small>1259</small> {/* {likes} *proveniente do um banco */}
                 </div>
             </div>
         </div>

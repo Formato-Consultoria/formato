@@ -1,9 +1,10 @@
 import { PropsArticle } from "@/@types/article";
 
-export default function FormatDataArticle(data: Object[]) {
+export default function FormatDataArticle(data: Object[]): PropsArticle[] {
     return data.map((article: any) => {
-    
-        // let contentBody = article.attributes.blocks.map((block: any) => {
+        
+        // desconsiderar após adicionar o CK Editor
+        // let contentBody = data.attributes.blocks.map((block: any) => {
         //   return {
         //     component: block.__component,
         //     content: block.body,
@@ -11,27 +12,27 @@ export default function FormatDataArticle(data: Object[]) {
         // })
 
         return {
-            id: article.id,
-            title: article.attributes?.title,
-            slug: article.attributes?.slug,
-            description: article.attributes?.description,
-            updatedAt: article.attributes?.updatedAt,
+            id: article?.id,
+            title: article?.attributes?.title,
+            slug: article?.attributes?.slug,
+            description: article?.attributes?.description,
+            updatedAt: article?.attributes?.updatedAt,
             cover: {
-                name: article.attributes?.cover.data.attributes?.name,
-                alternativeText: article.attributes?.cover.data.attributes?.alternativeText,
-                url: article.attributes?.cover.data.attributes?.url,
+                name: article?.attributes?.cover?.data?.attributes?.name,
+                alternativeText: article?.attributes?.cover?.data?.attributes?.alternativeText,
+                url: article?.attributes?.cover?.data?.attributes?.url,
             },
             category: {
-                name: article.attributes?.category.data.attributes?.name,
-                slug: article.attributes?.category.data.attributes?.slug,
-                description: article.attributes?.category.data.attributes?.description,
+                name: article?.attributes?.category?.data?.attributes?.name,
+                slug: article?.attributes?.category?.data?.attributes?.slug,
+                description: article?.attributes?.category?.data?.attributes?.description,
             },
             author: {
-                name: article.attributes?.author.data.attributes?.name,
-                avatar: article.attributes?.author.data.attributes?.avatar.data.attributes?.url,
-                email: article.attributes?.author.data.attributes?.email
+                name: article?.attributes?.author?.data?.attributes?.name,
+                avatar: article?.attributes?.author?.data?.attributes?.avatar?.data?.attributes?.url,
+                email: article?.attributes?.author?.data?.attributes?.email
             },
-            // body: contentBody
+            // body: article?.attributes?.body
         }
     });
 }
