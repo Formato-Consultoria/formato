@@ -20,8 +20,7 @@ export default function PostBox({
     author,
     typeBox
 }: PropsArticle) {
-    const time = formatDateTime(new Date());
-    const [updatedDateAt, setUpdatedDateAt] = useState(time);
+    const [updatedDateAt, setUpdatedDateAt] = useState('');
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -29,7 +28,7 @@ export default function PostBox({
         }, 1000);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [updatedAt]);
 
     return(
         <div className={cx(style.post, style[typeBox ?? "LAST_BOX_POST"], inter.className)}>

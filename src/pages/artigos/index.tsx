@@ -1,12 +1,11 @@
 import { PropsArticle, PropsPagination } from "@/@types/article";
 import { fetcher } from "@/lib/strapi-api";
 import PostBox from "@/ui/comp-post-box";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import style from "./articles.module.scss";
 import cx from "clsx";
 
-// import { BnrAlternative, NoArticle, Person } from "@/components/images";
 import FormatDataArticle from "@/utils/format-data-article";
 
 import useSWR from "swr";
@@ -14,35 +13,68 @@ import NotContent from "@/components/no-content";
 import ButttonGlobal from "@/components/button";
 import { ArrowLeft, ArrowRight } from "phosphor-react";
 
-export default function Articles({ articles, meta }: { articles: PropsArticle[], meta: PropsPagination }) {
+export default function Articles({
+  articles,
+  meta
+}: {
+  articles: PropsArticle[],
+  meta: PropsPagination
+}) {
+  const [firstPosted, setFirstPosted] = useState<PropsArticle>(articles[0]);
   const [allPosted, setAllPosted] = useState<PropsArticle[]>([]);
-  const firstArticle: PropsArticle = articles[0];
+  const [metaPagination, setMetaPagination] = useState<PropsPagination>(meta);
+  const refPostList = useRef<HTMLDivElement>(null);
   
   const [pageIndex, setPageIndex] = useState(1);
-  const { data } = useSWR(`${process.env.NEXT_PUBLIC_STRAPI_URL}/articles?populate=deep&pagination[page]=${pageIndex}&pagination[pageSize]=5`,
-    fetcher, { fallbackData: articles.slice(1) }
+  const { data, isLoading } = useSWR(
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/articles?populate=deep&sort[0]=id:desc&pagination[page]=${pageIndex}&pagination[pageSize]=3`,
+    fetcher, {
+      fallbackData: articles,
+    }
   )
-
+    
   useEffect(() => {
-    setAllPosted(data);
-  }, [data])
+    if (!isLoading) {
+      setMetaPagination(data.meta);
+
+      if(pageIndex === 1) {
+        setFirstPosted(FormatDataArticle(data.data)[0]);
+        setAllPosted(FormatDataArticle(data.data).slice(1));
+      } else {
+        setAllPosted(FormatDataArticle(data.data));
+      }
+    }
+
+    // if(pageIndex === 1)
+    //   window.scrollTo({ top: 0, behavior: "smooth" });
+    // else {
+    //   refPostList.current?.scrollIntoView({
+    //     behavior: 'smooth',
+    //     block: 'start',
+    //   });
+    // }
+  }, [data]);
+  
   
   return (
     <div className={style.container_articles}>{
       (articles.length > 0) ? (
         <div className={style.containt}>
           <PostBox
-            id={firstArticle?.id}
-            title={firstArticle?.title}
-            slug={firstArticle?.slug}
-            description={firstArticle?.description}
-            updatedAt={new Date(firstArticle?.updatedAt ?? InitialProps.updatedAt)}
-            cover={firstArticle?.cover}
-            category={firstArticle?.category}
-            author={firstArticle?.author}
+            id={firstPosted?.id}
+            title={firstPosted?.title}
+            slug={firstPosted?.slug}
+            description={firstPosted?.description}
+            updatedAt={new Date(firstPosted?.updatedAt ?? InitialProps.updatedAt)}
+            cover={firstPosted?.cover}
+            category={firstPosted?.category}
+            author={firstPosted?.author}
           />
 
-          <div className={style.posts_list_1}>
+          <div
+            ref={refPostList}
+            className={style.posts_list_1}
+          >
             {allPosted.map((post: PropsArticle, index) => (
               <PostBox 
                 key={index}
@@ -70,7 +102,9 @@ export default function Articles({ articles, meta }: { articles: PropsArticle[],
                 />
               }
               disabled={pageIndex === 1}
-              onClick={() => setPageIndex(pageIndex -1)}
+              onClick={() => {
+                setPageIndex(pageIndex -1);
+              }}
             />
 
             <ButttonGlobal
@@ -82,11 +116,13 @@ export default function Articles({ articles, meta }: { articles: PropsArticle[],
                   weight="fill"
                 />
               }
-              disabled={pageIndex === (data && meta.pagination.pageCount)}
-              onClick={() => setPageIndex(pageIndex +1)}
+              disabled={pageIndex === (data && metaPagination.pagination.pageCount)}
+              onClick={() => {
+                setPageIndex(pageIndex +1);
+              }}
             />
 
-            <span>{`${pageIndex} de ${data && meta.pagination.pageCount}`}</span>
+            <span>{`${pageIndex} de ${data && metaPagination.pagination.pageCount}`}</span>
           </div>
         </div>
       ) : ( <NotContent />)
@@ -95,25 +131,25 @@ export default function Articles({ articles, meta }: { articles: PropsArticle[],
 }
 
 export async function getStaticProps() {
-  const articleResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/articles?populate=deep&pagination[page]=1&pagination[pageSize]=5`);
+  const articleResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/articles?populate=deep&sort[0]=id:desc&pagination[page]=1&pagination[pageSize]=3`);
 
-  if(!articleResponse) {
+  if(!articleResponse.data) {
     return {
       notFound: true
     }
   }
 
   const { data } = articleResponse;
-  const articles: PropsArticle[] = FormatDataArticle(data).reverse();
-  
+  const articles: PropsArticle[] = FormatDataArticle(data);
+
   const { meta } = articleResponse;
   
   return {
     props: {
       articles,
-      meta,
+      meta
     },
-    revalidate: 30
+    revalidate: 10
   }
 }
 
