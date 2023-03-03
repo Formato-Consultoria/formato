@@ -6,6 +6,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <link rel="icon" type="image/png" href="favicon.png" />
+        {/* <meta name="developer" content="https://github.com/dc7devs"/> */}
       </Head>
 
       <body>

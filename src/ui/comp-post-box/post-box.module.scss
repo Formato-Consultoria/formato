@@ -39,8 +39,9 @@ div.post {
         div.category_box {
             font-weight: 600;
             width: max-content;
-            padding: 2px 10px;
+            padding: 1.5px 10px;
             
+            text-transform: uppercase;
             color: variable.$link-color;
             background-color: variable.$link-color-60;
             
@@ -115,7 +116,8 @@ div.post {
                 font-size: .9rem;
                 color: variable.$black-dark-50;
             }
-        }    }
+        }
+    }
 }
 
 div.LAST_BOX_POST {

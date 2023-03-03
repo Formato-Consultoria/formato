@@ -17,12 +17,12 @@ export default function formatDateTime(data: Date): string {
   let resultado = '', time = '';
 
   if (isToday(data)) {
-    resultado += 'Hoje · ';
+    resultado += 'Hoje ‧ ';
   } else if (isYesterday(data)) {
-    resultado += 'Ontem · ';
+    resultado += 'Ontem ‧ ';
   }
 
-  resultado += `${meses[data.getMonth()]} ${data.getDate()} ·`;
+  resultado += `${meses[data.getMonth()]} ${data.getDate()} ‧`;
 
   let segundos_diff = differenceInSeconds(new Date(), data);
   if (segundos_diff >= 1) {

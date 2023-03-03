@@ -1,16 +1,7 @@
 import { PropsArticle } from "@/@types/article";
 
-export default function FormatDataArticle(data: Object[]): PropsArticle[] {
+export default function FormatArticleData(data: Object[]): PropsArticle[] {
     return data.map((article: any) => {
-        
-        // desconsiderar após adicionar o CK Editor
-        // let contentBody = data.attributes.blocks.map((block: any) => {
-        //   return {
-        //     component: block.__component,
-        //     content: block.body,
-        //   }
-        // })
-
         return {
             id: article?.id,
             title: article?.attributes?.title,
@@ -32,7 +23,33 @@ export default function FormatDataArticle(data: Object[]): PropsArticle[] {
                 avatar: article?.attributes?.author?.data?.attributes?.avatar?.data?.attributes?.url,
                 email: article?.attributes?.author?.data?.attributes?.email
             },
-            // body: article?.attributes?.body
+            body: article?.attributes?.body
         }
     });
+}
+
+export function FormatSingleArticleData(articleData: any): PropsArticle {
+    return {
+        id: articleData?.id,
+        title: articleData?.attributes?.title,
+        slug: articleData?.attributes?.slug,
+        description: articleData?.attributes?.description,
+        updatedAt: articleData?.attributes?.updatedAt,
+        cover: {
+            name: articleData?.attributes?.cover?.data?.attributes?.name,
+            alternativeText: articleData?.attributes?.cover?.data?.attributes?.alternativeText,
+            url: articleData?.attributes?.cover?.data?.attributes?.url,
+        },
+        category: {
+            name: articleData?.attributes?.category?.data?.attributes?.name,
+            slug: articleData?.attributes?.category?.data?.attributes?.slug,
+            description: articleData?.attributes?.category?.data?.attributes?.description,
+        },
+        author: {
+            name: articleData?.attributes?.author?.data?.attributes?.name,
+            avatar: articleData?.attributes?.author?.data?.attributes?.avatar?.data?.attributes?.url,
+            email: articleData?.attributes?.author?.data?.attributes?.email
+        },
+        body: articleData?.attributes?.body
+    }
 }

@@ -1,5 +1,5 @@
 export const fetcher = async (url: string, options = {}) => {
-    // try {
+    try {
         const response: any = await fetch(url, options);
         //     {
         //     ...options,
@@ -12,7 +12,8 @@ export const fetcher = async (url: string, options = {}) => {
         if(response.ok) {
             return await response.json()
         }
-    // } catch (error) {
-    //     return error;
-    // }
+    } catch (error) {
+        console.error(error);
+        return error;
+    }
 }

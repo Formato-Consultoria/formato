@@ -1,9 +1,11 @@
 @use '../../../styles/variable';
 
+$height-banner: 300px;
+
 section.bannerTitle {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: $height-banner;
 
     display: flex;
     align-items: center;
@@ -24,7 +26,7 @@ section.bannerTitle {
         z-index: -1;
         
         width: 100%;
-        height: 300px;
+        height: $height-banner;
 
         top: 0;
         position: absolute;

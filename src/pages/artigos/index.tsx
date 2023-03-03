@@ -6,11 +6,12 @@ import { useEffect, useRef, useState } from "react";
 import style from "./articles.module.scss";
 import cx from "clsx";
 
-import FormatDataArticle from "@/utils/format-data-article";
+import FormatArticleData from "@/utils/format-data-article";
 
 import useSWR from "swr";
-import NotContent from "@/components/no-content";
+import NoContent from "@/components/no-content";
 import ButttonGlobal from "@/components/button";
+import { NoArticle } from "@/components/images";
 import { ArrowLeft, ArrowRight } from "phosphor-react";
 
 export default function Articles({
@@ -38,23 +39,22 @@ export default function Articles({
       setMetaPagination(data.meta);
 
       if(pageIndex === 1) {
-        setFirstPosted(FormatDataArticle(data.data)[0]);
-        setAllPosted(FormatDataArticle(data.data).slice(1));
+        setFirstPosted(FormatArticleData(data.data)[0]);
+        setAllPosted(FormatArticleData(data.data).slice(1));
       } else {
-        setAllPosted(FormatDataArticle(data.data));
+        setAllPosted(FormatArticleData(data.data));
       }
     }
 
-    // if(pageIndex === 1)
-    //   window.scrollTo({ top: 0, behavior: "smooth" });
-    // else {
-    //   refPostList.current?.scrollIntoView({
-    //     behavior: 'smooth',
-    //     block: 'start',
-    //   });
-    // }
+    if(pageIndex === 1)
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    else {
+      refPostList.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
   }, [data]);
-  
   
   return (
     <div className={style.container_articles}>{
@@ -125,7 +125,14 @@ export default function Articles({
             <span>{`${pageIndex} de ${data && metaPagination.pagination.pageCount}`}</span>
           </div>
         </div>
-      ) : ( <NotContent />)
+      ) : (
+        <NoContent
+          image={NoArticle.src}
+          width={250}
+          height={250}
+          isFilter
+        >Desculpe, ainda não temos nenhum conteudo! 🔎</NoContent>
+      )
     }</div>
   )
 }
@@ -140,7 +147,7 @@ export async function getStaticProps() {
   }
 
   const { data } = articleResponse;
-  const articles: PropsArticle[] = FormatDataArticle(data);
+  const articles: PropsArticle[] = FormatArticleData(data);
 
   const { meta } = articleResponse;
   
@@ -149,7 +156,7 @@ export async function getStaticProps() {
       articles,
       meta
     },
-    revalidate: 10
+    revalidate: 60
   }
 }
 

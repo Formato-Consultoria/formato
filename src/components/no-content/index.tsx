@@ -1,19 +1,36 @@
-import style from "./error.module.scss";
-
+import style from "./no-content.module.scss";
 import Image from "next/image";
-import { NoArticle } from "@/components/images";
 
-export default function NotContent() {
+import cx from "clsx";
+
+interface PropsNoContent {
+    image: string,
+    widht?: number,
+    height?: number,
+    isFilter?: boolean,
+    children?: string
+}
+
+export default function NoContent({
+    image,
+    width,
+    height,
+    isFilter = false,
+    children
+}: PropsNoContent) {
     return (
         <div className={style.container_articles}>
-            <div className={style.image_error}>
+            <div
+                className={cx(style.image_error, isFilter && style.filter)}
+                style={{ width: width, height: height }}
+            >
                 <Image
-                    src={NoArticle.src}
+                    src={image}
                     fill
-                    alt={"Esta pagina não foi encontrada!"}
+                    alt={"Imamge de pagina de error"}
                 />
 
-                <h2>Desculpe, ainda não temos nenhum conteudo! 🔎</h2>
+                <h2>{children ?? ""}</h2>
             </div>
         </div>
     )

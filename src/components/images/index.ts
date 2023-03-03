@@ -53,4 +53,8 @@ export { default as QuoteEnd } from "../../../public/icons/QuoteEnd.svg";
 // artigos
 export { default as NoArticle } from "../../../public/icons/nenhum-blog.png";
 export { default as Person } from "../../../public/icons/man-user.png";
+
+// Error message
+export { default as SearchNotFound } from "../../../public/icons/pesquisa.png";
 export { default as BnrAlternative } from "../../../public/images/alternative-banner.png";
+export { default as NotFoundImage } from "../../../public/icons/not-found.png";
