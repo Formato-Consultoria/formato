@@ -9,11 +9,11 @@ interface PropValuesForm {
 };
 
 export interface PropStateForm {
-    isLoading: boolean;
+    isLoading: boolean,
     errors: {
-        [key: string]: string;
-    };
-    values: PropValuesForm;
+        [key: string]: string,
+    },
+    values: PropValuesForm,
 };
 
 export interface PropsDialogError {

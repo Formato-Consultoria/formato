@@ -5,7 +5,7 @@ import cx from "clsx";
 
 interface PropsNoContent {
     image: string,
-    widht?: number,
+    width?: number,
     height?: number,
     isFilter?: boolean,
     children?: string
@@ -27,7 +27,7 @@ export default function NoContent({
                 <Image
                     src={image}
                     fill
-                    alt={"Imamge de pagina de error"}
+                    alt={"Imagem, pagina de error"}
                 />
 
                 <h2>{children ?? ""}</h2>
