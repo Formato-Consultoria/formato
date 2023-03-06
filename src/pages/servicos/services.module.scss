@@ -22,10 +22,17 @@ section.serviceContainer {
         width: 100%;
 
         h3 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: variable.$white-mediumn-dark;
             font-weight: 300;
-            padding: 0 0 20px 50px;
+            padding: 0 0 10px 50px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: variable.$white-mediumn-dark;
+            margin: 10px 0;
+            padding: 0 20px 20px 50px;
         }
     }
 }
@@ -33,12 +40,12 @@ section.serviceContainer {
 @media (max-width: 1024px) {
     section.serviceContainer {
         h2 {
-            font-size: 1.7rem;
+            font-size: 1.4rem;
         }
 
         div.sectionServices {
             h3 {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
         }
     }
@@ -47,12 +54,12 @@ section.serviceContainer {
 @media (max-width: 768px) {
     section.serviceContainer {
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
 
         div.sectionServices {
             h3 {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
         }
     }

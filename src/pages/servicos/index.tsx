@@ -47,19 +47,22 @@ export default function Services() {
         <div className={style.sectionServices}>
           <>
             <h3>Consultorias para Empresas Locais</h3>
-
+            <p>Melhore a performance e rentabilidade da sua empresa com os serviços de consultoria da Formato Consultoria. Nossa equipe de consultores altamente qualificados em finanças, marketing, recursos humanos e operações pode ajudá-lo a identificar oportunidades de crescimento, otimizar processos, aumentar a eficiência e produtividade, reduzir custos e criar soluções personalizadas e sustentáveis para as suas necessidades empresariais. Trabalharemos juntos para alcançar resultados tangíveis e duradouros para o seu negócio.</p>
+            
             {listServiceByType('CEL')}
           </>
         </div>
 
         <div className={style.sectionServices}>
           <h3>Workshops</h3>
+          <p>Capacite sua equipe para atingir metas mais ambiciosas com os workshops práticos e interativos da Formato Consultoria. Com uma ampla gama de tópicos, desde liderança até marketing digital e finanças empresariais, nossos workshops são adaptados às suas necessidades específicas. Desenvolva habilidades críticas em um ambiente de aprendizado colaborativo e hands-on para o sucesso empresarial.</p>
 
           {listServiceByType('WORKSHOPS')}
         </div>
 
         <div className={style.sectionServices}>
           <h3>Mentoria Técnica</h3>
+          <p>Enfrente desafios técnicos específicos em sua empresa com a mentoria técnica da Formato Consultoria. Nossos mentores técnicos são profissionais experientes em tecnologia da informação, engenharia, design e outras áreas técnicas, prontos para oferecer conhecimento especializado, conselhos e direcionamento personalizado. Trabalhando juntos, encontraremos soluções práticas e eficazes para seus desafios empresariais complexos.</p>
 
           {listServiceByType('MT')}
         </div>
