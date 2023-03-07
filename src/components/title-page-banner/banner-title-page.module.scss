@@ -1,15 +1,15 @@
 @use '../../../styles/variable';
 
-$height-banner: 300px;
-
 section.bannerTitle {
     position: relative;
     width: 100%;
-    height: $height-banner;
+    height: 300px;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    text-align: left;
 
     div.title {
         z-index: 1;
@@ -22,11 +22,11 @@ section.bannerTitle {
         }
     }
 
-    div.image {
+    figure.image {
         z-index: -1;
         
         width: 100%;
-        height: $height-banner;
+        height: 300px;
 
         top: 0;
         position: absolute;
@@ -39,6 +39,51 @@ section.bannerTitle {
 
             filter: brightness(.3);
         }
+
+        figcaption {
+            position: absolute;
+            bottom: -25px;
+            display: flex;
+            gap: 2px;
+
+            font-size: .8rem;
+            color: variable.$white-mediumn-dark;
+            vertical-align: sub;
+
+            font-weight: bold;
+
+            a {
+                text-decoration: none;
+                color: variable.$white-mediumn-dark;
+                font-weight: bold;
+                transition: .2s ease;
+            }
+
+            a:hover {
+                color: variable.$primary-color;
+                transition: .2s ease;
+            }
+        }
+    }
+}
+
+section.bannerArticle {
+    margin: 0 auto 50px;
+
+    div.title {
+        display: none;
+    }
+
+    figure.image {
+        z-index: 1;
+
+        border: 1px solid variable.$black-dark-50;
+        border-radius: 5px;
+    
+        img {
+            filter: none;
+            border-radius: 5px;
+        }
     }
 }
 
@@ -50,7 +95,7 @@ section.bannerTitle {
             font-size: 2rem;
         }
 
-        div.image {
+        figure.image {
             height: 250px;
         }
     }
@@ -65,7 +110,7 @@ section.bannerTitle {
             padding: 0 20px;
         }
 
-        div.image {
+        figure.image {
             height: 230px;
         }
     }
