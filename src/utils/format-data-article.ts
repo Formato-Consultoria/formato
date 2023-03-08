@@ -1,4 +1,4 @@
-import { PropsArticle } from "@/@types/article";
+import { PropsArticle, PropsCategory } from "@/@types/article";
 
 export default function FormatArticleData(data: Object[]): PropsArticle[] {
     return data.map((article: any) => {
@@ -51,5 +51,19 @@ export function FormatSingleArticleData(articleData: any): PropsArticle {
             email: articleData?.attributes?.author?.data?.attributes?.email
         },
         body: articleData?.attributes?.body
+    }
+}
+
+
+export function FormatCategoryData(categoryData: any, slug = ""): PropsCategory {
+    return {
+        name: categoryData?.attributes?.name,
+        slug: categoryData?.attributes?.slug,
+        description: categoryData?.attributes?.description,
+        articles: FormatArticleData(categoryData?.attributes?.articles?.data
+            .filter((article: any) => {
+                return article?.attributes?.slug != slug
+            })
+        )
     }
 }

@@ -1,4 +1,4 @@
-type TypeBox = "LAST_BOX_POST" | "BOX_POST";
+type TypeBox = "LAST_BOX_POST" | "BOX_POST" | "RELATED_BOX_POST";
 
 export interface PropsArticle {
     id: number,
@@ -31,6 +31,7 @@ export interface PropsCategory {
     name: string,
     slug: string,
     description?: string
+    articles?: PropsArticle[]
 }
 
 

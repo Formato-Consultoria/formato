@@ -46,20 +46,20 @@ section.bannerTitle {
             display: flex;
             gap: 2px;
 
-            font-size: .8rem;
+            font-size: .9rem;
             color: variable.$white-mediumn-dark;
             vertical-align: sub;
 
             font-weight: bold;
 
-            a {
+            a, p {
                 text-decoration: none;
                 color: variable.$white-mediumn-dark;
                 font-weight: bold;
                 transition: .2s ease;
             }
 
-            a:hover {
+            a:hover, p:hover {
                 color: variable.$primary-color;
                 transition: .2s ease;
             }
@@ -78,7 +78,7 @@ section.bannerArticle {
         z-index: 1;
 
         border: 1px solid variable.$black-dark-50;
-        border-radius: 5px;
+        border-radius: 6.1px;
     
         img {
             filter: none;

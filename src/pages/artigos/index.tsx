@@ -33,7 +33,8 @@ export default function Articles({
       fallbackData: articles,
     }
   )
-    
+
+  // TODO: Implementar skeleton loading
   useEffect(() => {
     if (!isLoading) {
       setMetaPagination(data.meta);
@@ -65,7 +66,7 @@ export default function Articles({
             title={firstPosted?.title}
             slug={firstPosted?.slug}
             description={firstPosted?.description}
-            updatedAt={new Date(firstPosted?.updatedAt ?? InitialProps.updatedAt)}
+            updatedAt={new Date(firstPosted?.updatedAt ?? new Date())}
             cover={firstPosted?.cover}
             category={firstPosted?.category}
             author={firstPosted?.author}
@@ -82,7 +83,7 @@ export default function Articles({
                 title={post.title}
                 slug={post.slug}
                 description={post.description}
-                updatedAt={new Date(post.updatedAt ?? InitialProps.updatedAt)}
+                updatedAt={new Date(post.updatedAt ?? new Date())}
                 cover={post.cover}
                 category={post.category}
                 author={post.author}
@@ -157,28 +158,5 @@ export async function getStaticProps() {
       meta
     },
     revalidate: 60
-  }
-}
-
-const InitialProps = {
-  id: 0,
-  title: '',
-  slug: '',
-  description: '',
-  updatedAt: new Date(),
-  cover: {
-    name: '',
-    alternativeText: '',
-    url: ''
-  },
-  category:{
-    name: '',
-    slug: '',
-    description: ''
-  },
-  author: {
-    name: '',
-    slug: '',
-    description: ''
   }
 }

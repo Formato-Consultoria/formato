@@ -2,7 +2,7 @@ import style from "./banner-title-page.module.scss";
 
 import cx from "clsx";
 import { inter } from "@/utils/_fonts";
-import { ReactNode, useState } from "react";
+import { CSSProperties, ReactNode } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -11,26 +11,29 @@ import { CaretRight } from "phosphor-react";
 type PropsBnrTlt = {
     value?: string | ReactNode,
     src: string,
-    breadcrumbsSlug?: string,
     height?: string,
     width?: string,
-    isBannerArticle?: boolean
+    isBannerArticle?: boolean,
+    title?: string,
+    styleBnr?: CSSProperties,
 }
+
+// TODO: Criar uam função para transoformar o titulo em formato slug
 
 export default function BannerTitle({
     src,
     value = "",
-    breadcrumbsSlug = "",
     height = "300px",
     width = "100%",
-    isBannerArticle = false
+    isBannerArticle = false,
+    title = "",
+    styleBnr
 }: PropsBnrTlt) {
-    const slug = breadcrumbsSlug;
 
     return (
         <section
             className={cx(style.bannerTitle, isBannerArticle && style.bannerArticle, inter)}
-            style={{height: height}}
+            style={{...styleBnr, height: height}}
         >
             <figure
                 className={style.image}
@@ -43,10 +46,10 @@ export default function BannerTitle({
                     priority
                 />
 
-                <figcaption style={{display: slug ? "flex" : "none"}}>
+                <figcaption style={{display: title ? "flex" : "none"}}>
                     <Link href="/artigos">Artigos</Link>
                     <CaretRight size={13} color="#080c10" weight="bold" />
-                    <Link href={`/artigos/${slug}`}>{slug}</Link>
+                    <p>{title}</p>
                 </figcaption>
             </figure>
 

@@ -65,6 +65,11 @@ div.post {
 
     p {
         color: variable.$black-dark-50;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     div.interaction {
@@ -233,6 +238,61 @@ div.BOX_POST {
 
     div.interaction {
         grid-area: interaction;
+    }
+}
+
+div.RELATED_BOX_POST {
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    height: 500px;
+    
+    border: 1px solid variable.$black-10;
+
+    padding: 5px;
+    gap: 7px;
+
+    a.image {
+        height: 150px;
+        width: 100%;
+
+        border-radius: 4px;
+
+        img {
+            border-radius: 4px;
+        }
+    }
+
+    div.date_and_category {
+        padding: 0 2px;
+        gap: 0;
+        align-items: start;
+        justify-content: space-between;
+
+        p {
+            font-size: .98rem;
+        }
+
+        div.category_box {
+            padding: 1.1px 5px;
+            font-size: 1rem;
+        }
+    }
+
+    h3.tex_title {
+        width: 80%;
+        padding: 0 2px;
+        
+        a {
+            font-size: 1.8rem;
+        }
+    }
+
+    p {
+        font-size: 1.1rem;
+        margin: 0 2px;
+
+        -webkit-line-clamp: 3;
     }
 }
 

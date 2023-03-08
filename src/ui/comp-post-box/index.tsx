@@ -58,17 +58,17 @@ export default function PostBox({
                 <div className={style.author_info}>
                     <Link
                         className={style.avatar}
-                        href={`mailto:${author?.email}`}
+                        href={`mailto:${author?.email}` ?? ""}
                         target={"_blank"}
                     >
                         <Image
                             src={author?.avatar ?? ""}
                             fill
-                            alt={author?.name ?? "avatar do author"}
+                            alt={author.name}
                         />
                     </Link>
 
-                    <p>{author?.name}</p>
+                    <p>{author.name}</p>
                 </div>
 
                 <div className={style.likes}>
