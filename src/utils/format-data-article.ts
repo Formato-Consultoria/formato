@@ -1,4 +1,5 @@
 import { PropsArticle, PropsCategory } from "@/@types/article";
+import { mdToHtml } from "@/lib/md-to-html";
 
 export default function FormatArticleData(data: Object[]): PropsArticle[] {
     return data.map((article: any) => {
@@ -28,7 +29,7 @@ export default function FormatArticleData(data: Object[]): PropsArticle[] {
     });
 }
 
-export function FormatSingleArticleData(articleData: any): PropsArticle {
+export async function FormatSingleArticleData(articleData: any): Promise<PropsArticle> {
     return {
         id: articleData?.id,
         title: articleData?.attributes?.title,
@@ -50,7 +51,7 @@ export function FormatSingleArticleData(articleData: any): PropsArticle {
             avatar: articleData?.attributes?.author?.data?.attributes?.avatar?.data?.attributes?.url,
             email: articleData?.attributes?.author?.data?.attributes?.email
         },
-        body: articleData?.attributes?.body
+        body: await mdToHtml(articleData?.attributes?.body)
     }
 }
 
