@@ -41,7 +41,7 @@ export default function PostBox({
             </Link>
 
             <div className={style.date_and_category}>
-                <p>{updatedDateAt}</p>
+                <time>{updatedDateAt}</time>
 
                 <div className={cx(style.category_box, blinker.className)}>{category?.name}</div>
             </div>

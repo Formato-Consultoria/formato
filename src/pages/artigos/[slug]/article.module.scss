@@ -52,7 +52,7 @@ div.article_page {
             width: 100%;
             gap: 5px;
         
-            p {
+            time {
                 color: variable.$black-dark-50;
             }
         
@@ -100,7 +100,7 @@ div.article_page {
         }
     }
 
-    div.content {
+    article.content {
         width: 100%;
         height: auto;
         padding: 0 20px;

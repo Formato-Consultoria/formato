@@ -62,14 +62,8 @@ export default function Articles({
       (articles.length > 0) ? (
         <div className={style.containt}>
           <PostBox
-            id={firstPosted?.id}
-            title={firstPosted?.title}
-            slug={firstPosted?.slug}
-            description={firstPosted?.description}
+            {...firstPosted}
             updatedAt={new Date(firstPosted?.updatedAt ?? new Date())}
-            cover={firstPosted?.cover}
-            category={firstPosted?.category}
-            author={firstPosted?.author}
           />
 
           <div
@@ -79,14 +73,8 @@ export default function Articles({
             {allPosted.map((post: PropsArticle, index) => (
               <PostBox 
                 key={index}
-                id={post.id}
-                title={post.title}
-                slug={post.slug}
-                description={post.description}
+                {...post}
                 updatedAt={new Date(post.updatedAt ?? new Date())}
-                cover={post.cover}
-                category={post.category}
-                author={post.author}
                 typeBox={"BOX_POST"}
               />
             ))}

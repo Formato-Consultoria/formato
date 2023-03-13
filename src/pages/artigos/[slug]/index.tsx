@@ -33,10 +33,6 @@ export default function Article({
         return () => clearInterval(interval);
     }, [updatedAt]);
 
-    useEffect(() => {
-        console.log(relatedArticles);
-    }, [])
-
     return (<>
         <div className={style.article_page}>
             <BannerTitle
@@ -83,29 +79,20 @@ export default function Article({
             
             <hr style={{ height: "1px", width: "90%", outline: "none", margin: "5px 20px", borderTop: "1px solid rgba(0, 0, 0, 0.1)", gridColumn: 2}} />
 
-            <div className={style.content}>
+            <article className={style.content}>
                 {/* <MDXContent /> */}
                 
                 {body}
-            </div>
+            </article>
         </div>
 
         <hr style={{ height: "1px", width: "90%", outline: "none", margin: "25px auto", borderTop: "1px solid rgba(0, 0, 0, 0.1)"}} />
 
-        <div className={style.related_articles}>{relatedArticles.map((
-            {id, title, slug, description, updatedAt, cover, category, author}: PropsArticle,
-            index
-        ) => (
+        <div className={style.related_articles}>{relatedArticles.map((article: PropsArticle, index) => (
             <PostBox
                 key={index}
-                id={id}
-                title={title}
-                slug={slug}
-                description={description}
+                {...article}
                 updatedAt={new Date(updatedAt ?? new Date())}
-                cover={cover}
-                category={category}
-                author={author}
                 typeBox={"RELATED_BOX_POST"}
             />
         ))}</div>
