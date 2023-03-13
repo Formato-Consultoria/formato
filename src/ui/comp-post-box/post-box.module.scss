@@ -244,7 +244,7 @@ div.BOX_POST {
 div.RELATED_BOX_POST {
     display: flex;
     flex-direction: column;
-    max-width: 350px;
+    max-width: 330px;
     height: 500px;
     
     border: 1px solid variable.$black-10;
@@ -285,6 +285,12 @@ div.RELATED_BOX_POST {
         
         a {
             font-size: 1.8rem;
+
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
 

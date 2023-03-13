@@ -112,11 +112,11 @@ div.article_page {
 div.related_articles {
     width: 100%;
     min-height: 200px;
-    padding: 20px;
+    padding: 20px 5px;
 
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 4px;
 
     flex-wrap: wrap;
     // background-color: variable.$blue-dark-50;

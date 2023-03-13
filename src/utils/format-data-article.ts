@@ -63,7 +63,7 @@ export function FormatCategoryData(categoryData: any, slug = ""): PropsCategory 
         articles: FormatArticleData(categoryData?.attributes?.articles?.data
             .filter((article: any) => {
                 return article?.attributes?.slug != slug
-            })
+            }).slice(0, 4)
         )
     }
 }
