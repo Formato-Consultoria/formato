@@ -1,5 +1,5 @@
 import { CircleNotch } from "phosphor-react";
-import { useState } from "react";
+import { createRef, useRef, useState } from "react";
 
 import useFormValidation from "@/hooks/useFormValidation";
 import ButttonGlobal from "@/components/button";
@@ -26,10 +26,13 @@ const initState: PropStateForm = {
     }
 }
 
+const RECAPTCHA_SITE_KEY = '6Lc2G-gnAAAAANp-86UWfPb6KHGG6vImoWR6PN6J';
+
 export default function Form() {
     const [state, setState] = useState<PropStateForm>(initState);
     const [touched, setTouched] = useState<PropValuesForm>(initState.values);
-    const [captchaDone, setCaptchaDone] = useState(false);
+    const [disabledButton, setDisabledButton] = useState(true);
+    const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
 
     const { values, isLoading, errors } = state;
 
@@ -62,8 +65,13 @@ export default function Form() {
         }));
     }
 
+    const handleRecaptchaChange = (value: string | null) => {
+        setRecaptchaValue(value);
+        value && setDisabledButton(false);
+    };
+
     const onSubmit = async () => {
-        if(useFormValidation(state).isValid) {
+        if(useFormValidation(state).isValid && (recaptchaValue != null)) {
             setState((prev) => ({
                 ...prev,
                 isLoading: true,
@@ -79,8 +87,8 @@ export default function Form() {
                         address,
                         phone,
                         message,
-                        subject: `Messagem do(a) ${values.name}`}
-                    ),
+                        subject: `Messagem do(a) ${values.name}`
+                    }),
                     {
                         loading: 'Enviando...',
                         success: <b>Enviado com sucesso!</b>,
@@ -106,12 +114,6 @@ export default function Form() {
                 toast.error(error);
             }
         }
-    }
-
-    const RECAPTCHA_SITE_KEY = '6Lc2G-gnAAAAANp-86UWfPb6KHGG6vImoWR6PN6J';
-    const onChangeCaptcha = () => {
-        console.log("changed");
-        setCaptchaDone(true);
     }
 
     return (
@@ -190,14 +192,15 @@ export default function Form() {
                 <ReCAPTCHA
                     style={{ margin: '0px 0px 15px' }}
                     sitekey={RECAPTCHA_SITE_KEY}
-                    onChange={onChangeCaptcha}
+                    onChange={handleRecaptchaChange}
                 />
 
-                {captchaDone && <ButttonGlobal
+                <ButttonGlobal
                     value={isLoading ? <CircleNotch size={22} weight="bold" /> : "Enviar"}
                     isLoading
                     onClick={onSubmit}
-                />}
+                    disabled={disabledButton}
+                />
             </div>
         </form>
     )

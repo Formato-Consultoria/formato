@@ -148,7 +148,11 @@ button.loading_btn:hover {
 }
 
 button.disabled_btn {
+    box-shadow: 0 0 0 0;
+    border: solid 1px '#707070';
     filter: grayscale(1) brightness(2);
+
+    opacity: 1;
 
     svg {
         transform: none;
@@ -157,6 +161,10 @@ button.disabled_btn {
 
 button.disabled_btn:hover {
     box-shadow: 0 0 0 0;
+    border: solid 1px '#707070';
+    color: variable.$white;
+
+    opacity: 1;
     filter: grayscale(1) brightness(2);
 
     svg {
