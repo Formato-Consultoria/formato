@@ -1,5 +1,5 @@
 import { CircleNotch } from "phosphor-react";
-import { ReactElement, createRef, useEffect, useState } from "react";
+import { useState } from "react";
 
 import useFormValidation from "@/hooks/useFormValidation";
 import ButttonGlobal from "@/components/button";
@@ -64,16 +64,6 @@ export default function Form() {
 
     const onSubmit = async () => {
         if(useFormValidation(state).isValid) {
-            // const recaptchaValue = await new Promise<string | null>((resolve) => {
-            //     const recaptchaRef = createRef<ReCAPTCHA>();
-    
-            //     const handleRecaptchaChange = (value: string | null) => {
-            //         resolve(value);
-            //     };
-    
-            //     recaptchaRef.current?.execute();
-            // });
-
             setState((prev) => ({
                 ...prev,
                 isLoading: true,
@@ -118,7 +108,7 @@ export default function Form() {
         }
     }
 
-    const RECAPTCHA_SITE_KEY = '6LfJ-OcnAAAAABllLVxHj-JDBL7z-s6c_I8UK5tN';
+    const RECAPTCHA_SITE_KEY = '6Lc2G-gnAAAAANp-86UWfPb6KHGG6vImoWR6PN6J';
     const onChangeCaptcha = () => {
         console.log("changed");
         setCaptchaDone(true);
@@ -196,8 +186,9 @@ export default function Form() {
 		Concordo em compartilhar meus dados com a <strong>Formato Consultoria</strong> para fins de comunicação e aceito seus termos de uso.
             </label>
 
-            <div className={'flex flex-col gap-3'}>
+            <div className={'flex flex-col'}>
                 <ReCAPTCHA
+                    style={{ margin: '0px 0px 15px' }}
                     sitekey={RECAPTCHA_SITE_KEY}
                     onChange={onChangeCaptcha}
                 />
