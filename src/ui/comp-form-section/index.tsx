@@ -1,5 +1,5 @@
 import { CircleNotch } from "phosphor-react";
-import { ReactElement, useEffect, useState } from "react";
+import { ReactElement, createRef, useEffect, useState } from "react";
 
 import useFormValidation from "@/hooks/useFormValidation";
 import ButttonGlobal from "@/components/button";
@@ -9,6 +9,8 @@ import { sendContactForm } from "@/service/email";
 import style from "@/ui/section-contact/contact-section.module.scss";
 import cx from "clsx";
 import toast from "react-hot-toast";
+
+import ReCAPTCHA from "react-google-recaptcha";
 
 const initState: PropStateForm = {
     isLoading: false,
@@ -27,6 +29,7 @@ const initState: PropStateForm = {
 export default function Form() {
     const [state, setState] = useState<PropStateForm>(initState);
     const [touched, setTouched] = useState<PropValuesForm>(initState.values);
+    const [captchaDone, setCaptchaDone] = useState(false);
 
     const { values, isLoading, errors } = state;
 
@@ -61,6 +64,16 @@ export default function Form() {
 
     const onSubmit = async () => {
         if(useFormValidation(state).isValid) {
+            // const recaptchaValue = await new Promise<string | null>((resolve) => {
+            //     const recaptchaRef = createRef<ReCAPTCHA>();
+    
+            //     const handleRecaptchaChange = (value: string | null) => {
+            //         resolve(value);
+            //     };
+    
+            //     recaptchaRef.current?.execute();
+            // });
+
             setState((prev) => ({
                 ...prev,
                 isLoading: true,
@@ -103,6 +116,12 @@ export default function Form() {
                 toast.error(error);
             }
         }
+    }
+
+    const RECAPTCHA_SITE_KEY = '6LfJ-OcnAAAAABllLVxHj-JDBL7z-s6c_I8UK5tN';
+    const onChangeCaptcha = () => {
+        console.log("changed");
+        setCaptchaDone(true);
     }
 
     return (
@@ -177,11 +196,18 @@ export default function Form() {
 		Concordo em compartilhar meus dados com a <strong>Formato Consultoria</strong> para fins de comunicação e aceito seus termos de uso.
             </label>
 
-            <ButttonGlobal
-                value={isLoading ? <CircleNotch size={22} weight="bold" /> : "Enviar"}
-                isLoading
-                onClick={onSubmit}
-            />
+            <div className={'flex flex-col gap-3'}>
+                <ReCAPTCHA
+                    sitekey={RECAPTCHA_SITE_KEY}
+                    onChange={onChangeCaptcha}
+                />
+
+                {captchaDone && <ButttonGlobal
+                    value={isLoading ? <CircleNotch size={22} weight="bold" /> : "Enviar"}
+                    isLoading
+                    onClick={onSubmit}
+                />}
+            </div>
         </form>
     )
 }
