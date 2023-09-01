@@ -15,7 +15,6 @@ import Image from "next/image";
 import style from "./article.module.scss";
 import PostBox from "@/ui/comp-post-box";
 
-
 export default function Article({
     article,
     relatedArticles
@@ -107,7 +106,7 @@ export async function getServerSideProps({ params }: any) {
     const idCategory = articleResponse?.data?.attributes?.category?.data?.id ?? 0;
     const articlesByCategoryResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/categories/${idCategory}?populate=deep,4`);
 
-    if(!articleResponse && !articlesByCategoryResponse) {
+    if(!articleResponse || !articlesByCategoryResponse.data) {
         return {
           notFound: true
         }
