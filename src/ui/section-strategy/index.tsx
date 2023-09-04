@@ -3,7 +3,7 @@ import { blinker } from '@/utils/_fonts';
 
 import cx from 'clsx';
 
-export default function StrategySection() {
+export function StrategySection() {
     return (
       <section className={cx(styles.strategy, blinker.className)}>
         <div className={styles.title_and_description}>

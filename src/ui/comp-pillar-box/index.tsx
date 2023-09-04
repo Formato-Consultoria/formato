@@ -6,7 +6,7 @@ type PropsPlrBxCrd = {
     value: string
 }
 
-export default function PillarBoxCard({ src, value }: PropsPlrBxCrd) {
+export function PillarBoxCard({ src, value }: PropsPlrBxCrd) {
     return (
         <div className={style.cardBox}>
             <div className={style.image}>

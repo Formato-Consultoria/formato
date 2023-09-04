@@ -1,3 +1,4 @@
+'use client'
 import styles from './service-section.module.scss';
 import { inter } from '../../utils/_fonts';
 import { ArrowRight, Buildings } from 'phosphor-react';
@@ -7,7 +8,7 @@ import Image from 'next/image';
 import cx from 'clsx';
 import Link from 'next/link';
 
-export default function ServiceSection() {
+export function ServiceSection() {
     return (
       <section className={cx(styles.services, inter.className)}>
         <div className={styles.container_services}>

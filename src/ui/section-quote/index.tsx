@@ -1,6 +1,6 @@
 import style from "./quote-section.module.scss";
 
-import { QuoteEnd, QuoteStart } from "@/components/images";
+// import { QuoteStart } from "@/components/images";
 import Image from "next/image";
 
 type PropsQuoteSection = {
@@ -8,11 +8,11 @@ type PropsQuoteSection = {
     img: string
 }
 
-export default function QuoteSection({ children, img }: PropsQuoteSection) {
+export function QuoteSection({ children, img }: PropsQuoteSection) {
     return (
         <div className={style.quote_section}>
             <p>
-                <QuoteStart />
+                {/* <QuoteStart /> */}
                 {children}
             </p>
 

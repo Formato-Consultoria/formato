@@ -1,3 +1,4 @@
+'use client'
 import styles from "./whatsapppWidget.module.scss";
 
 import cx from 'clsx';

@@ -27,12 +27,9 @@ import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
 import ReactPlayerMedia from "@/components/react-player";
 import BannerTitle from "@/components/title-page-banner";
 
-import GallerySection from "@/ui/section-image-gallery";
-import PillarBoxCard from "@/ui/comp-pillar-box";
+import Sections from "@/ui";
 
 import { ImageProps } from "@/@types/image-gallery";
-
-import ContactSection from "@/ui/section-contact";
 import getImagesGallery from "@/utils/get-cloudinary-gallery";
 
 // TODO: não funciona a animação e toggle do btn de Play para o btn Pouse
@@ -77,10 +74,10 @@ const About = ({ images }: { images: ImageProps[] }) => {
 
       <section className={cx(style.pillarsContainer, style.section)}>
         <div className={style.pillarsContent}>
-          <PillarBoxCard src={Mindset.src} value={"MINDSET"} />
-          <PillarBoxCard src={Strategy.src} value={"ESTRATÉGIA"} />
-          <PillarBoxCard src={Metrics.src} value={"MÉTRICAS"} />
-          <PillarBoxCard src={Innovation.src} value={"EVOLUÇÃO"} />
+          <Sections.PillarBoxCard src={Mindset.src} value={"MINDSET"} />
+          <Sections.PillarBoxCard src={Strategy.src} value={"ESTRATÉGIA"} />
+          <Sections.PillarBoxCard src={Metrics.src} value={"MÉTRICAS"} />
+          <Sections.PillarBoxCard src={Innovation.src} value={"EVOLUÇÃO"} />
         </div>
       </section>
 
@@ -136,22 +133,22 @@ const About = ({ images }: { images: ImageProps[] }) => {
           <h2>VALORES</h2>
 
           <div>
-            <PillarBoxCard src={Respect.src} value={"Respeito"} />
-            <PillarBoxCard src={OpennessChallenges.src} value={"Abertura a desafios"} />
-            <PillarBoxCard src={Willpower.src} value={"Vontade"} />
-            <PillarBoxCard src={Collaboration.src} value={"Colaboração"} />
-            <PillarBoxCard src={CriticalThinking.src} value={"Pensamento Crítico"} />
-            <PillarBoxCard src={Commitment.src} value={"Compromisso"} />
-            <PillarBoxCard src={Dialogue.src} value={"Diálogo"} />
+            <Sections.PillarBoxCard src={Respect.src} value={"Respeito"} />
+            <Sections.PillarBoxCard src={OpennessChallenges.src} value={"Abertura a desafios"} />
+            <Sections.PillarBoxCard src={Willpower.src} value={"Vontade"} />
+            <Sections.PillarBoxCard src={Collaboration.src} value={"Colaboração"} />
+            <Sections.PillarBoxCard src={CriticalThinking.src} value={"Pensamento Crítico"} />
+            <Sections.PillarBoxCard src={Commitment.src} value={"Compromisso"} />
+            <Sections.PillarBoxCard src={Dialogue.src} value={"Diálogo"} />
           </div>
         </div>
       </section>
 
-      <GallerySection
+      <Sections.GallerySection
         images={images}
       />
 
-      <ContactSection />
+      <Sections.ContactSection />
     </>
   )
 }

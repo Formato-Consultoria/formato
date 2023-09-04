@@ -2,38 +2,54 @@
 
 const nextConfig = {
   webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/i,
-      issuer: { and: [/\.(js|ts|md)x?$/] },
-      use: [
-        {
-          loader: "@svgr/webpack",
-          options: {
-            svgoConfig: { plugins: [
-              {
-                name: 'preset-default',
-                params: {
-                  overrides: { removeViewBox: false },
-                },
-              },
-            ]},
-          },
-        },
-      ],
-    });
-    return config;
+    const fileLoaderRule = config.module.rules.find((rule) =>
+      rule.test?.test?.('.svg'),
+    )
+
+    config.module.rules.push(
+      {
+        ...fileLoaderRule,
+        test: /\.svg$/i,
+        resourceQuery: /url/,
+      },
+      {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        resourceQuery: { not: /url/ },
+        use: ['@svgr/webpack'],
+      },
+    )
+
+    fileLoaderRule.exclude = /\.svg$/i
+
+    return config
   },
   images: {
-    formats: ['image/avif', 'image/webp'],
-    domains: ['res.cloudinary.com'],
+    remotePatterns: [
+      { protocol: "https", hostname: "**" }
+    ]
   },
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
-    fontLoaders: [
-      { loader: '@next/font/google', options: { subsets: ['latin'] } },
-    ],
-  },
 }
 
 module.exports = nextConfig;
+
+// {
+//   test: /\.svg$/i,
+//   issuer: { and: [/\.(js|ts|md)x?$/] },
+//   use: [
+//     {
+//       loader: "@svgr/webpack",
+//       options: {
+//         svgoConfig: { plugins: [
+//           {
+//             name: 'preset-default',
+//             params: {
+//               overrides: { removeViewBox: false },
+//             },
+//           },
+//         ]},
+//       },
+//     },
+//   ]}

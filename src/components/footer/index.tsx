@@ -1,3 +1,4 @@
+'use client'
 import style from './footer.module.scss';
 import { inter } from '@/utils/_fonts';
 import cx from 'clsx';

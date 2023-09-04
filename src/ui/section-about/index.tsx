@@ -4,7 +4,7 @@ import { inter, blinker } from "@/utils/_fonts";
 import Image from "next/image";
 import cx from "clsx";
 
-export default function AboutSection() {
+export function AboutSection() {
     return(
         <section className={cx(styles.about, inter.className)}>
             <h2 className={blinker.className}>SOBRE A NOSSA EMPRESA</h2>

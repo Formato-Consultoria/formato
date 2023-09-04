@@ -1,3 +1,4 @@
+'use client'
 import { blinker, inter } from "@/utils/_fonts";
 
 import cx from "clsx";
@@ -10,7 +11,7 @@ import { PropsArticle } from "@/@types/article";
 import formatDateTime from "@/utils/format-date-time";
 import { useEffect, useState } from "react";
 
-export default function PostBox({
+export function PostBox({
     slug,
     title,
     description,

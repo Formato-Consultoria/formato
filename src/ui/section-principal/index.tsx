@@ -7,7 +7,7 @@ import ButttonGlobal from "@/components/button";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function PrincipalSection() {
+export function PrincipalSection() {
     return (
         <section className={cx(styles.principal, inter.className)}>
             <div className={styles.titulo_and_apresentation}>

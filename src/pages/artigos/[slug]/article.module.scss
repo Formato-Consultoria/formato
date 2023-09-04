@@ -59,7 +59,7 @@ div.article_page {
             div.category_box {
                 font-weight: 600;
                 width: max-content;
-                padding: 1.5px 10px;
+                padding: .5px 9px;
                 
                 text-transform: uppercase;
                 color: variable.$black-dark;
@@ -73,7 +73,7 @@ div.article_page {
         div.author_info {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 10px;
 
             a.avatar {
                 position: relative;

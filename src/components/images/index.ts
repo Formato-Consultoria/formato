@@ -44,11 +44,11 @@ export { default as cdl } from "../../../public/images/cdl-tres-maria.png";
 export { default as maisBr } from "../../../public/images/mais-brasil.png";
 
 // svgs
-export { default as Play } from "../../../public/icons/Play.svg";
-export { default as Pause } from "../../../public/icons/Pause.svg";
+// export { default as Play } from "../../../public/icons/Play.svg?url";
+// export { default as Pause } from "../../../public/icons/Pause.svg?url";
 
-export { default as QuoteStart } from "../../../public/icons/QuoteStart.svg";
-export { default as QuoteEnd } from "../../../public/icons/QuoteEnd.svg";
+// export { default as QuoteStart } from "../../../public/icons/QuoteStart.svg";
+// export { default as QuoteEnd } from "../../../public/icons/QuoteEnd.svg";
 
 // artigos
 export { default as NoArticle } from "../../../public/icons/nenhum-blog.png";

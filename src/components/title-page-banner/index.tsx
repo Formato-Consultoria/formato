@@ -46,10 +46,10 @@ export default function BannerTitle({
                     priority
                 />
 
-                <figcaption style={{display: title ? "flex" : "none"}}>
+                <figcaption style={{ display: title ? "flex" : "none", alignItems: 'center'  }}>
                     <Link href="/artigos">Artigos</Link>
-                    <CaretRight size={13} color="#080c10" weight="bold" />
-                    <p>{title}</p>
+                    <CaretRight size={13} color="rgba(8, 12, 16, .7)" weight="bold" />
+                    <p style={{ cursor: 'pointer' }}>{title}</p>
                 </figcaption>
             </figure>
 

@@ -4,7 +4,7 @@ import cx from "clsx";
 
 import style from "./gallery-section.module.scss";
 
-export default function GallerySection({ images }: { images: ImageProps[] }) {
+export function GallerySection({ images }: { images: ImageProps[] }) {
     return (
         <section className={cx(style.gallery_section, style.section)}>
             <div className={style.content}>

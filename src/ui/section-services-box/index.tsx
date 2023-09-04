@@ -1,6 +1,7 @@
-import style from "./services-section-box.module.scss";
-
+'use client'
 import { ArrowRight } from "phosphor-react";
+
+import style from "./services-section-box.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,7 +15,7 @@ type PropsServieSectionBox = {
     bannerImg: string
 }
 
-export default function ServicesSectionBox({
+export function ServicesSectionBox({
     children,
     url,
     icon,

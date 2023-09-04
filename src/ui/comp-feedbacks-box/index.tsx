@@ -12,7 +12,7 @@ type PropsPersonProfession = {
     personProfession: string;
 }
 
-export default function TestimonialsBox({
+export function TestimonialsBox({
     children,
     companyName,
     imgBnr,

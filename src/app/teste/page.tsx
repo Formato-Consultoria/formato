@@ -1,3 +1,7 @@
-export default function PageTeste() {
-    return (<h1>Oi teste!</h1>)
+const PageTeste = () => {
+    return (<>
+        <p>Oi, testando</p>
+    </>)
 }
+
+export default PageTeste;

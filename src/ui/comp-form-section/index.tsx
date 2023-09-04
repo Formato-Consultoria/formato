@@ -1,3 +1,4 @@
+'use client'
 import { CircleNotch } from "phosphor-react";
 import { createRef, useRef, useState } from "react";
 
@@ -28,7 +29,7 @@ const initState: PropStateForm = {
 
 const RECAPTCHA_SITE_KEY = '6Lc2G-gnAAAAANp-86UWfPb6KHGG6vImoWR6PN6J';
 
-export default function Form() {
+export function Form() {
     const [state, setState] = useState<PropStateForm>(initState);
     const [touched, setTouched] = useState<PropValuesForm>(initState.values);
     const [disabledButton, setDisabledButton] = useState(true);

@@ -5,7 +5,7 @@ import style from "./services.module.scss";
 import { contentService, typeService } from "@/@types/services";
 
 import BannerTitle from "@/components/title-page-banner";
-import ServicesSessionBox from "@/ui/section-services-box";
+import Sections from "@/ui";
 
 import { services } from "@/content/all-services";
 import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
@@ -19,7 +19,7 @@ export default function Services() {
 
     return (
       arrServices.map((s: contentService) => (
-        <ServicesSessionBox
+        <Sections.ServicesSectionBox
           key={s.slug}
           url={`/servicos/${s.slug}`}
           icon={s.icon}
@@ -27,7 +27,7 @@ export default function Services() {
           bannerImg={s.bannerImg}
         >
           {s.description}
-        </ServicesSessionBox>
+        </Sections.ServicesSectionBox>
       ))
     )
   }

@@ -46,9 +46,9 @@ export default function Article({
             
             <div className={style.header}>
                 <div className={style.date_and_category}>
-                    <p>{updatedDateAt}</p>
+                    <p style={{ fontSize: 14, fontWeight: 'normal' }}>{updatedDateAt}</p>
 
-                    <div className={cx(style.category_box, blinker.className)}>{category?.name}</div>
+                    <div style={{ fontSize: 13 }}className={cx(style.category_box, blinker.className)}>{category?.name}</div>
                 </div>
 
                 <h1 className={style.title}>
@@ -68,7 +68,7 @@ export default function Article({
                         />
                     </Link>
 
-                    <p>{author?.name}</p>
+                    <p style={{ color: 'rgba(8, 12, 16, .)', fontWeight: 'mediumn' }}>{author?.name}</p>
                 </div>) : null}
             </div>
 

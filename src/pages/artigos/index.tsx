@@ -11,6 +11,7 @@ import FormatArticleData from "@/utils/format-data-article";
 import useSWR from "swr";
 import NoContent from "@/components/no-content";
 import ButttonGlobal from "@/components/button";
+
 import { NoArticle } from "@/components/images";
 import { ArrowLeft, ArrowRight } from "phosphor-react";
 
@@ -29,23 +30,25 @@ export default function Articles({
   const [pageIndex, setPageIndex] = useState(1);
   const { data, isLoading } = useSWR(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/articles?populate=deep&sort[0]=id:desc&pagination[page]=${pageIndex}&pagination[pageSize]=3`,
-    fetcher, {
-      fallbackData: articles,
-    }
+    fetcher,
+    { fallbackData: articles }
   )
 
   // TODO: Implementar skeleton loading
   useEffect(() => {
-    if (!isLoading) {
-      setMetaPagination(data.meta);
-
-      if(pageIndex === 1) {
-        setFirstPosted(FormatArticleData(data.data)[0]);
-        setAllPosted(FormatArticleData(data.data).slice(1));
-      } else {
-        setAllPosted(FormatArticleData(data.data));
+    async function exec() {
+      if (!isLoading) {
+        setMetaPagination(data.meta);
+  
+        if(pageIndex === 1) {
+          setFirstPosted((await FormatArticleData(data.data))[0]);
+          setAllPosted((await FormatArticleData(data.data)).slice(1));
+        } else {
+          setAllPosted(await FormatArticleData(data.data));
+        }
       }
     }
+    exec();
 
     if(pageIndex === 1)
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -66,7 +69,7 @@ export default function Articles({
             updatedAt={new Date(firstPosted?.updatedAt ?? new Date())}
           />
 
-          <div
+          {<div
             ref={refPostList}
             className={style.posts_list_1}
           >
@@ -78,7 +81,7 @@ export default function Articles({
                 typeBox={"BOX_POST"}
               />
             ))}
-          </div>
+          </div>}
 
           <div className={style.pagination_btn}>
             <ButttonGlobal
@@ -105,13 +108,13 @@ export default function Articles({
                   weight="fill"
                 />
               }
-              disabled={pageIndex === (data && metaPagination.pagination.pageCount)}
+              disabled={pageIndex === (data && metaPagination?.pagination?.pageCount)}
               onClick={() => {
                 setPageIndex(pageIndex +1);
               }}
             />
 
-            <span>{`${pageIndex} de ${data && metaPagination.pagination.pageCount}`}</span>
+            <span>{`${pageIndex} de ${data && metaPagination?.pagination?.pageCount}`}</span>
           </div>
         </div>
       ) : (
@@ -128,16 +131,15 @@ export default function Articles({
 
 export async function getStaticProps() {
   const articleResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/articles?populate=deep&sort[0]=id:desc&pagination[page]=1&pagination[pageSize]=3`);
-
-  if(!articleResponse.data) {
+  
+  if(!articleResponse || !articleResponse.data) {
     return {
       notFound: true
     }
   }
-
+  
   const { data } = articleResponse;
-  const articles: PropsArticle[] = FormatArticleData(data);
-
+  const articles: Array<PropsArticle> = FormatArticleData(data);
   const { meta } = articleResponse;
   
   return {

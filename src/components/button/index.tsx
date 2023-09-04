@@ -1,3 +1,4 @@
+'use client'
 import { IconProps } from 'phosphor-react';
 import { ReactElement } from 'react';
 import style from './button.module.scss';
