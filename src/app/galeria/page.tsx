@@ -1,19 +1,22 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { GetStaticProps } from "next";
-
 import type { ImageProps } from "@/@types/image-gallery";
 
 import style from "./gallery.module.scss";
 import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
 import getImagesGallery from "@/utils/get-cloudinary-gallery";
 
-const Gallery = ({ images }: { images: ImageProps[] }) => {
+export default async function GalleryPage() {
+    // const response = await getImagesGallery();
+    // console.log(response);
+    
+    // const images: ImageProps[] = await response;
+
     return (
         <>
             <div className={style.img_gallery}>
-                {images.map(({ id, public_id, format, blurDataUrl }) => (
+                {/* {images.map(({ id, public_id, format, blurDataUrl }) => (
                     <Link
                         key={id}
                         href={"#"}
@@ -30,21 +33,10 @@ const Gallery = ({ images }: { images: ImageProps[] }) => {
                             loading={id < 4 ? "eager" : "lazy"}
                         />
                     </Link>
-                ))}
+                ))} */}
             </div>
 
             <WhatsappWidgetButton />
         </>
     )
-}
-
-export default Gallery;
-
-export const getStaticProps: GetStaticProps = async () => {
-    const { props } = await getImagesGallery();
-    
-    return {
-        props,
-        revalidate: 10,
-    }
 }

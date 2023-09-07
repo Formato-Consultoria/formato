@@ -1,4 +1,4 @@
-import cloudinary from "../config/cloudinary";
+import cloudinary from "@/config/cloudinary";
 
 import type { ImageProps } from "@/@types/image-gallery";
 import getBase64ImageUrl from "@/utils/generate-blur-placeholder";
@@ -10,8 +10,7 @@ export default async function getImagesGallery(qntImage = 200) {
         .max_results(qntImage)
         .execute();
 
-    let reducedResults: ImageProps[] = []
-    let i = 0
+    let reducedResults: Array<ImageProps> = [], i = 0;
 
     for (let result of results.resources) {
         reducedResults.push({
@@ -36,8 +35,6 @@ export default async function getImagesGallery(qntImage = 200) {
     }
     
     return {
-        props: {
-            images: reducedResults,
-        }
+        images: reducedResults,
     }
 }

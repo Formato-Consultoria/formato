@@ -1,12 +1,13 @@
+'use client'
 import { useRef, useState } from "react";
-
-import cx from "clsx";
+import { GetStaticProps } from "next";
 
 import Image from "next/image";
-import { GetStaticProps } from "next";
 import ReactPlayer from "react-player";
+import { ImageProps } from "@/@types/image-gallery";
 
 import style from "./about.module.scss";
+import cx from "clsx";
 
 import { useMediaQuery } from "react-responsive";
 import { Play, Pause } from "phosphor-react";
@@ -23,20 +24,22 @@ import {
   Strategy,
   Willpower
 } from "@/components/images";
+
 import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
 import ReactPlayerMedia from "@/components/react-player";
 import BannerTitle from "@/components/title-page-banner";
 
-import Sections from "@/ui";
+import { PillarBoxCard } from "@/ui/comp-pillar-box";
+import { ContactSection } from "@/ui/section-contact";
 
-import { ImageProps } from "@/@types/image-gallery";
 import getImagesGallery from "@/utils/get-cloudinary-gallery";
+import { GallerySection } from "@/ui/section-image-gallery";
 
 // TODO: não funciona a animação e toggle do btn de Play para o btn Pouse
-
-const About = ({ images }: { images: ImageProps[] }) => {
+export default function PageAbout() {
   const [isPlay, setIsPlay] = useState(false);
   const [isStart, setIsStart] = useState(false);
+
   const isMobile = useMediaQuery({
     query: '(max-width: 768px)'
   });
@@ -74,10 +77,10 @@ const About = ({ images }: { images: ImageProps[] }) => {
 
       <section className={cx(style.pillarsContainer, style.section)}>
         <div className={style.pillarsContent}>
-          <Sections.PillarBoxCard src={Mindset.src} value={"MINDSET"} />
-          <Sections.PillarBoxCard src={Strategy.src} value={"ESTRATÉGIA"} />
-          <Sections.PillarBoxCard src={Metrics.src} value={"MÉTRICAS"} />
-          <Sections.PillarBoxCard src={Innovation.src} value={"EVOLUÇÃO"} />
+          <PillarBoxCard src={Mindset.src} value={"MINDSET"} />
+          <PillarBoxCard src={Strategy.src} value={"ESTRATÉGIA"} />
+          <PillarBoxCard src={Metrics.src} value={"MÉTRICAS"} />
+          <PillarBoxCard src={Innovation.src} value={"EVOLUÇÃO"} />
         </div>
       </section>
 
@@ -133,33 +136,20 @@ const About = ({ images }: { images: ImageProps[] }) => {
           <h2>VALORES</h2>
 
           <div>
-            <Sections.PillarBoxCard src={Respect.src} value={"Respeito"} />
-            <Sections.PillarBoxCard src={OpennessChallenges.src} value={"Abertura a desafios"} />
-            <Sections.PillarBoxCard src={Willpower.src} value={"Vontade"} />
-            <Sections.PillarBoxCard src={Collaboration.src} value={"Colaboração"} />
-            <Sections.PillarBoxCard src={CriticalThinking.src} value={"Pensamento Crítico"} />
-            <Sections.PillarBoxCard src={Commitment.src} value={"Compromisso"} />
-            <Sections.PillarBoxCard src={Dialogue.src} value={"Diálogo"} />
+            <PillarBoxCard src={Respect.src} value={"Respeito"} />
+            <PillarBoxCard src={OpennessChallenges.src} value={"Abertura a desafios"} />
+            <PillarBoxCard src={Willpower.src} value={"Vontade"} />
+            <PillarBoxCard src={Collaboration.src} value={"Colaboração"} />
+            <PillarBoxCard src={CriticalThinking.src} value={"Pensamento Crítico"} />
+            <PillarBoxCard src={Commitment.src} value={"Compromisso"} />
+            <PillarBoxCard src={Dialogue.src} value={"Diálogo"} />
           </div>
         </div>
       </section>
 
-      <Sections.GallerySection
-        images={images}
-      />
+      <GallerySection />
 
-      <Sections.ContactSection />
+      <ContactSection />
     </>
   )
-}
-
-export default About;
-
-export const getStaticProps: GetStaticProps = async () => {
-  const { props } = await getImagesGallery(5);
-
-  return {
-    props,
-    revalidate: 10,
-  }
 }

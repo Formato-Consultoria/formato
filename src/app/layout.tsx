@@ -1,5 +1,6 @@
 'use client'
 import styles from "./layout.module.scss";
+import "../../styles/global.scss"
 
 import { Metadata } from "next";
 import { usePathname } from "next/navigation";
@@ -10,15 +11,16 @@ import { inter } from "@/utils/_fonts";
 
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import VLibras from "@djpfs/react-vlibras";
 
-// export const metadata: Metadata = {
-//     title: 'Formato Consultoria',
-//     description: 'Ajudamos a conectar pessoas a seus negócios. Buscamos inovação e crescimento pessoal. Alinhamos objetivos, criamos conexão e colocamos ideias brilhantes em prática.',
-// }
+export const metadata: Metadata = {
+    title: 'Formato Consultoria',
+    description: 'Ajudamos a conectar pessoas a seus negócios. Buscamos inovação e crescimento pessoal. Alinhamos objetivos, criamos conexão e colocamos ideias brilhantes em prática.',
+}
 
-export function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
     const currentPathname = usePathname();
-    // metadata.title = `${currentPathname != '/' ? "Formato - "+currentPathname?.slice(1) : "Formato Consultoria"}`;
+    metadata.title = `${currentPathname != '/' ? "Formato - "+currentPathname?.slice(1) : "Formato Consultoria"}`;
 
     return (
         <html lang="pt-br">
@@ -28,30 +30,16 @@ export function RootLayout({ children }: { children: React.ReactNode }) {
 
                     <main className={cx(styles.main, currentPathname == "/" && styles.home_page)}>
                         {children}
+
+                        <Toaster
+                            position="bottom-left"
+                            reverseOrder={true}
+                        />
                     </main>
-
                     <Footer />
-
-                    <Toaster
-                        position="bottom-left"
-                        reverseOrder={true}
-                    />
                 </div>
-
-                <div className="enabled">
-                    <div vw-access-button className="active"></div>
-
-
-                    <div vw-plugin-wrapper>
-                        <div className="vw-plugin-top-wrapper"></div>
-                    </div>
-                </div>
-
-                <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
                 
-                <script>
-                    new window.VLibras.Widget('https://vlibras.gov.br/app');
-                </script>
+                <VLibras forceOnload={true} />
             </body>
         </html>
     )

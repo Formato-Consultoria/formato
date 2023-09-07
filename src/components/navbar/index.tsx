@@ -2,7 +2,6 @@
 import style from "./navbar.module.scss";
 
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 import { List, X } from "phosphor-react";
 
@@ -15,7 +14,6 @@ import cx from "clsx";
 import Modal from "@/components/modal-section";
 
 export default function Navbar() {
-    const router = useRouter();
     const [didScroll, setDidiScroll] = useState(false);
     const [isOpenModal, setIsOpenModal] = useState(false);
 

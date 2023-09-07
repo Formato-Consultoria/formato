@@ -1,9 +1,10 @@
+'use client'
 import style from "./service-page.module.scss";
 
 import cx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import { House, Shield } from "phosphor-react";
 import {  useState } from "react";
 import { useMediaQuery } from "react-responsive";
@@ -19,9 +20,7 @@ const Service = () => {
         query: '(max-width: 768px)'
     });
 
-    const router = useRouter();
-    const { service } = router.query;
-
+    const service = usePathname();
     const srv: contentService | undefined = services.find((srv) => srv.slug === service);
     
     return (

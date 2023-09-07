@@ -4,7 +4,7 @@ export const fetcher = async (url: string, options = {}) => {
             ...options,
             headers: {
                 Authorization: `Bearer ${process.env.STRAPI_TOKEN}`,
-            }
+            },
         })
 
         if(response.ok) {

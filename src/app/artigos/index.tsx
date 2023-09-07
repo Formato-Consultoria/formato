@@ -1,6 +1,6 @@
 import { PropsArticle, PropsPagination } from "@/@types/article";
 import { fetcher } from "@/lib/strapi-api";
-import PostBox from "@/ui/comp-post-box";
+import { PostBox } from "@/ui/comp-post-box";
 import { useEffect, useRef, useState } from "react";
 
 import style from "./articles.module.scss";

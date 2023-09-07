@@ -1,3 +1,4 @@
+'use client'
 import { fetcher } from "@/lib/strapi-api";
 
 import { PropsArticle, PropsCategory } from "@/@types/article";
@@ -13,7 +14,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import style from "./article.module.scss";
-import PostBox from "@/ui/comp-post-box";
+import { PostBox } from "@/ui/comp-post-box";
 
 export default function Article({
     article,

@@ -4,8 +4,6 @@ import BannerTitle from "@/components/title-page-banner";
 import Image from "next/image";
 import cx from "clsx";
 
-import Sections from "@/ui";
-
 import {
   cdl,
   farMelhor,
@@ -15,6 +13,10 @@ import {
   sebrae,
 } from "@/components/images";
 import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
+
+import { QuoteSection } from "@/ui/section-quote";
+import { InfiniteScrollCarousel } from "@/ui/section-infinite-scroll-carousel";
+import { TestimonialsBox } from "@/ui/comp-feedbacks-box";
 
 export default function Clients() {
     return (
@@ -27,13 +29,13 @@ export default function Clients() {
         <WhatsappWidgetButton />
 
         <section className={cx(style.container_clients, style.section)}>
-          <Sections.QuoteSection
+          <QuoteSection
             img={"/teste/clientes_hero.jpg"}
           >
             Se existe um único segredo do sucesso, ele está
             na capacidade de ver as coisas do ponto de vista de
             outra pessoa.
-          </Sections.QuoteSection>
+          </QuoteSection>
           
           <div className={style.container_images_gallery}>
             <div className={style.images_gallery}>
@@ -80,7 +82,7 @@ export default function Clients() {
 
           {/* video */}
 
-          <Sections.InfiniteScrollCarousel
+          <InfiniteScrollCarousel
             images={[
               nexa.src,
               sebrae.src,
@@ -95,7 +97,7 @@ export default function Clients() {
             <h2>Veja os depoimentos de nossos clientes</h2>
 
             <div className={style.container_testimonials_box}>
-              <Sections.TestimonialsBox
+              <TestimonialsBox
                 imgBnr={"/teste/Dp1.jpeg"}
                 companyName={"Aniplex"}
                 personImg={"/teste/Robert.png"}
@@ -105,9 +107,9 @@ export default function Clients() {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
                 enim est laudantium, illo fugit nemo velit error, eius magnam cupiditate.
-              </Sections.TestimonialsBox>
+              </TestimonialsBox>
 
-              <Sections.TestimonialsBox
+              <TestimonialsBox
                 imgBnr={"/teste/Dp2.jpeg"}
                 companyName={"Mercearia do Marcos"}
                 personImg={"/teste/Marcos.jpeg"}
@@ -119,9 +121,9 @@ export default function Clients() {
                 Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
                 enim est laudantium, illo fugit nemo velit error, eius magnam cupiditate.
                 enim est laudantium, illo fugit nemo velit error, eius magnam cupiditate.
-              </Sections.TestimonialsBox>
+              </TestimonialsBox>
 
-              <Sections.TestimonialsBox
+              <TestimonialsBox
                 imgBnr={"/teste/Dp2.jpeg"}
                 companyName={"Mercearia do Marcos"}
                 personImg={"/teste/Marcos.jpeg"}
@@ -132,9 +134,9 @@ export default function Clients() {
                 Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
                 Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
                 enim est laudantium, illo fugit nemo velit error, eius magnam cupiditate.
-              </Sections.TestimonialsBox>
+              </TestimonialsBox>
 
-              <Sections.TestimonialsBox
+              <TestimonialsBox
                 imgBnr={"/teste/Dp1.jpeg"}
                 companyName={"Aniplex"}
                 personImg={"/teste/Robert.png"}
@@ -144,9 +146,9 @@ export default function Clients() {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
                 enim est laudantium, illo fugit nemo velit error, eius magnam cupiditate.
-              </Sections.TestimonialsBox>
+              </TestimonialsBox>
 
-              <Sections.TestimonialsBox
+              <TestimonialsBox
                 imgBnr={"/teste/Dp2.jpeg"}
                 companyName={"Mercearia do Marcos"}
                 personImg={"/teste/Marcos.jpeg"}
@@ -158,9 +160,9 @@ export default function Clients() {
                 Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
                 enim est laudantium, illo fugit nemo velit error, eius magnam cupiditate.
                 enim est laudantium, illo fugit nemo velit error, eius magnam cupiditate.
-              </Sections.TestimonialsBox>
+              </TestimonialsBox>
 
-              <Sections.TestimonialsBox
+              <TestimonialsBox
                 imgBnr={"/teste/Dp2.jpeg"}
                 companyName={"Mercearia do Marcos"}
                 personImg={"/teste/Marcos.jpeg"}
@@ -171,9 +173,9 @@ export default function Clients() {
                 Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
                 Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
                 enim est laudantium, illo fugit nemo velit error, eius magnam cupiditate.
-              </Sections.TestimonialsBox>
+              </TestimonialsBox>
 
-              <Sections.TestimonialsBox
+              <TestimonialsBox
                 imgBnr={"/teste/Dp2.jpeg"}
                 companyName={"Mercearia do Marcos"}
                 personImg={"/teste/Marcos.jpeg"}
@@ -185,9 +187,9 @@ export default function Clients() {
                 Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
                 enim est laudantium, illo fugit nemo velit error, eius magnam cupiditate.
                 enim est laudantium, illo fugit nemo velit error, eius magnam cupiditate.
-              </Sections.TestimonialsBox>
+              </TestimonialsBox>
 
-              <Sections.TestimonialsBox
+              <TestimonialsBox
                 imgBnr={"/teste/Dp2.jpeg"}
                 companyName={"Mercearia do Marcos"}
                 personImg={"/teste/Marcos.jpeg"}
@@ -198,7 +200,7 @@ export default function Clients() {
                 Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
                 Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
                 enim est laudantium, illo fugit nemo velit error, eius magnam cupiditate.
-              </Sections.TestimonialsBox>
+              </TestimonialsBox>
             </div>
           </div>
         </section>

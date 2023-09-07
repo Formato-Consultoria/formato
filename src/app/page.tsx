@@ -1,17 +1,23 @@
-'use client'
-import Sections from "@/ui";
+import { AboutSection } from "@/ui/section-about";
+import { ContactSection } from "@/ui/section-contact";
+import { PrincipalSection } from "@/ui/section-principal";
+import { StrategySection } from "@/ui/section-strategy";
+import { ServiceSection } from "@/ui/service-section";
+
 import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
 
-export default function PageHome() {
+function PageHome() {
   return (
     <>
-      <Sections.PrincipalSection />
+      <PrincipalSection />
       <WhatsappWidgetButton />
 
-      <Sections.StrategySection />
-      <Sections.ServiceSection />
-      <Sections.AboutSection />
-      <Sections.ContactSection />
+      <StrategySection />
+      <ServiceSection />
+      <AboutSection />
+      <ContactSection />
     </>
   )
 }
+
+export default PageHome;
