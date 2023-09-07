@@ -1,6 +1,17 @@
+'use client'
 import dynamic from 'next/dynamic';
-const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
+const ReactPlayerElement = dynamic(() => import("react-player"), { ssr: false });
+
+import ReactPlayer from "react-player";
+
+import { useRef, useState } from 'react';
+import { Pause, Play } from 'phosphor-react';
+import cx from "clsx";
+
+import style from "./react-player.module.scss";
+
 import { ReactPlayerProps } from "react-player";
+import { useMediaQuery } from 'react-responsive';
 
 const propsInitialState: ReactPlayerProps = {
     playing: true, // false
@@ -10,23 +21,63 @@ const propsInitialState: ReactPlayerProps = {
     height: "100%"
 }
 
-const ReactPlayerMedia: React.FC<ReactPlayerProps> = (
-    props,
-    { playerref }
-) => {
+const ReactPlayerMedia = () => {
+    const [isPlay, setIsPlay] = useState(false);
+    const [isStart, setIsStart] = useState(false);
+
+    const isMobile = useMediaQuery({
+        query: '(max-width: 768px)'
+    });
+
+    const ref = useRef<ReactPlayer>(null);
+    const videos = [
+        "https://youtu.be/IAnzAWt5tCI",
+        "https://youtu.be/Cm9QLc1azl4"
+    ]
+
+    function changeStopPlayState() {
+        ref?.current?.showPreview()
+    }
+
     return (
-        <ReactPlayer
-            ref={playerref}
-            {...propsInitialState}
-            {...props}
-            config={{
-                file: { 
-                    attributes: { 
-                    poster: '/videos/Formato.png'
+        <div className={cx(style.media_video)}>
+            <ReactPlayerElement
+                ref={ref}
+                {...propsInitialState}
+                light={"videos/Formato_2.png"}
+                muted={false}
+                url={videos}
+                playIcon={
+                    <button
+                    onClick={() => setIsPlay(true)}
+                    className={cx(isPlay && style.play_ping_animation)}
+                    onAnimationEnd={() => setIsStart(true)}
+                    >
+                    {isPlay ?
+                        <Pause
+                        size={cx(isMobile ? 60 : 100)}
+                        color="rgb(8, 12, 16, 0.5)"
+                        weight="fill"
+                        />
+                        :
+                        <Play
+                        size={cx(isMobile ? 60 : 100)}
+                        color="rgb(8, 12, 16, 0.5)"
+                        weight="fill"
+                        />}
+                    </button>
+                }
+                // playing={isStart} // animação não funciona #2
+                onEnded={changeStopPlayState} // não funciona #3
+                config={{
+                    file: { 
+                        attributes: { 
+                            poster: '/videos/Formato.png'
+                        } 
                     } 
-                } 
-            }}
-        />
+                }}
+            />
+        </div>
     );
 }
 

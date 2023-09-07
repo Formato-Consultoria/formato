@@ -1,27 +1,21 @@
-'use client'
 import Image from "next/image";
 import cx from "clsx";
 
 import style from "./gallery-section.module.scss";
-import getImagesGallery from "@/utils/get-cloudinary-gallery";
+import { ImageProps } from "@/@types/image-gallery";
 
-// import { ImageProps } from "@/@types/image-gallery";
+export async function GallerySection() {
+    const data = await fetch(`${process.env.BASE_URL}/galeria?n=5`, {
+        next: {
+            revalidate: 10
+        }
+    });
 
-export function GallerySection() {
-    async function exec() {
-        const { images } = await getImagesGallery(5);
-        // const res = await fetch('/api/gallery?n=5', {
-        //     method: 'GET',
-        // });
-
-        console.log(images);
-    }
+    const images: Array<ImageProps> = await data.json();
 
     return (<>
         <section className={cx(style.gallery_section, style.section)}>
             <div className={style.content}>
-                <button onClick={exec} style={{ fontWeight: 'bold' }}>TESTE</button>
-                {/*
                  {images.map(({ id, public_id, format, blurDataUrl }) => (
                     <div key={id}>
                         <Image
@@ -34,7 +28,7 @@ export function GallerySection() {
                             loading={"eager"}
                         />
                     </div>
-                ))} */}
+                ))}
             </div>
         </section>
     </>)

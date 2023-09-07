@@ -1,16 +1,9 @@
-'use client'
-import { useRef, useState } from "react";
-import { GetStaticProps } from "next";
-
 import Image from "next/image";
-import ReactPlayer from "react-player";
 import { ImageProps } from "@/@types/image-gallery";
 
 import style from "./about.module.scss";
 import cx from "clsx";
 
-import { useMediaQuery } from "react-responsive";
-import { Play, Pause } from "phosphor-react";
 import {
   Collaboration,
   Commitment,
@@ -32,28 +25,10 @@ import BannerTitle from "@/components/title-page-banner";
 import { PillarBoxCard } from "@/ui/comp-pillar-box";
 import { ContactSection } from "@/ui/section-contact";
 
-import getImagesGallery from "@/utils/get-cloudinary-gallery";
 import { GallerySection } from "@/ui/section-image-gallery";
 
 // TODO: não funciona a animação e toggle do btn de Play para o btn Pouse
-export default function PageAbout() {
-  const [isPlay, setIsPlay] = useState(false);
-  const [isStart, setIsStart] = useState(false);
-
-  const isMobile = useMediaQuery({
-    query: '(max-width: 768px)'
-  });
-
-  const playerRef = useRef<ReactPlayer>();
-  const videos = [
-    "https://youtu.be/IAnzAWt5tCI",
-    "https://youtu.be/Cm9QLc1azl4"
-  ]
-
-  function changeStopPlayState() {
-    playerRef?.current?.showPreview()
-  }
-
+export default async function PageAbout() {
   return (
     <>
       <BannerTitle
@@ -99,36 +74,7 @@ export default function PageAbout() {
       </section>
 
       <section className={cx(style.mediaContent, style.section)}>
-        <div className={cx(style.media_video)}>
-          <ReactPlayerMedia
-            playerref={playerRef}
-            url={videos}
-            light={"videos/Formato_2.png"}
-            muted={false}
-            // playing={isStart} // animação não funciona #2
-            playIcon={
-              <button
-                onClick={() => setIsPlay(true)}
-                className={cx(isPlay && style.play_ping_animation)}
-                onAnimationEnd={() => setIsStart(true)}
-              >
-                {isPlay ?
-                  <Pause
-                    size={cx(isMobile ? 60 : 100)}
-                    color="rgb(8, 12, 16, 0.5)"
-                    weight="fill"
-                  />
-                  :
-                  <Play
-                    size={cx(isMobile ? 60 : 100)}
-                    color="rgb(8, 12, 16, 0.5)"
-                    weight="fill"
-                  />}
-              </button>
-            }
-            onEnded={changeStopPlayState} // não funciona #3
-          />
-        </div>
+        <ReactPlayerMedia />
       </section>
 
       <section className={cx(style.valueContainer, style.section)}>

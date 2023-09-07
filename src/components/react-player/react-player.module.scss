@@ -1,0 +1,17 @@
+@use '../../../styles/variable';
+button.play_ping_animation {
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) 1;
+}
+
+div.media_video {
+    width: 80%;
+    height: 550px;
+
+    border-radius: 10px;
+    background-color: variable.$black;
+    position: relative;
+
+    video {
+        border-radius: 10px;
+    }
+}

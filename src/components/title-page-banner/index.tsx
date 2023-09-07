@@ -1,3 +1,4 @@
+'use client'
 import style from "./banner-title-page.module.scss";
 
 import cx from "clsx";

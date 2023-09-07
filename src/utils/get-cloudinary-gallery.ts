@@ -1,7 +1,7 @@
 import cloudinary from "@/config/cloudinary";
 
 import type { ImageProps } from "@/@types/image-gallery";
-import getBase64ImageUrl from "@/utils/generate-blur-placeholder";
+import { getBase64RemoteImage } from "@/lib/plaiceholder";
 
 export default async function getImagesGallery(qntImage = 200) {
     const results = await cloudinary.v2.search
@@ -25,7 +25,9 @@ export default async function getImagesGallery(qntImage = 200) {
     }
 
     const blurImagePromises = results.resources.map((image: ImageProps) => {
-        return getBase64ImageUrl(image);
+        let url = `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/f_jpg,w_8,q_70/${image.public_id}.${image.format}`;
+
+        return getBase64RemoteImage(url);
     })
 
     const imagesWithBlurDataUrls = await Promise.all(blurImagePromises);
