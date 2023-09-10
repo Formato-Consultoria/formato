@@ -17,6 +17,13 @@ import { NoArticle } from "@/components/images";
 import Comp from './components';
 import BannerTitle from "@/components/title-page-banner";
 
+// import {
+//   Tabs,
+//   TabsContent,
+//   TabsList,
+//   TabsTrigger,
+// } from "@/components/ui/tabs"
+
 import { Faker, pt_BR } from '@faker-js/faker';
 
 const faker = new Faker({
@@ -90,13 +97,13 @@ export default async function Articles() {
 
   // -----------------------------------------------------------------------------
 
-  const articleResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/articles?populate=deep&sort[0]=id:desc&pagination[page]=1&pagination[pageSize]=3`);
+  // const articleResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/articles?populate=deep&sort[0]=id:desc&pagination[page]=1&pagination[pageSize]=3`);
   
-  if(!articleResponse || !articleResponse.data) notFound();
+  // if(!articleResponse || !articleResponse.data) notFound();
 
-  const { data } = articleResponse;
-  const articles: Array<PropsArticle> = FormatArticleData(data);
-  const { meta } = articleResponse;
+  // const { data } = articleResponse;
+  // const articles: Array<PropsArticle> = FormatArticleData(data);
+  // const { meta } = articleResponse;
   
   return (<>
       <BannerTitle
