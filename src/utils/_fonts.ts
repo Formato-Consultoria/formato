@@ -1,12 +1,12 @@
-import { Inter, Blinker } from 'next/font/google';
+import { Inter } from 'next/font/google';
+import { Blinker } from 'next/font/google';
 
 export const inter = Inter({
-    weight: ['400', '500', '600', '700'],
     fallback: ['sans-serif'],
     subsets: ['latin'],
 });
 
 export const blinker = Blinker({
-  weight: ['100', '200', '300', '400', '600', '700'],
+  weight: ['100', '200', '300', '400', '600', '700', '800'],
   subsets: ['latin'],
 });

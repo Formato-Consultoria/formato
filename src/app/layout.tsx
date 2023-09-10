@@ -1,6 +1,6 @@
 'use client'
+import "./global.scss";
 import styles from "./layout.module.scss";
-import "../../styles/global.scss"
 
 import { Metadata } from "next";
 import { usePathname } from "next/navigation";

@@ -1,8 +1,8 @@
-import { AboutSection } from "@/ui/section-about";
-import { ContactSection } from "@/ui/section-contact";
-import { PrincipalSection } from "@/ui/section-principal";
-import { StrategySection } from "@/ui/section-strategy";
-import { ServiceSection } from "@/ui/service-section";
+import { AboutSection } from "@/components/ui/section-about";
+import { ContactSection } from "@/components/ui/section-contact";
+import { PrincipalSection } from "@/components/ui/section-principal";
+import { StrategySection } from "@/components/ui/section-strategy";
+import { ServiceSection } from "@/components/ui/service-section";
 
 import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
 

@@ -5,7 +5,7 @@ import cx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { House, Shield } from "phosphor-react";
+import { House, Shield } from "@/components/images/phosphor";
 import {  useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
@@ -16,6 +16,7 @@ import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
 
 const Service = () => {
     const [dontIcon, setdontIcon] = useState(false);
+    
     const isMobile = useMediaQuery({
         query: '(max-width: 768px)'
     });
@@ -26,20 +27,9 @@ const Service = () => {
     return (
         <>
             <BannerTitle
-                value={
-                    <div
-                        className={style.title_custom}
-                        style={{ display: "flex", alignItems: "center", opacity: ".8" }}
-                    >
-                        <Link
-                            href="/servicos"
-                            style={{ fontSize: "2.3px", color: "#FFF", textDecoration: "underline" }}
-                        >
-                            <House size={cx(isMobile ? 29 : 35)} />
-                        </Link><span style={{margin: "0 10px"}}>•</span>{srv?.title}
-                    </div> ?? "serviço indisponivel"
-                }
                 src={srv?.bannerImg ?? ""}
+                styleBnr={{}}
+                height=""
             />
 
             <WhatsappWidgetButton />

@@ -4,7 +4,7 @@ import cx from "clsx";
 import style from "./services.module.scss";
 import { contentService, typeService } from "@/@types/services";
 
-import { ServicesSectionBox } from "@/ui/section-services-box";
+import { ServicesSectionBox } from "@/components/ui/section-services-box";
 import BannerTitle from "@/components/title-page-banner";
 
 import { services } from "@/content/all-services";
@@ -35,9 +35,10 @@ export default function Services() {
   return (
     <>
       <BannerTitle
-        value="Serviços"
         src="/images/services_hero.jpg"
-      />
+      >
+        <p className={'text-2xl md:text-3xl text-white'}>Serviços - Essa pagina vai ser removida</p>
+      </BannerTitle>
       
       <WhatsappWidgetButton />
 

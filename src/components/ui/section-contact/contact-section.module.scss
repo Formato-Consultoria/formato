@@ -1,0 +1,227 @@
+@use '../../../../styles/variable';
+
+section.contact {
+    width: 100%;
+
+    background-repeat: no-repeat;
+    background-image: variable.$black-dark-80-gradient, url("/images/contato.jpeg");
+    background-size: cover;
+    
+    color: variable.$white-80;
+
+    display: flex;
+    align-items: stretch;
+    flex-basis: auto;
+
+    div.sideinfo,
+    div.sideform {
+        display: flex;
+        justify-content: stretch;
+        padding: 50px;
+        background: none;
+    }
+
+    div.sideinfo {
+        flex: 1;
+        flex-direction: column;
+        gap: 30px;
+
+        div.contacts {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        div.address {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+
+    div.sideform {
+        flex: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto auto auto auto;
+            grid-template-areas:
+                "name address"
+                "phone email"
+                "textmessage textmessage"
+                "terms terms"
+                "button .";
+            position: relative;
+
+            gap: 10px;
+            min-width: 90%;
+
+            input:not(input[type="checkbox"], input[type="submit"]) {
+                border-radius: 5px;
+                width: 100%;
+                height: 45px;
+                padding: 10px 20px;
+                font-weight: 500;
+                font-size: 1.07rem;
+            }
+
+            input::placeholder {
+                font-size: 1.07rem;
+            }
+
+            input, textarea {
+                border: 1px solid transparent;
+                outline: none;
+            }
+
+            input[name="name"] {
+                grid-area: name;
+            }
+            input[name="address"] {
+                grid-area: address;
+            }
+            input[name="phone"] {
+                grid-area: phone;
+            }
+            input[name="email"] {
+                grid-area: email;
+            }
+
+            textarea[name="message"] {
+                grid-area: textmessage;
+                width: 100%;
+                height: 150px;
+                border-radius: 5px;
+                padding: 20px;
+                font-size: 1.07rem;
+                font-weight: 500;
+
+                resize: none;
+            }
+
+            input.is_invalid,
+            textarea.is_invalid {
+                color: #f00;
+                border-color: #f00;
+                background-color: #FFE5E5;
+                transition: .1s ease-out;
+            }
+
+            input.is_invalid::placeholder,
+            textarea.is_invalid::placeholder {
+                color: #f00;
+                transition: .1s ease-out;
+            }
+
+            label {
+                grid-area: terms;
+                vertical-align: middle;
+
+                input[type="checkbox"] {
+                    margin-right: 5px;
+                }
+
+                font-size: .9rem;
+                color: variable.$white-80;
+
+                a {
+                    color: variable.$white-80;
+                    text-decoration: none;
+                    :hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+            
+            button {
+                grid-area: button;
+            }
+        }
+    }
+}
+
+@media (max-width: 896px) {
+    section.contact {
+        div.sideinfo,
+        div.sideform {
+            padding: 30px 20px;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    section.contact {
+        flex-direction: column;
+
+        div.sideinfo,
+        div.sideform {
+            padding: 25px 20px;
+        }
+
+        div.sideinfo {
+            padding: 25px 20px 0;
+            gap: 20px;
+
+            div.contacts {
+                gap: 10px;
+            }
+    
+            div.address {
+                gap: 10px;
+            }
+        }
+
+        div.sideform {
+            padding: 20px 20px;
+            
+            form {
+                min-width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 572px) {
+    section.contact {
+        div.sideform {
+            form {
+                grid-template-areas:
+                    "name name"
+                    "address address"
+                    "phone phone"
+                    "email email"
+                    "textmessage textmessage"
+                    "terms terms"
+                    "button button";
+
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto auto auto auto auto;
+                
+                input[type="button"] {
+                    width: 100%;
+                    height: 40px;
+                }
+
+                input:not(input[type="checkbox"], input[type="button"]) {
+                    font-size: .9rem;
+                    border-radius: 2px;
+                }
+
+                textarea[name="message"] {
+                    border-radius: 2px;
+                    font-size: .9rem;
+                }
+
+                input::placeholder {
+                    font-size: .9rem;
+                }
+            }
+        }
+    }
+}

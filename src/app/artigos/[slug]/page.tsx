@@ -14,7 +14,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import style from "./article.module.scss";
-import { PostBox } from "@/ui/comp-post-box";
+import AllBoxPost from "@/components/ui/comp-all-box-post";
 
 export default function Article({
     article,
@@ -25,7 +25,7 @@ export default function Article({
 }) {
     const [updatedDateAt, setUpdatedDateAt] = useState('');
     const { slug, title, description, body, updatedAt, cover, category, author } = article;
-    
+
     useEffect(() => {
         const interval = setInterval(() => {
             setUpdatedDateAt(formatDateTime(new Date(updatedAt)));
@@ -42,14 +42,14 @@ export default function Article({
                 height={"250px"}
                 width={"95%"}
                 isBannerArticle
-                styleBnr={{gridArea: "banner"}}
+                styleBnr={{ gridArea: "banner" }}
             />
-            
+
             <div className={style.header}>
                 <div className={style.date_and_category}>
                     <p style={{ fontSize: 14, fontWeight: 'normal' }}>{updatedDateAt}</p>
 
-                    <div style={{ fontSize: 13 }}className={cx(style.category_box, blinker.className)}>{category?.name}</div>
+                    <div style={{ fontSize: 13 }} className={cx(style.category_box, blinker.className)}>{category?.name}</div>
                 </div>
 
                 <h1 className={style.title}>
@@ -77,46 +77,49 @@ export default function Article({
                 <p className={blinker.className}>Nessa pagina</p>
                 {/* map de todos os headings dentro do body */}
             </div>
-            
-            <hr style={{ height: "1px", width: "90%", outline: "none", margin: "5px 20px", borderTop: "1px solid rgba(0, 0, 0, 0.1)", gridColumn: 2}} />
+
+            <hr style={{ height: "1px", width: "90%", outline: "none", margin: "5px 20px", borderTop: "1px solid rgba(0, 0, 0, 0.1)", gridColumn: 2 }} />
 
             <article className={style.content}>
                 {/* <MDXContent /> */}
-                
+
                 <div dangerouslySetInnerHTML={{ __html: article.body ?? "" }}></div>
             </article>
         </div>
 
-        <hr style={{ height: "1px", width: "90%", outline: "none", margin: "25px auto", borderTop: "1px solid rgba(0, 0, 0, 0.1)"}} />
+        <hr style={{ height: "1px", width: "90%", outline: "none", margin: "25px auto", borderTop: "1px solid rgba(0, 0, 0, 0.1)" }} />
 
-        <div className={style.related_articles}>{relatedArticles.map((article: PropsArticle, index) => (
-            <PostBox
-                key={index}
-                {...article}
-                updatedAt={new Date(updatedAt ?? new Date())}
-                typeBox={"RELATED_BOX_POST"}
-            />
-        ))}</div>
+        <div className={style.related_articles}>
+            <AllBoxPost />
+            {/* {relatedArticles.map((article: PropsArticle, index) => (
+                <PostBox
+                    key={index}
+                    {...article}
+                    updatedAt={new Date(updatedAt ?? new Date())}
+                    typeBox={"RELATED_BOX_POST"}
+                />
+            ))} */}
+        </div>
     </>);
 }
 
 export async function getServerSideProps({ params }: any) {
     const { slug } = params;
     const articleResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/slugify/slugs/article/${slug}?populate=deep`);
-    
+
     const idCategory = articleResponse?.data?.attributes?.category?.data?.id ?? 0;
     const articlesByCategoryResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/categories/${idCategory}?populate=deep,4`);
 
-    if(!articleResponse || !articlesByCategoryResponse.data) {
+    if (!articleResponse || !articlesByCategoryResponse.data) {
         return {
-          notFound: true
+            notFound: true
         }
     }
 
     const { data } = articleResponse;
     const article: PropsArticle = await FormatSingleArticleData(data);
 
-    const  { articles }: PropsCategory = FormatCategoryData(articlesByCategoryResponse.data, slug);
+    const { articles }: PropsCategory = FormatCategoryData(articlesByCategoryResponse.data, slug);
     const relatedArticles = articles;
 
     return {

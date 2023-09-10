@@ -1,0 +1,59 @@
+@use '../../styles/variable';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    ::selection {
+        color: white;
+        background-color: variable.$primary-color;
+    }
+    
+    img {
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
+    
+    body {
+        width: 100%;
+        min-height: 100vh;
+        margin: 0 auto;
+        
+        font-size: 17px;
+        --webkit-font-somoothing: antialiased;
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+    button {
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+    
+    a.button {
+        width: max-content;
+        height: auto;
+        text-decoration: none;
+    
+        button {
+            margin: 0;
+        }
+    }
+    
+    a,
+    button {
+        -webkit-tap-highlight-color: transparent;
+    }
+}

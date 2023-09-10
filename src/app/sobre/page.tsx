@@ -22,10 +22,10 @@ import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
 import ReactPlayerMedia from "@/components/react-player";
 import BannerTitle from "@/components/title-page-banner";
 
-import { PillarBoxCard } from "@/ui/comp-pillar-box";
-import { ContactSection } from "@/ui/section-contact";
+import { PillarBoxCard } from "@/components/ui/comp-pillar-box";
+import { ContactSection } from "@/components/ui/section-contact";
 
-import { GallerySection } from "@/ui/section-image-gallery";
+import { GallerySection } from "@/components/ui/section-image-gallery";
 
 // TODO: não funciona a animação e toggle do btn de Play para o btn Pouse
 export default async function PageAbout() {
@@ -33,8 +33,9 @@ export default async function PageAbout() {
     <>
       <BannerTitle
         src="/images/quem_somos_hero.jpg"
-        value="Quem somos?"
-      />
+      >
+        <p className={'text-2xl md:text-3xl text-white'}>Quem somos?</p>
+      </BannerTitle>
       
       <WhatsappWidgetButton />
 

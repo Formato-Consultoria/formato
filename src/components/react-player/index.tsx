@@ -5,7 +5,7 @@ const ReactPlayerElement = dynamic(() => import("react-player"), { ssr: false })
 import ReactPlayer from "react-player";
 
 import { useRef, useState } from 'react';
-import { Pause, Play } from 'phosphor-react';
+import { Pause, Play } from '@/components/images/phosphor';
 import cx from "clsx";
 
 import style from "./react-player.module.scss";

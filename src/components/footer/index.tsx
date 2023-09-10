@@ -5,7 +5,7 @@ import cx from 'clsx';
 
 import Link from 'next/link';
 
-import { InstagramLogo, LinkedinLogo } from 'phosphor-react';
+import { InstagramLogo, LinkedinLogo } from "@/components/images/phosphor";
 import { LightLogotipo } from '../images';
 import { contentService, typeService } from '@/@types/services';
 import { ReactElement } from 'react';

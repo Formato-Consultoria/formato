@@ -11,18 +11,7 @@ section.bannerTitle {
 
     text-align: left;
 
-    div.title {
-        z-index: 1;
-        font-size: 2.2rem;
-        color: variable.$white;
-        font-weight: 300;
-
-        a {
-            text-decoration: underline;
-        }
-    }
-
-    figure.image {
+    div.image {
         z-index: -1;
         
         width: 100%;
@@ -39,51 +28,6 @@ section.bannerTitle {
 
             filter: brightness(.3);
         }
-
-        figcaption {
-            position: absolute;
-            bottom: -25px;
-            display: flex;
-            gap: 2px;
-
-            font-size: .9rem;
-            color: variable.$white-mediumn-dark;
-            vertical-align: sub;
-
-            font-weight: bold;
-
-            a, p {
-                text-decoration: none;
-                color: variable.$white-mediumn-dark;
-                font-weight: bold;
-                transition: .2s ease;
-            }
-
-            a:hover, p:hover {
-                color: variable.$primary-color;
-                transition: .2s ease;
-            }
-        }
-    }
-}
-
-section.bannerArticle {
-    margin: 0 auto 50px;
-
-    div.title {
-        display: none;
-    }
-
-    figure.image {
-        z-index: 1;
-
-        border: 1px solid variable.$black-dark-50;
-        border-radius: 6.1px;
-    
-        img {
-            filter: none;
-            border-radius: 5px;
-        }
     }
 }
 
@@ -91,11 +35,7 @@ section.bannerArticle {
     section.bannerTitle {
         height: 250px;
 
-        div.title {
-            font-size: 2rem;
-        }
-
-        figure.image {
+        div.image {
             height: 250px;
         }
     }
@@ -105,12 +45,7 @@ section.bannerArticle {
     section.bannerTitle {
         height: 230px;
 
-        div.title {
-            font-size: 1.5rem;
-            padding: 0 20px;
-        }
-
-        figure.image {
+        div.image {
             height: 230px;
         }
     }

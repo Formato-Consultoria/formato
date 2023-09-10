@@ -7,13 +7,13 @@ import style from "./gallery.module.scss";
 import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
 
 export default async function GalleryPage() {
-    const res = await fetch(`${process.env.BASE_URL}/galeria`, {
+    const data = await fetch(`${process.env.BASE_URL}/api/galeria`, {
         next: {
             revalidate: 10
         }
     });
 
-    const { images } = await res.json();
+    const images: Array<ImageProps> = await data.json();
 
     return (
         <>

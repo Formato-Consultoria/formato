@@ -7,54 +7,50 @@ import { CSSProperties, ReactNode } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
-import { CaretRight } from "phosphor-react";
+import { CaretRight } from "@/components/images/phosphor";
+import { usePathname } from "next/navigation";
 
 type PropsBnrTlt = {
-    value?: string | ReactNode,
-    src: string,
-    height?: string,
-    width?: string,
-    isBannerArticle?: boolean,
-    title?: string,
-    styleBnr?: CSSProperties,
+    children?: ReactNode
+    src: string
+    height?: string
+    width?: string
+    styles?: {
+        containner?: CSSProperties
+        content?: string
+        imageContain?: CSSProperties
+        image?: CSSProperties
+    }
 }
-
-// TODO: Criar uam função para transoformar o titulo em formato slug
 
 export default function BannerTitle({
     src,
-    value = "",
+    children,
     height = "300px",
     width = "100%",
-    isBannerArticle = false,
-    title = "",
-    styleBnr
+    styles,
 }: PropsBnrTlt) {
+    const pathname = usePathname();
 
     return (
         <section
-            className={cx(style.bannerTitle, isBannerArticle && style.bannerArticle, inter)}
-            style={{...styleBnr, height: height}}
+            className={cx(style.bannerTitle, inter.className)}
+            style={{...styles?.containner, height: height}}
         >
-            <figure
-                className={style.image}
-                style={{height: height, width: width}}
+            <div
+                className={cx(style.image, styles?.imageContain)}
+                style={{ height: height, width: width }}
             >
                 <Image
+                    style={styles?.image}
                     src={src}
                     fill
-                    alt={`imagem banner de ${value}`}
+                    alt={`imagem banner de ${pathname.replace('/', '')}`}
                     priority
                 />
+            </div>
 
-                <figcaption style={{ display: title ? "flex" : "none", alignItems: 'center'  }}>
-                    <Link href="/artigos">Artigos</Link>
-                    <CaretRight size={13} color="rgba(8, 12, 16, .7)" weight="bold" />
-                    <p style={{ cursor: 'pointer' }}>{title}</p>
-                </figcaption>
-            </figure>
-
-            <div className={style.title}>{value}</div>
+            <div className={styles?.content as string}>{children}</div>
         </section>
     )
 }

@@ -1,0 +1,111 @@
+@use '../../../../styles/variable';
+
+div.quote_section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px auto;
+
+    gap: 80px;
+
+    width: 100%;
+    height: 430px;
+
+    background-color: variable.$blue-dark-50;
+
+    p {
+        font-size: 2rem;
+        width: 50%;
+        max-width: 900px;
+        color: variable.$white;
+
+        text-align: justify;
+
+        svg {
+            width: 35px;
+
+            margin-bottom: 20px;
+        }
+    }
+
+    div.image_box {
+        height: 300px;
+        width: 320px;
+
+        border: variable.$border-client solid variable.$white;
+        border-radius: 4px;
+        rotate: 5deg;
+
+        img {
+            object-fit: cover;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    div.quote_section {
+        height: 400px;
+        padding: 25px 20px;
+        gap: 50px;
+
+        p {
+            font-size: 1.8rem;
+
+            svg {
+                width: 30px;
+            }
+        }
+
+        div.image_box {
+            height: 280px;
+            width: 300px;
+
+            border-radius: 3px;
+            rotate: 4deg;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    div.quote_section {
+        height: 270px;
+        padding: 20px 10px;
+        gap: 30px;
+
+        p {
+            font-size: 1.5rem;
+
+            svg {
+                width: 25px;
+            }
+        }
+
+        div.image_box {
+            height: 220px;
+            width: 240px;
+        }
+    }
+}
+
+@media (max-width: 596px) {
+    div.quote_section {
+        justify-content: flex-start;
+        padding: 20px 40px;
+
+        gap: 0;
+
+        p {
+            width: 100%;
+            text-align: start;
+
+            svg {
+                width: 20px;
+                margin: 0;
+            }
+        }
+
+        div.image_box {
+            display: none;
+        }
+    }
+}

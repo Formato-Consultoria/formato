@@ -29,7 +29,7 @@ const nextConfig = {
       { protocol: "https", hostname: "**" }
     ]
   },
-  reactStrictMode: true,
+  // reactStrictMode: true,
   swcMinify: true,
 }
 

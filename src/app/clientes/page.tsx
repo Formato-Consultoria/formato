@@ -14,17 +14,18 @@ import {
 } from "@/components/images";
 import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
 
-import { QuoteSection } from "@/ui/section-quote";
-import { InfiniteScrollCarousel } from "@/ui/section-infinite-scroll-carousel";
-import { TestimonialsBox } from "@/ui/comp-feedbacks-box";
+import { QuoteSection } from "@/components/ui/section-quote";
+import { InfiniteScrollCarousel } from "@/components/ui/section-infinite-scroll-carousel";
+import { TestimonialsBox } from "@/components/ui/comp-feedbacks-box";
 
 export default function Clients() {
     return (
       <>
         <BannerTitle
-          value="Clientes"
           src="/images/cliente_hero.jpg"
-        />
+        >
+          <p className={'text-2xl md:text-3xl text-white'}>Clientes</p>
+        </BannerTitle>
 
         <WhatsappWidgetButton />
 

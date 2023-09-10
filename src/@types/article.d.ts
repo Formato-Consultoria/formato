@@ -1,5 +1,3 @@
-type TypeBox = "LAST_BOX_POST" | "BOX_POST" | "RELATED_BOX_POST";
-
 export interface PropsArticle {
     id: number,
     title: string,
@@ -11,8 +9,6 @@ export interface PropsArticle {
     category: PropsCategory,
     author: PropsAuthor,
     body?: string,
-
-    typeBox?: TypeBox
 }
 
 export interface PropsCover {

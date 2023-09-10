@@ -3,7 +3,7 @@ import style from "./navbar.module.scss";
 
 import Link from "next/link";
 
-import { List, X } from "phosphor-react";
+import { List, X } from "@/components/images/phosphor";
 
 import ButttonGlobal from "@/components/button";
 import { useCallback, useState, useEffect } from "react";
