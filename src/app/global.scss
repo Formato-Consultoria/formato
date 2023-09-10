@@ -1,4 +1,3 @@
-@use '../../styles/variable';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,10 +8,55 @@
         padding: 0;
         box-sizing: border-box;
     }
+
+    :root {
+        --black-dark: rgb(8, 12, 16);
+        --black-dark-97: rgba(8, 12, 16, 0.97);
+        --black-dark-90: rgba(8, 12, 16, 0.9);
+        --black-dark-80: rgb(8, 12, 16, 0.8);
+        --black-dark-60: rgba(8, 12, 16, 0.5);
+        --black-dark-50: rgba(8, 12, 16, 0.5);
+
+        --blue-dark: rgb(40, 6, 90);
+        --blue-dark-50: rgba(40, 6, 90, .50);
+        --blue-dark-97: rgba(40, 6, 90, .97);
+
+        --black: rgb(0, 0, 0);
+        --black-80: rgba(0, 0, 0, 0.8);
+        --black-50: rgba(0, 0, 0, 0.5);
+        --black-10: rgba(0, 0, 0, 0.1);
+
+        --white: rgb(255, 255, 255);
+        --white-50: rgba(255, 255, 255, 0.5);
+        --white-75: rgba(255, 255, 255, 0.75);
+        --white-80: rgba(255, 255, 255, 0.8);
+
+        --white-blog: rgb(255, 254, 252);
+
+        --white-mediumn: rgb(235, 235, 235);
+        --white-mediumn-dark:  rgb(85, 85, 85);
+
+        --white-regular: rgb(170, 170, 170);
+        --white-regular-80: rgba(170, 170, 170, 0.8);
+
+        --primary-color: rgb(181, 12, 251);
+        --link-color: rgb(118, 18, 134);
+        --link-color-60: rgba(118, 18, 134, 0.6);
+
+        --radial-gradient-bg: radial-gradient(49.89% 67.16% at 83.93% 0%, var(--white-75) 0%, var(--white-75) 0.01%, var(--white) 100%);
+        --black-dark-80-gradient: linear-gradient(90deg, var(--black-dark-80) 0%, var(--black-dark-80) 0%);
+
+        --media-radial-shadow: radial-gradient(44.47% 44.47% at 50% 50%, rgba(255, 255, 255, 0.15) 0%, #FFFFFF 86.03%);
+
+        --height-nav-bar: 80px;
+        --max-width-screen: 2560px;
+        --max-section: 1700px;
+        --border-client: 2px;
+    }
     
     ::selection {
         color: white;
-        background-color: variable.$primary-color;
+        background-color: var(--primary-color);
     }
     
     img {
@@ -55,5 +99,40 @@
     a,
     button {
         -webkit-tap-highlight-color: transparent;
+    }
+}
+
+@layer components {
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        max-width: var(--max-width-screen);
+        margin: 0 auto;
+    
+        padding-top: calc(var(--height-nav-bar) + 20px);
+    }
+    
+    .home_page {
+        background-image: var(--radial-gradient-bg), url('/images/Background-img.png');
+    
+        background-repeat: no-repeat, no-repeat;
+        background-size: 60% 180vh, 60%;
+        background-position: top right, top right;
+    
+        padding-top: 0;
+    }
+    
+    @media (max-width: 1440px) {
+        .home_page {
+            background-size: 70% 180vh, 70%;
+        }
+    }
+    
+    @media (max-width: 896px) {
+        .home_page {
+            background-size: 100% 100vh, 100vh;
+        }
     }
 }
