@@ -7,7 +7,7 @@ import cx from "clsx";
 export function AboutSection() {
     return(
         <section className={cx(styles.about, inter.className)}>
-            <h2 className={blinker.className}>SOBRE A NOSSA EMPRESA</h2>
+            <h2 className={blinker.className}>SOBRE A HISOTÓRIA DA FORMATO</h2>
 
             <div className={styles.content}>
                 <div className={styles.image}>
@@ -19,13 +19,13 @@ export function AboutSection() {
                 </div>
 
                 <div>
-                    <p>Desde 2017 atuamos no segmento de consultoria empresarial. Entendemos que a gestão pode ser feita de forma simples e também prazerosa. Estamos sempre em busca de estratégias que reduzem a complexidade e focam no essencial.</p>
+                    <p>Desde 2017 atuamos no segmento de consultoria empresarial.</p>
                     <br/>
-                    <p>Somos apaixonados por negócios, temos uma vontade genuína de trabalhar pelo sucesso dos nossos clientes e fazer a diferença na vida de cada pessoa que está conosco.</p>
+                    <p>Simplificando a gestão e a tornando um processo prazeroso.</p>
                     <br/>
-                    <p>Acreditamos que a inovação é essencial para nos conduzir ao futuro. Nossas intervenções são estratégicas e com ações conectadas com o que realmente importa.</p>
+                    <p>Somos apaixonados por negócios, com uma vontade sincera de trabalhar pelo sucesso dos nossos clientes e fazer a diferença na vida de cada pessoa que está conosco.</p>
                     <br/>
-                    <p>Desenvolvemos soluções personalizadas, que respeitam o momento de vida e os objetivos do seu negócio. Estamos abertos a novos desafios e acreditamos que juntos podemos cocriar um mundo cada vez melhor.</p>
+                    <p>Acreditamos na inovação e desenvolvemos soluções personalizadas, que respeitam o momento de vida e objetivos de cada um, para assim, criar um mundo melhor juntos.</p>
                 </div>
             </div>
         </section>

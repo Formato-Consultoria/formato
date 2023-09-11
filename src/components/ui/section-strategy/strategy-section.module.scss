@@ -17,7 +17,7 @@ section.strategy {
 
         h2 {
             color: var(--black-80);
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 600;
         }
     }
@@ -85,7 +85,7 @@ section.strategy {
 
         div.title_and_description {
             h2 {
-                font-size: 1.8rem;
+                font-size: 1.2rem;
                 font-weight: 500;
             }
         }
@@ -150,12 +150,6 @@ section.strategy {
 
 @media (max-width: 768px) {
     section.strategy {
-        div.title_and_description {
-            p {
-                width: 100%;
-            }
-        }
-
         div.strategys_and_image {
             div.first_block,
             div.secound_block {

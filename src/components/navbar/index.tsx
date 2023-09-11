@@ -12,10 +12,12 @@ import { DarkIcon, DarkLogotipo } from "@/components/images";
 
 import cx from "clsx";
 import Modal from "@/components/modal-section";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
     const [didScroll, setDidiScroll] = useState(false);
     const [isOpenModal, setIsOpenModal] = useState(false);
+    const pathname = usePathname();
 
     const onScroll = useCallback(() => {
         const { scrollY } = window;
@@ -62,25 +64,32 @@ export default function Navbar() {
                 <div className={style.navigation}>
                     <ul className={style.navigation_options}>
                         <li>
-                            <Link href="/">Inicio</Link>
-                        </li>
-                        <li>
-                            <Link href="/sobre">Sobre Nós</Link>
+                            <Link style={{
+                                color: pathname === "/sobre" ? "var(--link-color)" : "var(--black-dark)",
+                            }} href="/sobre">Sobre Nós</Link>
                         </li>
                         <li>
                             <Link href="/#contato">Contatos</Link>
                         </li>
                         <li>
-                            <Link href="/servicos">Serviços</Link>
+                            <Link style={{
+                                color: pathname === "/servicos" ? "var(--link-color)" : "var(--black-dark)",
+                            }} href="/servicos">Serviços</Link>
+                        </li >
+                        <li>
+                            <Link style={{
+                                color: pathname === "/clientes" ? "var(--link-color)" : "var(--black-dark)",
+                            }} href="/clientes">Clientes</Link>
                         </li>
                         <li>
-                            <Link href="/clientes">Clientes</Link>
+                            <Link style={{
+                                color: pathname === "/artigos" ? "var(--link-color)" : "var(--black-dark)",
+                            }} href="/artigos">Artigos</Link>
                         </li>
-                        <li>
-                            <Link href="/artigos">Artigos</Link>
-                        </li>
-                        <li>
-                            <Link href="/galeria">Galeria</Link>
+                        <li >
+                            <Link style={{
+                                color: pathname === "/galeria" ? "var(--link-color)" : "var(--black-dark)",
+                            }} href="/galeria">Galeria</Link>
                         </li>
                     </ul>
                     
