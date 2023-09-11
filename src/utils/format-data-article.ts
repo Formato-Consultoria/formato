@@ -2,9 +2,6 @@ import { PropsArticle, PropsCategory } from "@/@types/article";
 import { mdToHtml } from "@/lib/md-to-html";
 
 export default function FormatArticleData(data: Array<any>): Array<PropsArticle> {
-
-    console.log(data);
-
     return data.map((article: any) => {
         return {
             id: article?.id,

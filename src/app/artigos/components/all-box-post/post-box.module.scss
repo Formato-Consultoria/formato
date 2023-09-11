@@ -1,5 +1,3 @@
-@use '../../../../../styles/variable';
-
 div.container_articles {
     width: 100%;
 
@@ -8,7 +6,7 @@ div.container_articles {
     align-items: center;
 
     padding: 0 20px;
-    background-color: variable.$white-blog;
+    background-color: var(--white-blog);
     
     div.containt {
         width: 95%;
@@ -23,8 +21,8 @@ div.container_articles {
             width: 100%;
             height: auto;
 
-            border-top: solid .5px variable.$black-10;
-            border-bottom: solid .5px variable.$black-10;
+            border-top: solid .5px var(--black-10);
+            border-bottom: solid .5px var(--black-10);
         }
 
         div.pagination_btn {
@@ -57,129 +55,32 @@ div.container_articles {
     }
 }
 
-div.post {
-    width: 100%;
-    background-color: variable.$white;
+// div.post {
+//     width: 100%;
+//     background-color: var(--white);
 
-    a.image {
-        position: relative;
-        border: solid 1px variable.$black-10;
+//     a.image {
+//         position: relative;
+//         border: solid 1px var(--black-10);
 
-        img {
-            object-fit: cover;
+//         img {
+//             object-fit: cover;
 
-            width: 100%;
-            height: 100%;
+//             width: 100%;
+//             height: 100%;
 
-            transition: .5s ease-out;
-            filter: brightness(.8);
-        }
-    }
+//             transition: .5s ease-out;
+//             filter: brightness(.8);
+//         }
+//     }
 
-    a.image:hover {
-        img {
-            transition: .5s ease-out;
-            filter: brightness(1);
-        }
-    }
+//     a.image:hover {
+//         img {
+//             transition: .5s ease-out;
+//             filter: brightness(1);
+//         }
+//     }
 
-    div.date_and_category {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        gap: 5px;
-
-        time {
-            color: variable.$black-dark-50;
-        }
-
-        div.category_box {
-            font-weight: 600;
-            width: max-content;
-            padding: 1.5px 10px;
-            
-            text-transform: uppercase;
-            color: variable.$link-color;
-            background-color: variable.$link-color-60;
-            
-            border: 1px solid variable.$link-color;
-            border-radius: 999px;
-        }
-    }
-
-    h3.tex_title {
-        a {
-            color: variable.$primary-color;
-            text-decoration: none;
-            transition: .1s ease-in-out;
-        }
-
-        a:hover {
-            color: variable.$link-color;
-            transition: .1s ease-in-out;
-        }
-    }
-
-    p {
-        color: variable.$black-dark-50;
-        display: -webkit-box;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    div.interaction {
-        height: 50px;
-        width: 100%;
-        padding: 0 10px;
-        margin-top: auto;
-        
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        div.author_info {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-
-            a.avatar {
-                position: relative;
-                border-radius: 999px;
-
-                width: 35px;
-                height: 35px;
-
-                border: 1px solid variable.$link-color;
-
-                img {
-                    object-fit: cover;
-                    border-radius: 999px;
-
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-
-            p {
-                font-size: 1rem;
-                color: variable.$black-dark-50;
-            }
-        }
-
-        div.likes {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-
-            small {
-                display: none;
-                font-size: .9rem;
-                color: variable.$black-dark-50;
-            }
-        }
-    }
-}
+// }
 
 // TODO: Configurar responsividade

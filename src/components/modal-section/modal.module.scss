@@ -1,5 +1,3 @@
-@use '../../../styles/variable';
-
 .dialog {
     position: absolute;
     z-index: 50;
@@ -39,10 +37,10 @@ ul.container_list_pages {
         justify-content: space-between;
         width: 100%;
         height: 50px;
-        color: variable.$black-dark;
+        color: var(--black-dark);
 
         a {
-            color: variable.$black-dark-97;
+            color: var(--black-dark-97);
             font-size: 17px;
             text-decoration: none;
             line-height: 50px;

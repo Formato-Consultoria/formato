@@ -14,5 +14,5 @@ export function Time({ time }: { time: Date }) {
         return () => clearInterval(interval);
     }, [time]);
 
-    return <time>{updatedDateAt}</time>
+    return <time className="w-full px-2 pt-3 break-words text-xs text-[var(--black-dark-50)]">{updatedDateAt}</time>
 }

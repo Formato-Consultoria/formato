@@ -1,12 +1,10 @@
-@use '../../../../styles/variable';
-
 section.service_page {
     display: flex;
     flex-direction: column;
 
     width: 100%;
     padding: 50px 20px 0;
-    background-color: variable.$white-mediumn;
+    background-color: var(--white-mediumn);
 
     div.title_service {
         display: flex;
@@ -19,7 +17,7 @@ section.service_page {
             width: auto;
             height: auto;
 
-            background-color: variable.$white;
+            background-color: var(--white);
             border-radius: 999px;
             padding: 10px;
 
@@ -39,7 +37,7 @@ section.service_page {
 
         h3 {
             font-size: 2rem;
-            color: variable.$black-80;
+            color: var(--black-80);
         }
     }
 
@@ -53,7 +51,7 @@ section.service_page {
         p {
             line-height: 2rem;
             font-size: 1.1rem;
-            color: variable.$black;
+            color: var(--black);
         }
     }
 }

@@ -1,7 +1,6 @@
-@use '../../../../styles/variable';
 
 section.strategy {
-    background: variable.$white-mediumn;
+    background: var(--white-mediumn);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,7 +16,7 @@ section.strategy {
         align-items: center;
 
         h2 {
-            color: variable.$black-80;
+            color: var(--black-80);
             font-size: 2rem;
             font-weight: 600;
         }
@@ -53,12 +52,12 @@ section.strategy {
                 gap: 10px;
                 
                 h3 {
-                    color: variable.$black-dark;
+                    color: var(--black-dark);
                     font-weight: 400;
                     font-size: 2rem;
                 }
                 p {
-                    color: variable.$black-dark;
+                    color: var(--black-dark);
                     font-weight: 300;
                     font-size: 1.1rem;
                 }
@@ -107,17 +106,17 @@ section.strategy {
                     max-width: 100%;
                     width: 50%;
 
-                    background-color: variable.$white;
+                    background-color: var(--white);
                     padding: 20px;
                     border-radius: 10px;
 
                     h3 {
-                        color: variable.$black-dark;
+                        color: var(--black-dark);
                         font-weight: 300;
                         font-size: 1.5rem;
                     }
                     p {
-                        color: variable.$black-dark-97;
+                        color: var(--black-dark-97);
 
                         font-weight: 200;
                         font-size: 1.15rem;
@@ -172,7 +171,7 @@ section.strategy {
                         font-size: 1.5rem;
                     }
                     p {
-                        color: variable.$black-dark;
+                        color: var(--black-dark);
                         font-size: 1.1rem;
                     }
                 }

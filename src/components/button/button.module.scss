@@ -1,9 +1,7 @@
-@use '../../../styles/variable';
-
 button.primary_btn {
     height: 32px;
-    background-color: variable.$primary-color;
-    color: variable.$white;
+    background-color: var(--primary-color);
+    color: var(--white);
     border: solid 1px transparent;
     
     display: flex;
@@ -13,7 +11,7 @@ button.primary_btn {
     padding: 0 20px;
 
     vertical-align: center;
-    color: variable.$white;
+    color: var(--white);
     font-weight: 500;
     font-size: 1.03rem;
 
@@ -30,9 +28,10 @@ button.primary_btn {
 }
 
 button.primary_btn:hover {
-    box-shadow: 0 0 40px 40px variable.$white inset;
-    border: solid 1px variable.$primary-color;
-    color: variable.$primary-color;
+    box-shadow: 0 0 40px 40px var(--white inset);
+    border: solid 1px var(--primary-color);
+    color: var(--primary-color);
+    background-color: var(--white);
 
     opacity: .95;
     transition: opacity .5;
@@ -44,20 +43,20 @@ button.primary_btn:hover {
 
 button.secundary_btn {
     border-radius: 8px;
-    background-image: linear-gradient(45deg, variable.$white 50%, transparent 50%);
-    background-image: -webkit-linear-gradient(45deg, variable.$white 50%, transparent 50%);
+    background-image: linear-gradient(45deg, var(--white) 50%, transparent 50%);
+    background-image: -webkit-linear-gradient(45deg, var(--white) 50%, transparent 50%);
 
     background-size: 400%;
 
-    color: variable.$primary-color;
-    border: solid 1px variable.$primary-color;
+    color: var(--primary-color);
+    border: solid 1px var(--primary-color);
     
     transition: background .3s ease-in-out;
 }
 
 button.secundary_btn:hover {
     background-position: 100%;
-    color: variable.$white;
+    color: var(--white);
     box-shadow: 0 0 0 0;
 }
 
@@ -70,7 +69,7 @@ button.custommer_btn {
 
     div > div {
         font-size: 1.03rem;
-        color: variable.$black-dark;
+        color: var(--black-dark);
         
         font-weight: 500;
         padding: 5px 10px 5px 5px;
@@ -80,7 +79,7 @@ button.custommer_btn {
 
         height: 32px;
         border-radius: 0 10px 10px 0;
-        background-color: variable.$white;
+        background-color: var(--white);
         
         border-top: 1px;
         border-bottom: 1px;
@@ -88,7 +87,7 @@ button.custommer_btn {
         border-left: 0;
 
         border-style: solid;
-        border-color: variable.$primary-color;
+        border-color: var(--primary-color);
         box-shadow: 0 0 0 0;
 
         transition: background .2s ease-out;
@@ -97,11 +96,11 @@ button.custommer_btn {
 
 button.custommer_btn:hover {
     box-shadow: 0 0 0 0;
-    background-color: variable.$white;
+    background-color: var(--white);
 
     div > div {
-        color: variable.$white;
-        background-color: variable.$primary-color;
+        color: var(--white);
+        background-color: var(--primary-color);
     }
 }
 
@@ -162,7 +161,7 @@ button.disabled_btn {
 button.disabled_btn:hover {
     box-shadow: 0 0 0 0;
     border: solid 1px '#707070';
-    color: variable.$white;
+    color: var(--white);
 
     opacity: 1;
     filter: grayscale(1) brightness(2);

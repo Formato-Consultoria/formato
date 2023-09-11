@@ -1,15 +1,13 @@
-@use '../../../../styles/variable';
-
 section.about {
     width: 100%;
-    background-color: variable.$white-mediumn;
+    background-color: var(--white-mediumn);
 
     display: flex;
     flex-direction: column;
     align-items: stretch;
 
     h2 {
-        color: variable.$black-80;
+        color: var(--black-80);
         font-size: 2rem;
         margin: 25px 0 0 50px;
         font-weight: 600;
@@ -52,7 +50,7 @@ section.about {
             p {
                 line-height: 2.2rem;
                 font-size: 1.1rem;
-                color: variable.$black-80;
+                color: var(--black-80);
             }
         }
     }

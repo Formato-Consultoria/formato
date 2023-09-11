@@ -1,13 +1,11 @@
-@use '../../../../styles/variable';
-
 section.contact {
     width: 100%;
 
     background-repeat: no-repeat;
-    background-image: variable.$black-dark-80-gradient, url("/images/contato.jpeg");
+    background-image: var(--black-dark-80-gradient), url("/images/contato.jpeg");
     background-size: cover;
     
-    color: variable.$white-80;
+    color: var(--white-80);
 
     display: flex;
     align-items: stretch;
@@ -127,10 +125,10 @@ section.contact {
                 }
 
                 font-size: .9rem;
-                color: variable.$white-80;
+                color: var(--white-80);
 
                 a {
-                    color: variable.$white-80;
+                    color: var(--white-80);
                     text-decoration: none;
                     :hover {
                         text-decoration: underline;

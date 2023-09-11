@@ -6,11 +6,11 @@ div.img_gallery {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: variable.$border-client;
+    gap: var(--border-client);
 
     .image {
         height: 480px;
-        width: calc(33% - (variable.$border-client));
+        width: calc(33% - (var(--border-client)));
         position: relative;
         
         border-radius: 10px;
@@ -38,7 +38,7 @@ div.img_gallery {
 @media (max-width: 1280px) {
     div.img_gallery {
         .image {
-            width: calc(50% - (variable.$border-client));
+            width: calc(50% - (var(--border-client)));
         }
     }
 }
@@ -47,7 +47,7 @@ div.img_gallery {
     div.img_gallery {
         padding: 0 5px;
         .image {
-            width: calc(100% - (variable.$border-client));
+            width: calc(100% - (var(--border-client)));
         }
     }
 }

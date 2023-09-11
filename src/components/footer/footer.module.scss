@@ -1,14 +1,12 @@
-@use '../../../styles/variable';
-
 .footer {
-    color: variable.$white;
-    max-width: variable.$max-width-screen;
+    color: var(--white);
+    max-width: var(--max-width-screen);
     margin: 0 auto;
 
     div.navigation_container {
         display: flex;
         gap: 20px;
-        background: variable.$blue-dark-97;
+        background: var(--blue-dark-97);
         padding: 35px 35px 20px;
 
         .logotipo_img img {
@@ -18,7 +16,7 @@
 
         div.navigation_content {
             display: flex;
-            color: variable.$white;
+            color: var(--white);
             gap: 60px;
 
             div.servicos div.menu_services nav {
@@ -34,13 +32,13 @@
                             font-weight: 200;
             
                             text-decoration: none;
-                            color: variable.$white-50;
+                            color: var(--white-50);
                             transition: .5s;
                         }
             
                         a:hover {
                             text-decoration: underline;
-                            color: variable.$white-mediumn;
+                            color: var(--white-mediumn);
                             transition: .5s;
                         }
                     }
@@ -54,7 +52,7 @@
 
                     div {
                         h5 {
-                            color: variable.$white-80;
+                            color: var(--white-80);
                             font-size: 1rem;
                             margin: 10px 0;
                         }
@@ -70,10 +68,10 @@
         justify-content: space-between;
         padding: 5px 100px;
 
-        background-color: variable.$blue-dark;
+        background-color: var(--blue-dark);
 
         div a {
-            color: variable.$white-80;
+            color: var(--white-80);
             margin: 0 5px;
             opacity: .5;
             
@@ -83,7 +81,7 @@
 
             :hover {
                 opacity: none;
-                color: variable.$white;
+                color: var(--white);
             }
         }
 

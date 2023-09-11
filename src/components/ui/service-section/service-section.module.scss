@@ -1,14 +1,12 @@
-@use '../../../../styles/variable';
-
 section.services {
     width: 100%;
-    background: variable.$white;
+    background: var(--white);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 50px;
     margin: 50px 0;
-    max-width: variable.$max-section;
+    max-width: var(--max-section);
 
     div.container_services {
         width: 100%;
@@ -31,10 +29,10 @@ section.services {
             align-items: center;
             justify-content: flex-start;
     
-            color: variable.$blue-dark;
-            background-color: variable.$white;
+            color: var(--blue-dark);
+            background-color: var(--white);
 
-            border: solid .5px variable.$black-dark-50;
+            border: solid .5px var(--black-dark-50);
             border-radius: 15px;
 
             gap: 8px;
@@ -51,18 +49,18 @@ section.services {
 
             small {
                 text-align: center;
-                color: variable.$blue-dark-50;
+                color: var(--blue-dark-50);
                 font-size: 1.1rem;
             }
         }
 
         div.black {
-            background-color: variable.$blue-dark;
-            color: variable.$white;
-            border: variable.$blue-dark;
+            background-color: var(--blue-dark);
+            color: var(--white);
+            border: var(--blue-dark);
             
             small {
-                color: variable.$white-50;
+                color: var(--white-50);
             }
         }
     }
