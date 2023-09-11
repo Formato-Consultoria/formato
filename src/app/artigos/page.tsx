@@ -178,7 +178,7 @@ export default async function Articles() {
 // teste
 const GetAllArticles = () => {
   const categorias: Array<PropsCategory> = faker.helpers.multiple(() => generateCategory(), { count: 5 });
-  const articlesGen: Array<PropsArticle> = faker.helpers.multiple(() => generateArticle(categorias), { count: 3 });
+  const articlesGen: Array<PropsArticle> = faker.helpers.multiple(() => generateArticle(categorias), { count: 10 });
 
   categorias.forEach((categoria) => {
     const { articles } = categoria;

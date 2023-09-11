@@ -1,4 +1,3 @@
-'use client'
 import { fetcher } from "@/lib/strapi-api";
 
 import { PropsArticle, PropsCategory } from "@/@types/article";
@@ -9,45 +8,46 @@ import formatDateTime from "@/utils/format-date-time";
 import { blinker } from "@/utils/_fonts";
 
 import cx from "clsx";
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 import style from "./article.module.scss";
-import AllBoxPost from "@/components/ui/comp-all-box-post";
+import { Time } from "../components/time";
 
-export default function Article({
-    article,
-    relatedArticles
-}: {
-    article: PropsArticle,
-    relatedArticles: PropsArticle[]
-}) {
-    const [updatedDateAt, setUpdatedDateAt] = useState('');
+import Comp from "../components";
+import { notFound } from "next/navigation";
+
+export default async function Article({ params }: { params: { slug: string } }) {
+    const responseArticle = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/slugify/slugs/article/${params.slug}?populate=deep`, {
+        next: {
+            revalidate: 60
+        }
+    });
+    const articleResponse = await responseArticle.json();
+
+    const idCategory = articleResponse?.data?.attributes?.category?.data?.id ?? 0;
+    const responseByCategory = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/categories/${idCategory}?populate=deep,4`);
+
+    const articlesByCategoryResponse = await responseByCategory.json();
+    console.log(articlesByCategoryResponse)
+
+    if(!articleResponse || !articlesByCategoryResponse.data) notFound();
+
+    const { data } = articleResponse;
+    const article: PropsArticle = await FormatSingleArticleData(data);
+
+    const { articles }: PropsCategory = FormatCategoryData(articlesByCategoryResponse.data, params.slug);
+    const relatedArticles = articles;
+
     const { slug, title, description, body, updatedAt, cover, category, author } = article;
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setUpdatedDateAt(formatDateTime(new Date(updatedAt)));
-        }, 1000);
-
-        return () => clearInterval(interval);
-    }, [updatedAt]);
-
+    
     return (<>
         <div className={style.article_page}>
-            <BannerTitle
-                src={cover.url}
-                title={title}
-                height={"250px"}
-                width={"95%"}
-                isBannerArticle
-                styleBnr={{ gridArea: "banner" }}
-            />
+            <BannerTitle src={cover.url} />
 
             <div className={style.header}>
                 <div className={style.date_and_category}>
-                    <p style={{ fontSize: 14, fontWeight: 'normal' }}>{updatedDateAt}</p>
+                    <Time time={new Date(updatedAt)}/>
 
                     <div style={{ fontSize: 13 }} className={cx(style.category_box, blinker.className)}>{category?.name}</div>
                 </div>
@@ -75,7 +75,6 @@ export default function Article({
 
             <div className={style.headlings}>
                 <p className={blinker.className}>Nessa pagina</p>
-                {/* map de todos os headings dentro do body */}
             </div>
 
             <hr style={{ height: "1px", width: "90%", outline: "none", margin: "5px 20px", borderTop: "1px solid rgba(0, 0, 0, 0.1)", gridColumn: 2 }} />
@@ -89,17 +88,13 @@ export default function Article({
 
         <hr style={{ height: "1px", width: "90%", outline: "none", margin: "25px auto", borderTop: "1px solid rgba(0, 0, 0, 0.1)" }} />
 
-        <div className={style.related_articles}>
-            <AllBoxPost />
-            {/* {relatedArticles.map((article: PropsArticle, index) => (
-                <PostBox
-                    key={index}
-                    {...article}
-                    updatedAt={new Date(updatedAt ?? new Date())}
-                    typeBox={"RELATED_BOX_POST"}
-                />
-            ))} */}
-        </div>
+        {relatedArticles && <Comp.AllBoxPost>
+            {relatedArticles.map((article: PropsArticle) => {
+                return (
+                    <Comp.BoxPost key={article.id} article={article} />
+                )
+            })}
+        </Comp.AllBoxPost>}
     </>);
 }
 

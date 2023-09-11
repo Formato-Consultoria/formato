@@ -17,7 +17,7 @@ export default function NoContent({
                 className={cx("absolute z-10 h-[180px] w-[180px] sm:h-[350px] sm:w-[350px]")}
             >
                 <Image
-                    className="object-contain grayscale brightness-100 opacity-10"
+                    className={"object-contain grayscale brightness-100 opacity-20"}
                     src={image}
                     fill
                     alt={"Imagem, pagina de error"}
