@@ -2,7 +2,6 @@
 import "./global.scss";
 import styles from "./layout.module.scss";
 
-import { Metadata } from "next";
 import { usePathname } from "next/navigation";
 
 import cx from "clsx";
@@ -13,14 +12,14 @@ import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import VLibras from "@djpfs/react-vlibras";
 
-export const metadata: Metadata = {
-    title: 'Formato Consultoria',
-    description: 'Ajudamos a conectar pessoas a seus negócios. Buscamos inovação e crescimento pessoal. Alinhamos objetivos, criamos conexão e colocamos ideias brilhantes em prática.',
-}
+// export const metadata: Metadata = {
+//     title: 'Formato Consultoria',
+//     description: 'Ajudamos a conectar pessoas a seus negócios. Buscamos inovação e crescimento pessoal. Alinhamos objetivos, criamos conexão e colocamos ideias brilhantes em prática.',
+// }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     const currentPathname = usePathname();
-    metadata.title = `${currentPathname != '/' ? "Formato - "+currentPathname?.slice(1) : "Formato Consultoria"}`;
+    // metadata.title = `${currentPathname != '/' ? "Formato - "+currentPathname?.slice(1) : "Formato Consultoria"}`;
 
     return (
         <html lang="pt-br">

@@ -24,7 +24,7 @@ export default function Clients() {
         <BannerTitle
           src="/images/cliente_hero.jpg"
         >
-          <p className={'text-2xl md:text-3xl text-white'}>Clientes</p>
+          <p className={'text-2xl md:text-3xl text-white'}>Nossos clientes</p>
         </BannerTitle>
 
         <WhatsappWidgetButton />

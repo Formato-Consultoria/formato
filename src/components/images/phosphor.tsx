@@ -5,8 +5,6 @@ export {
     ArrowLeft,
     ArrowRight,
     Buildings,
-    InstagramLogo,
-    LinkedinLogo,
     List,
     X,
     Pause,
@@ -14,7 +12,23 @@ export {
     CaretRight,
     House,
     Shield,
-    User
+    User,
+    InstagramLogo,
+    LinkedinLogo,
+    LinkBreak,
+    FacebookLogo,
+    TwitterLogo,
+    WhatsappLogo,
+    MediumLogo,
+    TiktokLogo,
+    SnapchatLogo,
+    PinterestLogo,
+    YoutubeLogo,
+    RedditLogo,
+    WechatLogo,
+    DiscordLogo,
+    Vibrate,
+    MagnifyingGlass
 } from "@phosphor-icons/react"
 
 export type { IconProps } from "@phosphor-icons/react";

@@ -1,11 +1,5 @@
 import { ReactNode } from "react";
 
-/**
- * CEL - Consultoria para empresas locais
- * MT - Mentoria Técnica
- */
-export type typeService = 'WORKSHOPS' | 'CEL' | 'MT';
-
 export interface contentService {
     slug: string,
     icon: string,
@@ -13,5 +7,4 @@ export interface contentService {
     bannerImg: string,
     description: string,
     content: ReactNode,
-    typeService: typeService
 }

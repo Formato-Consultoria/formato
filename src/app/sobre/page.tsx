@@ -95,7 +95,6 @@ export default async function PageAbout() {
       </section>
 
       <GallerySection />
-
       <ContactSection />
     </>
   )

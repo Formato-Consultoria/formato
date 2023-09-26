@@ -21,13 +21,16 @@ export interface PropsAuthor {
     name: string,
     avatar?: string,
     email?: string,
+    banner?: string,
+    socialMedia?: Array<{ mediaName: string, mediaLink: string }>
 }
 
 export interface PropsCategory {
+    id: number,
     name: string,
     slug: string,
-    description?: string
-    articles?: PropsArticle[]
+    description?: string,
+    articles?: PropsArticle[],
 }
 
 

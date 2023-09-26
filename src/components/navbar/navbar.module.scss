@@ -12,7 +12,7 @@ header.header {
         background: var(--primary-color);
     }
 
-    .nav_bar {
+    nav.nav_bar {
         min-height: var(--height-nav-bar);
         max-width: var(--max-width-screen);
         margin: 0 auto;
@@ -30,46 +30,12 @@ header.header {
             }
         }
     
-        div.navigation {
+        .navigation {
             height: 100%;
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            gap: 35px;
-            
-            ul.navigation_options {
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-                gap: 25px;
-        
-                li {
-                    line-height: calc(var(--height-nav-bar) - 10px);
-                    vertical-align: center;
-        
-                    a {
-                        font-size: 1.2rem;
-                        font-weight: 500;
-    
-                        text-decoration: none;
-                        color: var(--black-dark);
-                        transition: .5s;
-                    }
-    
-                    a:hover {
-                        text-decoration: underline;
-                        color: var(--link-color);
-                        transition: .5s;
-                    }
-                }
-            }
-    
-            button.search_btn {
-                svg {
-                    max-width: 25px;
-                }
-            }
+            gap: 20px;
 
             button.hamburgerIcon {
                 display: none;
@@ -85,16 +51,8 @@ header.onScroll {
     backdrop-filter: blur(4px);
     transition: height .3s ease-in;
 
-    .nav_bar {
+    nav.nav_bar {
         min-height: 40px;
-
-        div.navigation {
-            ul.navigation_options {
-                li {
-                    line-height: 30px;
-                }
-            }
-        }
 
         .logotipo_img img {
             transition: .1s ease;
@@ -105,33 +63,21 @@ header.onScroll {
 
 @media (max-width: 1024px) {
     header.header {
-        .nav_bar {
+        nav.nav_bar {
             padding-left: 25px;
             padding-right: 30px;
-            
-            div.navigation {
-                gap: 20px;
-
-                ul.navigation_options {
-                    gap: 15px;
-                }
-            }
         }
     }
 }
 
 @media (max-width: 896px) {
     header.header {
-        .nav_bar {
+        nav.nav_bar {
             div.logotipo_img img {
                 height: 40px;
             }
 
-            div.navigation {
-                ul.navigation_options {
-                    display: none;
-                }
-
+            .navigation {
                 button.hamburgerIcon {
                     display: block;
                 }
@@ -140,21 +86,9 @@ header.onScroll {
     }
 
     header.onScroll {
-        .nav_bar {    
+        nav.nav_bar {    
             .logotipo_img img {
                 height: 30px;
-            }
-        }
-    }
-}
-
-@media (max-width: 572px) {
-    header.header {
-        .nav_bar {
-            div.navigation {
-                button.contratar_btn {
-                    display: none;
-                }
             }
         }
     }

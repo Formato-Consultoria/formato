@@ -17,9 +17,9 @@ import {
 
 export const services: contentService[] = [
     {
+        title: "Finanças",
         slug: "financas",
         icon: Finance.src,
-        title: "Finanças",
         bannerImg: "/images/servicos/financas.png",
         description: "Você sabe gerenciar bem o dinheiro da sua empresa? Nós podemos te ajudar! Nossos serviços de finanças oferecem soluções para a gestão eficiente de receitas, despesas, investimentos e fluxo de caixa.",
         content:<>
@@ -27,12 +27,11 @@ export const services: contentService[] = [
             <br />
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque.</p>
         </>,
-        typeService: 'CEL',
     },
     {
+        title: "Marketing",
         slug: "marketing",
         icon: Marketing.src,
-        title: "Marketing",
         bannerImg: "/images/servicos/marketing.png",
         description: "Atrair e fidelizar clientes é fundamental para o sucesso da sua empresa. Com nossos serviços de marketing, você pode criar estratégias e táticas personalizadas para divulgar seus produtos e serviços e alcançar o público certo.",
         content:<>
@@ -40,12 +39,11 @@ export const services: contentService[] = [
             <br />
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque.</p>
         </>,
-        typeService: 'CEL',
     },
     {
+        title: "Marketing digital",
         slug: "marketing-digital",
         icon: DigitalMarketing.src,
-        title: "Marketing digital",
         bannerImg: "/images/servicos/marketing-digital.png",
         description: "Seu público está online, e você também precisa estar. Nossos serviços de marketing digital utilizam as melhores práticas para explorar canais digitais, alcançar clientes em potencial e gerar resultados reais.",
         content:<>
@@ -53,12 +51,11 @@ export const services: contentService[] = [
             <br />
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque.</p>
         </>,
-        typeService: 'CEL',
     },
     {
+        title: "Modelagem de negocios",
         slug: "modelagem-de-negocios",
         icon: BusinessModeling.src,
-        title: "Modelagem de negocios",
         bannerImg: "/images/servicos/modelagem-de-negocios.png",
         description: "Você quer entender melhor o seu negócio e identificar oportunidades de crescimento? Nossos serviços de modelagem de negócios podem ajudar a criar e analisar modelos de negócios que vão te ajudar a criar e entregar valor aos seus clientes.",
         content:<>
@@ -66,12 +63,11 @@ export const services: contentService[] = [
             <br />
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque.</p>
         </>,
-        typeService: 'CEL',
     },
     {
+        title: "Produção enxuta",
         slug: "producao-enxuta",
         icon: LeanProduction.src,
-        title: "Produção enxuta",
         bannerImg: "/images/servicos/producao-enxuta.png",
         description: "Você quer reduzir custos e aumentar a eficiência na sua empresa? A produção enxuta é uma abordagem que pode te ajudar. Nossos serviços oferecem soluções para identificar e eliminar desperdícios, simplificar processos e otimizar resultados.",
         content:<>
@@ -79,12 +75,11 @@ export const services: contentService[] = [
             <br />
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque.</p>
         </>,
-        typeService: 'CEL',
     },
     {
+        title: "Planejamento estrategico",
         slug: "planejamento-estrategico",
         icon: StrategicPlanning.src,
-        title: "Planejamento estrategico",
         bannerImg: "/images/servicos/planejamento-estrategico.png",
         description: "Você quer ter uma visão clara do futuro da sua empresa? O planejamento estratégico é fundamental. Nossos serviços oferecem ferramentas para análise de mercado, definição de metas e objetivos, e elaboração de planos de ação eficazes.",
         content:<>
@@ -92,12 +87,11 @@ export const services: contentService[] = [
             <br />
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque.</p>
         </>,
-        typeService: 'WORKSHOPS',
     },
     {
+        title: "Gestão por OKRS",
         slug: "gestao-por-okrs",
         icon: ManagementOKRS.src,
-        title: "Gestão por OKRS",
         bannerImg: "/images/servicos/gestao-por-okrs.png",
         description: "Você quer acompanhar o desempenho da sua empresa e dos seus colaboradores de forma objetiva e eficiente? A gestão por OKRs pode ser a solução. Nossos serviços oferecem ferramentas para definir e acompanhar objetivos e resultados chave, e melhorar a produtividade e a motivação da equipe.",
         content:<>
@@ -105,12 +99,11 @@ export const services: contentService[] = [
             <br />
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque.</p>
         </>,
-        typeService: 'WORKSHOPS',
     },
     {
+        title: "Produtividade e gestão de tarefas",
         slug: "produtividade-e-gestao-de-tarefas",
         icon: ProductivityTaskManagement.src,
-        title: "Produtividade e gestão de tarefas",
         bannerImg: "/images/servicos/produtividade-e-gestao-de-tarefas.png",
         description: "Você quer aumentar a produtividade e a eficiência da sua equipe? Nossos serviços de produtividade e gestão de tarefas oferecem soluções para organizar e priorizar atividades, gerenciar o tempo e evitar desperdícios.",
         content:<>
@@ -118,12 +111,11 @@ export const services: contentService[] = [
             <br />
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque.</p>
         </>,
-        typeService: 'WORKSHOPS',
     },
     {
+        title: "Indicadores e metricas",
         slug: "indicadores-e-metricas",
         icon: IndicatorsMetrics.src,
-        title: "Indicadores e metricas",
         bannerImg: "/images/servicos/indicadores-e-metricas.png",
         description: "Você quer acompanhar o desempenho da sua empresa de forma objetiva e precisa? Nossos serviços de indicadores e métricas oferecem soluções para coletar, analisar e interpretar dados relevantes, e tomar decisões estratégicas com base em evidências.",
         content:<>
@@ -131,12 +123,11 @@ export const services: contentService[] = [
             <br />
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque.</p>
         </>,
-        typeService: 'WORKSHOPS',
     },
     {
+        title: "Inovação e Modelo de Negócio",
         slug: "inovacao-e-modelo-de-negocio",
         icon: InnovationBusinessModel.src,
-        title: "Inovação e Modelo de Negócio",
         bannerImg: "/images/servicos/inovacao-e-modelo-de-negocio.png",
         description: "Você quer inovar e encontrar novas oportunidades de crescimento para a sua empresa? Nossos serviços de inovação e modelo de negócio oferecem soluções para identificar tendências de mercado, criar e validar ideias, e implementar modelos de negócios inovadores.",
         content:<>
@@ -144,12 +135,11 @@ export const services: contentService[] = [
             <br />
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque.</p>
         </>,
-        typeService: 'MT',
     },
     {
+        title: "Qualidade e Produtividade",
         slug: "qualidade-e-produtividade",
         icon: QualityProductivity.src,
-        title: "Qualidade e Produtividade",
         bannerImg: "/images/servicos/qualidade-e-produtividade.png",
         description: "Você quer garantir a qualidade dos seus produtos e serviços e aumentar a satisfação dos seus clientes? Nossos serviços de qualidade e produtividade oferecem soluções para identificar oportunidades de melhoria, implementar processos eficazes.",
         content:<>
@@ -157,12 +147,11 @@ export const services: contentService[] = [
             <br />
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque.</p>
         </>,
-        typeService: 'MT',
     },
     {
+        title: "Transformação Digital",
         slug: "transformacao-digital",
         icon: DigitalTransformation.src,
-        title: "Transformação Digital",
         bannerImg: "/images/servicos/transformacao-digital.png",
         description: "Você quer modernizar e otimizar os processos da sua empresa, explorando todo o potencial da tecnologia? A transformação digital pode ser a solução. Descubra como a transformação digital pode trazer mais eficiência, agilidade, inovação e vantagem competitiva para o seu negócio.",
         content:<>
@@ -170,6 +159,5 @@ export const services: contentService[] = [
             <br />
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatibus amet tempora sit ratione, officiis saepe inventore, doloremque nostrum consequatur cupiditate magni expedita dolorem veniam, eligendi adipisci id quod itaque.</p>
         </>,
-        typeService: 'MT',
     },
 ];

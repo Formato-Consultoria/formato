@@ -7,7 +7,7 @@ import cx from 'clsx';
 type BtnProps = {
     value: string | ReactElement,
     icone?: ReactElement<IconProps>,
-    onClick?: () => Promise<void> | void,
+    onClick?: () => Promise<void|any> | void | any,
     isSecondary?: boolean,
     isCustommer?: boolean,
     isDowButton?: boolean,
@@ -38,6 +38,7 @@ export default function ButttonGlobal({
                 isDowButton && style.arrowdow_btn,
                 isLoading && style.loading_btn,
                 disabled && style.disabled_btn,
+                "disabled:pointer-events-none",
                 className
         )}>
             {value} {icone && <strong>{icone}</strong>}

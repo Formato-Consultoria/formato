@@ -1,5 +1,5 @@
-import { Inter } from '@next/font/google';
-import { Blinker } from '@next/font/google';
+import { Inter } from 'next/font/google';
+import { Blinker } from 'next/font/google';
 
 export const inter = Inter({
     fallback: ['sans-serif'],

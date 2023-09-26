@@ -1,7 +1,7 @@
 import { PropsArticle, PropsCategory } from "@/@types/article";
 import { mdToHtml } from "@/lib/md-to-html";
 
-export default function FormatArticleData(data: Array<any>): Array<PropsArticle> {
+export function FormatArticleData(data: Array<any>): Array<PropsArticle> {
     return data.map((article: any) => {
         return {
             id: article?.id,
@@ -15,6 +15,7 @@ export default function FormatArticleData(data: Array<any>): Array<PropsArticle>
                 url: article?.attributes?.cover?.data?.attributes?.url,
             },
             category: {
+                id: article?.attributes?.category?.data?.id,
                 name: article?.attributes?.category?.data?.attributes?.name,
                 slug: article?.attributes?.category?.data?.attributes?.slug,
                 description: article?.attributes?.category?.data?.attributes?.description,
@@ -42,6 +43,7 @@ export async function FormatSingleArticleData(articleData: any): Promise<PropsAr
             url: articleData?.attributes?.cover?.data?.attributes?.url,
         },
         category: {
+            id: articleData?.attributes?.category?.data?.id,
             name: articleData?.attributes?.category?.data?.attributes?.name,
             slug: articleData?.attributes?.category?.data?.attributes?.slug,
             description: articleData?.attributes?.category?.data?.attributes?.description,
@@ -58,6 +60,7 @@ export async function FormatSingleArticleData(articleData: any): Promise<PropsAr
 
 export function FormatCategoryData(categoryData: any, slug = ""): PropsCategory {
     return {
+        id: categoryData?.id,
         name: categoryData?.attributes?.name,
         slug: categoryData?.attributes?.slug,
         description: categoryData?.attributes?.description,
@@ -67,4 +70,18 @@ export function FormatCategoryData(categoryData: any, slug = ""): PropsCategory 
             }).slice(0, 4)
         )
     }
+}
+
+
+export function FormatCategoriesData(categoryData: Array<any>): Array<PropsCategory> {
+    return categoryData.map((category: any) => {
+
+        return {
+            id: category?.id,
+            name: category?.attributes?.name,
+            slug: category?.attributes?.slug,
+            description: category?.attributes?.description,
+            articles: FormatArticleData(category?.attributes?.articles?.data)
+        }
+    })
 }
