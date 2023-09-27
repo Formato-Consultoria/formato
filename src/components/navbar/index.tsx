@@ -54,16 +54,16 @@ export default function Navbar() {
     }, []);
 
     const onClose = () => {
-        setIsOpenModal(false);
+        setTimeout(() => {
+            if(isOpenModal) setIsOpenModal(false);
+        }, 200);
     };
 
     const onOpen = () => {
-        setIsOpenModal(true);
+        setTimeout(() => {
+            if(!isOpenModal) setIsOpenModal(true);
+        }, 200);
     };
-
-    const onToggle = () => {
-        setIsOpenModal(!isOpenModal);
-    }
 
     return (
         <header className={cx(style.header, (didScroll && style.onScroll), blinker.className)}>
@@ -78,7 +78,7 @@ export default function Navbar() {
                 </div>
                 
                 <NavigationMenu className={style.navigation}>
-                    <NavigationMenuList className={"hidden sm:flex sm:gap-4 md:gap-5"}>
+                    <NavigationMenuList className={"hidden md:flex sm:gap-4 md:gap-5"}>
                         <NavigationMenuItem>
                             <Link
                                 className={cx(`h-full text-lg ${pathname === "/sobre" ? 'text-[var(--link-color)]' : 'text-[var(--black-dark)]'} duration-500 font-medium no-underline hover:underline hover:text-[var(--link-color)] hover:duration-500`, blinker.className)}
@@ -150,7 +150,7 @@ export default function Navbar() {
                     </NavigationMenuList>
 
                     <button
-                        onClick={onToggle}
+                        onClick={isOpenModal ? onClose : onOpen}
                         className={style.hamburgerIcon}
                     >
                         {isOpenModal ? <X size={26} /> : <List size={26} />}
@@ -158,7 +158,6 @@ export default function Navbar() {
 
                     <Modal
                         onClose={onClose}
-                        onOpen={onOpen}
                         isOpen={isOpenModal}
                     />
 

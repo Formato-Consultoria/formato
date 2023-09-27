@@ -18,11 +18,10 @@ import { services } from "@/content/all-services";
 
 interface ModalProps {
     isOpen: boolean,
-    onOpen: () => void,
     onClose: () => void,
 }
 
-export default function Modal({ isOpen, onOpen, onClose }: ModalProps) {
+export default function Modal({ isOpen, onClose }: ModalProps) {
     const compServices = Object.values(services);
 
     return (
@@ -54,27 +53,29 @@ export default function Modal({ isOpen, onOpen, onClose }: ModalProps) {
                         <AccordionItem value="Serviços">
                             <AccordionTrigger className={"h-[50px] text-[var(--black-dark-97)] text-[17px] font-[669] hover:no-underline"}>Serviços</AccordionTrigger>
 
-                            <>{compServices.map((_) => (
-                                <AccordionContent
-                                    key={_.slug}
-                                    className="items-center pl-2 text-[var(--black-dark)]"
-                                >
-                                    <Image
-                                        className={"align-middle my-auto"}
-                                        src={_.icon}
-                                        width={20}
-                                        height={20}
-                                        alt={`service - ${_.title}`}
-                                    />
-                                    
-                                    <Link
-                                        href={`servicos/${_.slug}`}
-                                        className={"ml-3 my-auto text-sm text-[var(--black-dark)] no-underline self-center font-medium"}
-                                    >{_.title}</Link>
-                                </AccordionContent>
+                            <>{compServices.map((_, index) => (
+                                    <AccordionContent
+                                        key={_.slug}
+                                        className={"items-center h-10 pl-2 py-1 text-[var(--black-dark)]"}
+                                    >
+                                        <Image
+                                            className={"align-middle my-auto"}
+                                            src={_.icon}
+                                            width={20}
+                                            height={20}
+                                            alt={`service - ${_.title}`}
+                                        />
+                                        
+                                        <Link
+                                            href={`servicos/${_.slug}`}
+                                            className={"ml-3 mb-auto text-sm text-[var(--black-dark)] no-underline self-center font-medium"}
+                                        >{_.title}</Link>
+
+                                        {(compServices.length-1 !== index) && <hr className="w-full mt-2 outline-0	border-x-0 border-b-0 border-t-[1px] border-solid border-black/10 box-content" />}
+                                    </AccordionContent>
                             ))}</>
 
-                            <hr className="w-full border-t-[1px] border-solid border-black/10 box-content" />
+                            <hr className="w-full outline-0	border-x-0 border-b-0 border-t-[1px] border-solid border-black/10 box-content" />
                         </AccordionItem>
                     </Accordion>
 

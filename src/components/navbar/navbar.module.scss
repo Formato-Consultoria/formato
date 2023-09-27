@@ -78,6 +78,9 @@ header.onScroll {
             }
 
             .navigation {
+                div:nth-child(1) {
+                    display: none;
+                }
                 button.hamburgerIcon {
                     display: block;
                 }
