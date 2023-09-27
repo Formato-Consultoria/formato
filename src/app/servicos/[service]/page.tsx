@@ -1,55 +1,76 @@
-'use client'
+'use client';
 import style from "./service-page.module.scss";
 
 import cx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { House, Shield } from "@/components/images/phosphor";
-import {  useState } from "react";
-import { useMediaQuery } from "react-responsive";
 
 import type { contentService } from "@/@types/services";
 import BannerTitle from "@/components/title-page-banner";
 import { services } from '@/content/all-services';
 import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
+import NoContent from "@/components/no-content";
+import { NoArticle } from "@/components/images";
+import ButttonGlobal from "@/components/button";
 
 const Service = () => {
-    const isMobile = useMediaQuery({
-        query: '(max-width: 768px)'
-    });
-
     const service = usePathname();
-    const srv: contentService = services.find((srv) => srv.slug === service) as contentService;
-    
-    return (
-        <>
+
+    const serviceComp: contentService = services.find((srv) => srv.slug === service.split('/').pop()) as contentService;
+
+    if(serviceComp) {
+        return (<>
             <BannerTitle
-                src={srv?.bannerImg}
-            />
+                styles={{ containner: {
+                    borderBottomWidth: '1.5px',
+                    borderBottomStyle: 'solid',
+                    borderBottomColor: 'rgba(255, 255, 255, .5)'
+                } }}
+                height="200px"
+                src={serviceComp.bannerImg}
+            >
+                <div className={"absolute -bottom-9 left-[43%] sm:left-12 md:left-14 rounded-full p-[10px] bg-[var(--white)] ring-1 ring-zinc-300"}>
+                    <Image
+                        src={serviceComp.icon}
+                        width={45}
+                        height={45}
+                        alt={`service - ${serviceComp.title}`}
+                    />
+                </div>
+            </BannerTitle>
 
             <WhatsappWidgetButton />
 
             <section className={cx(style.service_page, style.section)}>
-                <div className={style.title_service}>
-                    <div className={style.iconImg}>
-                        <Image
-                            src={srv?.icon}
-                            width={43}
-                            height={43}
-                            alt={`service - ${srv?.title}`}
-                        /> : <Shield size={43} />
-                    </div>
-
-                    <h3>{srv?.title}</h3>
+                <div className={style.title_service}>    
+                    <h3>{serviceComp.title}</h3>
                 </div>
 
                 <div className={style.content}>
-                    {srv?.content}
+                    {serviceComp.content}
                 </div>
             </section>
-        </>
-    )
+        </>)
+    } else {
+        return (
+            <NoContent image={NoArticle.src}>
+                <section>
+                    <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+                        <div className="mx-auto max-w-screen-sm text-center">
+                            <h1 className="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-notcontent-600">204</h1>
+                            <p className="mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl">Sem conteúdo 🔎</p>
+                            <p className="mb-4 text-lg font-light text-gray-500">Desculpe, não há conteúdo disponível nesta página no momento. Verifique novamente mais tarde ou explore outras partes do nosso site.</p>
+                            <Link href="/" className="inline-flex no-underline">
+                                <ButttonGlobal className={'bg-notcontent-600 hover:text-notcontent-600 hover:border-notcontent-600'} value="Voltar para o inicio"/>
+                            </Link>
+                        </div>   
+                    </div>
+                </section>
+            </NoContent>
+        )
+    }
+    
 }
 
 export default Service;

@@ -27,10 +27,10 @@ import {
 } from "@/components/ui/navigation-menu";
 import { services } from "@/content/all-services";
 
-
 export default function Navbar() {
     const [didScroll, setDidiScroll] = useState(false);
     const [isOpenModal, setIsOpenModal] = useState(false);
+
     const pathname = usePathname();
 
     const compServices = Object.values(services);
@@ -55,13 +55,13 @@ export default function Navbar() {
 
     const onClose = () => {
         setTimeout(() => {
-            if(isOpenModal) setIsOpenModal(false);
+            if (isOpenModal) setIsOpenModal(false);
         }, 200);
     };
 
     const onOpen = () => {
         setTimeout(() => {
-            if(!isOpenModal) setIsOpenModal(true);
+            if (!isOpenModal) setIsOpenModal(true);
         }, 200);
     };
 
@@ -76,7 +76,7 @@ export default function Navbar() {
                         />
                     </Link>
                 </div>
-                
+
                 <NavigationMenu className={style.navigation}>
                     <NavigationMenuList className={"hidden md:flex sm:gap-4 md:gap-5"}>
                         <NavigationMenuItem>
@@ -93,22 +93,22 @@ export default function Navbar() {
                             >Contatos</Link>
                         </NavigationMenuItem>
 
-                        <NavigationMenuItem>
+                        <NavigationMenuItem className="hover:bg-transparent">
                             <NavigationMenuTrigger
                                 className={cx(
                                     'p-0 m-0',
-                                    `h-full bg-transparent text-lg duration-500 text-[var(--black-dark)] font-medium no-underline hover:bg-transparent hover:underline hover:text-[var(--link-color)] hover:duration-500`
+                                    `h-full bg-transparent text-lg duration-500 text-[var(--black-dark)] font-medium no-underline hover:bg-transparent focus:bg-transparent hover:underline hover:text-[var(--link-color)] hover:duration-500`
                                     , blinker.className
                                 )}
                             >Serviços</NavigationMenuTrigger>
-                            <NavigationMenuContent className="bg-[var(--white-75)]">
+                            <NavigationMenuContent className={"bg-transparent"}>
                                 <ul className="grid bg-transparent w-[500px] gap-3 p-4 md:w-[600px] md:grid-cols-3 lg:w-[700px]">
                                     {compServices.map((_) => (
                                         <ListItem
                                             key={_.slug}
                                             icon={_.icon}
                                             title={_.title}
-                                            href={`servicos/${_.slug}`}
+                                            href={`/servicos/${_.slug}`}
                                         >
                                             {_.description}
                                         </ListItem>
@@ -170,36 +170,69 @@ export default function Navbar() {
     )
 }
 
-const ListItem = React.forwardRef<
-    React.ElementRef<"a">,
-    React.ComponentPropsWithoutRef<"a">
->(({ className, icon, title, children, ...props }, ref) => {
+const ListItem = ({ className, icon, title, children, href }: {
+    className?: string,
+    icon: string
+    title: string
+    children: string
+    href: string
+}) => {
     return (
         <li>
-            <NavigationMenuLink asChild>
-                <a
-                    ref={ref}
-                    className={cx(
-                        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-                        className
-                    )}
-                    {...props}
-                >
-                    <div className={"flex gap-1 items-center"}>
-                        <Image
-                            src={icon}
-                            width={20}
-                            height={20}
-                            alt={`service - ${title}`}
-                        />
-                        <div className={cx("text-sm text-[var(--black-dark)] hover:text-[var(--link-color)] font-medium leading-none", blinker.className)}>{title}</div>
-                    </div>
-                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                        {children}
-                    </p>
-                </a>
-            </NavigationMenuLink>
+            <Link
+                href={href}
+                className={cx(
+                    "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-white hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+                    className
+                )}
+            >
+                <div className={"flex gap-1 items-center"}>
+                    <Image
+                        src={icon}
+                        width={20}
+                        height={20}
+                        alt={`service - ${title}`}
+                    />
+                    <div className={cx("text-sm text-[var(--black-dark)] hover:text-[var(--link-color)] font-medium leading-none", blinker.className)}>{title}</div>
+                </div>
+                <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                    {children}
+                </p>
+            </Link>
         </li>
     )
-})
-ListItem.displayName = "ListItem";
+}
+
+// const ListItem = React.forwardRef<
+//     React.ElementRef<"a">,
+//     React.ComponentPropsWithoutRef<"a">
+// >(({ className, icon, title, children, ...props }, ref) => {
+//     return (
+//         <li>
+//             <NavigationMenuLink asChild>
+//                 <Link
+//                     ref={ref}
+//                     className={cx(
+//                         "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-white hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+//                         className
+//                     )}
+//                     {...props}
+//                 >
+//                     <div className={"flex gap-1 items-center"}>
+//                         <Image
+//                             src={icon}
+//                             width={20}
+//                             height={20}
+//                             alt={`service - ${title}`}
+//                         />
+//                         <div className={cx("text-sm text-[var(--black-dark)] hover:text-[var(--link-color)] font-medium leading-none", blinker.className)}>{title}</div>
+//                     </div>
+//                     <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+//                         {children}
+//                     </p>
+//                 </Link>
+//             </NavigationMenuLink>
+//         </li>
+//     )
+// })
+// ListItem.displayName = "ListItem";
