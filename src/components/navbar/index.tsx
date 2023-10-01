@@ -12,7 +12,7 @@ import { blinker } from "@/utils/_fonts";
 import { DarkIcon, DarkLogotipo } from "@/components/images";
 
 import cx from "clsx";
-import Modal from "@/components/modal-section";
+import Modal from "@/components/modal";
 import { usePathname } from "next/navigation";
 
 import { MagnifyingGlass } from "@/components/images/phosphor";
@@ -26,6 +26,7 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { services } from "@/content/all-services";
+import LogoFormato from "../logo";
 
 export default function Navbar() {
     const [didScroll, setDidiScroll] = useState(false);
@@ -68,14 +69,14 @@ export default function Navbar() {
     return (
         <header className={cx(style.header, (didScroll && style.onScroll), blinker.className)}>
             <nav className={style.nav_bar}>
-                <div className={style.logotipo_img}>
-                    <Link href="/">
-                        <img
-                            src={cx(didScroll ? DarkIcon.src : DarkLogotipo.src)}
-                            alt="Formato consultoria"
-                        />
-                    </Link>
-                </div>
+                <LogoFormato
+                    src={cx(didScroll ? DarkIcon.src : DarkLogotipo.src)}
+                    style={{
+                        transition: didScroll ? '.1s ease' : '',
+                        height: didScroll ? 37 : 50,
+                        width: didScroll ? 40 : 144
+                    }}
+                />
 
                 <NavigationMenu className={style.navigation}>
                     <NavigationMenuList className={"hidden md:flex sm:gap-4 md:gap-5"}>
@@ -182,7 +183,7 @@ const ListItem = ({ className, icon, title, children, href }: {
             <Link
                 href={href}
                 className={cx(
-                    "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-white hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+                    "group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-white hover:text-accent-foreground ring-1 ring-transparent hover:ring-[var(--black-10)] focus:bg-accent focus:text-accent-foreground",
                     className
                 )}
             >
@@ -193,7 +194,7 @@ const ListItem = ({ className, icon, title, children, href }: {
                         height={20}
                         alt={`service - ${title}`}
                     />
-                    <div className={cx("text-sm text-[var(--black-dark)] hover:text-[var(--link-color)] font-medium leading-none", blinker.className)}>{title}</div>
+                    <div className={cx("text-sm text-[var(--black-dark)] group-hover:text-[var(--link-color)] font-medium leading-none", blinker.className)}>{title}</div>
                 </div>
                 <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                     {children}
@@ -202,37 +203,3 @@ const ListItem = ({ className, icon, title, children, href }: {
         </li>
     )
 }
-
-// const ListItem = React.forwardRef<
-//     React.ElementRef<"a">,
-//     React.ComponentPropsWithoutRef<"a">
-// >(({ className, icon, title, children, ...props }, ref) => {
-//     return (
-//         <li>
-//             <NavigationMenuLink asChild>
-//                 <Link
-//                     ref={ref}
-//                     className={cx(
-//                         "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-white hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-//                         className
-//                     )}
-//                     {...props}
-//                 >
-//                     <div className={"flex gap-1 items-center"}>
-//                         <Image
-//                             src={icon}
-//                             width={20}
-//                             height={20}
-//                             alt={`service - ${title}`}
-//                         />
-//                         <div className={cx("text-sm text-[var(--black-dark)] hover:text-[var(--link-color)] font-medium leading-none", blinker.className)}>{title}</div>
-//                     </div>
-//                     <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-//                         {children}
-//                     </p>
-//                 </Link>
-//             </NavigationMenuLink>
-//         </li>
-//     )
-// })
-// ListItem.displayName = "ListItem";

@@ -7,14 +7,20 @@ import Link from 'next/link';
 
 import { InstagramLogo, LinkedinLogo } from "@/components/images/phosphor";
 import { LightLogotipo } from '../images';
+import LogoFormato from '../logo';
 
 export default function Footer() {
     return (
         <footer className={cx(style.footer, inter.className)}>
             <div className={style.navigation_container}>
-                <div className={style.logotipo_img}>
-                    <img src={LightLogotipo.src} alt="Formato consultoria"/>
-                </div>
+                <LogoFormato
+                    src={LightLogotipo.src}
+                    style={{
+                        height: 52,
+                        width: 170,
+                        marginLeft: 8,
+                    }}
+                />
             </div>
 
             <div className={style.network_and_copy}>

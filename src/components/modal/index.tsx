@@ -67,7 +67,8 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
                                         />
                                         
                                         <Link
-                                            href={`servicos/${_.slug}`}
+                                            onClick={onClose}
+                                            href={`/servicos/${_.slug}`}
                                             className={"ml-3 mb-auto text-sm text-[var(--black-dark)] no-underline self-center font-medium"}
                                         >{_.title}</Link>
 

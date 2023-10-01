@@ -1,17 +1,12 @@
 .footer {
     color: var(--white);
     max-width: var(--max-width-screen);
-    margin: 0 auto;
+    margin: auto auto 0;
 
     div.navigation_container {
         display: flex;
         background: var(--blue-dark-97);
         padding: 35px 35px 20px;
-
-        .logotipo_img img {
-            width: 170px;
-            margin-right: 25px;
-        }
     }
 
     div.network_and_copy {
@@ -53,10 +48,6 @@
         div.navigation_container {
             flex-direction: column;
             padding: 20px 20px 10px;
-
-            .logotipo_img img {
-                margin: 0;
-            }
         }
     }
 }

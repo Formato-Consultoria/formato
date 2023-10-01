@@ -44,9 +44,9 @@ export default function BannerTitle({
                 <Image
                     style={styles?.image}
                     src={src}
-                    fill
                     alt={`imagem banner de ${pathname.replace('/', '')}`}
                     priority
+                    fill
                 />
             </div>
 

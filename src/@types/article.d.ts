@@ -9,6 +9,7 @@ export interface PropsArticle {
     category: PropsCategory,
     author: PropsAuthor,
     body?: string,
+    blocks?: Array<Object<any>>
 }
 
 export interface PropsCover {
@@ -22,7 +23,7 @@ export interface PropsAuthor {
     avatar?: string,
     email?: string,
     banner?: string,
-    socialMedia?: Array<{ mediaName: string, mediaLink: string }>
+    socialMedia: { [key: string]: string }
 }
 
 export interface PropsCategory {
@@ -32,7 +33,6 @@ export interface PropsCategory {
     description?: string,
     articles?: PropsArticle[],
 }
-
 
 export interface PropsPagination {
     pagination: {

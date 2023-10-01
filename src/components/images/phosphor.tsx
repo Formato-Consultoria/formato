@@ -28,7 +28,8 @@ export {
     WechatLogo,
     DiscordLogo,
     Vibrate,
-    MagnifyingGlass
+    MagnifyingGlass,
+    EnvelopeSimple
 } from "@phosphor-icons/react"
 
 export type { IconProps } from "@phosphor-icons/react";

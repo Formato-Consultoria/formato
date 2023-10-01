@@ -6,6 +6,13 @@ import { ServiceSection } from "@/components/ui/service-section";
 
 import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Formato Consultoria',
+  description: 'Ajudamos a conectar pessoas a seus negócios. Buscamos inovação e crescimento pessoal. Alinhamos objetivos, criamos conexão e colocamos ideias brilhantes em prática.',
+}
+
 function PageHome() {
   return (
     <>
