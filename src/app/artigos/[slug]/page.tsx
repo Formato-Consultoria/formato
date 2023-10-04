@@ -11,14 +11,13 @@ import { DataFormatter } from "@/utils/format-data-article";
 import BannerTitle from "@/components/title-page-banner";
 import { Comp, Shared } from ".";
 
-import { serialize } from 'next-mdx-remote/serialize'
-import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from "next-mdx-remote/serialize"
+import { MDXRemote } from "next-mdx-remote"
+import Image from "next/image";
 
 export default function Article({ params }: { params: { slug: string } }) {
     const { articleData } = use(getdArticleData(params));
     const { slug, title, description, body, blocks, updatedAt, cover, category, author } = articleData;
-
-    console.log(body);
 
     return (<>
         <div className={"w-full flex flex-col items-center relative bg-white z-0"}>
@@ -36,7 +35,7 @@ export default function Article({ params }: { params: { slug: string } }) {
             </BannerTitle>
 
             {/* <div className={style.headlings}>
-                <p className={blinker.className}>Nessa pagina</p>
+                <strong className={blinker.className}>Nessa pagina</strong>
             </div> */}
 
             <div className={"w-full md:w-[800px] flex flex-col gap-3 p-5 bg-[var(--white-mediumn)]"}>
@@ -56,24 +55,26 @@ export default function Article({ params }: { params: { slug: string } }) {
                     />
                 </div>
 
-                <div className={"flex items-center gap-3"}>
+                {/* <div className={"flex items-center gap-3"}>
                     <Comp.UserAvatar author={author} className="w-8 h-8" />
                     <p style={{ color: 'rgba(8, 12, 16, .)', fontWeight: 'mediumn' }}>{author?.name}</p>
-                </div>
+                </div> */}
             </div>
 
             <Comp.ArticleContent>
                 {/* <MDXRemote {...source} /> */}
+                
                 <div dangerouslySetInnerHTML={{ __html: body ?? "" }}></div>
 
                 {blocks && blocks.map((block) => {
-                    const Component = Shared[block.component];
-                    
-                    if(Component) return <Component key={block.id} {...block} />;
-                    return <></>;
+                        const Component = Shared[block.component];
+
+                        if(Component) return <Component key={block.id} {...block} />;
+                        else return <></>;
                 })}
             </Comp.ArticleContent>
         </div>
+        
         <Comp.RelatedArticleCards
             categorySlug={category.slug}
             pageSlug={slug}

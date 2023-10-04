@@ -38,7 +38,6 @@ export class DataFormatter {
             Whatsapp: article?.attributes?.author?.data?.attributes?.Whatsapp && `https://wa.me/${article?.attributes?.author?.data?.attributes?.Whatsapp}`
           }
         },
-        body: article?.attributes?.body,
       }
     });
   }
@@ -91,8 +90,7 @@ export class DataFormatter {
             return {
               id: block.id,
               component: block.__component,
-              body: block.body,
-              title: block.title
+              body: await mdToHtml(block.body),
             }
           case "shared.media":
             return {

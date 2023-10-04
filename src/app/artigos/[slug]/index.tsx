@@ -6,10 +6,10 @@ import { Breadcrumb } from "@/components/breadcrumbs";
 import { RelatedArticleCards } from "@/components/related-article-card";
 import { Time } from "@/components/time";
 
-import { Quote } from "@/components/quote";
-import { RichText } from "@/components/rich-text";
-import { Media } from "@/components/media";
-import { Slider } from "@/components/slider";
+import { Quote } from "@/components/shared-quote";
+import { RichText } from "@/components/shared-rich-text";
+import { Media } from "@/components/shared-media";
+import { Slider } from "@/components/shared-slider";
 
 import { ReactElement } from "react";
 
@@ -28,4 +28,5 @@ export const Shared: { [key: string]: (props: any) => ReactElement<any> } = {
     "shared.rich-text": RichText,
     "shared.media": Media,
     "shared.slider": Slider,
+    "shared.video": () => <></>
 }

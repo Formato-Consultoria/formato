@@ -36,7 +36,7 @@ export function UserAvatar({ author, className }: { author: PropsAuthor, classNa
       <HoverCardTrigger asChild>
         <Avatar className={cx('w-6 h-6 ring-1 ring-[var(--link-color-60)] cursor-pointer', className)}>
           <AvatarImage src={author.avatar} alt={author.name} />
-          <AvatarFallback className='text-xs p-1 pb-0 font-semibold'>{acronymGenerator(author.name)}</AvatarFallback>
+          <AvatarFallback className='text-xs p-1 pb-0 font-semibold'>{acronymGenerator(author.name ?? "teste")}</AvatarFallback>
         </Avatar>
       </HoverCardTrigger>
       <HoverCardContent className="h-auto w-80 p-0 rounded border border-gray-300 bg-white/80 backdrop-blur-sm">
