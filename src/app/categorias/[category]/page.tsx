@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { PropsArticle, PropsCategory } from "@/@types/article";
 
 import { DataFormatter } from "@/utils/format-data-article";
 
-import { Comp } from "..";
+import { Comp } from ".";
 import ButttonGlobal from "@/components/button";
 import { NoArticle } from "@/components/images";
 import NoContent from "@/components/no-content";
@@ -20,7 +21,7 @@ export default async function Category({ params }: { params: { category: string 
               <Comp.ArticleCard
                 key={article.id}
                 article={article}
-                className={"sm:w-96"}
+                className={"md:w-96"}
               />
             )
         })}
@@ -47,7 +48,7 @@ export default async function Category({ params }: { params: { category: string 
 }
 
 async function getArticlesByCategory({ category }: { category: string }) {
-  const input: RequestInfo | URL = (category !== "all") ? `${process.env.NEXT_PUBLIC_STRAPI_URL}/articles?filters[category][slug][$eq]=${category}&populate=deep` : `${process.env.NEXT_PUBLIC_STRAPI_URL}/articles?populate=deep`;
+  const input: RequestInfo | URL = (category !== "all") ? `${process.env.NEXT_PUBLIC_STRAPI_URL}/articles?filters[category][slug][$eq]=${category}&filters[author][id][$ne]=-1&populate=deep` : `${process.env.NEXT_PUBLIC_STRAPI_URL}/articles?filters[author][id][$ne]=-1&populate=deep`;
   const options: RequestInit = {
     next: {
       revalidate: 60

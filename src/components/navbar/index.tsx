@@ -145,7 +145,7 @@ export default function Navbar() {
                                 className="button"
                                 target={"_blank"}
                             >
-                                <ButttonGlobal value="Contratar" className={style.contratar_btn} />
+                                <ButttonGlobal value="Fale Conosco" className={style.contratar_btn} />
                             </Link>
                         </NavigationMenuItem>
                     </NavigationMenuList>

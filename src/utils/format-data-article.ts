@@ -79,9 +79,53 @@ export class DataFormatter {
         }
       },
       body: await mdToHtml(articleData?.attributes?.body),
-      blocks: [{}]
+      blocks: await Promise.all(articleData?.attributes?.blocks?.map(async (block: any) => {
+        switch(block.__component) {
+          case 'shared.rich-text':
+            return {
+              id: block.id,
+              component: block.__component,
+              body: await mdToHtml(block.body)
+            }
+          case 'shared.quote':
+            return {
+              id: block.id,
+              component: block.__component,
+              body: block.body,
+              title: block.title
+            }
+          case "shared.media":
+            return {
+              id: block.id,
+              component: block.__component,
+              file: {
+                id: block.file.data.id,
+                name: block.file.data.attributes.name,
+                url: block.file.data.attributes.url,
+                alternativeText: block.file.data.attributes.alternativeText,
+                caption: block.file.data.attributes.caption,
+                previewUrl: block.file.data.attributes.previewUrls
+              }
+            }
+          case "shared.slider":
+            return {
+              id: block.id,
+              component: block.__component,
+              files: block.files.data.map((image: any) => {
+                return {
+                  id: image.id,
+                  name: image.attributes.name,
+                  url: image.attributes.url,
+                  alternativeText: image.attributes.alternativeText 
+                }
+              })
+            }
+        }
+      }))
     };
   }
+
+  // body: await mdToHtml(articleData?.attributes?.body), // função alternativa
 
   static formatCategoryData(categoryData: any, slug = ""): PropsCategory {
     return {

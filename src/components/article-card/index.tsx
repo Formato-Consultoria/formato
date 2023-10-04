@@ -14,7 +14,7 @@ export function ArticleCard({ article, className }: { article: PropsArticle, cla
 
     return (
         <div
-            className={cx("group h-auto w-full rounded-md bg-[var(--white-mediumn)] ring-1 ring-[var(--black-10)] no-underline",
+            className={cx("group h-auto w-full sm:w-72 rounded-md bg-[var(--white-mediumn)] ring-1 ring-[var(--black-10)] no-underline",
                 className,
                 inter.className
             )}

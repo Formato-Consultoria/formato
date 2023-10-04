@@ -1,8 +1,9 @@
 import Link from "next/link";
 
 export function Breadcrumb({
-  categorySlug
-}: { categorySlug: string }) {
+  categorySlug,
+  categoryName
+}: { categorySlug: string, categoryName: string }) {
   return (
     <nav className="flex" aria-label="Breadcrumb">
       <ul className="inline-flex items-center justify-center mx-auto w-[90%]">
@@ -19,7 +20,7 @@ export function Breadcrumb({
             <svg className="w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4" />
             </svg>
-            <Link href={`/artigos/${categorySlug}`} className="ml-1 text-sm font-medium no-underline text-gray-700 hover:text-[var(--link-color)] md:ml-2">Negócios e Finanças</Link>
+            <Link href={`/categorias/${categorySlug}`} className="ml-1 text-sm font-medium no-underline text-gray-700 hover:text-[var(--link-color)] md:ml-2">{categoryName}</Link>
           </div>
         </li>
       </ul>

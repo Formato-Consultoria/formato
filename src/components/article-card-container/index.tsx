@@ -10,7 +10,7 @@ export function ArticleCardContainer({
     className?: string
 }) {
     return (
-        <div className={cx("flex flex-wrap justify-center h-auto w-full py-5 px-10 sm:px-8 md:px-10 gap-y-4 gap-x-5 lg:gap-x-5", className)}>
+        <div className={cx("flex flex-wrap h-auto w-full md:w-11/12 py-5 px-4 md:px-5 gap-y-4 gap-x-2 sm:gap-x-3 md:gap-x-5", className)}>
             {children}
         </div>
     )

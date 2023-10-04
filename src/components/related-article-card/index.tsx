@@ -17,9 +17,9 @@ export function RelatedArticleCards({
   else
     return (<>
       <hr style={{ height: "1px", width: "90%", outline: "none", margin: "25px auto", borderTop: "1px solid rgba(0, 0, 0, 0.1)" }} />
-      <h3 className={cx("md:self-start sm:ml-10 lg:ml-20 text-xl font-semibold md:text-2xl tracking-wide leading-relaxed mb-5 md:mb-10 text-[var(--black-80)]", blinker.className)}>RELACIONADOS</h3>
+      <h3 className={cx("md:self-start sm:ml-10 lg:ml-20 text-xl font-semibold md:text-2xl tracking-wide leading-relaxed mb-5 md:mb-0 text-[var(--black-80)]", blinker.className)}>RELACIONADOS</h3>
 
-      <ArticleCardContainer>
+      <ArticleCardContainer className="md:gap-x-3">
         {relatedArticleDatas?.map((article: PropsArticle) => {
             return (
               <ArticleCard
@@ -43,7 +43,7 @@ async function getRelatedArticleData({
     },
   }
 
-  const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/articles?filters[category][slug][$eq]=${categorySlug}&filters[slug][$ne]=${pageSlug}&pagination[page]=1&pagination[pageSize]=3&populate=deep`, {...options});
+  const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/articles?filters[category][slug][$eq]=${categorySlug}&filters[slug][$ne]=${pageSlug}&pagination[page]=1&pagination[pageSize]=4&populate=deep`, {...options});
   const { data } = await response.json();
   
   if (!response || !data) return { relatedArticleDatas: null };

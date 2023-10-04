@@ -9,7 +9,6 @@ export async function getBase64RemoteImage(
     );
 
     const { base64 } = await getPlaiceholder(buffer);
-
     return base64;
 }
 

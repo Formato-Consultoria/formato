@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Comp } from "..";
+import { Comp } from ".";
 import { notFound } from "next/navigation";
 import { DataFormatter } from "@/utils/format-data-article";
 import { PropsCategory } from "@/@types/article";
