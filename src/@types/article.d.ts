@@ -1,3 +1,8 @@
+import { PropsMedia } from "@/components/shared.media";
+import { PropsQuote } from "@/components/shared.quote";
+import { PropsRichText } from "@/components/shared.rich-text";
+import { PropsSlider } from "@/components/shared.slider";
+
 export interface PropsArticle {
     id: number,
     title: string,
@@ -12,45 +17,16 @@ export interface PropsArticle {
     blocks?: Array<PropsMedia | PropsRichText | PropsQuote | PropsSlider>
 }
 
+export interface HeaderShared {
+    id: number,
+    component: string
+}
+
 export interface PropsCover {
     name: string,
     alternativeText: string,
     url: string,
     blurUrl?: string
-}
-
-interface HeaderShared {
-    id: number,
-    component: string
-}
-
-export interface PropsMedia extends HeaderShared {
-    file: {
-        id: id,
-        name: string,
-        url: string,
-        alternativeText: string,
-        caption?: string,
-        // typeFile: string,
-        // fileExtension: string,
-        previewUrl?: string
-    }
-}
-export interface PropsRichText extends HeaderShared {
-    body: string
-}
-export interface PropsQuote extends HeaderShared {
-    body: string,
-    title?: string
-}
-
-export interface PropsSlider extends HeaderShared {
-    files: Array<{
-        id: number,
-        name: string,
-        url: string,
-        alternativeText: string
-    }>
 }
 
 export interface PropsAuthor {

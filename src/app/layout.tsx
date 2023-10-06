@@ -1,6 +1,8 @@
 'use client'
 import "./global.scss";
 import styles from "./layout.module.scss";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import cx from "clsx";
 import { Toaster } from "react-hot-toast";

@@ -90,7 +90,7 @@ export class DataFormatter {
             return {
               id: block.id,
               component: block.__component,
-              body: await mdToHtml(block.body),
+              body: block.body,
             }
           case "shared.media":
             return {
@@ -102,6 +102,8 @@ export class DataFormatter {
                 url: block.file.data.attributes.url,
                 alternativeText: block.file.data.attributes.alternativeText,
                 caption: block.file.data.attributes.caption,
+                fileExtension: block.file.data.attributes.ext,
+                mimeType: block.file.data.attributes.mime,
                 previewUrl: block.file.data.attributes.previewUrls
               }
             }
@@ -118,6 +120,14 @@ export class DataFormatter {
                 }
               })
             }
+          case "shared.video":
+            return {
+              id: block.id,
+              component: block.__component,
+              ...block,
+            }
+          default:
+            return null
         }
       }))
     };

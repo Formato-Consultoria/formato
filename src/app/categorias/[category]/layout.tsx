@@ -6,12 +6,16 @@ import BannerTitle from "@/components/title-page-banner";
 
 import { DataFormatter } from "@/utils/format-data-article";
 import { PropsCategory } from "@/@types/article";
+import { NoArticle } from "@/components/images";
+import NoContent from "@/components/no-content";
+import Link from "next/link";
+import ButttonGlobal from "@/components/button";
 
 export default async function LayoutCategory({ children, params }: {
   children: ReactNode,
   params: { category: string }
 }) {
-  const { categorias } = await getCategories();
+  const { categorias, isAllNoEmpty } = await getCategories();
   const category  = categorias.find((_) => _.slug === params.category);
 
   return (<>
@@ -27,23 +31,41 @@ export default async function LayoutCategory({ children, params }: {
       <h2 className={"text-xl sm:text-2xl text-white"}>
         Bem-vindo a pagina de artigos <br className="hidden sm:block" />{category ? `sobre ${category.name}` : "da Formato"}
       </h2>
-      <p className={"w-full sm:w-[500px] text-sm sm:text-base font-normal text-white/70"}>{category ? category.description : `Explore nossos artigos informativos e descubra insights valiosos sobre estratégias de negócios, inovação, gestão e muito mais. A Formato Consultoria está aqui para ajudá-lo a alcançar o sucesso empresarial.`}</p>
+      <p className={"w-full sm:w-[500px] text-sm sm:text-base font-normal text-white/70"}>{category ? category.description : `Explore nossos artigos informativos e descubra insights valiosos sobre estratégias de negócios, inovação, gestão e muito mais. Estamos aqui para ajudá-lo a alcançar seu sucesso empresarial.`}</p>
     </BannerTitle>
 
-    <Comp.CategoryHashContainer>
-      <Comp.CategoryHash name="All" categorySlug="all" active={"all" === params.category} />
-
-      <>{categorias.map((_) => (
-        <Comp.CategoryHash
-          key={_.slug}
-          name={_.name}
-          categorySlug={_.slug}
-          active={_.slug === params.category}
-        />
-      ))}</>
-    </Comp.CategoryHashContainer>
-
-    {children}
+    {isAllNoEmpty ? (
+      <>
+        <Comp.CategoryHashContainer>
+          <Comp.CategoryHash name="All" categorySlug="all" active={"all" === params.category} />
+    
+          <>{categorias.map((_) => (
+            <Comp.CategoryHash
+              key={_.slug}
+              name={_.name}
+              categorySlug={_.slug}
+              active={_.slug === params.category}
+            />
+          ))}</>
+        </Comp.CategoryHashContainer>
+        {children}
+      </>
+    ):(
+      <NoContent image={NoArticle.src}>
+        <section>
+          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+            <div className="mx-auto max-w-screen-sm text-center">
+              <h1 className="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-notcontent-600">204</h1>
+              <p className="mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl">Sem conteúdo 🔎</p>
+              <p className="mb-4 text-lg font-light text-gray-500">Desculpe, não há conteúdo disponível nesta página no momento. Verifique novamente mais tarde ou explore outras partes do nosso site.</p>
+              <Link href="/" className="inline-flex no-underline">
+                <ButttonGlobal className={'bg-notcontent-600 hover:text-notcontent-600 hover:border-notcontent-600'} value="Voltar para o inicio" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      </NoContent>
+    )}
   </>)
 }
 
@@ -58,8 +80,17 @@ async function getCategories() {
 
   const categorias: Array<PropsCategory> = DataFormatter.formatCategoriesData(resCategory.data);
   const { meta } = resCategory;
+  let isAllNoEmpty = false;
 
-  return { categorias, meta }
+  for(let category of categorias) {
+    if(!category.articles || (category.articles?.length === 0)) isAllNoEmpty = false;
+    else {
+      isAllNoEmpty = true;
+      break;
+    }
+  }
+
+  return { categorias, meta, isAllNoEmpty }
 }
 
 // async function getCategoryBySlug({ categorySlug }: { categorySlug: string }): Promise<{ category: PropsCategory|null }> {

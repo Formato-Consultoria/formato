@@ -162,9 +162,9 @@ export default function Navbar() {
                         isOpen={isOpenModal}
                     />
 
-                    <button className={"self-center"}>
+                    {/* <button className={"self-center"}>
                         <MagnifyingGlass size={25} />
-                    </button>
+                    </button> */}
                 </NavigationMenu>
             </nav>
         </header>
