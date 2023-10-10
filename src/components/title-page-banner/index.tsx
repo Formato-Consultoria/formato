@@ -6,9 +6,6 @@ import { inter } from "@/utils/_fonts";
 import { CSSProperties, ReactNode } from "react";
 
 import Image from "next/image";
-import Link from "next/link";
-import { CaretRight } from "@/components/images/phosphor";
-import { usePathname } from "next/navigation";
 
 type PropsBnrTlt = {
     children?: ReactNode
@@ -30,8 +27,6 @@ export default function BannerTitle({
     width = "100%",
     styles,
 }: PropsBnrTlt) {
-    const pathname = usePathname();
-
     return (
         <section
             className={cx(style.bannerTitle, inter.className)}
@@ -44,7 +39,7 @@ export default function BannerTitle({
                 <Image
                     style={styles?.image}
                     src={src}
-                    alt={`imagem banner de ${pathname.replace('/', '')}`}
+                    alt={`imagem banner`}
                     priority
                     fill
                 />

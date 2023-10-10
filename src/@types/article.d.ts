@@ -9,9 +9,11 @@ export interface PropsArticle {
     slug: string,
     description: string,
     updatedAt: Date,
+    publishedAt: Date,
 
     cover: PropsCover,
     category: PropsCategory,
+    tags?: Array<string>,
     author: PropsAuthor,
     body?: string,
     blocks?: Array<PropsMedia | PropsRichText | PropsQuote | PropsSlider>

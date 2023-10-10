@@ -1,3 +1,4 @@
+'use client';
 import Image from "next/image";
 import cx from 'clsx';
 
@@ -24,28 +25,33 @@ import {
 } from '@/components/images/phosphor';
 import { PropsAuthor } from "@/@types/article";
 import Link from "next/link";
+import { ReactNode, memo, useMemo } from "react";
 
-export function UserAvatar({ author, className }: { author: PropsAuthor, className?: string }) {
-  const SocialMedia = author.socialMedia;
-  const SocialMediaKeys = Object.keys(SocialMedia).filter((_) => {
-      return (SocialMedia[_] !== null)
-  })
+export const UserAvatar = memo(({ author, className }: { author: PropsAuthor, className?: string }) => {
+  const { authorData, SocialMedia, SocialMediaKeys } = useMemo(() => {
+    const sMedia = author.socialMedia;
+    const sMediaKeys = Object.keys(sMedia).filter((_) => {
+      return (sMedia[_] !== null)
+    })
+
+    return { authorData: author,  SocialMedia: sMedia, SocialMediaKeys: sMediaKeys }
+  }, [author])
 
   return (
     <HoverCard>
       <HoverCardTrigger asChild>
         <Avatar className={cx('w-6 h-6 ring-1 ring-[var(--link-color-60)] cursor-pointer', className)}>
-          <AvatarImage src={author.avatar} alt={author.name} />
-          <AvatarFallback className='text-xs p-1 pb-0 font-semibold'>{acronymGenerator(author.name ?? "teste")}</AvatarFallback>
+          <AvatarImage src={authorData.avatar} alt={authorData.name} />
+          <AvatarFallback className='text-xs p-1 pb-0 font-semibold'>{acronymGenerator(authorData.name ?? "teste")}</AvatarFallback>
         </Avatar>
       </HoverCardTrigger>
       <HoverCardContent className="h-auto w-80 p-0 rounded border border-gray-300 bg-white/80 backdrop-blur-sm">
         <div className='relative w-full h-14 rounded-t'>
           <Image
             className={'object-cover rounded-t'}
-            src={author.avatar ?? "/images/alternative-banner-user-popover.png"}
+            src={authorData.avatar ?? "/images/alternative-banner-user-popover.png"}
             fill
-            alt={`Banner ${author.name}`}
+            alt={`Banner ${authorData.name}`}
           />
         </div>
 
@@ -59,9 +65,9 @@ export function UserAvatar({ author, className }: { author: PropsAuthor, classNa
       </HoverCardContent>
     </HoverCard>
   )
-}
+})
 
-const SocialMediaIcons = {
+const SocialMediaIcons: { [key: string]: ReactNode } = {
   'Email': <EnvelopeSimple size={22} color={"var(--blue-dark-50)"} weight="fill" />,
   'Instagram': <InstagramLogo size={22} color={"var(--blue-dark-50)"} weight="fill" />,
   'Linkedin': <LinkedinLogo size={22} color={"var(--blue-dark-50)"} weight="fill" />,
@@ -87,7 +93,5 @@ const acronymGenerator = (name: string) => {
       return name[0];
   else if (matches) {
       return name[0].toUpperCase() + matches.pop()![0].toUpperCase();
-  }
-
-  return "";
+  } else return "";
 }

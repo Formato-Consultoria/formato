@@ -17,6 +17,12 @@ import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
 import { QuoteSection } from "@/components/ui/section-quote";
 import { InfiniteScrollCarousel } from "@/components/ui/section-infinite-scroll-carousel";
 import { TestimonialsBox } from "@/components/ui/comp-feedbacks-box";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Nossos Clientes",
+  description: "Conheça alguns dos nossos clientes satisfeitos e veja como podemos ajudar você também.",
+}
 
 export default function Clients() {
     return (

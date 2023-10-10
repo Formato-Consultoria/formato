@@ -1,6 +1,6 @@
-import { HeaderShared } from "@/@types/article";
-
-export interface PropsRichText extends HeaderShared {
+export interface PropsRichText {
+  id: number,
+  component: string
   body: string
 }
 

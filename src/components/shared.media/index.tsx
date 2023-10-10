@@ -72,9 +72,9 @@ const getIconByExtension = (extension: string) => {
     case 'docx':
       return (
         <IconContext.Provider
-          value={{ className: "h-6 w-6 text-[var(--black-dark-90)] group-hover:text-[var(--primary-color)]" }}
+          value={{ className: "h-5 w-6 text-[var(--black-dark-90)] group-hover:text-[var(--primary-color)]" }}
         >
-          <div>
+          <div className={"bg-white rounded-full p-2"}>
             <AiOutlineFileWord />
           </div>
         </IconContext.Provider>
@@ -83,9 +83,9 @@ const getIconByExtension = (extension: string) => {
     case 'xlsx':
       return (
         <IconContext.Provider
-          value={{ className: "h-6 w-6 text-[var(--black-dark-90)] group-hover:text-[var(--primary-color)]" }}
+          value={{ className: "h-5 w-6 text-[var(--black-dark-90)] group-hover:text-[var(--primary-color)]" }}
         >
-          <div>
+          <div className={"bg-white rounded-full p-2"}>
             <AiOutlineFileExcel />
           </div>
         </IconContext.Provider>
@@ -94,9 +94,9 @@ const getIconByExtension = (extension: string) => {
     case 'pptx':
       return (
         <IconContext.Provider
-          value={{ className: "h-6 w-6 text-[var(--black-dark-90)] group-hover:text-[var(--primary-color)]" }}
+          value={{ className: "h-5 w-6 text-[var(--black-dark-90)] group-hover:text-[var(--primary-color)]" }}
         >
-          <div>
+          <div className={"bg-white rounded-full p-2"}>
             <AiOutlineFilePpt />
           </div>
         </IconContext.Provider>
@@ -104,9 +104,9 @@ const getIconByExtension = (extension: string) => {
     default:
       return (
         <IconContext.Provider
-          value={{ className: "h-6 w-6 text-[var(--black-dark-90)] group-hover:text-[var(--primary-color)]" }}
+          value={{ className: "h-5 w-6 text-[var(--black-dark-90)] group-hover:text-[var(--primary-color)]" }}
         >
-          <div>
+          <div className={"bg-white rounded-full p-2"}>
             <AiOutlineFileText />
           </div>
         </IconContext.Provider>
@@ -128,16 +128,18 @@ function DefaultRender({ fileName, mimeType, fileExc, fileUrl }: { fileName: str
   // console.log(blobUrl);
 
   return (
-    <div className={"group h-12 w-64 px-2.5 my-3 text-xs text-[var(--black)] group-hover:text-[var(--link-color)] ring-2 ring-[var(--black-dark-20)] hover:ring-[var(--primary-color-50)] rounded flex items-center gap-2 justify-stretch transition-all duration-150 ease-linear brightness-90 hover:brightness-95 bg-[var(--white-mediumn)] cursor-pointer"}>
+    <div className={cx("group h-14 w-72 px-2.5 my-3 text-xs text-[var(--black)] group-hover:text-[var(--link-color)] ring-2 ring-[var(--black-dark-20)] hover:ring-[var(--primary-color-75)] hover:rounded flex items-center gap-2 justify-stretch transition-all duration-150 ease-linear bg-[var(--white-mediumn)] cursor-pointer")}>
       {getIconByExtension(fileExc.slice(1))}
       <DownloadLink
-        label={`Download arquivo ${fileName}`}
+        style={{ textDecoration: 'none', color: 'rgb(8, 12, 16, 0.7)', fontWeight: "bold" }}
+        label={`DOWNLOAD arquivo ${fileName}`}
         filename={fileName}
         exportFile={async () => {
           const res = await fetch(fileUrl);
           return await res.blob();
         }}
       />
+      <svg xmlns="http://www.w3.org/2000/svg" className={"h-6 w-6 justify-self-end fill-[var(--black-dark-80)] group-hover:fill-[var(--primary-color)]"} viewBox="0 0 24 24"><path d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10s10-4.49 10-10S17.51 2 12 2zm-1 8V6h2v4h3l-4 4l-4-4h3zm6 7H7v-2h10v2z"/></svg>
     </div>
   )
 }
@@ -145,9 +147,9 @@ function DefaultRender({ fileName, mimeType, fileExc, fileUrl }: { fileName: str
 function ImageRender({ src, alt }: { src: string, alt: string }) {
   return (
     <img
-        src={src}
-        alt={alt}
-      />
+      src={src}
+      alt={alt}
+    />
   )
 }
 

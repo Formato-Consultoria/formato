@@ -1,10 +1,8 @@
-'use client';
 import style from "./service-page.module.scss";
 
 import cx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 import type { contentService } from "@/@types/services";
 import BannerTitle from "@/components/title-page-banner";
@@ -13,11 +11,32 @@ import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
 import NoContent from "@/components/no-content";
 import { NoArticle } from "@/components/images";
 import ButttonGlobal from "@/components/button";
+import { Metadata } from "next";
+import siteMetadata from "@/utils/siteMetadata";
 
-const Service = () => {
-    const service = usePathname();
+type Props = {
+    params: { service: string }
+}
 
-    const serviceComp: contentService = services.find((srv) => srv.slug === service.split('/').pop()) as contentService;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const serviceComp: contentService = services.find((srv) => srv.slug === params.service) as contentService;
+
+    return {
+        title: `${serviceComp.title} Serviço`,
+        description: serviceComp.description,
+        openGraph: {
+            title: serviceComp.title,
+            description: serviceComp.description,
+            url: `${siteMetadata.siteUrl}/servicos/${serviceComp.slug}`,
+            siteName: siteMetadata.title,
+            locale: 'pt_BR',
+            images: [serviceComp.bannerImg],
+        },
+    }
+}
+
+const Service = ({ params }: Props) => {
+    const serviceComp: contentService = services.find((srv) => srv.slug === params.service) as contentService;
 
     if(serviceComp) {
         return (<>

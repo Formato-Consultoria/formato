@@ -1,40 +1,84 @@
-'use client';
-import { fetcher } from "@/lib/strapi-api";
-import { use } from "react";
-import { PropsArticle } from "@/@types/article";
+import "./article.scss";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import cx from "clsx";
+
+import { PropsRichText } from "@/components/shared.rich-text";
+import { PropsMedia } from "@/components/shared.media";
+import { PropsQuote } from "@/components/shared.quote";
+import { PropsSlider } from "@/components/shared.slider";
+import { PropsArticle, PropsCover } from "@/@types/article";
 
 import { blinker } from "@/utils/_fonts";
 import { DataFormatter } from "@/utils/format-data-article";
+import cx from "clsx";
 
-import BannerTitle from "@/components/title-page-banner";
 import { Comp, Shared } from ".";
+import siteMetadata from "@/utils/siteMetadata";
 
-export default function Article({ params }: { params: { slug: string } }) {
-    const { articleData } = use(getdArticleData(params));
-    const { slug, title, description, body, blocks, updatedAt, cover, category, author } = articleData;
+type Props = {
+    params: { slug: string }
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { articleData } = await getdArticleData(params);
+
+    const publishedAt = new Date(articleData.publishedAt).toISOString();
+    const modifiedAt = new Date(articleData.updatedAt).toISOString();
+
+    let listImages: Array<PropsCover | string> = [siteMetadata.socialBanner];
+    if(articleData.cover) {
+        listImages = [articleData.cover];
+    }
+    const ogImages = listImages.map((img: any) => {
+        const urlImg = img?.url ?? null;
+
+        if(urlImg)
+            return { url: urlImg };
+        else
+            return { url: img.includes("http") ? img : siteMetadata.siteUrl+img }
+    });
+
+    const authors = articleData?.author ? [articleData.author.name] : siteMetadata.author;
+
+    return {
+        title: articleData.title,
+        description: articleData.description,
+        openGraph: {
+            title: articleData.title,
+            description: articleData.description,
+            url: `${siteMetadata.siteUrl}/articles/${articleData.slug}`,
+            siteName: siteMetadata.title,
+            locale: 'pt_BR',
+            type: 'article',
+            publishedTime: publishedAt,
+            modifiedTime: modifiedAt,
+            images: ogImages,
+            authors: authors.length > 0 ? authors : [siteMetadata.author]
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: articleData.title,
+            description: articleData.description,
+            images: ogImages,
+        },
+    }
+}
+
+export default async function Article({ params }: Props) {
+    const { articleData } = await getdArticleData(params);
+    const { slug, title, body, blocks, updatedAt, cover, category, tags, author } = articleData;
+
+    const HeadlingsContent = generateHeadlingsContent({ body, blocks });
 
     return (<>
-        <div className={"w-full flex flex-col items-center relative bg-white z-0"}>
-            <BannerTitle
-                src={cover.url}
-                height={"180px"}
-                styles={{
-                    containner: { width: '100%', marginBottom: '50px', outline: '1px solid rgba(0, 0, 0, .2)' },
-                    image: { filter: 'none' },
-                    content: "flex flex-col items-center justify-center gap-3 p-5 h-max w-11/12  md:w-[700px] absolute z-10 -bottom-1/4 bg-white ring-1 ring-[var(--black-10)] shadow-inner"
-                }}
-            >
-                <h1 className={cx("line-clamp-3 leading-tight md:leading-snug my-1 text-center", blinker.className)}>{title}</h1>
-                <Comp.Breadcrumb categorySlug={category.slug} categoryName={category.name} />
-            </BannerTitle>
+        <div className={"w-full flex flex-col items-center relative bg-gray-50 z-0"}>
+            <Comp.BannerTitle
+                title={title}
+                cover={cover}
+                category={category}
+            />
 
-            {/* <div className={style.headlings}>
-                <strong className={blinker.className}>Nessa pagina</strong>
-            </div> */}
-
-            <div className={"w-full md:w-[800px] flex flex-col gap-3 p-5 bg-[var(--white-mediumn)]"}>
+            <div className={"w-full lg:w-[1024px] xl:w-[1280px] 2xl:w-[1536px] flex flex-col gap-3 p-5 sm:p-3 md:p-5 bg-[var(--white-mediumn)] ring-1 ring-zinc-950/10"}>
                 <div
                     style={{ fontSize: 13 }}
                     className={cx(
@@ -55,23 +99,35 @@ export default function Article({ params }: { params: { slug: string } }) {
                     <Comp.UserAvatar author={author} className="w-8 h-8" />
                     <p style={{ color: 'rgba(8, 12, 16, .)', fontWeight: 'mediumn' }}>{author?.name}</p>
                 </div>
+
+                <div className={"flex items-center gap-2 mt-3 flex-wrap w-full"}>{tags?.map((tag: string, index) => (
+                    <div key={index} className={cx("max-w-max text-xs px-2 py-.5 rounded-lg ring-1 ring-zinc-950/10 bg-purple-400 text-purple-800 uppercase", blinker.className)}># {tag}</div>
+                ))}</div>
             </div>
 
-            <Comp.ArticleContent>
-                <div dangerouslySetInnerHTML={{ __html: body ?? "" }}></div>
+            <div className={"flex flex-col md:flex-row justify-center h-auto md:mt-3 lg:mt-5 w-full relative"}>
+                <Comp.Headlings
+                    className={cx("order-1 md:h-[500px] max-w-full md:basis-2/6 md:order-2 lg:basis-3/12", blinker.className)}
+                    content={HeadlingsContent}
+                />
 
-                {blocks && blocks.map((block) => {
-                    if(!block) return <p className={"text-lg my-5 font-bold text-[#fce100]"}>⚠️ Bloco de dado não suportado ainda! :(</p>
-                    const Component = Shared[block.component];
+                <Comp.ArticleContent className={"order-2 md:order-1 relative max-w-full px-3 md:w-[530px] lg:w-[800px] bg-[var(--white-blog)] self-center ring-1 ring-zinc-950/5"}>
+                    <div dangerouslySetInnerHTML={{ __html: body ?? "" }}></div>
 
-                    if (Component) return <Component key={block.id} {...block} />;
-                    else return <></>;
-                })}
-            </Comp.ArticleContent>
+                    {blocks && blocks.map((block) => {
+                        if (!block) return <p className={"text-lg my-5 font-bold text-[#fce100]"}>⚠️ Bloco de dado não suportado ainda! :(</p>
+                        const Component = Shared[block.component];
+
+                        if (Component) return <Component key={block.id} {...block} />;
+                        else return <></>;
+                    })}
+                </Comp.ArticleContent>
+            </div>
         </div>
 
         <Comp.RelatedArticleCards
             categorySlug={category.slug}
+            tags={tags ?? []}
             pageSlug={slug}
         />
     </>);
@@ -88,10 +144,21 @@ async function getdArticleData(params: { slug: string }) {
     const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/slugify/slugs/article/${slug}?populate=deep`, {
         ...options,
     });
-    const articleResponse = await response.json();
-    if (!articleResponse || !articleResponse.data) notFound();
 
+    if (!response) notFound();
+    const articleResponse = await response.json();
     const { data } = articleResponse;
-    const articleData: PropsArticle = await DataFormatter.formatSingleArticleData(data);
-    return { articleData }
+
+    if (!data) notFound();
+    else {
+        const articleData: PropsArticle = await DataFormatter.formatSingleArticleData(data);
+        return { articleData }
+    }
+}
+
+function generateHeadlingsContent({ body, blocks }: { body?: string, blocks?: Array<PropsMedia | PropsRichText | PropsQuote | PropsSlider> }) { 
+    if(body || blocks) {
+        const blocksRichText: Array<PropsRichText>|undefined = blocks?.filter(block => block.component === "shared.rich-text") as Array<PropsRichText>;
+        return body + '\n' + blocksRichText.map(block => block.body).join('\n');
+    } else return '';
 }

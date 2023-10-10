@@ -27,6 +27,7 @@ export {
     RedditLogo,
     WechatLogo,
     DiscordLogo,
+    GithubLogo,
     Vibrate,
     MagnifyingGlass,
     EnvelopeSimple

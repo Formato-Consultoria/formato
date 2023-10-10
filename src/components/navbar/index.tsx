@@ -127,8 +127,8 @@ export default function Navbar() {
 
                         <NavigationMenuItem>
                             <Link
-                                className={cx(`h-full text-lg ${pathname === "/artigos" ? 'text-[var(--link-color)]' : 'text-[var(--black-dark)]'} duration-500 font-medium no-underline hover:underline hover:text-[var(--link-color)] hover:duration-500`, blinker.className)}
-                                href="/artigos"
+                                className={cx(`h-full text-lg ${pathname.includes("categorias") ? 'text-[var(--link-color)]' : 'text-[var(--black-dark)]'} duration-500 font-medium no-underline hover:underline hover:text-[var(--link-color)] hover:duration-500`, blinker.className)}
+                                href="/categorias/all"
                             >Artigos</Link>
                         </NavigationMenuItem>
 

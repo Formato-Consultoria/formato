@@ -10,13 +10,34 @@ import { NoArticle } from "@/components/images";
 import NoContent from "@/components/no-content";
 import Link from "next/link";
 import ButttonGlobal from "@/components/button";
+import { Metadata } from "next";
+
+type Props = {
+  params: { category: string }
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { category } = await getCategoryBySlug({ categorySlug: params.category });
+
+  if(category) {
+    return {
+      title: `Artigos sobre ${category.name}`,
+      description: category.description,
+    }
+  }
+
+  return {
+    title: 'Todos os Artigos',
+    description: "Explore nossos artigos informativos e descubra insights valiosos sobre estratégias de negócios, inovação, gestão e muito mais. Estamos aqui para ajudá-lo a alcançar seu sucesso empresarial.",
+  }
+}
 
 export default async function LayoutCategory({ children, params }: {
   children: ReactNode,
   params: { category: string }
 }) {
-  const { categorias, isAllNoEmpty } = await getCategories();
-  const category  = categorias.find((_) => _.slug === params.category);
+  const { categorias, isNotAllEmpty } = await getCategories();
+  const category  = categorias?.find((_) => _.slug === params.category);
 
   return (<>
     <BannerTitle
@@ -34,12 +55,12 @@ export default async function LayoutCategory({ children, params }: {
       <p className={"w-full sm:w-[500px] text-sm sm:text-base font-normal text-white/70"}>{category ? category.description : `Explore nossos artigos informativos e descubra insights valiosos sobre estratégias de negócios, inovação, gestão e muito mais. Estamos aqui para ajudá-lo a alcançar seu sucesso empresarial.`}</p>
     </BannerTitle>
 
-    {isAllNoEmpty ? (
+    {(isNotAllEmpty || categorias) ? (
       <>
         <Comp.CategoryHashContainer>
           <Comp.CategoryHash name="All" categorySlug="all" active={"all" === params.category} />
     
-          <>{categorias.map((_) => (
+          <>{categorias?.map((_) => (
             <Comp.CategoryHash
               key={_.slug}
               name={_.name}
@@ -48,6 +69,7 @@ export default async function LayoutCategory({ children, params }: {
             />
           ))}</>
         </Comp.CategoryHashContainer>
+
         {children}
       </>
     ):(
@@ -75,37 +97,40 @@ async function getCategories() {
       revalidate: 60
     }
   })
-  const resCategory = await response.json();
-  if (!resCategory || !resCategory.data) notFound();
 
-  const categorias: Array<PropsCategory> = DataFormatter.formatCategoriesData(resCategory.data);
-  const { meta } = resCategory;
-  let isAllNoEmpty = false;
+  if(!response) notFound();
+  const { data, meta } = await response.json();
+  
+  if (data.length === 0) return { categorias: null, isNotAllEmpty: false };
+  else {
+    const categorias: Array<PropsCategory> = DataFormatter.formatCategoriesData(data);
 
-  for(let category of categorias) {
-    if(!category.articles || (category.articles?.length === 0)) isAllNoEmpty = false;
-    else {
-      isAllNoEmpty = true;
-      break;
+    for(let category of categorias) {
+      if(category.articles?.length === 0) {
+        return { categorias: null, isNotAllEmpty: false };
+      }
     }
+    
+    return { categorias, meta, isNotAllEmpty: true }
   }
-
-  return { categorias, meta, isAllNoEmpty }
 }
 
-// async function getCategoryBySlug({ categorySlug }: { categorySlug: string }): Promise<{ category: PropsCategory|null }> {
-//   const input: RequestInfo | URL = `${process.env.NEXT_PUBLIC_STRAPI_URL}/slugify/slugs/category/${categorySlug}`;
-//   const response = await fetch(input, {
-//     next: {
-//       revalidate: 60
-//     }
-//   })
+async function getCategoryBySlug({ categorySlug }: { categorySlug: string }): Promise<{ category: PropsCategory|null }> {
+  const input: RequestInfo | URL = `${process.env.NEXT_PUBLIC_STRAPI_URL}/slugify/slugs/category/${categorySlug}`;
+  const response = await fetch(input, {
+    next: {
+      revalidate: 60
+    }
+  })
 
-//   const { data } = await response.json();
+  if(response) {
+    const { data } = await response.json();
+    if (!data || data.length === 0) return { category: null };
+    else {
+      const category: PropsCategory = DataFormatter.formatCategoryData(data);
+      return { category }
+    };
+  }
 
-//   if (!response || !data) return { category: null };
-//   else {
-//     const category: PropsCategory = DataFormatter.formatCategoryData(data);
-//     return { category }
-//   };
-// }
+  return { category: null };
+}

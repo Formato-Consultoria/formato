@@ -1,8 +1,5 @@
-import Image from "next/image";
-import { ImageProps } from "@/@types/image-gallery";
-
 import style from "./about.module.scss";
-import cx from "clsx";
+import Image from "next/image";
 
 import {
   Collaboration,
@@ -21,11 +18,18 @@ import {
 import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
 import ReactPlayerMedia from "@/components/react-player";
 import BannerTitle from "@/components/title-page-banner";
+import cx from "clsx";
 
 import { PillarBoxCard } from "@/components/ui/comp-pillar-box";
 import { ContactSection } from "@/components/ui/section-contact";
 
-import { GallerySection } from "@/components/ui/section-image-gallery";
+import GallerySection from "@/components/ui/section-image-gallery";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sobre Nós",
+  description: "Descubra quem somos, nossa jornada, valores e compromisso com a excelência. Conheça a equipe por trás da nossa empresa e saiba como estamos fazendo a diferença.",
+}
 
 // TODO: não funciona a animação e toggle do btn de Play para o btn Pouse
 export default async function PageAbout() {

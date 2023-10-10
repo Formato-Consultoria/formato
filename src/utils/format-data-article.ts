@@ -2,53 +2,14 @@ import { PropsArticle, PropsCategory } from "@/@types/article";
 import { mdToHtml } from "@/lib/md-to-html";
 
 export class DataFormatter {
-  static formatArticleData(data: Array<any>): Array<PropsArticle> {
-    return data.map((article: any) => {
-      return {
-        id: article?.id,
-        title: article?.attributes?.title,
-        slug: article?.attributes?.slug,
-        description: article?.attributes?.description,
-        updatedAt: article?.attributes?.updatedAt,
-        cover: {
-          name: article?.attributes?.cover?.data?.attributes?.name,
-          alternativeText: article?.attributes?.cover?.data?.attributes?.alternativeText,
-          url: article?.attributes?.cover?.data?.attributes?.url,
-        },
-        category: {
-          id: article?.attributes?.category?.data?.id,
-          name: article?.attributes?.category?.data?.attributes?.name,
-          slug: article?.attributes?.category?.data?.attributes?.slug,
-          description: article?.attributes?.category?.data?.attributes?.description,
-        },
-        author: {
-          name: article?.attributes?.author?.data?.attributes?.name,
-          avatar: article?.attributes?.author?.data?.attributes?.avatar?.data?.attributes?.url,
-          email: article?.attributes?.author?.data?.attributes?.email,
-          socialMedia: {
-            Email: article?.attributes?.author?.data?.attributes?.email && `mailto:${article?.attributes?.author?.data?.attributes?.email}`,
-            Instagram: article?.attributes?.author?.data?.attributes?.Instagram && `https://www.instagram.com/${article?.attributes?.author?.data?.attributes?.Instagram}`,
-            Discord: article?.attributes?.author?.data?.attributes?.Discord && `${article?.attributes?.author?.data?.attributes?.Discord}`,
-            Medium: article?.attributes?.author?.data?.attributes?.Medium && `${article?.attributes?.author?.data?.attributes?.Medium}`,
-            Pinterest: article?.attributes?.author?.data?.attributes?.Pinterest && `${article?.attributes?.author?.data?.attributes?.Pinterest}`,
-            Snapchat: article?.attributes?.author?.data?.attributes?.Snapchat && `${article?.attributes?.author?.data?.attributes?.Snapchat}`,
-            TikTok: article?.attributes?.author?.data?.attributes?.TikTok && `${article?.attributes?.author?.data?.attributes?.TikTok}`,
-            Twitter: article?.attributes?.author?.data?.attributes?.Twitter && `${article?.attributes?.author?.data?.attributes?.Twitter}`,
-            YouTube: article?.attributes?.author?.data?.attributes?.YouTube && `${article?.attributes?.author?.data?.attributes?.YouTube}`,
-            Whatsapp: article?.attributes?.author?.data?.attributes?.Whatsapp && `https://wa.me/${article?.attributes?.author?.data?.attributes?.Whatsapp}`
-          }
-        },
-      }
-    });
-  }
-
-  static async formatSingleArticleData(articleData: any): Promise<PropsArticle> {
+  static formatSingleArticleDataHeader(articleData: any): PropsArticle {
     return {
       id: articleData?.id,
       title: articleData?.attributes?.title,
       slug: articleData?.attributes?.slug,
       description: articleData?.attributes?.description,
       updatedAt: articleData?.attributes?.updatedAt,
+      publishedAt: articleData?.attributes?.publishedAt,
       cover: {
         name: articleData?.attributes?.cover?.data?.attributes?.name,
         alternativeText: articleData?.attributes?.cover?.data?.attributes?.alternativeText,
@@ -60,6 +21,7 @@ export class DataFormatter {
         slug: articleData?.attributes?.category?.data?.attributes?.slug,
         description: articleData?.attributes?.category?.data?.attributes?.description,
       },
+      tags: [...articleData?.attributes?.Tags],
       author: {
         name: articleData?.attributes?.author?.data?.attributes?.name,
         avatar: articleData?.attributes?.author?.data?.attributes?.avatar?.data?.attributes?.url,
@@ -77,9 +39,15 @@ export class DataFormatter {
           Whatsapp: articleData?.attributes?.author?.data?.attributes?.Whatsapp && `${articleData?.attributes?.author?.data?.attributes?.Whatsapp}`
         }
       },
+    }
+  }
+
+  static async formatSingleArticleData(articleData: any): Promise<PropsArticle> {
+    return {
+      ...DataFormatter.formatSingleArticleDataHeader(articleData),
       body: await mdToHtml(articleData?.attributes?.body),
       blocks: await Promise.all(articleData?.attributes?.blocks?.map(async (block: any) => {
-        switch(block.__component) {
+        switch (block.__component) {
           case 'shared.rich-text':
             return {
               id: block.id,
@@ -116,7 +84,7 @@ export class DataFormatter {
                   id: image.id,
                   name: image.attributes.name,
                   url: image.attributes.url,
-                  alternativeText: image.attributes.alternativeText 
+                  alternativeText: image.attributes.alternativeText
                 }
               })
             }
@@ -133,19 +101,26 @@ export class DataFormatter {
     };
   }
 
+  static formatMultipleArticleData(data: Array<any>): Array<PropsArticle> {
+    return data.map((article: any) => {
+      return DataFormatter.formatSingleArticleDataHeader(article);
+    });
+  }
+
   // body: await mdToHtml(articleData?.attributes?.body), // função alternativa
 
   static formatCategoryData(categoryData: any, slug = ""): PropsCategory {
+    const articles = categoryData?.attributes?.articles;
     return {
       id: categoryData?.id,
       name: categoryData?.attributes?.name,
       slug: categoryData?.attributes?.slug,
       description: categoryData?.attributes?.description,
-      articles: DataFormatter.formatArticleData(categoryData?.attributes?.articles?.data
+      articles: articles ? DataFormatter.formatMultipleArticleData(articles.data
         .filter((article: any) => {
           return article?.attributes?.slug != slug;
         }).slice(0, 4)
-      )
+      ) : undefined
     };
   }
 
@@ -156,7 +131,7 @@ export class DataFormatter {
         name: category?.attributes?.name,
         slug: category?.attributes?.slug,
         description: category?.attributes?.description,
-        articles: DataFormatter.formatArticleData(category?.attributes?.articles?.data)
+        articles: DataFormatter.formatMultipleArticleData(category?.attributes?.articles?.data)
       };
     });
   }

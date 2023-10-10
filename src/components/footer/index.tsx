@@ -5,11 +5,28 @@ import cx from 'clsx';
 
 import Link from 'next/link';
 
-import { InstagramLogo, LinkedinLogo } from "@/components/images/phosphor";
+import {
+    InstagramLogo,
+    LinkedinLogo,
+    FacebookLogo,
+    YoutubeLogo,
+    TwitterLogo,
+    GithubLogo
+} from "@/components/images/phosphor";
 import { LightLogotipo } from '../images';
 import LogoFormato from '../logo';
+import siteMetadata from '@/utils/siteMetadata';
 
 export default function Footer() {
+    const socialMedia = [
+        { href: siteMetadata.instagram, icon: <InstagramLogo size={36} weight="fill" /> },
+        { href: siteMetadata.facebook, icon: <FacebookLogo size={36} weight="fill" /> },
+        { href: siteMetadata.linkedin, icon: <LinkedinLogo size={36} weight="fill" /> },
+        { href: siteMetadata.youtube, icon: <YoutubeLogo size={36} weight="fill" /> },
+        { href: siteMetadata.twitter, icon: <TwitterLogo size={36} weight="fill" /> },
+        { href: siteMetadata.github, icon: <GithubLogo size={36} weight="fill" /> }
+    ]
+
     return (
         <footer className={cx(style.footer, inter.className)}>
             <div className={style.navigation_container}>
@@ -24,15 +41,12 @@ export default function Footer() {
             </div>
 
             <div className={style.network_and_copy}>
-                <div>
-                    <Link href="https://www.instagram.com/consultoria.formato" target="_blank">
-                        <InstagramLogo size={36} weight="fill" />
+                <div>{socialMedia.filter(_ => _.href !== '').map((_, index) => (
+                    <Link key={index} href={_.href} target="_blank">
+                        {_.icon}
                     </Link>
+                ))}</div>
 
-                    <Link href="https://www.linkedin.com/company/formato-consultoria" target="_blank">
-                        <LinkedinLogo size={36} weight="fill" />
-                    </Link>
-                </div>
                 <p><span>Formato Consultoria</span> &copy; {new Date().getFullYear()}</p>
             </div>
         </footer>

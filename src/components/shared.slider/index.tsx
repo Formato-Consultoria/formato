@@ -1,3 +1,4 @@
+'use client';
 import Slider from 'react-slick';
 
 import { HeaderShared } from "@/@types/article";
@@ -26,7 +27,7 @@ export function ImageSlider({
   };
 
   return (
-    <div className="inline-flex items-center justify-center w-full my-7 bg-[var(--white-mediumn)]">
+    <div className="inline-flex items-center justify-center w-full my-7 bg-purple-500/70">
       <div className={"w-11/12 h-auto relative"}>
         <Slider
           {...settings}

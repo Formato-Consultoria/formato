@@ -1,3 +1,4 @@
+'use client';
 import { use, useEffect, useState } from "react";
 import Image from "next/image";
 import cx from "clsx";
@@ -5,37 +6,50 @@ import cx from "clsx";
 import style from "./gallery-section.module.scss";
 import { ImageProps } from "@/@types/image-gallery";
 
+export default function GallerySection() {
+    const [imagesData, setImagesData] = useState<Array<ImageProps>|null>();
+
+    useEffect(() => {
+        async function exec() {
+            const { images } = await getImages();
+            setImagesData(images);
+        }
+        exec();
+    }, [])
+
+    if(imagesData)
+        return (<>
+            <section className={cx(style.gallery_section, style.section)}>
+                <div className={style.content}>
+                    {imagesData && imagesData.map(({ id, public_id, format, blurDataUrl }) => (
+                        <div key={id}>
+                            <Image
+                                style={{ transform: 'translate3d(0, 0, 0)' }}
+                                src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${public_id}.${format}`}
+                                blurDataURL={blurDataUrl}
+                                placeholder="blur"
+                                alt="Gallery image"
+                                fill
+                                loading={"eager"}
+                            />
+                        </div>
+                    ))}
+                </div>
+            </section>
+        </>)
+    else return <></>;
+}
+
 async function getImages() {
-    const data = await fetch(`${process.env.BASE_URL}/api/galeria?n=5`, {
+    const response = await fetch(`${process.env.BASE_URL}/api/galeria?n=5`, {
         next: {
             revalidate: 10
         }
     });
+    if(!response) return { images: null };
 
-    const images: Array<ImageProps> = await data.json();
-    return images;
-}
+    const images: Array<ImageProps> = await response.json();
+    if(images.length === 0) return { images: null };
 
-export async function GallerySection() {
-    const images = await getImages();
-
-    return (<>
-        <section className={cx(style.gallery_section, style.section)}>
-            <div className={style.content}>
-                {images && images.map(({ id, public_id, format, blurDataUrl }) => (
-                    <div key={id}>
-                        <Image
-                            style={{ transform: 'translate3d(0, 0, 0)' }}
-                            src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${public_id}.${format}`}
-                            blurDataURL={blurDataUrl}
-                            placeholder="blur"
-                            alt="Gallery image"
-                            fill
-                            loading={"eager"}
-                        />
-                    </div>
-                ))}
-            </div>
-        </section>
-    </>)
+    return { images };
 }

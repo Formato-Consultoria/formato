@@ -29,7 +29,7 @@ export function Video({
       className={"my-2 md:my-5 border-2 border-solid border-transparent outline outline-1 outline-[var(--black-10)] bg-[var(--white-mediumn)]"}
       url={url}
       controls
-      height={isMobile ? "260px" : "380px"}
+      height={isMobile ? "260px" : "395px"}
       width="100%"
     />
   )

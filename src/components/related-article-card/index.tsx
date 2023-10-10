@@ -9,8 +9,9 @@ import { ArticleCardContainer } from "../article-card-container";
 
 export function RelatedArticleCards({
   categorySlug,
+  tags,
   pageSlug,
-}: { categorySlug: string, pageSlug: string }) {
+}: { categorySlug: string, tags: Array<string>, pageSlug: string }) {
   const { relatedArticleDatas } = use(getRelatedArticleData({ categorySlug, pageSlug }));
   
   if(!relatedArticleDatas || relatedArticleDatas?.length === 0) return <></>;
@@ -48,7 +49,7 @@ async function getRelatedArticleData({
   
   if (!response || !data) return { relatedArticleDatas: null };
   else {
-    const articles: Array<PropsArticle> = DataFormatter.formatArticleData(data);
+    const articles: Array<PropsArticle> = DataFormatter.formatMultipleArticleData(data);
     return { relatedArticleDatas: articles }
   }
 }
