@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 import { use, useEffect, useState } from "react";
 import Image from "next/image";
 import cx from "clsx";
@@ -7,21 +7,13 @@ import style from "./gallery-section.module.scss";
 import { ImageProps } from "@/@types/image-gallery";
 
 export default function GallerySection() {
-    const [imagesData, setImagesData] = useState<Array<ImageProps>|null>();
+    const { images } = use(getImages());
 
-    useEffect(() => {
-        async function exec() {
-            const { images } = await getImages();
-            setImagesData(images);
-        }
-        exec();
-    }, [])
-
-    if(imagesData)
+    if(images)
         return (<>
             <section className={cx(style.gallery_section, style.section)}>
                 <div className={style.content}>
-                    {imagesData && imagesData.map(({ id, public_id, format, blurDataUrl }) => (
+                    {images && images.map(({ id, public_id, format, blurDataUrl }) => (
                         <div key={id}>
                             <Image
                                 style={{ transform: 'translate3d(0, 0, 0)' }}
