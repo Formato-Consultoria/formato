@@ -7,16 +7,22 @@ import ButttonGlobal from "@/components/button";
 import Link from "next/link";
 import Image from "next/image";
 
+import { HeadlineH1 } from "./HeadlineH1";
+import { Paragraph } from "./Paragraph";
+
+
 export function PrincipalSection() {
     return (
         <section className={cx(styles.principal, inter.className)}>
             <div className={styles.titulo_and_apresentation}>
-                <h1>
+                <HeadlineH1>
                     Formato
                     <span>Consultoria</span>
-                </h1>
+                </HeadlineH1>
 
-                <p>Ajudamos a conectar pessoas a seus negócios. Buscamos inovação e crescimento pessoal. Alinhamos objetivos, criamos conexão e colocamos ideias brilhantes em prática.</p>
+                <Paragraph>
+                    Ajudamos a conectar pessoas a seus negócios. Buscamos inovação e crescimento pessoal. Alinhamos objetivos, criamos conexão e colocamos ideias brilhantes em prática.
+                </Paragraph>
 
                 <Link href={"/sobre"}>
                     <ButttonGlobal value="Saiba Mais"/>

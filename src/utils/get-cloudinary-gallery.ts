@@ -1,6 +1,6 @@
 import cloudinary from "@/config/cloudinary";
 
-import type { ImageProps } from "@/@types/image-gallery";
+import type { ImageProps } from "@/app/api/@types/image-gallery";
 import { getBase64RemoteImage } from "@/lib/plaiceholder";
 
 export default async function getImagesGallery(qntImage = 200) {

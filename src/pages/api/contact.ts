@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { PropValuesForm } from '@/@types/form';
+import { PropValuesForm } from '@/app/api/@types/form';
 
 import { mailOptions, transporter } from "@/config/nodemailer";
 

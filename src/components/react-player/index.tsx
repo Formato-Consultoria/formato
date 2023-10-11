@@ -21,7 +21,7 @@ const propsInitialState: ReactPlayerProps = {
     height: "100%"
 }
 
-const ReactPlayerMedia = () => {
+const ReactPlayerMedia = ({ videos }: { videos: Array<string> }) => {
     const [isPlay, setIsPlay] = useState(false);
     const [isStart, setIsStart] = useState(false);
 
@@ -30,10 +30,6 @@ const ReactPlayerMedia = () => {
     });
 
     const ref = useRef<ReactPlayer>(null);
-    const videos = [
-        "https://youtu.be/IAnzAWt5tCI",
-        "https://youtu.be/Cm9QLc1azl4"
-    ]
 
     function changeStopPlayState() {
         ref?.current?.showPreview()

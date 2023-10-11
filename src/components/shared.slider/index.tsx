@@ -1,7 +1,7 @@
 'use client';
 import Slider from 'react-slick';
 
-import { HeaderShared } from "@/@types/article";
+import { HeaderShared } from "@/app/api/@types/article";
 import Image from "next/image";
 import cx from "clsx";
 

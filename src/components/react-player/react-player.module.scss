@@ -14,3 +14,31 @@ div.media_video {
         border-radius: 10px;
     }
 }
+
+@media (min-width: 1536px) {
+    div.media_video {
+        width: 90%;
+        height: 780px;
+    }
+}
+
+@media (max-width: 1024px) {
+    div.media_video {
+        width: 100%;
+        height: 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    div.media_video {
+        width: 100%;
+        height: 350px;
+    }
+}
+
+@media (max-width: 640px) {
+    div.media_video {
+        width: 100%;
+        height: 250px;
+    }
+}

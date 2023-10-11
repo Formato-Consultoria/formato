@@ -1,5 +1,5 @@
 'use client';
-import { PropsCategory, PropsCover } from "@/@types/article"
+import { PropsCategory, PropsCover } from "@/app/api/@types/article"
 import BannerTitle from "@/components/title-page-banner"
 import { useMediaQuery } from "react-responsive"
 import { Comp } from ".."

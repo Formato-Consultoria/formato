@@ -4,20 +4,15 @@ import BannerTitle from "@/components/title-page-banner";
 import Image from "next/image";
 import cx from "clsx";
 
-import {
-  cdl,
-  farMelhor,
-  garanti,
-  maisBr,
-  nexa,
-  sebrae,
-} from "@/components/images";
 import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
 
 import { QuoteSection } from "@/components/ui/section-quote";
-import { InfiniteScrollCarousel } from "@/components/ui/section-infinite-scroll-carousel";
+
 import { TestimonialsBox } from "@/components/ui/comp-feedbacks-box";
 import { Metadata } from "next";
+import { blinker } from "@/utils/_fonts";
+import { useMediaQuery } from "react-responsive";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Nossos Clientes",
@@ -25,15 +20,21 @@ export const metadata: Metadata = {
 }
 
 export default function Clients() {
+  notFound();
+
     return (
       <>
+        <WhatsappWidgetButton />
+
         <BannerTitle
           src="/images/cliente_hero.jpg"
+          height={"200px"}
+          styles={{
+              containner: { width: '100%', outline: '1px solid rgba(0, 0, 0, .2)' },
+          }}
         >
-          <p className={'text-2xl md:text-3xl text-white'}>Nossos clientes</p>
+          <h1 className={cx("line-clamp-3 leading-tight md:leading-snug my-1 text-center text-white", blinker.className)}>Nossos clientes</h1>
         </BannerTitle>
-
-        <WhatsappWidgetButton />
 
         <section className={cx(style.container_clients, style.section)}>
           <QuoteSection
@@ -44,7 +45,7 @@ export default function Clients() {
             outra pessoa.
           </QuoteSection>
           
-          <div className={style.container_images_gallery}>
+          {/* <div className={style.container_images_gallery}>
             <div className={style.images_gallery}>
                 <div>
                   <Image
@@ -85,20 +86,7 @@ export default function Clients() {
                   />
                 </div>
             </div>
-          </div>
-
-          {/* video */}
-
-          <InfiniteScrollCarousel
-            images={[
-              nexa.src,
-              sebrae.src,
-              farMelhor.src,
-              cdl.src,
-              garanti.src,
-              maisBr.src
-            ]}
-          />
+          </div> */}
 
           <div className={style.depositions_section}>
             <h2>Veja os depoimentos de nossos clientes</h2>

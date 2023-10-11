@@ -5,7 +5,7 @@ import { Comp } from ".";
 import BannerTitle from "@/components/title-page-banner";
 
 import { DataFormatter } from "@/utils/format-data-article";
-import { PropsCategory } from "@/@types/article";
+import { PropsCategory } from "@/app/api/@types/article";
 import { NoArticle } from "@/components/images";
 import NoContent from "@/components/no-content";
 import Link from "next/link";

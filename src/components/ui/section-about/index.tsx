@@ -12,7 +12,7 @@ export function AboutSection() {
             <div className={styles.content}>
                 <div className={styles.image}>
                     <Image
-                        src="/images/imagem-predio.png"
+                        src="/images/Logotipo_light.jpg"
                         fill
                         alt="sobre a nossa empresa image banner"
                     />

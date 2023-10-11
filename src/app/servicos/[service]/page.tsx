@@ -4,7 +4,7 @@ import cx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 
-import type { contentService } from "@/@types/services";
+import type { contentService } from "@/app/api/@types/services";
 import BannerTitle from "@/components/title-page-banner";
 import { services } from '@/content/all-services';
 import WhatsappWidgetButton from "@/components/whatsapp-widget-button";
@@ -13,6 +13,7 @@ import { NoArticle } from "@/components/images";
 import ButttonGlobal from "@/components/button";
 import { Metadata } from "next";
 import siteMetadata from "@/utils/siteMetadata";
+import { blinker } from "@/utils/_fonts";
 
 type Props = {
     params: { service: string }
@@ -41,15 +42,13 @@ const Service = ({ params }: Props) => {
     if(serviceComp) {
         return (<>
             <BannerTitle
-                styles={{ containner: {
-                    borderBottomWidth: '1.5px',
-                    borderBottomStyle: 'solid',
-                    borderBottomColor: 'rgba(255, 255, 255, .5)'
-                } }}
-                height="200px"
                 src={serviceComp.bannerImg}
+                height={"200px"}
+                styles={{
+                    containner: { width: '100%', outline: '1px solid rgba(0, 0, 0, .2)' },
+                }}
             >
-                <div className={"absolute -bottom-9 left-[43%] sm:left-12 md:left-14 rounded-full p-[10px] bg-[var(--white)] ring-1 ring-zinc-300"}>
+                <div className={"absolute -bottom-9 left-[5%] sm:left-12 md:left-14 rounded-full p-[10px] bg-[var(--white)] ring-1 ring-zinc-300"}>
                     <Image
                         src={serviceComp.icon}
                         width={45}
@@ -62,13 +61,13 @@ const Service = ({ params }: Props) => {
             <WhatsappWidgetButton />
 
             <section className={cx(style.service_page, style.section)}>
-                <div className={style.title_service}>    
-                    <h3>{serviceComp.title}</h3>
+                <div className={cx(style.title_service, "prose prose-base md:prose-xl lg:prose-2xl")}>
+                    <h3 className={blinker.className}>{serviceComp.title}</h3>
                 </div>
 
-                <div className={style.content}>
+                <article className={cx("prose prose-base md:prose-xl lg:prose-2xl prose-zinc prose-p:leading-8", style.content)}>
                     {serviceComp.content}
-                </div>
+                </article>
             </section>
         </>)
     } else {

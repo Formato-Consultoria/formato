@@ -4,7 +4,7 @@ import Image from "next/image";
 import cx from "clsx";
 
 import style from "./gallery-section.module.scss";
-import { ImageProps } from "@/@types/image-gallery";
+import { ImageProps } from "@/app/api/@types/image-gallery";
 
 export default function GallerySection() {
     const { images } = use(getImages());

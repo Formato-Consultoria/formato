@@ -2,11 +2,12 @@ section.gallery_section {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--white);
 
     width: 100%;
     overflow: hidden;
 
-    margin: 25px 0;
+    padding: 25px 0;
 
     div.content {
         display: flex;

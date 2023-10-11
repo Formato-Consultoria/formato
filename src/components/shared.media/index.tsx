@@ -7,7 +7,7 @@ import cx from "clsx";
 import Link from "next/link";
 import Image from "next/image";
 
-import { HeaderShared } from "@/@types/article";
+import { HeaderShared } from "@/app/api/@types/article";
 import { useMediaQuery } from "react-responsive";
 import DownloadLink from "react-download-link";
 import { IconContext } from "react-icons";

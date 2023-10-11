@@ -29,26 +29,6 @@ section.about {
     }
 }
 
-section.pillarsContainer {
-    width: 100%;
-
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap;
-
-    div.pillarsContent {
-        display: flex;
-        align-items: stretch;
-        justify-content: center;
-
-        gap: 60px;
-
-        height: 250px;
-        width: 100%;
-        background-color: var(--white-mediumn);
-    }
-}
-
 section.logotipoAndInspirationMessage {
     display: flex;
     align-items: stretch;
@@ -166,13 +146,6 @@ section.valueContainer {
         }
     }
 
-    section.pillarsContainer {
-        div.pillarsContent {
-            gap: 40px;
-            height: 230px;
-        }
-    }
-
     section.logotipoAndInspirationMessage {
         padding: 20px 20px;
         height: 330px;
@@ -205,17 +178,6 @@ section.valueContainer {
 }
 
 @media (max-width: 768px) {
-    section.pillarsContainer {
-        height: auto;
-
-        div.pillarsContent {
-            height: auto;
-            gap: 20px;
-            flex-wrap: wrap;
-            padding: 20px 0;
-        }
-    }
-
     section.logotipoAndInspirationMessage {
         padding: 10px 20px;
         height: 290px;

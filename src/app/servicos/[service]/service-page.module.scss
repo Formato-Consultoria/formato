@@ -16,15 +16,14 @@ section.service_page {
         }
     }
 
-    div.content {
-        width:  75%;
+    article.content {
+        width:  auto;
         padding: 20px 0;
         margin: 0 auto 0 50px;
 
         p {
             line-height: 2rem;
             font-size: 1.1rem;
-            color: var(--black);
         }
     }
 }
@@ -45,7 +44,7 @@ section.service_page {
             }
         }
 
-        div.content {
+        article.content {
             width:  85%;
             margin: 0 auto 0 13px;
         }
@@ -58,7 +57,7 @@ section.service_page {
             margin-left: 8px;
         }
         
-        div.content {
+        article.content {
             width: 100%;
             padding: 20px 8px;
             margin: 0 auto;

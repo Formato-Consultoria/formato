@@ -2,7 +2,7 @@ import cx from 'clsx';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { PropsArticle } from '@/@types/article';
+import { PropsArticle } from '@/app/api/@types/article';
 import { blinker, inter } from '@/utils/_fonts';
 
 import { Time } from '../time';

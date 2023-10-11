@@ -1,5 +1,5 @@
 'use client';
-import { PropsArticle } from "@/@types/article";
+import { PropsArticle } from "@/app/api/@types/article";
 import cx from "clsx";
 import { ArticleCard } from "../article-card";
 import { DataFormatter } from "@/utils/format-data-article";

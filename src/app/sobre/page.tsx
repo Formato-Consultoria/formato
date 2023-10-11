@@ -6,12 +6,8 @@ import {
   Commitment,
   CriticalThinking,
   Dialogue,
-  Innovation,
-  Metrics,
-  Mindset,
   OpennessChallenges,
   Respect,
-  Strategy,
   Willpower
 } from "@/components/images";
 
@@ -25,6 +21,8 @@ import { ContactSection } from "@/components/ui/section-contact";
 
 import GallerySection from "@/components/ui/section-image-gallery";
 import { Metadata } from "next";
+import { blinker } from "@/utils/_fonts";
+import { StrategySection } from "@/components/ui/section-strategy";
 
 export const metadata: Metadata = {
   title: "Sobre Nós",
@@ -33,12 +31,21 @@ export const metadata: Metadata = {
 
 // TODO: não funciona a animação e toggle do btn de Play para o btn Pouse
 export default async function PageAbout() {
+  const videos = [
+    "https://youtu.be/IAnzAWt5tCI",
+    "https://youtu.be/Cm9QLc1azl4"
+]
+
   return (
     <>
       <BannerTitle
-        src="/images/quem_somos_hero.jpg"
+        src={"/images/quem_somos_hero.jpg"}
+        height={"200px"}
+        styles={{
+          containner: { width: '100%', outline: '1px solid rgba(0, 0, 0, .2)' },
+        }}
       >
-        <p className={'text-2xl md:text-3xl text-white'}>Quem somos?</p>
+        <h1 className={cx("line-clamp-3 leading-tight md:leading-snug my-1 text-center text-white", blinker.className)}>Quem somos?</h1>
       </BannerTitle>
       
       <WhatsappWidgetButton />
@@ -55,14 +62,7 @@ export default async function PageAbout() {
         </div>
       </section>
 
-      <section className={cx(style.pillarsContainer, style.section)}>
-        <div className={style.pillarsContent}>
-          <PillarBoxCard src={Mindset.src} value={"MINDSET"} />
-          <PillarBoxCard src={Strategy.src} value={"ESTRATÉGIA"} />
-          <PillarBoxCard src={Metrics.src} value={"MÉTRICAS"} />
-          <PillarBoxCard src={Innovation.src} value={"EVOLUÇÃO"} />
-        </div>
-      </section>
+      {/* Section Estrategia!! */}
 
       <section className={cx(style.logotipoAndInspirationMessage)}>
         <div className={style.logotipo_img}>
@@ -78,8 +78,10 @@ export default async function PageAbout() {
         </div>
       </section>
 
+      <StrategySection />
+
       <section className={cx(style.mediaContent, style.section)}>
-        <ReactPlayerMedia />
+        <ReactPlayerMedia videos={videos} />
       </section>
 
       <section className={cx(style.valueContainer, style.section)}>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 
-import type { ImageProps } from "@/@types/image-gallery";
+import type { ImageProps } from "@/app/api/@types/image-gallery";
 
 import style from "./gallery.module.scss";
 import WhatsappWidgetButton from "@/components/whatsapp-widget-button";

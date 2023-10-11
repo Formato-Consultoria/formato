@@ -6,7 +6,7 @@ import { PropsRichText } from "@/components/shared.rich-text";
 import { PropsMedia } from "@/components/shared.media";
 import { PropsQuote } from "@/components/shared.quote";
 import { PropsSlider } from "@/components/shared.slider";
-import { PropsArticle, PropsCover } from "@/@types/article";
+import { PropsArticle, PropsCover } from "@/app/api/@types/article";
 
 import { blinker } from "@/utils/_fonts";
 import { DataFormatter } from "@/utils/format-data-article";

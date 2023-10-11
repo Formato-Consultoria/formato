@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { PropsArticle } from "@/@types/article";
+import { PropsArticle } from "@/app/api/@types/article";
 
 import { DataFormatter } from "@/utils/format-data-article";
 
