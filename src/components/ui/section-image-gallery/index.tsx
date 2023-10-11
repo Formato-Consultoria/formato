@@ -14,17 +14,17 @@ export default function GallerySection() {
             <section className={cx(style.gallery_section, style.section)}>
                 <div className={style.content}>
                     {images && images.map(({ id, public_id, format, blurDataUrl }) => (
-                        <div key={id}>
-                            <Image
-                                style={{ transform: 'translate3d(0, 0, 0)' }}
-                                src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${public_id}.${format}`}
-                                blurDataURL={blurDataUrl}
-                                placeholder="blur"
-                                alt="Gallery image"
-                                fill
-                                loading={"eager"}
-                            />
-                        </div>
+                            <div key={id} className={"group ring-2 ring-transparent hover:ring-[var(--primary-color-50)]"}>
+                                <Image
+                                    style={{ transform: 'translate3d(0, 0, 0)' }}
+                                    src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${public_id}.${format}`}
+                                    blurDataURL={blurDataUrl}
+                                    placeholder="blur"
+                                    alt="Gallery image"
+                                    fill
+                                    loading={"eager"}
+                                />
+                            </div>
                     ))}
                 </div>
             </section>

@@ -10,7 +10,7 @@ export function AboutSection() {
             <h2 className={blinker.className}>SOBRE A HISOTÓRIA DA FORMATO</h2>
 
             <div className={styles.content}>
-                <div className={styles.image}>
+                <div className={cx(styles.image, "ring-1 ring-zinc-950/10")}>
                     <Image
                         src="/images/Logotipo_light.jpg"
                         fill
