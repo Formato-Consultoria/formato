@@ -1,6 +1,6 @@
-import "./article.scss";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 
 import { PropsRichText } from "@/components/shared.rich-text";
 import { PropsMedia } from "@/components/shared.media";
@@ -21,6 +21,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { articleData } = await getdArticleData(params);
+    if(!articleData) return {};
 
     const publishedAt = new Date(articleData.publishedAt).toISOString();
     const modifiedAt = new Date(articleData.updatedAt).toISOString();
@@ -63,9 +64,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         },
     }
 }
+export const revalidate = 60; 
 
 export default async function Article({ params }: Props) {
     const { articleData } = await getdArticleData(params);
+    
+    if(!articleData) notFound();
     const { slug, title, description, body, blocks, publishedAt, updatedAt, cover, category, tags, author } = articleData;
 
     let listImages: Array<PropsCover | string> = [siteMetadata.socialBanner];
@@ -104,13 +108,15 @@ export default async function Article({ params }: Props) {
                 />
 
                 <div className={"w-full lg:w-[1024px] xl:w-[1280px] 2xl:w-[1536px] flex flex-col gap-3 p-5 sm:p-3 md:p-5 bg-[var(--white-mediumn)] ring-1 ring-zinc-950/10"}>
-                    <div
+                    <Link
+                        href={`/categorias/${category.slug}`}
                         style={{ fontSize: 13 }}
                         className={cx(
-                            "text-xs font-semibold w-max px-2 rounded-full uppercase text-[var(--black-dark)] bg-[var(--black-dark-60)] ring-1 ring-[var(--black-dark)]",
+                            "text-xs font-semibold w-max px-2 rounded-full uppercase text-[var(--black-dark)] bg-[var(--black-dark-60)] ring-1 ring-[var(--black-dark)] cursor-pointer",
+                            "no-underline hover:text-[var(--link-color)] hover:bg-[var(--link-color-60)] hover:ring-[var(--link-color)] transition-all duration-150 ease-linear",
                             blinker.className)
                         }
-                    >{category.name}</div>
+                    >{category.name}</Link>
 
                     <div className={"flex gap-1 items-center"}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="rgb(8, 12, 16, 0.8)" d="M12 20a8 8 0 0 0 8-8a8 8 0 0 0-8-8a8 8 0 0 0-8 8a8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10a10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67l-.75 1.23L11 13V7h1.5Z" /></svg>
@@ -125,7 +131,7 @@ export default async function Article({ params }: Props) {
                         <p style={{ color: 'rgba(8, 12, 16, .)', fontWeight: 'mediumn' }}>{author?.name}</p>
                     </div>
 
-                    <div className={"flex items-center gap-2 mt-3 flex-wrap w-full"}>{tags?.map((tag: string, index) => (
+                    <div className={"flex items-center gap-2 mt-3 flex-wrap w-full"}>{tags?.map((tag: string, index: number) => (
                         <div key={index} className={cx("max-w-max text-xs px-2 py-.5 rounded-lg ring-1 ring-zinc-950/10 bg-purple-400 text-purple-800 uppercase", blinker.className)}># {tag}</div>
                     ))}</div>
                 </div>
@@ -139,7 +145,7 @@ export default async function Article({ params }: Props) {
                     <Comp.ArticleContent className={"order-2 md:order-1 relative max-w-full px-3 md:w-[530px] lg:w-[800px] bg-[var(--white-blog)] self-center ring-1 ring-zinc-950/5"}>
                         <div dangerouslySetInnerHTML={{ __html: body ?? "" }}></div>
 
-                        {blocks && blocks.map((block) => {
+                        {blocks?.map((block: PropsMedia | PropsRichText | PropsQuote | PropsSlider) => {
                             if (!block) return <p className={"text-lg my-5 font-bold text-[#fce100]"}>⚠️ Bloco de dado não suportado ainda! :(</p>
                             const Component = Shared[block.component];
 
@@ -160,25 +166,22 @@ export default async function Article({ params }: Props) {
 }
 
 async function getdArticleData(params: { slug: string }) {
-    const options: RequestInit = {
-        next: {
-            revalidate: 60
-        },
-    }
-
-    const { slug } = params;
-    const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/slugify/slugs/article/${slug}?populate=deep`, {
-        ...options,
-    });
-
-    if (!response) notFound();
-    const articleResponse = await response.json();
-    const { data } = articleResponse;
-
-    if (!data) notFound();
-    else {
-        const articleData: PropsArticle = await DataFormatter.formatSingleArticleData(data);
-        return { articleData }
+    try {
+        const { slug } = params;
+        const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/slugify/slugs/article/${slug}?populate=deep`);
+    
+        if (!response) notFound();
+        const articleResponse = await response.json();
+        const { data } = articleResponse;
+    
+        if (!data) notFound();
+        else {
+            const articleData: PropsArticle = await DataFormatter.formatSingleArticleData(data);
+            return { articleData }
+        }
+    } catch(error) {
+        console.log("Error ao buscar dados de artigo: ", error);
+        return { articleData: null };
     }
 }
 

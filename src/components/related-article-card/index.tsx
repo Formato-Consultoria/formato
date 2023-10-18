@@ -38,18 +38,17 @@ async function getRelatedArticleData({
   categorySlug,
   pageSlug
 }: { categorySlug: string, pageSlug: string }) {
-  const options: RequestInit = {
-    next: {
-      revalidate: 60
-    },
-  }
-
-  const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/articles?filters[category][slug][$eq]=${categorySlug}&filters[slug][$ne]=${pageSlug}&filters[author][id][$ne]=-1&pagination[page]=1&pagination[pageSize]=4&populate=deep`, {...options});
-  const { data } = await response.json();
-  
-  if (!response || !data) return { relatedArticleDatas: null };
-  else {
-    const articles: Array<PropsArticle> = DataFormatter.formatMultipleArticleData(data);
-    return { relatedArticleDatas: articles }
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/articles?filters[category][slug][$eq]=${categorySlug}&filters[slug][$ne]=${pageSlug}&filters[author][id][$ne]=-1&pagination[page]=1&pagination[pageSize]=4&populate=deep`);
+    const { data } = await response.json();
+    
+    if (!response || !data) return { relatedArticleDatas: null };
+    else {
+      const articles: Array<PropsArticle> = DataFormatter.formatMultipleArticleData(data);
+      return { relatedArticleDatas: articles }
+    }
+  } catch(error) {
+    console.log(error);
+    return { relatedArticleDatas: null };
   }
 }
