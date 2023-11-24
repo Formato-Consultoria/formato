@@ -16,13 +16,13 @@ import ReactPlayerMedia from "@/components/react-player";
 import BannerTitle from "@/components/title-page-banner";
 import cx from "clsx";
 
-import { PillarBoxCard } from "@/components/ui/comp-pillar-box";
-import { ContactSection } from "@/components/ui/section-contact";
+import { ContactSection } from "@/components/section-contact";
 
-import GallerySection from "@/components/ui/section-image-gallery";
 import { Metadata } from "next";
 import { blinker } from "@/utils/_fonts";
-import { StrategySection } from "@/components/ui/section-strategy";
+import { StrategySection } from "@/components/section-strategy";
+import { PillarBoxCard } from "@/components/comp-pillar-box";
+import { GallerySection } from "./gallery";
 
 export const metadata: Metadata = {
   title: "Sobre Nós",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 }
 
 // TODO: não funciona a animação e toggle do btn de Play para o btn Pouse
-export default async function PageAbout() {
+export default function PageAbout({ params }: any) {
   const videos = [
     "https://youtu.be/IAnzAWt5tCI",
     "https://youtu.be/Cm9QLc1azl4"

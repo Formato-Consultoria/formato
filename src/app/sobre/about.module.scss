@@ -12,7 +12,7 @@ section.section {
     }
 }
 
-section.about { 
+section.about {
     margin-top: 50px;
     margin-bottom: 0;
 
@@ -91,7 +91,7 @@ section.valueContainer {
     div.containerBox {
         display: flex;
         flex-direction: column;
-        
+
         width: 100%;
         height: auto;
         background-color: var(--white-mediumn);
@@ -107,7 +107,7 @@ section.valueContainer {
             justify-content: center;
             row-gap: 10px;
             column-gap: 23px;
-    
+
             flex-wrap: wrap;
             height: auto;
             padding: 25px 20px;
@@ -118,9 +118,11 @@ section.valueContainer {
 }
 
 @keyframes ping {
-    75%, 100% {
-      transform: scale(2);
-      opacity: 0;
+
+    75%,
+    100% {
+        transform: scale(2);
+        opacity: 0;
     }
 }
 
@@ -149,7 +151,7 @@ section.valueContainer {
     section.logotipoAndInspirationMessage {
         padding: 20px 20px;
         height: 330px;
-    
+
         gap: 25px;
 
         div.message {
@@ -168,11 +170,13 @@ section.valueContainer {
 
     section.valueContainer {
         margin: 0;
-        
+
         div.containerBox {
             h2 {
                 margin: 30px auto;
             }
+
+
         }
     }
 }
@@ -181,7 +185,7 @@ section.valueContainer {
     section.logotipoAndInspirationMessage {
         padding: 10px 20px;
         height: 290px;
-    
+
         gap: 15px;
 
         div.message {

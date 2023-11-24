@@ -23,7 +23,7 @@ import {
   Vibrate,
   EnvelopeSimple
 } from '@/components/images/phosphor';
-import { PropsAuthor } from "@/app/api/@types/article";
+import { PropsAuthor } from "@/@types/article";
 import Link from "next/link";
 import { ReactNode, memo, useMemo } from "react";
 

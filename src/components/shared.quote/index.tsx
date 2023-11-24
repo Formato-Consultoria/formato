@@ -1,4 +1,4 @@
-import { HeaderShared } from "@/app/api/@types/article";
+import { HeaderShared } from "@/@types/article";
 import cx from "clsx";
 
 export interface PropsQuote extends HeaderShared {

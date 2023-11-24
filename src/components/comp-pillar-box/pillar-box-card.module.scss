@@ -1,0 +1,69 @@
+div.cardBox {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  height: 100%;
+  width: 200px;
+  max-width: 200px;
+
+  div.image {
+    width: 90px;
+    height: 90px;
+    position: relative;
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  p {
+    font-size: 1.3rem;
+    color: var(--black-80);
+  }
+}
+
+div.cardBox:hover {
+  div.image {
+    transition: all;
+    transition-timing-function: ease-in-out;
+    transition-duration: 75ms;
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width: 1024px) {
+  div.cardBox {
+    div.image {
+      width: 70px;
+      height: 70px;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  div.cardBox {
+    div.image {
+      width: 50px;
+      height: 50px;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  div.cardBox {
+    width: 100%;
+  }
+}

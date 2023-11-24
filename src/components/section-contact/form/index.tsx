@@ -4,10 +4,10 @@ import { createRef, useRef, useState } from "react";
 
 import useFormValidation from "@/hooks/useFormValidation";
 import ButttonGlobal from "@/components/button";
-import { PropStateForm, PropValuesForm } from "@/app/api/@types/form";
+import { PropStateForm, PropValuesForm } from "@/@types/form";
 import { sendContactForm } from "@/service/email";
 
-import style from "@/components/ui/section-contact/contact-section.module.scss";
+import style from "../contact-section.module.scss";
 import cx from "clsx";
 import toast from "react-hot-toast";
 

@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic";
 const ReactPlayerElement = dynamic(() => import("react-player"), { ssr: false });
 
-import { HeaderShared } from "@/app/api/@types/article";
+import { HeaderShared } from "@/@types/article";
 import { useMediaQuery } from "react-responsive";
 
 import cx from "clsx";

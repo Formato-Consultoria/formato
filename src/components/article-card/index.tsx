@@ -2,15 +2,21 @@ import cx from 'clsx';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { PropsArticle } from '@/app/api/@types/article';
+import { PropsArticle } from '@/@types/article';
 import { blinker, inter } from '@/utils/_fonts';
 
 import { Time } from '../time';
 import { Hearts } from '../hearts';
 import { UserAvatar } from '../avatar';
 
-export function ArticleCard({ article, className }: { article: PropsArticle, className?: string }) {
-    const { slug, title, description, updatedAt, cover, category, author } = article;
+import { differenceInDays, parseISO } from 'date-fns';
+
+export function ArticleCard({ article, className, isNew }: { article: PropsArticle, className?: string, isNew?: boolean }) {
+    const { slug, title, description, publishedAt, updatedAt, cover, category, author } = article;
+
+    function wasPostedAt(days: number): boolean {
+        return differenceInDays(new Date(), parseISO(publishedAt.toString())) >= days;
+    }
 
     return (
         <div
@@ -27,6 +33,11 @@ export function ArticleCard({ article, className }: { article: PropsArticle, cla
                             fill
                             alt={cover.alternativeText}
                         />}
+
+                        {(wasPostedAt(5) || isNew) && <span className="absolute flex h-3 w-3 right-5 top-5">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+                        </span>}
                 </div>
             </Link>
 

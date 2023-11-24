@@ -80,18 +80,18 @@ export default function Navbar() {
 
                 <NavigationMenu className={style.navigation}>
                     <NavigationMenuList className={"hidden md:flex sm:gap-4 md:gap-5"}>
+                    <NavigationMenuItem>
+                            <Link
+                                className={cx(`h-full text-lg ${pathname === "/" ? 'text-[var(--link-color)]' : 'text-[var(--black-dark)]'} duration-500 font-medium no-underline hover:underline hover:text-[var(--link-color)] hover:duration-500`, blinker.className)}
+                                href="/"
+                            >Inicio</Link>
+                        </NavigationMenuItem>
+
                         <NavigationMenuItem>
                             <Link
                                 className={cx(`h-full text-lg ${pathname === "/sobre" ? 'text-[var(--link-color)]' : 'text-[var(--black-dark)]'} duration-500 font-medium no-underline hover:underline hover:text-[var(--link-color)] hover:duration-500`, blinker.className)}
                                 href="/sobre"
                             >Sobre Nós</Link>
-                        </NavigationMenuItem>
-
-                        <NavigationMenuItem>
-                            <Link
-                                className={cx(`h-full text-lg duration-500 text-[var(--black-dark)] font-medium no-underline hover:underline hover:text-[var(--link-color)] hover:duration-500`, blinker.className)}
-                                href="/#contato"
-                            >Contatos</Link>
                         </NavigationMenuItem>
 
                         <NavigationMenuItem className="hover:bg-transparent">
@@ -120,9 +120,9 @@ export default function Navbar() {
 
                         <NavigationMenuItem>
                             <Link
-                                className={cx(`h-full text-lg ${pathname === "/clientes" ? 'text-[var(--link-color)]' : 'text-[var(--black-dark)]'} duration-500 font-medium no-underline hover:underline hover:text-[var(--link-color)] hover:duration-500`, blinker.className)}
-                                href="/clientes"
-                            >Clientes</Link>
+                                className={cx(`h-full text-lg duration-500 text-[var(--black-dark)] font-medium no-underline hover:underline hover:text-[var(--link-color)] hover:duration-500`, blinker.className)}
+                                href="/#contato"
+                            >Contatos</Link>
                         </NavigationMenuItem>
 
                         <NavigationMenuItem>
@@ -130,13 +130,6 @@ export default function Navbar() {
                                 className={cx(`h-full text-lg ${pathname?.includes("categorias") ? 'text-[var(--link-color)]' : 'text-[var(--black-dark)]'} duration-500 font-medium no-underline hover:underline hover:text-[var(--link-color)] hover:duration-500`, blinker.className)}
                                 href="/categorias/all"
                             >Artigos</Link>
-                        </NavigationMenuItem>
-
-                        <NavigationMenuItem>
-                            <Link
-                                className={cx(`h-full text-lg ${pathname === "/galeria" ? 'text-[var(--link-color)]' : 'text-[var(--black-dark)]'} duration-500 font-medium no-underline hover:underline hover:text-[var(--link-color)] hover:duration-500`, blinker.className)}
-                                href="/galeria"
-                            >Galeria</Link>
                         </NavigationMenuItem>
 
                         <NavigationMenuItem className="hidden sm:flex">

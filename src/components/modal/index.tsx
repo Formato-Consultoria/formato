@@ -39,14 +39,12 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
                     </li>
                     
                     <li onClick={onClose}>
-                        <Link href="/clientes">Clientes</Link>
-                        <hr />
-                    </li>
-                    
-
-                    <li onClick={onClose}>
                         <Link href="/sobre">Sobre Nós</Link>
                         <hr />
+                    </li>
+
+                    <li onClick={onClose}>
+                        <Link href="/#contato">Contatos</Link>
                     </li>
 
                     <Accordion type="single" collapsible className="w-full">
@@ -83,13 +81,6 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
                     <li onClick={onClose}>
                         <Link href="/artigos">Artigos</Link>
                         <hr />
-                    </li>
-                    <li onClick={onClose}>
-                        <Link href="/galeria">Galeria</Link>
-                        <hr />
-                    </li>
-                    <li onClick={onClose}>
-                        <Link href="/#contato">Contatos</Link>
                     </li>
                 </ul>
 

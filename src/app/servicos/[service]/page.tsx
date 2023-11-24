@@ -4,7 +4,7 @@ import cx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 
-import type { contentService } from "@/app/api/@types/services";
+import type { contentService } from "@/@types/services";
 import BannerTitle from "@/components/title-page-banner";
 import { services } from '@/content/all-services';
 import WhatsappWidgetButton from "@/components/whatsapp-widget-button";

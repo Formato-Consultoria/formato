@@ -10,7 +10,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { ComVLibras } from "@/components/v-libras";
 
-import { Metadata } from "next"; 
+import { Metadata } from "next";
 import siteMetadata from "@/utils/siteMetadata";
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         url: new URL(siteMetadata.siteUrl),
         siteName: siteMetadata.title,
         images: [
-          siteMetadata.socialBanner
+            siteMetadata.socialBanner
         ],
         locale: 'pt_BR',
         type: 'website',
@@ -55,7 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="pt-br">
             <body>
-                <div className={inter.className}>                    
+                <div className={inter.className}>
                     <Navbar />
 
                     <Main>
@@ -68,7 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     </Main>
                     <Footer />
                 </div>
-                
+
                 <ComVLibras />
             </body>
         </html>

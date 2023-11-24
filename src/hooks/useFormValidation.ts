@@ -1,4 +1,4 @@
-import { PropStateForm } from "@/app/api/@types/form";
+import { PropStateForm } from "@/@types/form";
 
 export default function useFormValidation({ values, errors }: PropStateForm) {
     const { name, email, address, phone, message, terms } = values;

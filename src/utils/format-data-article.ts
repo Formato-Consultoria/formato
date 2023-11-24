@@ -1,4 +1,4 @@
-import { PropsArticle, PropsCategory } from "@/app/api/@types/article";
+import { PropsArticle, PropsCategory } from "@/@types/article";
 import { mdToHtml } from "@/lib/md-to-html";
 
 export class DataFormatter {
