@@ -32,16 +32,13 @@ const PageHome = () => {
       <section className={cx(
         "w-full h-auto m-0 mb-0 p-0",
       )}>
-        <div className={"w-full flex flex-wrap items-stretch justify-center gap-y-12 md:gap-10 lg:gap-[60px] bg-[var(--white-mediumn)] py-7"}>
+        <div className={"w-full flex flex-wrap items-stretch justify-center gap-y-12 md:gap-10 lg:gap-[60px] bg-[var(--white-mediumn)] py-14"}>
           <PillarBoxCard src={Mindset.src} value={"MINDSET"} />
           <PillarBoxCard src={Strategy.src} value={"ESTRATÉGIA"} />
           <PillarBoxCard src={Metrics.src} value={"MÉTRICAS"} />
           <PillarBoxCard src={Innovation.src} value={"EVOLUÇÃO"} />
         </div>
       </section>
-
-      <GallerySection />
-      <AboutSection />
 
       <InfiniteScrollCarousel
         images={[
@@ -53,6 +50,10 @@ const PageHome = () => {
           maisBr.src
         ]}
       />
+
+      <GallerySection />
+      <AboutSection />
+
       <ServiceSection />
       <ContactSection />
     </>

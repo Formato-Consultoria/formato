@@ -34,16 +34,10 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
             <Dialog.Panel className={style.dialog_panel}>
                 <ul className={style.container_list_pages}>
                     <li onClick={onClose}>
-                        <Link href="/">inicio</Link>
+                        <Link href="/">Início</Link>
                         <hr />
                     </li>
                     
-                    <li onClick={onClose}>
-                        <Link href="/clientes">Clientes</Link>
-                        <hr />
-                    </li>
-                    
-
                     <li onClick={onClose}>
                         <Link href="/sobre">Sobre Nós</Link>
                         <hr />

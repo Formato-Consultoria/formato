@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 }
 
 export default function Clients() {
-  notFound();
+    notFound();
 
     return (
       <>
@@ -28,7 +28,7 @@ export default function Clients() {
 
         <BannerTitle
           src="/images/cliente_hero.jpg"
-          height={"200px"}
+          height={"350px"}
           styles={{
               containner: { width: '100%', outline: '1px solid rgba(0, 0, 0, .2)' },
           }}
@@ -44,160 +44,6 @@ export default function Clients() {
             na capacidade de ver as coisas do ponto de vista de
             outra pessoa.
           </QuoteSection>
-          
-          {/* <div className={style.container_images_gallery}>
-            <div className={style.images_gallery}>
-                <div>
-                  <Image
-                    src={"/teste/B4.jpeg"}
-                    fill
-                    alt="hero4 img"
-                  />
-                </div>
-                <div>
-                  <Image
-                    src={"/teste/B2.jpeg"}
-                    fill
-                    alt="hero2 img"
-                  />
-              </div>
-            </div>
-
-            <div className={style.images_gallery}>
-                <div>
-                  <Image
-                    src={"/teste/B5.jpeg"}
-                    fill
-                    alt="hero5 img"
-                  />
-                </div>
-                <div>
-                  <Image
-                    src={"/teste/B3.jpeg"}
-                    fill
-                    alt="her3 img" 
-                  />
-                </div>
-                <div>
-                  <Image
-                    src={"/teste/B1.jpeg"}
-                    fill
-                    alt="hero1 img"
-                  />
-                </div>
-            </div>
-          </div> */}
-
-          <div className={style.depositions_section}>
-            <h2>Veja os depoimentos de nossos clientes</h2>
-
-            <div className={style.container_testimonials_box}>
-              <TestimonialsBox
-                imgBnr={"/teste/Dp1.jpeg"}
-                companyName={"Aniplex"}
-                personImg={"/teste/Robert.png"}
-                personName={"Bob Robert"}
-                personProfession={"Gerente de projetos"}
-              >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
-                enim est laudantium, illo fugit nemo velit error, eius magnam cupiditate.
-              </TestimonialsBox>
-
-              <TestimonialsBox
-                imgBnr={"/teste/Dp2.jpeg"}
-                companyName={"Mercearia do Marcos"}
-                personImg={"/teste/Marcos.jpeg"}
-                personName={"Marcos"}
-                personProfession={"Gerente geral"}
-              >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
-                Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
-                enim est laudantium, illo fugit nemo velit error, eius magnam cupiditate.
-                enim est laudantium, illo fugit nemo velit error, eius magnam cupiditate.
-              </TestimonialsBox>
-
-              <TestimonialsBox
-                imgBnr={"/teste/Dp2.jpeg"}
-                companyName={"Mercearia do Marcos"}
-                personImg={"/teste/Marcos.jpeg"}
-                personName={"Marcos"}
-                personProfession={"Gerente geral"}
-              >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
-                Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
-                enim est laudantium, illo fugit nemo velit error, eius magnam cupiditate.
-              </TestimonialsBox>
-
-              <TestimonialsBox
-                imgBnr={"/teste/Dp1.jpeg"}
-                companyName={"Aniplex"}
-                personImg={"/teste/Robert.png"}
-                personName={"Bob Robert"}
-                personProfession={"Gerente de projetos"}
-              >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
-                enim est laudantium, illo fugit nemo velit error, eius magnam cupiditate.
-              </TestimonialsBox>
-
-              <TestimonialsBox
-                imgBnr={"/teste/Dp2.jpeg"}
-                companyName={"Mercearia do Marcos"}
-                personImg={"/teste/Marcos.jpeg"}
-                personName={"Marcos"}
-                personProfession={"Gerente geral"}
-              >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
-                Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
-                enim est laudantium, illo fugit nemo velit error, eius magnam cupiditate.
-                enim est laudantium, illo fugit nemo velit error, eius magnam cupiditate.
-              </TestimonialsBox>
-
-              <TestimonialsBox
-                imgBnr={"/teste/Dp2.jpeg"}
-                companyName={"Mercearia do Marcos"}
-                personImg={"/teste/Marcos.jpeg"}
-                personName={"Marcos"}
-                personProfession={"Gerente geral"}
-              >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
-                Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
-                enim est laudantium, illo fugit nemo velit error, eius magnam cupiditate.
-              </TestimonialsBox>
-
-              <TestimonialsBox
-                imgBnr={"/teste/Dp2.jpeg"}
-                companyName={"Mercearia do Marcos"}
-                personImg={"/teste/Marcos.jpeg"}
-                personName={"Marcos"}
-                personProfession={"Gerente geral"}
-              >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
-                Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
-                enim est laudantium, illo fugit nemo velit error, eius magnam cupiditate.
-                enim est laudantium, illo fugit nemo velit error, eius magnam cupiditate.
-              </TestimonialsBox>
-
-              <TestimonialsBox
-                imgBnr={"/teste/Dp2.jpeg"}
-                companyName={"Mercearia do Marcos"}
-                personImg={"/teste/Marcos.jpeg"}
-                personName={"Marcos"}
-                personProfession={"Gerente geral"}
-              >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
-                Necessitatibus illum esse praesentium quia. Deserunt quis itaque dolores odio, repellendus
-                enim est laudantium, illo fugit nemo velit error, eius magnam cupiditate.
-              </TestimonialsBox>
-            </div>
-          </div>
         </section>
       </>
     )

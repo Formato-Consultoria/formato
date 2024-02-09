@@ -5,11 +5,11 @@ section.about {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    padding: 50px 0;
 
     h2 {
         color: var(--black-80);
-        font-size: 1.5rem;
-        margin: 25px 0 0 50px;
+        font-size: 1.8rem;
         font-weight: 600;
         text-align: center;
     }
@@ -61,7 +61,7 @@ section.about {
         h2 {
             margin: 30px 20px 0;
             font-weight: 500;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
         }
 
         div.content {

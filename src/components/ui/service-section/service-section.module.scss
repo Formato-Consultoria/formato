@@ -8,6 +8,8 @@ section.services {
     margin: 50px 0;
     max-width: var(--max-section);
 
+    padding: 40px 0;
+
     div.container_services {
         width: 100%;
         height: auto;
@@ -34,8 +36,8 @@ section.services {
 
             border-radius: 15px;
 
-            gap: 8px;
-            padding: 10px;
+            gap: 10px;
+            padding: 20px;
 
             img {
                 margin-top: 5px
@@ -73,6 +75,7 @@ section.services {
     section.services {
         div.container_services {
             div.box_services {
+                padding: 25px;
                 width: 100%;
             }
         }
@@ -85,7 +88,7 @@ section.services {
         margin: 30px 0;
         div.container_services {
             padding: 0 20px;
-            gap: 10px;
+            gap: 25px;
 
             div.box_services {
                 p {
@@ -111,10 +114,6 @@ section.services {
     section.services {
         div.container_services {
             padding: 0 8px;
-
-            div.box_services {
-                border-radius: 5px;
-            }
         }
     }
 }

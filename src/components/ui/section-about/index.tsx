@@ -7,7 +7,7 @@ import cx from "clsx";
 export function AboutSection() {
     return(
         <section className={cx(styles.about, inter.className)}>
-            <h2 className={blinker.className}>SOBRE A HISOTÓRIA DA FORMATO</h2>
+            <h2 className={blinker.className}>SOBRE A FORMATO</h2>
 
             <div className={styles.content}>
                 <div className={cx(styles.image, "ring-1 ring-zinc-950/10")}>

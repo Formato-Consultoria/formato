@@ -18,12 +18,11 @@ section.strategy {
         flex-wrap: wrap;
 
         gap: 20px;
-        padding: 20px 20px;
+        padding: 40px 20px;
 
         div {
             // width: calc(50% - 60px);
             width: 100%;
-            height: auto;
             background-color: var(--white);
 
             padding: 20px;
@@ -47,7 +46,7 @@ section.strategy {
             padding: 20px 30px;
             
             div {
-                height: 280px;
+                height: 100%;
             }
         }
     }
@@ -56,11 +55,12 @@ section.strategy {
 @media (min-width: 768px) {
     section.strategy {
         div.strategys {
-            padding: 20px 50px;
+            padding: 70px 50px;
+            position: relative;
 
             div {
-                width: calc(50% - 60px);
-                height: 200px;
+                flex-basis: calc(50% - 60px);
+                height: max-content;
             }
         }
     }

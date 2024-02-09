@@ -46,12 +46,12 @@ export function ServiceSection() {
           </div>
         </div>
         
-        <Link href="/servicos">
+        {/* <Link href="/servicos">
           <ButttonGlobal
             value="Conhecer todos os serviços"
             icone={<ArrowRight size={20}/>}
           />
-        </Link>
+        </Link> */}
       </section>
     )
 }
