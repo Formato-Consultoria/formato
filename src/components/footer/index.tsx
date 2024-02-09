@@ -24,7 +24,6 @@ export default function Footer() {
         { href: siteMetadata.linkedin, icon: <LinkedinLogo size={36} weight="fill" /> },
         { href: siteMetadata.youtube, icon: <YoutubeLogo size={36} weight="fill" /> },
         { href: siteMetadata.twitter, icon: <TwitterLogo size={36} weight="fill" /> },
-        { href: siteMetadata.github, icon: <GithubLogo size={36} weight="fill" /> }
     ]
 
     return (
