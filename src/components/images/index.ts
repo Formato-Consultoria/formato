@@ -6,20 +6,6 @@ export { default as LinghtIcon } from "../../../public/icons/icon_light.png";
 export { default as DarkLogotipo } from "../../../public/icons/Logotipo_dark.png";
 export { default as LightLogotipo } from "../../../public/icons/Logotipo_light.png";
 
-// serviços
-export { default as Marketing } from "../../../public/icons/Marketing.png";
-export { default as Finance } from "../../../public/icons/Finance.png";
-export { default as DigitalMarketing } from "../../../public/icons/campanha-digital.png";
-export { default as BusinessModeling } from "../../../public/icons/model.png";
-export { default as LeanProduction } from "../../../public/icons/produtividade.png";
-export { default as StrategicPlanning } from "../../../public/icons/analysis.png";
-export { default as ManagementOKRS } from "../../../public/icons/okr.png";
-export { default as ProductivityTaskManagement } from "../../../public/icons/time-management.png";
-export { default as IndicatorsMetrics } from "../../../public/icons/metrics.png";
-export { default as InnovationBusinessModel } from "../../../public/icons/business-model.png";
-export { default as QualityProductivity } from "../../../public/icons/development.png";
-export { default as DigitalTransformation } from "../../../public/icons/digital-transformation.png";
-
 // estratégia
 export { default as Mindset } from "../../../public/icons/brainstorm.png";
 export { default as Strategy } from "../../../public/icons/strategy.png";

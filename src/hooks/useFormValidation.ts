@@ -1,4 +1,4 @@
-import { PropStateForm } from "@/app/api/@types/form";
+import { PropStateForm } from "@/@types/form";
 
 export default function useFormValidation({ values, errors }: PropStateForm) {
     const { name, email, address, phone, message, terms } = values;
@@ -6,7 +6,7 @@ export default function useFormValidation({ values, errors }: PropStateForm) {
 
     if(!name) {
         isValid = false;
-        errors.name = "Precisamos do seu nome para fins de indentificação!";
+        errors.name = "Precisamos do seu nome, por favor!";
     } else {
         delete errors.name
     }

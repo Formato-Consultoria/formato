@@ -1,16 +1,16 @@
 import { ReactNode } from "react";
 import { notFound } from "next/navigation";
+import Link from "next/link";
+import { Metadata } from "next";
 
 import { Comp } from ".";
-import BannerTitle from "@/components/title-page-banner";
 
 import { DataFormatter } from "@/utils/format-data-article";
-import { PropsCategory } from "@/app/api/@types/article";
+import { PropsCategory } from "@/@types/article";
 import { NoArticle } from "@/components/images";
 import NoContent from "@/components/no-content";
-import Link from "next/link";
 import ButttonGlobal from "@/components/button";
-import { Metadata } from "next";
+import { cn } from "@/lib/utils";
 
 type Props = {
   params: { category: string }
@@ -76,37 +76,48 @@ export default async function LayoutCategory({ children, params }: {
   );
 
   return (<>
-    <BannerTitle
-      src="/images/article-banner-image.png"
-      styles={{
-        containner: { justifyContent: 'flex-start', padding: '30px 0px' },
-        content: "flex flex-col gap-4 px-10",
-        image: { filter: 'brightness(1)' },
-      }}
-      height="100%"
-    >
-      <h2 className={"text-xl sm:text-2xl text-white"}>
-        Bem-vindo a pagina de artigos <br className="hidden sm:block" />{category ? `sobre ${category.name}` : "da Formato"}
-      </h2>
-      <p className={"w-full sm:w-[500px] text-sm sm:text-base font-normal text-white/70"}>{category ? category.description : `Explore nossos artigos informativos e descubra insights valiosos sobre estratégias de negócios, inovação, gestão e muito mais. Estamos aqui para ajudá-lo a alcançar seu sucesso empresarial.`}</p>
-    </BannerTitle>
+    <section className="w-full flex justify-start py-10">
+      
+      <div className={"w-full flex flex-col px-5 md:pl-16 prose prose-2xl"}>
+        <h2 className={"prose-h2:mb-1 text-2xl md:text-3xl text-balance	text-black"}>
+          Explore a coleção de artigos da Formato<span className={cn(category && "hidden")}>:</span> <br className="hidden sm:block" />{category && (<><span>onde falamos sobre</span><span className="mx-2 underline">{category.name}:</span></>)} Seja bem-vindo!
+        </h2>
+        <p
+          className={"text-lg md:text-xl font-normal text-balance text-black/70"}>
+            {category
+              ? category.description
+              : 'Explore nossos artigos informativos e descubra insights valiosos sobre estratégias de negócios, inovação, '+
+                'gestão e muito mais. Estamos aqui para ajudá-lo a alcançar seu sucesso empresarial.'
+            }
+        </p>
+      </div>
+    </section>
+
+    <hr className="w-11/12 border-black/10" />
 
     {content}
 
   </>)
 }
 
-
 async function getCategories() {
+  const TIMEOUT = 3000;
+
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), TIMEOUT);
+
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/categories?filters[articles][id][$ne]=-1&populate=deep`);
+    const input: RequestInfo | URL = `${process.env.NEXT_PUBLIC_STRAPI_URL}/categories?filters[articles][id][$ne]=-1&populate=deep`;
+
+    const response = await fetch(input, { signal: controller.signal });
+
     if(!response) notFound();
     const { data, meta } = await response.json();
     
     if (data.length === 0) return { categorias: null, isNotAllEmpty: false };
     else {
       const categorias: Array<PropsCategory> = DataFormatter.formatCategoriesData(data);
-  
+
       for(let category of categorias) {
         if(category.articles?.length === 0) {
           return { categorias: null, isNotAllEmpty: false };
@@ -118,13 +129,20 @@ async function getCategories() {
   } catch(error) {
     console.error("Error ao buscar todas as categorias: ", error);
     return { categorias: null, isNotAllEmpty: false }
+  } finally {
+    clearTimeout(timeoutId);
   }
 }
 
 async function getCategoryBySlug({ categorySlug }: { categorySlug: string }): Promise<{ category: PropsCategory|null }> {
+  const TIMEOUT = 3000;
+
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), TIMEOUT);
+
   try {
     const input: RequestInfo | URL = `${process.env.NEXT_PUBLIC_STRAPI_URL}/slugify/slugs/category/${categorySlug}`;
-    const response = await fetch(input);
+    const response = await fetch(input, { signal: controller.signal });
   
     if(response) {
       const { data } = await response.json();
@@ -139,5 +157,7 @@ async function getCategoryBySlug({ categorySlug }: { categorySlug: string }): Pr
   } catch (error) {
     console.error("Error ao buscar categoria pela slug: ", error);
     return { category: null };
+  } finally {
+    clearTimeout(timeoutId);
   }
 }

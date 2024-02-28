@@ -6,13 +6,13 @@ import { PropsRichText } from "@/components/shared.rich-text";
 import { PropsMedia } from "@/components/shared.media";
 import { PropsQuote } from "@/components/shared.quote";
 import { PropsSlider } from "@/components/shared.slider";
-import { PropsArticle, PropsCover } from "@/app/api/@types/article";
+import { PropsArticle, PropsCover } from "@/@types/article";
 
 import { blinker } from "@/utils/_fonts";
 import { DataFormatter } from "@/utils/format-data-article";
 import cx from "clsx";
 
-import { Comp, Shared } from ".";
+import { ArticleComp, Shared } from "@/components/article-components";
 import siteMetadata from "@/utils/siteMetadata";
 
 type Props = {
@@ -64,7 +64,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         },
     }
 }
-export const revalidate = 60; 
 
 export default async function Article({ params }: Props) {
     const { articleData } = await getdArticleData(params);
@@ -100,34 +99,36 @@ export default async function Article({ params }: Props) {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <>
-            <div className={"w-full flex flex-col items-center relative bg-gray-50 z-0"}>
-                <Comp.BannerTitle
+            <div className={"w-full flex flex-col items-center relative bg-white z-0"}>
+                <ArticleComp.BannerTitle
                     title={title}
                     cover={cover}
                     category={category}
                 />
 
-                <div className={"w-full lg:w-[1024px] xl:w-[1280px] 2xl:w-[1536px] flex flex-col gap-3 p-5 sm:p-3 md:p-5 bg-[var(--white-mediumn)] ring-1 ring-zinc-950/10"}>
+                <div className={"w-full xl:w-11/12 max-w-[1536px] flex flex-col gap-3 p-5 sm:p-3 md:p-5 bg-[var(--white-mediumn)] ring-1 ring-zinc-950/10"}>
                     <Link
                         href={`/categorias/${category.slug}`}
                         style={{ fontSize: 13 }}
                         className={cx(
-                            "text-xs font-semibold w-max px-2 rounded-full uppercase text-[var(--black-dark)] bg-[var(--black-dark-60)] ring-1 ring-[var(--black-dark)] cursor-pointer",
-                            "no-underline hover:text-[var(--link-color)] hover:bg-[var(--link-color-60)] hover:ring-[var(--link-color)] transition-all duration-150 ease-linear",
-                            blinker.className)
-                        }
+                            "text-xs font-semibold w-max px-2 rounded-full uppercase no-underline ring-1 cursor-pointer",
+                            "text-[var(--black-dark)] bg-[var(--black-dark-60)] ring-[var(--black-dark)]",
+                            "hover:text-[var(--link-color)] hover:bg-[var(--link-color-60)] hover:ring-[var(--link-color)]",
+                            "transition-all duration-150 ease-linear",
+                            blinker.className
+                        )}
                     >{category.name}</Link>
 
                     <div className={"flex gap-1 items-center"}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="rgb(8, 12, 16, 0.8)" d="M12 20a8 8 0 0 0 8-8a8 8 0 0 0-8-8a8 8 0 0 0-8 8a8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10a10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67l-.75 1.23L11 13V7h1.5Z" /></svg>
-                        <Comp.Time
+                        <ArticleComp.Time
                             time={new Date(updatedAt)}
                             style={{ margin: 0, padding: 0, fontSize: 14, color: 'var(--black-dark-80)' }}
                         />
                     </div>
 
                     <div className={"flex items-center gap-3"}>
-                        <Comp.UserAvatar author={author} className="w-8 h-8" />
+                        <ArticleComp.UserAvatar author={author} className="w-8 h-8" />
                         <p style={{ color: 'rgba(8, 12, 16, .)', fontWeight: 'mediumn' }}>{author?.name}</p>
                     </div>
 
@@ -137,13 +138,13 @@ export default async function Article({ params }: Props) {
                 </div>
 
                 <div className={"flex flex-col md:flex-row justify-center h-auto md:mt-3 lg:mt-5 w-full relative"}>
-                    <Comp.Headlings
+                    <ArticleComp.Headlings
                         className={cx("order-1 md:h-[500px] max-w-full md:basis-2/6 md:order-2 lg:basis-3/12", blinker.className)}
                         content={HeadlingsContent}
                     />
 
-                    <Comp.ArticleContent className={"order-2 md:order-1 relative max-w-full px-3 md:w-[530px] lg:w-[800px] bg-[var(--white-blog)] self-center ring-1 ring-zinc-950/5"}>
-                        <div dangerouslySetInnerHTML={{ __html: body ?? "" }}></div>
+                    <ArticleComp.ArticleContent className={"order-2 md:order-1 relative max-w-full  md:max-w-xl lg:max-w-4xl px-3 self-center"}>
+                        <div dangerouslySetInnerHTML={{ __html: body! }}></div>
 
                         {blocks?.map((block: PropsMedia | PropsRichText | PropsQuote | PropsSlider) => {
                             if (!block) return <p className={"text-lg my-5 font-bold text-[#fce100]"}>⚠️ Bloco de dado não suportado ainda! :(</p>
@@ -152,26 +153,39 @@ export default async function Article({ params }: Props) {
                             if (Component) return <Component key={block.id} {...block} />;
                             else return <></>;
                         })}
-                    </Comp.ArticleContent>
+                    </ArticleComp.ArticleContent>
                 </div>
             </div>
 
-            <Comp.RelatedArticleCards
+            <ArticleComp.RelatedArticleCards
                 categorySlug={category.slug}
                 tags={tags ?? []}
                 pageSlug={slug}
             />
+
+            {/* EmailMarketing */}
         </>
     </>);
 }
 
 async function getdArticleData(params: { slug: string }) {
+    const TIMEOUT = 3000;
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), TIMEOUT);
+
     try {
         const { slug } = params;
-        const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/slugify/slugs/article/${slug}?populate=deep`);
+        const input: RequestInfo | URL = `${process.env.NEXT_PUBLIC_STRAPI_URL}/slugify/slugs/article/${slug}?populate=deep`;
+        const response = await fetch(input, {
+            signal: controller.signal,
+            next: {
+                revalidate: 60 * 8 // 8 min
+            }
+        });
     
-        if (!response) notFound();
-        const articleResponse = await response.json();
+        if (response.status !== 200) notFound();
+        const articleResponse = await response.json(); 
         const { data } = articleResponse;
     
         if (!data) notFound();
@@ -182,6 +196,8 @@ async function getdArticleData(params: { slug: string }) {
     } catch(error) {
         console.log("Error ao buscar dados de artigo: ", error);
         return { articleData: null };
+    } finally {
+        clearTimeout(timeoutId)
     }
 }
 

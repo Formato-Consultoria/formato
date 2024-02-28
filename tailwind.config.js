@@ -73,7 +73,7 @@ module.exports = {
       },
       gridTemplateRows: {
         'artc-2': '1fr, auto'
-      }
+      },
     },
   },
   plugins: [

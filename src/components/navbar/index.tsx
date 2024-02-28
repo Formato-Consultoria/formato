@@ -7,7 +7,7 @@ import Image from "next/image";
 import { List, X } from "@/components/images/phosphor";
 
 import ButttonGlobal from "@/components/button";
-import React, { useCallback, useState, useEffect } from "react";
+import { useCallback, useState, useEffect } from "react";
 import { blinker } from "@/utils/_fonts";
 import { DarkIcon, DarkLogotipo } from "@/components/images";
 
@@ -15,17 +15,11 @@ import cx from "clsx";
 import Modal from "@/components/modal";
 import { usePathname } from "next/navigation";
 
-import { MagnifyingGlass } from "@/components/images/phosphor";
 import {
     NavigationMenu,
-    NavigationMenuContent,
     NavigationMenuItem,
-    NavigationMenuLink,
     NavigationMenuList,
-    NavigationMenuTrigger,
-    navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { services } from "@/content/all-services";
 import LogoFormato from "../logo";
 
 export default function Navbar() {
@@ -33,8 +27,6 @@ export default function Navbar() {
     const [isOpenModal, setIsOpenModal] = useState(false);
 
     const pathname = usePathname();
-
-    const compServices = Object.values(services);
 
     const onScroll = useCallback(() => {
         const { scrollY } = window;
@@ -88,27 +80,10 @@ export default function Navbar() {
                         </NavigationMenuItem>
 
                         <NavigationMenuItem className="hover:bg-transparent">
-                            <NavigationMenuTrigger
-                                className={cx(
-                                    'p-0 m-0',
-                                    `h-full bg-transparent text-lg duration-500 text-[var(--black-dark)] font-medium no-underline hover:bg-transparent focus:bg-transparent hover:underline hover:text-[var(--link-color)] hover:duration-500`
-                                    , blinker.className
-                                )}
-                            >Serviços</NavigationMenuTrigger>
-                            <NavigationMenuContent className={"bg-transparent"}>
-                                <ul className="grid bg-transparent w-[550px] gap-3 p-4 md:grid-cols-3">
-                                    {compServices.map((_) => (
-                                        <ListItem
-                                            key={_.slug}
-                                            icon={_.icon}
-                                            title={_.title}
-                                            href={`/servicos/${_.slug}`}
-                                        >
-                                            {_.description}
-                                        </ListItem>
-                                    ))}
-                                </ul>
-                            </NavigationMenuContent>
+                            <Link
+                                className={cx(`h-full text-lg ${pathname === "/servicos" ? 'text-[var(--link-color)]' : 'text-[var(--black-dark)]'} duration-500 font-medium no-underline hover:underline hover:text-[var(--link-color)] hover:duration-500`, blinker.className)}
+                                href="/servicos"
+                            >Serviços</Link>
                         </NavigationMenuItem>
 
                         {/* <NavigationMenuItem>
@@ -123,6 +98,13 @@ export default function Navbar() {
                                 className={cx(`h-full text-lg ${pathname?.includes("categorias") ? 'text-[var(--link-color)]' : 'text-[var(--black-dark)]'} duration-500 font-medium no-underline hover:underline hover:text-[var(--link-color)] hover:duration-500`, blinker.className)}
                                 href="/categorias/all"
                             >Artigos</Link>
+                        </NavigationMenuItem>
+
+                        <NavigationMenuItem className="hover:bg-transparent">
+                            <Link
+                                className={cx(`h-full text-lg ${(pathname === "/servicos" && true) ? 'text-[var(--link-color)]' : 'text-[var(--black-dark)]'} duration-500 font-medium no-underline hover:underline hover:text-[var(--link-color)] hover:duration-500`, blinker.className)}
+                                href="/servicos/#faqs"
+                            >FAQs</Link>
                         </NavigationMenuItem>
 
                         <NavigationMenuItem>

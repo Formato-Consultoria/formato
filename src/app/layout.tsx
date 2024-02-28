@@ -2,16 +2,11 @@ import "./global.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { Toaster } from "react-hot-toast";
-import { inter } from "@/utils/_fonts";
-
-import { Main } from "@/components/main";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
-import { ComVLibras } from "@/components/v-libras";
-
 import { Metadata } from "next"; 
 import siteMetadata from "@/utils/siteMetadata";
+import { CustomRootLayout } from "@/components/root-layout";
+
+// import { ComVLibras } from "@/components/v-libras";
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteMetadata.siteUrl),
@@ -55,21 +50,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="pt-br">
             <body>
-                <div className={inter.className}>                    
-                    <Navbar />
+                <CustomRootLayout>
+                    {children}
+                </CustomRootLayout>
 
-                    <Main>
-                        {children}
-
-                        <Toaster
-                            position="bottom-left"
-                            reverseOrder={true}
-                        />
-                    </Main>
-                    <Footer />
-                </div>
-                
-                <ComVLibras />
+                {/* <ComVLibras /> */}
             </body>
         </html>
     )
